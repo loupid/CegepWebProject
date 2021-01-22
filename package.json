@@ -1,0 +1,30 @@
+{
+  "name": "CegepWebProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tw:build": "tailwindcss build ./src/css/tailwind.css -o ./public/css/tailwind.css",
+    "tw:prod": "NODE_ENV=production postcss build ./src/css/tailwind.css -o ./public/css/tailwind.css",
+    "tw:watch": "onchange 'tailwind.config.js' 'src/**/*.css' -- npm run tw:build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loupid/CegepWebProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loupid/CegepWebProject/issues"
+  },
+  "homepage": "https://github.com/loupid/CegepWebProject#readme",
+  "dependencies": {
+    "autoprefixer": "^10.2.3",
+    "cssnano": "^4.1.10",
+    "onchange": "^7.1.0",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.2"
+  }
+}
