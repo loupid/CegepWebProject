@@ -4,16 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tw:build": "tailwindcss build ./src/css/tailwind.css -o ./public/css/tailwind.css",
-    "tw:prod": "NODE_ENV=production postcss build ./src/css/tailwind.css -o ./public/css/tailwind.css",
-    "tw:watch": "onchange 'tailwind.config.js' 'src/**/*.css' -- npm run tw:build"
+    "tw:build": "tailwindcss build ./src/css/tailwind.css -o ./public/css/tailwind.css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/loupid/CegepWebProject.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "William Hudon",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/loupid/CegepWebProject/issues"

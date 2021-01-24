@@ -3,6 +3,5 @@
 
  $router = new App\Router('views');
 
- $router->get('/','home')
-     ->get('/main-[i:age]-[a:name]','main', 'main')
-     ->run();
+ include '../routes.php';
+ $router->run();

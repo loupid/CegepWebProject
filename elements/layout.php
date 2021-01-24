@@ -8,7 +8,7 @@
 <body>
     <!--insert here the top of all page-->
     <a href="/" class="text-9xl">Retour au menu</a>
-    
+
     <div id="root"></div>
     <div class="flex justify-center items-center h-screen bg-cwc-gray text-9xl">
         <?= $view ?>
@@ -16,6 +16,7 @@
 
 <!--todo$wh-->
 <!--Add script here by a variable -->
+    <?= $script ?>
 
     <!--insert here to bottom of all page-->
 </body>
