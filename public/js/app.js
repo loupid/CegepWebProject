@@ -23,9 +23,13 @@ for (let i = 0; i < btn.length; i++) {
 
 let progDropdown = document.getElementById('program-dropdown')
 let btnProgram = document.getElementById('btn-program')
+let newsDropdown = document.getElementById('news-dropdown')
+let btnNews = document.getElementById('btn-news')
+
 btnProgram.addEventListener('mouseover', () => {
     if (progDropdown.classList.contains('hidden')) {
         progDropdown.classList.remove('hidden')
+        newsDropdown.classList.add('hidden')
     }
 })
 
@@ -44,11 +48,10 @@ $(document).click(function () {
     }
 });
 
-let newsDropdown = document.getElementById('news-dropdown')
-let btnNews = document.getElementById('btn-news')
 btnNews.addEventListener('mouseover', () => {
     if (newsDropdown.classList.contains('hidden')) {
         newsDropdown.classList.remove('hidden')
+        progDropdown.classList.add('hidden')
     }
 })
 
