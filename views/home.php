@@ -1,1 +1,0 @@
-<a href="<?=$this->generate('main',['age' => 20, 'name' => 'William'])?>">CLIQUE ICITTE</a>
