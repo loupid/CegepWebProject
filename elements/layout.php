@@ -12,7 +12,7 @@
 <div class="relative bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-            <div class="flex justify-start lg:w-0 lg:flex-1">
+            <div class="flex justify-start">
                 <a href="/" class="inline-block mr-4">
                     <img class="dark:hidden inline-block" src="images/svgs/logodep.svg" alt="Logo département">
                     <img class="dark:inline-block hidden" src="images/logos/dep.png" alt="Logo département">
@@ -33,7 +33,7 @@
             <nav class="hidden md:flex space-x-10">
                 <div class="relative">
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-                    <button role="menuitem" id="btn-program" type="button"
+                    <button id="btn-program" type="button"
                             class="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span>Programme</span>
                         <!--
@@ -50,7 +50,7 @@
                         </svg>
                     </button>
 
-                    <div id="program-dropdown" class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2 hidden">
+                    <div id="program-dropdown" class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 hidden">
                         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                                 <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
@@ -128,12 +128,12 @@
                     Cours
                 </a>
                 <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-                    Actualité
+                    Événements
                 </a>
 
                 <div class="relative">
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-                    <button role="menuitem" type="button"
+                    <button id="btn-news" role="menuitem" type="button"
                             class="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span>Actualité</span>
                         <!--
@@ -150,7 +150,7 @@
                         </svg>
                     </button>
 
-                    <div class="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0 hidden">
+                    <div id="news-dropdown" class="absolute z-10 mt-3 px-2 w-screen max-w-md sm:px-0 hidden">
                         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                                 <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
@@ -259,7 +259,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="w-1/4 flex-none flex flex-wrap flex-row-reverse">
+            <div class="w-1/4 flex-1 flex flex-wrap flex-row-reverse">
                 <a href="#" class="inline-block ml-4">
                     <img class="theme-toggle dark:hidden inline-block" src="images/svgs/moon.svg" alt="Lune">
                     <img class="theme-toggle dark:inline-block hidden" src="images/svgs/sunny.svg" alt="Soleil">

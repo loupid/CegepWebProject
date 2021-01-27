@@ -39,7 +39,24 @@ $(document).click(function () {
     if (this.id !== 'program-dropdown' && this.id !== 'btn-program') {
         $("#program-dropdown").addClass('hidden');
     }
+    if (this.id !== 'news-dropdown' && this.id !== 'btn-news') {
+        $("#news-dropdown").addClass('hidden');
+    }
 });
+
+let newsDropdown = document.getElementById('news-dropdown')
+let btnNews = document.getElementById('btn-news')
+btnNews.addEventListener('mouseover', () => {
+    if (newsDropdown.classList.contains('hidden')) {
+        newsDropdown.classList.remove('hidden')
+    }
+})
+
+newsDropdown.addEventListener('mouseleave', () => {
+    if (!newsDropdown.classList.contains('hidden')) {
+        newsDropdown.classList.add('hidden')
+    }
+})
 
 
 
