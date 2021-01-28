@@ -29,6 +29,9 @@ let moreDropdown = document.getElementById('more-dropdown')
 let btnMore = document.getElementById('btn-more')
 let studentsDropdown = document.getElementById('students-dropdown')
 let btnStudents = document.getElementById('btn-students')
+let mobileMenu = document.getElementById('mobile-menu')
+let btnClose = document.getElementById('btn-close-mobile-menu')
+let btnOpen = document.getElementById('btn-open-mobile-menu')
 
 btnProgram.addEventListener('mouseover', () => {
     if (progDropdown.classList.contains('hidden')) {
@@ -104,6 +107,14 @@ $(document).click(function () {
         $("#more-dropdown").addClass('hidden');
     }
 });
+
+btnClose.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden')
+})
+
+btnOpen.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden')
+})
 
 
 
