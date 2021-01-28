@@ -14,6 +14,7 @@
 .[:format]?          // Match an optional parameter 'format' - a / or . before the block is also optional
  */
 
-$router->get('/','home')
-    ->get('/main-[i:age]-[a:name]','main', 'menu')
-    ->get('/programme','program', 'program');
+$router->map('GET','/','HomeController@index');
+//some Target argument is to change for the controller
+$router->map('GET', '/main/[i:age]/[a:name]','actualities/main', 'menu');
+$router->map('GET', '/programme','program', 'program');

@@ -5,7 +5,7 @@
     <title>Département d'informatique</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="/css/tailwind.css">
 </head>
 <body class="dark">
 <!--insert here the top of all page-->
@@ -13,9 +13,9 @@
     <div class="mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
             <div class="flex justify-start">
-                <a href="/" class="inline-block">
-                    <img class="dark:hidden inline-block" src="images/svgs/logodep.svg" alt="Logo département">
-                    <img class="dark:inline-block hidden" src="images/logos/dep.png" alt="Logo département">
+                <a href="/" class="inline-block mr-4">
+                    <img class="dark:hidden inline-block" src="/images/svgs/logodep.svg" alt="Logo département">
+                    <img class="dark:inline-block hidden" src="/images/logos/dep.png" alt="Logo département">
                 </a>
             </div>
             <div class="-mr-2 -my-2 md:hidden">
@@ -408,7 +408,6 @@
                 Programme
               </span>
                         </a>
-
                         <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <!-- Heroicon name: cursor-click -->
                             <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
@@ -420,7 +419,6 @@
                 Cours
               </span>
                         </a>
-
                         <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <!-- Heroicon name: shield-check -->
                             <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
@@ -476,15 +474,14 @@
     </div>
 </div>
 
-<div id="root"></div>
 <div class="flex justify-center items-center h-screen bg-cwc-gray text-9xl">
-    <?= $view ?? '' ?>
+    <?= $content ?? '' ?>
 </div>
 
 <!--todo$wh-->
 <!--Add script here by a variable -->
 <?= $script ?? '' ?>
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 <!--insert here to bottom of all page-->
 </body>
 </html>

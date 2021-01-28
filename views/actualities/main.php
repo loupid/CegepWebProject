@@ -1,0 +1,5 @@
+<?=
+$params['age'];
+?>
+<?=
+$params['name'];
