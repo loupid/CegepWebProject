@@ -25,17 +25,68 @@ let progDropdown = document.getElementById('program-dropdown')
 let btnProgram = document.getElementById('btn-program')
 let newsDropdown = document.getElementById('news-dropdown')
 let btnNews = document.getElementById('btn-news')
+let moreDropdown = document.getElementById('more-dropdown')
+let btnMore = document.getElementById('btn-more')
+let studentsDropdown = document.getElementById('students-dropdown')
+let btnStudents = document.getElementById('btn-students')
 
 btnProgram.addEventListener('mouseover', () => {
     if (progDropdown.classList.contains('hidden')) {
         progDropdown.classList.remove('hidden')
         newsDropdown.classList.add('hidden')
+        moreDropdown.classList.add('hidden')
+        studentsDropdown.classList.add('hidden')
     }
 })
 
 progDropdown.addEventListener('mouseleave', () => {
     if (!progDropdown.classList.contains('hidden')) {
         progDropdown.classList.add('hidden')
+    }
+})
+
+btnNews.addEventListener('mouseover', () => {
+    if (newsDropdown.classList.contains('hidden')) {
+        newsDropdown.classList.remove('hidden')
+        progDropdown.classList.add('hidden')
+        moreDropdown.classList.add('hidden')
+        studentsDropdown.classList.add('hidden')
+    }
+})
+
+newsDropdown.addEventListener('mouseleave', () => {
+    if (!newsDropdown.classList.contains('hidden')) {
+        newsDropdown.classList.add('hidden')
+    }
+})
+
+btnMore.addEventListener('mouseover', () => {
+    if (moreDropdown.classList.contains('hidden')) {
+        moreDropdown.classList.remove('hidden')
+        newsDropdown.classList.add('hidden')
+        progDropdown.classList.add('hidden')
+        studentsDropdown.classList.add('hidden')
+    }
+})
+
+moreDropdown.addEventListener('mouseleave', () => {
+    if (!moreDropdown.classList.contains('hidden')) {
+        moreDropdown.classList.add('hidden')
+    }
+})
+
+btnStudents.addEventListener('mouseover', () => {
+    if (studentsDropdown.classList.contains('hidden')) {
+        studentsDropdown.classList.remove('hidden')
+        newsDropdown.classList.add('hidden')
+        moreDropdown.classList.add('hidden')
+        progDropdown.classList.add('hidden')
+    }
+})
+
+studentsDropdown.addEventListener('mouseleave', () => {
+    if (!studentsDropdown.classList.contains('hidden')) {
+        studentsDropdown.classList.add('hidden')
     }
 })
 
@@ -46,20 +97,13 @@ $(document).click(function () {
     if (this.id !== 'news-dropdown' && this.id !== 'btn-news') {
         $("#news-dropdown").addClass('hidden');
     }
+    if (this.id !== 'more-dropdown' && this.id !== 'btn-more') {
+        $("#more-dropdown").addClass('hidden');
+    }
+    if (this.id !== 'students-dropdown' && this.id !== 'btn-students') {
+        $("#more-dropdown").addClass('hidden');
+    }
 });
-
-btnNews.addEventListener('mouseover', () => {
-    if (newsDropdown.classList.contains('hidden')) {
-        newsDropdown.classList.remove('hidden')
-        progDropdown.classList.add('hidden')
-    }
-})
-
-newsDropdown.addEventListener('mouseleave', () => {
-    if (!newsDropdown.classList.contains('hidden')) {
-        newsDropdown.classList.add('hidden')
-    }
-})
 
 
 
