@@ -18,12 +18,11 @@ class Controller {
         // Construct the view with the variables
         try {
             ob_start();
-            require __DIR__.'/../views/'.str_replace('.', '/', $view).'.php';
+            require __DIR__.'/../views/' . $view . '.php';
             $content = ob_get_clean();
-
             require __DIR__.'/../elements/layout.php';
         } catch (\Exception $e) {
-            echo 'wer';
+            echo $e->getMessage();
             return false;
         }
         return true;
