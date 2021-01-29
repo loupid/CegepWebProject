@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         cwc: {
+          white: "#f5f5f5",
           red: "#b70739",
           blue: "#49aade",
           gray: "#222222",

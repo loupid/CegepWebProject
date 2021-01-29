@@ -9,7 +9,7 @@
 </head>
 <body class="dark">
 <!--insert here the top of all page-->
-<div class="relative bg-white">
+<div class="relative bg-white shadow">
     <div class="mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
             <div class="flex justify-start">
@@ -33,7 +33,8 @@
             <nav class="hidden md:flex space-x-10">
                 <div class="relative">
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-                    <button id="btn-program" type="button"
+<!--                    isset($this) ? $this->router->generate('indexProgram') : $router->generate('indexProgram')                  -->
+                    <button id="btn-program" type="button" onclick="window.location = '<?= $this->router->generate('indexProgram') ?>'"
                             class="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span>Programme</span>
                         <!--
@@ -379,7 +380,7 @@
             <div class="pt-5 pb-6 px-5">
                 <div class="flex items-center justify-between">
                     <div>
-                        <img class="h-8 w-auto" src="images/svgs/logodep.svg"
+                        <img class="h-8 w-auto" src="/images/svgs/logodep.svg"
                              alt="Logodep">
                     </div>
                     <div class="-mr-2">
@@ -397,7 +398,7 @@
                 </div>
                 <div class="mt-6">
                     <nav class="grid gap-y-8">
-                        <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                        <a href="<?= isset($this) ? $this->router->generate('indexProgram') : $router->generate('indexProgram') ?>" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <!-- Heroicon name: chart-bar -->
                             <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
                                  fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -474,14 +475,13 @@
     </div>
 </div>
 
-<div class="flex justify-center items-center h-screen bg-cwc-gray text-9xl">
+<div class="h-full bg-cwc-white">
     <?= $content ?? '' ?>
 </div>
+<!--insert here to bottom of all page-->
 
-<!--todo$wh-->
 <!--Add script here by a variable -->
 <?= $script ?? '' ?>
 <script src="/js/app.js"></script>
-<!--insert here to bottom of all page-->
 </body>
 </html>

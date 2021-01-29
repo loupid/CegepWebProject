@@ -1,9 +1,11 @@
 <?php
 require '../vendor/autoload.php';
 
-
 require '../database/Database.php';
 $router = new AltoRouter();
+
+
+$uri = $_SERVER['REQUEST_URI'];
 
 //$database_config = require '../config/database.php';
 //$database_config = $database_config['mysql']; // Set to wanted database config name
@@ -20,6 +22,7 @@ require '../routes.php';
 
 $match = $router->match();
 
+
 if (is_array($match)) {
     $exploded = explode('@', $match['target']);
 
@@ -30,9 +33,7 @@ if (is_array($match)) {
             require '../controllers/' . $exploded[0] . '.php';
             if (class_exists('\\controllers\\' . $exploded[0])) {
                 $instance = getControllerClassInstance($exploded[0], $router, $db_conn);
-                $response = call_user_func_array(array($instance, $exploded[1]), $match['params']) or die("Couldn't call specified method");
-                if (!$response)
-                    die("Couldn't return demanded view");
+                call_user_func_array(array($instance, $exploded[1]), $match['params']);
             } else {
                 die("Specified controller class not found");
             }
@@ -40,16 +41,15 @@ if (is_array($match)) {
             die("Specified controller class not found");
         }
     } else {
+        require '../controllers/Controller.php';
         $instance = getControllerClassInstance('Controller', $router, $db_conn);
-        $response = call_user_func_array(array($instance, 'view'), array($match['target'], $match['params'])) or die("Couldn't call specified method");
-        if (!$response)
-            echo "Couldn't return demanded view";
+        call_user_func_array(array($instance, 'view'), array($match['target'], $match['params'])) or die("Couldn't call specified method");
     }
 } else {
-    ob_start();
-    require '../views/error/error.php';
-    $content = ob_get_clean();
-    require '../elements/layout.php';
+    require '../controllers/Controller.php';
+    require '../controllers/ErrorController.php';
+    $instance = getControllerClassInstance('ErrorController', $router, $db_conn);
+    $response = call_user_func_array(array($instance, 'error'), array('error', null));
 }
 
 function getControllerClassInstance($controller, $router, $db)
@@ -58,7 +58,6 @@ function getControllerClassInstance($controller, $router, $db)
         $class = new ReflectionClass('\\controllers\\' . $controller);
         return $class->newInstanceArgs(array($router, $db));
     } catch (ReflectionException $e) {
-        die($e->getMessage()). 'wer';
+        die($e->getMessage() . 'qweqwe');
     }
 }
-
