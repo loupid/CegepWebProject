@@ -18,3 +18,4 @@ $router->map('GET','/','HomeController@index');
 //some Target argument is to change for the controller
 $router->map('GET', '/main/[i:age]/[a:name]','actualities/main', 'menu');
 $router->map('GET', '/programme','program', 'program');
+$router->map('GET', '/cours', 'CoursesController@index', 'CoursesIndex');

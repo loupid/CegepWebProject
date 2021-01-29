@@ -15,7 +15,6 @@
             <div class="flex justify-start">
                 <a href="/" class="inline-block mr-4">
                     <img class="dark:hidden inline-block" src="/images/svgs/logodep.svg" alt="Logo département">
-                    <img class="dark:inline-block hidden" src="/images/logos/dep.png" alt="Logo département">
                 </a>
             </div>
             <div class="-mr-2 -my-2 md:hidden">
@@ -374,12 +373,12 @@
         </div>
     </div>
 
-    <div id="mobile-menu" class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+    <div id="mobile-menu" class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right hidden">
         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div class="pt-5 pb-6 px-5">
                 <div class="flex items-center justify-between">
                     <div>
-                        <img class="h-8 w-auto" src="images/svgs/logodep.svg"
+                        <img class="h-8 w-auto" src="/images/svgs/logodep.svg"
                              alt="Logodep">
                     </div>
                     <div class="-mr-2">
@@ -474,7 +473,7 @@
     </div>
 </div>
 
-<div class="flex justify-center items-center h-screen bg-cwc-gray text-9xl">
+<div class="flex justify-center pt-8">
     <?= $content ?? '' ?>
 </div>
 

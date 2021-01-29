@@ -104,7 +104,7 @@ $(document).click(function () {
         $("#more-dropdown").addClass('hidden');
     }
     if (this.id !== 'students-dropdown' && this.id !== 'btn-students') {
-        $("#more-dropdown").addClass('hidden');
+        $("#students-dropdown").addClass('hidden');
     }
 });
 
