@@ -7,16 +7,15 @@ $router = new AltoRouter();
 
 $uri = $_SERVER['REQUEST_URI'];
 
-//$database_config = require '../config/database.php';
-//$database_config = $database_config['mysql']; // Set to wanted database config name
-//
-//$database = new Database($database_config['database']);
-//$database->setHost($database_config['host'])
-//    ->setPort($database_config['port'])
-//    ->setUsername($database_config['username'])
-//    ->setPassword($database_config['password']);
-//$db_conn = $database->connect();
-$db_conn = null;
+$database_config = require '../config/database.php';
+$database_config = $database_config['mysql']; // Set to wanted database config name
+
+$database = new Database($database_config['database']);
+$database->setHost($database_config['host'])
+    ->setPort($database_config['port'])
+    ->setUsername($database_config['username'])
+    ->setPassword($database_config['password']);
+$db_conn = $database->connect();
 
 require '../routes.php';
 
@@ -43,13 +42,13 @@ if (is_array($match)) {
     } else {
         require '../controllers/Controller.php';
         $instance = getControllerClassInstance('Controller', $router, $db_conn);
-        call_user_func_array(array($instance, 'view'), array($match['target'], $match['params'])) or die("Couldn't call specified method");
+        call_user_func_array(array($instance, 'view'), array($match['target'], $match['params']));
     }
 } else {
     require '../controllers/Controller.php';
     require '../controllers/ErrorController.php';
     $instance = getControllerClassInstance('ErrorController', $router, $db_conn);
-    $response = call_user_func_array(array($instance, 'error'), array('error', null));
+    call_user_func_array(array($instance, 'error'), array('error', null));
 }
 
 function getControllerClassInstance($controller, $router, $db)

@@ -5,10 +5,15 @@
     <title>Département d'informatique</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" href="/css/tailwind.css">
 </head>
 <body class="dark">
 <!--insert here the top of all page-->
+<?php
+$isAdmin = $isAdmin ?? false;
+if (!$isAdmin??false){
+    ?>
 <div class="relative bg-white shadow">
     <div class="mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
@@ -34,7 +39,7 @@
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
 <!--                    isset($this) ? $this->router->generate('indexProgram') : $router->generate('indexProgram')                  -->
                     <button id="btn-program" type="button" onclick="window.location = '<?= $this->router->generate('indexProgram') ?>'"
-                            class="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span>Programme</span>
                         <!--
                           Heroicon name: chevron-down
@@ -473,14 +478,17 @@
         </div>
     </div>
 </div>
+<?php } ?>
 
 <div class="h-full bg-cwc-white">
     <?= $content ?? '' ?>
 </div>
 <!--insert here to bottom of all page-->
 
-
-<footer class="bg-white dark:bg-gray-800">
+<?php
+if (!$isAdmin??false){
+?>
+<footer class="bg-white dark:bg-gray-800 shadow">
     <div class="container mx-auto px-6 py-4">
         <div class="lg:flex">
             <div class="w-full lg:w-2/5">
@@ -593,6 +601,7 @@
         </div>
     </div>
 </footer>
+<?php } ?>
 
 <!--Add script here by a variable -->
 <?= $script ?? '' ?>
