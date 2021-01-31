@@ -8,12 +8,12 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return $this->view('admin/index');
+        return $this->view('login/index',[], 2);
     }
 
     public function adminsList()
     {
-        return $this->view('admin/adminsList');
+        return $this->view('admin/adminsList', [], 1);
     }
 
     public function login()
@@ -32,6 +32,6 @@ class AdminController extends Controller
     }
 
     public function dashboard(){
-        return $this->view('admin/dashboard');
+        return $this->view('admin/dashboard', [], 1);
     }
 }

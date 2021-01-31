@@ -5,7 +5,6 @@
     <title>Département d'informatique</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" href="/css/tailwind.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -18,10 +17,6 @@
 </head>
 <body class="dark">
 <!--insert here the top of all page-->
-<?php
-$isAdmin = $isAdmin ?? false;
-if (!$isAdmin??false){
-    ?>
 <div class="relative bg-white shadow">
     <div class="mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
@@ -486,16 +481,12 @@ if (!$isAdmin??false){
         </div>
     </div>
 </div>
-<?php } ?>
 
 <div class="h-full bg-cwc-white">
     <?= $content ?? '' ?>
 </div>
 <!--insert here to bottom of all page-->
 
-<?php
-if (!$isAdmin??false){
-?>
 <footer class="bg-white border-t-2 dark:bg-gray-800">
     <div class="container mx-auto px-6 py-4">
         <div class="lg:flex">
@@ -609,7 +600,6 @@ if (!$isAdmin??false){
         </div>
     </div>
 </footer>
-<?php } ?>
 
 <!--Add script here by a variable -->
 <?= $script ?? '' ?>
