@@ -41,7 +41,7 @@ class Controller {
     }
 
     protected function redirectToRoute($route) {
-
+        header('Location: '.$this->router->generate($route));
     }
 
 }

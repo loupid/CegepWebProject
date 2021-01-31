@@ -5,10 +5,15 @@
     <title>Département d'informatique</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" href="/css/tailwind.css">
 </head>
 <body class="dark">
 <!--insert here the top of all page-->
+<?php
+$isAdmin = $isAdmin ?? false;
+if (!$isAdmin??false){
+    ?>
 <div class="relative bg-white shadow">
     <div class="mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
@@ -34,7 +39,7 @@
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
 <!--                    isset($this) ? $this->router->generate('indexProgram') : $router->generate('indexProgram')                  -->
                     <button id="btn-program" type="button" onclick="window.location = '<?= $this->router->generate('indexProgram') ?>'"
-                            class="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span>Programme</span>
                         <!--
                           Heroicon name: chevron-down
@@ -473,14 +478,17 @@
         </div>
     </div>
 </div>
+<?php } ?>
 
 <div class="h-full bg-cwc-white">
     <?= $content ?? '' ?>
 </div>
 <!--insert here to bottom of all page-->
 
-
-<footer class="bg-white dark:bg-gray-800">
+<?php
+if (!$isAdmin??false){
+?>
+<footer class="bg-white dark:bg-gray-800 shadow">
     <div class="container mx-auto px-6 py-4">
         <div class="lg:flex">
             <div class="w-full lg:w-2/5">
@@ -533,6 +541,16 @@
                                 <path d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"/>
                             </svg>
                         </a>
+                        <a href="https://www.cegeptr.qc.ca/" target="_blank"
+                           class="mx-2 text-gray-700 dark:text-gray-200 hover:text-blue-700 dark:hover:text-gray-400"
+                           aria-label="Linkden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current -mt-1" viewBox="0 0 4000 4000">
+                                <g id="layout-cegep" fill="currentcolor" stroke="none">
+                                    <path d="M1590 2540 l0 -810 -405 0 -405 0 0 -405 0 -405 1225 0 1225 0 0 135 0 135 -1087 2 -1088 3 -3 133 -3 132 411 0 410 0 0 945 0 945 -140 0 -140 0 0 -810z"/>
+                                    <path d="M2140 2405 l0 -945 545 0 545 0 0 135 0 135 -410 0 -410 0 0 810 0 810 -135 0 -135 0 0 -945z"/>
+                                </g>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -582,6 +600,7 @@
         </div>
     </div>
 </footer>
+<?php } ?>
 
 <!--Add script here by a variable -->
 <?= $script ?? '' ?>

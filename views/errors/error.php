@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-center md:flex-row">
+<div class="flex flex-col justify-center md:flex-row py-8 h-screen">
     <div class="flex">
         <div class="rounded-full md:h-80 md:w-80 h-60 w-60 flex items-center opacity-75 bg-blue-600 text-white text-center text-xl font-bold">
             <p class="w-32 ml-12">Notre site est tout cassé</p>

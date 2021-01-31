@@ -11,13 +11,22 @@ class AdminController extends Controller
         return $this->view('admin/index');
     }
 
-    public function confirm()
+    public function login()
     {
-        //this will extract all value of
-//        extract($_POST);
-//        $name;
-        //validation and decide if you return to the list with a succes or to the same view with an errorst
+        extract($_POST);
 
-        return $this->view('admin/index', $_POST);
+        $con = $this->getDatabase();
+        $query = $con->prepare("select count(*) as nbr from admins where email = '$email' and password = '$password';");
+        $query->execute();
+        $result = $query->fetch();
+
+        if ($result['nbr'] == 1){
+            $this->redirectToRoute('dashboardAdmin');
+        }
+        else $this->redirectToRoute('indexAdmin');
+    }
+
+    public function dashboard(){
+        return $this->view('admin/dashboard');
     }
 }
