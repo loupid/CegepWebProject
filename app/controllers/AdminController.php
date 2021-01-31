@@ -25,10 +25,14 @@ class AdminController extends Controller
         $query->execute();
         $result = $query->fetch();
 
+        $error = array();
+        array_push($error,'Le courriel ou le mot de passe est incorrect');
         if ($result['nbr'] == 1){
             $this->redirectToRoute('dashboardAdmin');
         }
-        else $this->redirectToRoute('indexAdmin');
+        else $this->redirectToRoute('indexAdmin', [
+            'error'=>$error
+        ]);
     }
 
     public function dashboard(){

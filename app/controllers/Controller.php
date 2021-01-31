@@ -2,8 +2,9 @@
 
 namespace controllers;
 
-class Controller
-{
+use app\Session;
+
+class Controller {
 
     private $router;
     private $db;
@@ -49,14 +50,23 @@ class Controller
         return $this->db;
     }
 
-    protected function redirectToUrl($url)
-    {
+    protected function redirectToUrl(String $url, Array $data = []) {
+        foreach($data as $k => $v) {
+            Session::put($k, $v);
+        }
 
+        header('Location: '.$url);
     }
 
-    protected function redirectToRoute($route)
-    {
-        header('Location: ' . $this->router->generate($route));
+    protected function redirectToRoute(String $route, Array $data = []) {
+        $url = $this->router->generate($route);
+
+        foreach($data as $k => $v) {
+            Session::put($k, $v);
+        }
+
+        header('Location: '.$url);
+        return true;
     }
 
 }
