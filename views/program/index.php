@@ -7,7 +7,7 @@
             <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                 <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
             </div>
-            <div class="order-1 bg-green-200 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
+            <div class="order-1 bg-indigo-200 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
                 <h3 class="mb-3 font-bold text-gray-800 text-xl">Technique informatique</h3>
                 <p class="text-sm font-medium leading-snug tracking-wide text-gray-900">
                     Excellentes perspectives d'emploi (Emploi Québec). Salaire initial moyen 20 $/h, salaire initial supérieur 24 $/h. Simulations, jeux et réalité virtuelle.
@@ -22,7 +22,7 @@
             <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                 <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
             </div>
-            <div class="order-1 bg-green-300 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
+            <div class="order-1 bg-indigo-300 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
                 <h3 class="mb-3 font-bold text-gray-800 text-xl">Aperçu du programme</h3>
                 <p class="text-sm font-medium leading-snug tracking-wide text-gray-900 ">
                     Comme technicien ou technicienne en informatique de gestion, tu développeras des logiciels et des applications qui répondront efficacement aux besoins d’entreprises de toute nature. Tu proposeras également des améliorations fonctionnelles aux plateformes existantes en plus d’assurer la formation et le soutien technique aux utilisateurs.
@@ -39,7 +39,7 @@
             <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                 <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
             </div>
-            <div class="order-1 bg-green-400 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
+            <div class="order-1 bg-indigo-400 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
                 <h3 class="mb-3 font-bold text-gray-800 text-xl">Nos avantages</h3>
                 <p class="text-sm font-medium leading-snug tracking-wide text-gray-900 ">
                     &#8226; Une formation dans le développement d’applications web et de gestion.<br/>
@@ -59,7 +59,7 @@
             <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                 <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
             </div>
-            <div class="order-1 bg-green-500 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150 ">
+            <div class="order-1 bg-indigo-500 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150 ">
                 <h3 class="mb-3 font-bold text-white text-xl">Perspective d'avenir</h3>
                 <p class="text-sm font-medium leading-snug tracking-wide text-white ">
                     &#8226; Entreprises de développement web et mobile.<br/>
@@ -79,7 +79,7 @@
             <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                 <h1 class="mx-auto font-semibold text-lg text-white">5</h1>
             </div>
-            <div class="order-1 bg-green-600 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
+            <div class="order-1 bg-indigo-600 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
                 <h3 class="mb-3 font-bold text-white text-xl">Conditions d'admission</h3>
                 <p class="text-sm font-medium leading-snug tracking-wide text-white ">
                     Mathématiques CST 5e sec*
