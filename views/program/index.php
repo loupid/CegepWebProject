@@ -60,8 +60,8 @@
                 <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
             </div>
             <div class="order-1 bg-green-500 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150 ">
-                <h3 class="mb-3 font-bold text-gray-800 text-xl">Perspective d'avenir</h3>
-                <p class="text-sm font-medium leading-snug tracking-wide text-gray-900 ">
+                <h3 class="mb-3 font-bold text-white text-xl">Perspective d'avenir</h3>
+                <p class="text-sm font-medium leading-snug tracking-wide text-white ">
                     &#8226; Entreprises de développement web et mobile.<br/>
                     &#8226; Bureaux de consultants en informatique.<br/>
                     &#8226; Entreprises manufacturières commerciales ou de services, etc..<br/>
@@ -80,8 +80,8 @@
                 <h1 class="mx-auto font-semibold text-lg text-white">5</h1>
             </div>
             <div class="order-1 bg-green-600 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
-                <h3 class="mb-3 font-bold text-gray-800 text-xl">Conditions d'admission</h3>
-                <p class="text-sm font-medium leading-snug tracking-wide text-gray-900 ">
+                <h3 class="mb-3 font-bold text-white text-xl">Conditions d'admission</h3>
+                <p class="text-sm font-medium leading-snug tracking-wide text-white ">
                     Mathématiques CST 5e sec*
                     Ancien curriculum du secondaire
                     <br/>
