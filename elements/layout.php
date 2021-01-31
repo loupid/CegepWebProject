@@ -7,6 +7,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
 </head>
 <body class="dark">
 <!--insert here the top of all page-->
@@ -35,11 +43,15 @@ if (!$isAdmin??false){
                 </button>
             </div>
             <nav class="hidden md:flex space-x-10">
+                <a href="/" class="text-base font-medium text-gray-900 hover:text-indigo-600">
+                    Accueil
+                </a>
+
                 <div class="relative">
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
 <!--                    isset($this) ? $this->router->generate('indexProgram') : $router->generate('indexProgram')                  -->
                     <button id="btn-program" type="button" onclick="window.location = '<?= $this->router->generate('indexProgram') ?>'"
-                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 ">
                         <span>Programme</span>
                         <!--
                           Heroicon name: chevron-down
@@ -69,10 +81,10 @@ if (!$isAdmin??false){
                                     </svg>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
-                                            Test
+                                            Cours
                                         </p>
                                         <p class="mt-1 text-sm text-gray-500">
-                                            Ceci est un test/template
+                                            La liste complète des cours par session
                                         </p>
                                     </div>
                                 </a>
@@ -97,7 +109,7 @@ if (!$isAdmin??false){
                             </div>
                             <div class="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                                 <div class="flow-root">
-                                    <a href="#"
+                                    <a href="https://www.cegeptr.qc.ca/futurs-etudiants/inscription/" target="_blank"
                                        class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
                                         <!-- Heroicon name: play -->
                                         <svg class="flex-shrink-0 h-6 w-6 text-gray-400"
@@ -116,14 +128,10 @@ if (!$isAdmin??false){
                     </div>
                 </div>
 
-                <a href="#" class="text-base font-medium text-gray-900 hover:text-indigo-600">
-                    Cours
-                </a>
-
                 <div class="relative">
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
                     <button id="btn-students" role="menuitem" type="button"
-                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 ">
                         <span>Étudiants</span>
                         <!--
                           Heroicon name: chevron-down
@@ -225,7 +233,7 @@ if (!$isAdmin??false){
                 <div class="relative">
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
                     <button id="btn-news" role="menuitem" type="button"
-                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600">
                         <span>Actualité</span>
                         <!--
                           Heroicon name: chevron-down
@@ -318,7 +326,7 @@ if (!$isAdmin??false){
                 <div class="relative">
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
                     <button id="btn-more" role="menuitem" type="button"
-                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 ">
                         <span>Plus</span>
                         <!--
                           Heroicon name: chevron-down
@@ -488,7 +496,7 @@ if (!$isAdmin??false){
 <?php
 if (!$isAdmin??false){
 ?>
-<footer class="bg-white dark:bg-gray-800 shadow">
+<footer class="bg-white border-t-2 dark:bg-gray-800">
     <div class="container mx-auto px-6 py-4">
         <div class="lg:flex">
             <div class="w-full lg:w-2/5">
@@ -498,7 +506,7 @@ if (!$isAdmin??false){
                              alt="Logo département">
                     </a>
 
-                    <p class="mt-2 text-gray-500 dark:text-gray-400 max-w-md w-64">Le département d'informatique du
+                    <p class="mt-2 text-gray-900 dark:text-gray-400 max-w-md w-64">Le département d'informatique du
                         Cégep de Trois-Rivières</p>
 
                     <div class="flex mt-4 -mx-2">
@@ -560,7 +568,7 @@ if (!$isAdmin??false){
                 <div class="grid gap-2 grid-cols-1 sm:grid-cols-1 md:grid-cols-3">
                     <div>
                         <h3 class="text-gray-700 dark:text-white uppercase">Programme</h3>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Test</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Cours</a>
                         <a href="#"
                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Test2</a>
                     </div>
@@ -583,7 +591,7 @@ if (!$isAdmin??false){
 
                     <div>
                         <h3 class="text-gray-700 dark:text-white uppercase">Nous joindre</h3>
-                        <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400">819 376-1721 Poste: 3706</span>
+                        <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400">819 376-1721 poste: 3706</span>
                         <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400">david.b.brouillette@cegeptr.qc.ca</span>
                         <a href="https://www.google.com/maps/place/C%C3%A9gep+de+Trois-Rivi%C3%A8res/@46.3551699,-72.5766428,15z/data=!4m8!1m2!2m1!1spavillon+science+cegep+trois-rivieres!3m4!1s0x0:0x799f8b93d17aae1e!8m2!3d46.3545664!4d-72.5729316"
                            target="_blank" class="block mt-6 text-sm hover:text-indigo-600 text-gray-600 dark:text-gray-400">Pavillon des Sciences
