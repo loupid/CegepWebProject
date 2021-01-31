@@ -76,7 +76,7 @@ function callMiddleware($middleware, $route_params, $router, $db) {
         require_once '../app/'.str_replace('\\', '/', $middleware).'.php';
         $class = new ReflectionClass($middleware);
         $instance = $class->newInstanceArgs(array($router, $db));
-        call_user_func_array(array($instance, 'handle'), array($_REQUEST, $route_params));
+        call_user_func_array(array($instance, 'handle'), $route_params);
     } catch (ReflectionException $e) {
         die("Couldn't load specified middleware");
     }

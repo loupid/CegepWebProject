@@ -4,5 +4,5 @@ namespace middlewares;
 
 interface IMiddleware
 {
-    public function handle($request, $route_param = []);
+    public function handle($route_param = []);
 }

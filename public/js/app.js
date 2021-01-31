@@ -1,4 +1,3 @@
-import 'alpinejs';
 let body = document.getElementsByTagName('body')[0]
 
 // Check if there's a theme cookie saved
@@ -116,7 +115,6 @@ btnClose.addEventListener('click', () => {
 btnOpen.addEventListener('click', () => {
     mobileMenu.classList.remove('hidden')
 })
-
 
 
 

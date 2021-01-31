@@ -10,11 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css"/>
 </head>
-<body class="dark">
+<body class="dark bg-cwc-white">
 <?php
-ob_start();
-?>true<?php
-$isAdmin = ob_get_clean();
     if (app\Session::has('error')){
         foreach (app\Session::get('error') as $error){
 ?>
