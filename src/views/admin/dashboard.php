@@ -18,8 +18,8 @@ $isAdmin = ob_get_clean();
                 </div>
             </div>
 
-            <nav class="mt-10">
-                <a class="flex items-center mt-4 py-2 px-6 bg-gray-700 bg-opacity-25 text-gray-100" href="/">
+            <nav x-data="{ selecteditem : 'dashboard' }" class="mt-10">
+                <a :class=" selecteditem === 'dashboard' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' " @click="selecteditem = 'dashboard'" class="flex items-center mt-4 py-2 px-6" href="#">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -31,8 +31,8 @@ $isAdmin = ob_get_clean();
                     <span class="mx-3">Dashboard</span>
                 </a>
 
-                <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                   href="/ui-elements">
+                <a :class=" selecteditem === 'Elements' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' " @click="selecteditem = 'Elements'"  class="flex items-center mt-4 py-2 px-6"
+                   href="#">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -43,8 +43,8 @@ $isAdmin = ob_get_clean();
                     <span class="mx-3">UI Elements</span>
                 </a>
 
-                <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                   href="/tables">
+                <a  class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                   href="#">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -56,7 +56,7 @@ $isAdmin = ob_get_clean();
                 </a>
 
                 <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                   href="/forms">
+                   href="#">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

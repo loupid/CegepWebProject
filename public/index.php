@@ -1,11 +1,9 @@
 <?php
+session_start();
 require '../vendor/autoload.php';
-
+require '../app/Session.php';
 require '../database/database.php';
 $router = new AltoRouter();
-
-
-$uri = $_SERVER['REQUEST_URI'];
 
 $database_config = require '../config/database.php';
 $database_config = $database_config['mysql']; // Set to wanted database config name
@@ -17,11 +15,22 @@ $database->setHost($database_config['host'])
     ->setPassword($database_config['password']);
 $db_conn = $database->connect();
 
-require '../routes.php';
+require '../config/routes.php';
 
 $match = $router->match();
 
 if (is_array($match)) {
+
+    $middlewares = require '../config/middlewares.php';
+    if(isset($middlewares[$match['name']])) {
+        $middleware = $middlewares[$match['name']];
+        if(is_array($middleware)) {
+            foreach($middleware as $m) {
+                callMiddleware($m, $match['params'], $router, $db_conn);
+            }
+        } else callMiddleware($middleware, $match['params'], $router, $db_conn);
+    }
+
     $exploded = explode('@', $match['target']);
 
     if (is_array($exploded) && count($exploded) >= 2) {
@@ -57,5 +66,18 @@ function getControllerClassInstance($controller, $router, $db)
         return $class->newInstanceArgs(array($router, $db));
     } catch (ReflectionException $e) {
         die($e->getMessage());
+    }
+}
+
+function callMiddleware($middleware, $route_params, $router, $db) {
+    try {
+        require_once '../app/middlewares/Middleware.php';
+        require_once '../app/middlewares/IMiddleware.php';
+        require_once '../app/'.str_replace('\\', '/', $middleware).'.php';
+        $class = new ReflectionClass($middleware);
+        $instance = $class->newInstanceArgs(array($router, $db));
+        call_user_func_array(array($instance, 'handle'), array($_REQUEST, $route_params));
+    } catch (ReflectionException $e) {
+        die("Couldn't load specified middleware");
     }
 }

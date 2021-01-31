@@ -1,11 +1,11 @@
 <div class="container mx-auto pb-8 w-full">
     <div class="relative px-10 pt-8 overflow-hidden ">
-        <div class="border-2-2  absolute border-opacity-20 border-gray-700 h-full border" style="left: 50%"></div>
+        <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style="left: 50%"></div>
         <!-- right timeline -->
         <div class="mb-8 flex justify-between items-center w-full right-timeline overflow-ellipsis">
             <div class="order-1 w-5/12"></div>
-            <div class=" flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-                <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+            <div class="z-0 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+                <h1 class=" mx-auto font-semibold text-lg text-white">1</h1>
             </div>
             <div class="order-1 bg-indigo-200 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
                 <h3 class="mb-3 font-bold text-gray-800 text-xl">Technique informatique</h3>
@@ -19,7 +19,7 @@
         <!-- left timeline -->
         <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
             <div class="order-1 w-5/12"></div>
-            <div class=" flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+            <div class="z-0 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                 <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
             </div>
             <div class="order-1 bg-indigo-300 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
@@ -36,7 +36,7 @@
         <!-- right timeline -->
         <div class="mb-8 flex justify-between items-center w-full right-timeline">
             <div class="order-1 w-5/12"></div>
-            <div class=" flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+            <div class="z-0 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                 <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
             </div>
             <div class="order-1 bg-indigo-400 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
@@ -56,7 +56,7 @@
         <!-- left timeline -->
         <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
             <div class="order-1 w-5/12"></div>
-            <div class=" flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+            <div class="z-0 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                 <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
             </div>
             <div class="order-1 bg-indigo-500 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150 ">
@@ -76,7 +76,7 @@
         <!-- right timeline -->
         <div class="mb-8 flex justify-between items-center w-full right-timeline">
             <div class="order-1 w-5/12"></div>
-            <div class="flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+            <div class="z-0 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                 <h1 class="mx-auto font-semibold text-lg text-white">5</h1>
             </div>
             <div class="order-1 bg-indigo-600 rounded-lg shadow-xl w-5/12 px-6 py-4 transform hover:scale-105 duration-150">
