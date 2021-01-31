@@ -18,9 +18,9 @@ class Controller {
         // Construct the view with the variables
         try {
             ob_start();
-            require __DIR__.'/../views/' . $view . '.php';
+            require __DIR__ . '/../../src/views/' . $view . '.php';
             $content = ob_get_clean();
-            require __DIR__.'/../elements/layout.php';
+            require __DIR__ . '/../../src/views/layouts/layout.php';
         } catch (\Exception $e) {
             echo $e->getMessage();
             return false;
