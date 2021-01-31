@@ -1,5 +1,5 @@
 <?php
-//put here the same property than in the DB
+//put here the same properties as the DB
 
 class Admins
 {

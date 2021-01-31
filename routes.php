@@ -37,6 +37,7 @@ $router->map('GET', '/programme', 'ProgramController@index', 'indexProgram');
 $router->map('GET', '/admin', 'AdminController@index', 'indexAdmin');
 $router->map('POST', '/admin/login', 'AdminController@login', 'confirmAdmin');
 $router->map('GET', '/admin/dashboard', 'AdminController@dashboard', 'dashboardAdmin');
+$router->map('GET', '/admin/adminsList', 'AdminController@adminsList', 'adminsList');
 
 //Cours
 $router->map('GET', '/cours', 'CoursesController@index', 'CoursesIndex');

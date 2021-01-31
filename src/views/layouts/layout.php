@@ -27,7 +27,7 @@ if (!$isAdmin??false){
         <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
             <div class="flex justify-start">
                 <a href="/" class="inline-block mr-4">
-                    <img class="dark:hidden inline-block" src="/images/svgs/logodep.svg" alt="Logo département">
+                    <img class="dark:hidden inline-block" src="/images/svgs/darklogodep.svg" alt="Logo département">
                 </a>
             </div>
             <div class="-mr-2 -my-2 md:hidden">
@@ -234,7 +234,7 @@ if (!$isAdmin??false){
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
                     <button id="btn-news" role="menuitem" type="button"
                             class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600">
-                        <span>Actualité</span>
+                        <span>Actualités</span>
                         <!--
                           Heroicon name: chevron-down
 
@@ -262,7 +262,7 @@ if (!$isAdmin??false){
                                     </svg>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
-                                            Actualité technologique
+                                            Actualités technologique
                                         </p>
                                         <p class="mt-1 text-sm text-gray-500">
                                             See what meet-ups and other events we might be planning near you.
@@ -392,8 +392,8 @@ if (!$isAdmin??false){
             <div class="pt-5 pb-6 px-5">
                 <div class="flex items-center justify-between">
                     <div>
-                        <img class="h-8 w-auto" src="/images/svgs/logodep.svg"
-                             alt="Logodep">
+                        <img class="h-8 w-auto" src="/images/svgs/darklogodep.svg"
+                             alt="darklogodep">
                     </div>
                     <div class="-mr-2">
                         <button id="btn-close-mobile-menu" type="button"
@@ -452,7 +452,7 @@ if (!$isAdmin??false){
                                       d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
                             </svg>
                             <span class="ml-3 text-base font-medium text-gray-900">
-                Actualité
+                Actualités
               </span>
                         </a>
                     </nav>
@@ -502,7 +502,7 @@ if (!$isAdmin??false){
             <div class="w-full lg:w-2/5">
                 <div>
                     <a href="#">
-                        <img class="dark:hidden inline-block" src="/images/svgs/logodep.svg"
+                        <img class="dark:hidden inline-block" src="/images/svgs/darklogodep.svg"
                              alt="Logo département">
                     </a>
 

@@ -5,16 +5,16 @@ $isAdmin = ob_get_clean();
 ?>
 <div>
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
-        <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false" class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
+        <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false"
+             class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
 
-        <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'" class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
+        <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
+             class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
             <div class="flex items-center justify-center mt-8">
                 <div class="flex items-center">
-                    <svg class="h-12 w-12" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M364.61 390.213C304.625 450.196 207.37 450.196 147.386 390.213C117.394 360.22 102.398 320.911 102.398 281.6C102.398 242.291 117.394 202.981 147.386 172.989C147.386 230.4 153.6 281.6 230.4 307.2C230.4 256 256 102.4 294.4 76.7999C320 128 334.618 142.997 364.608 172.989C394.601 202.981 409.597 242.291 409.597 281.6C409.597 320.911 394.601 360.22 364.61 390.213Z" fill="#4C51BF" stroke="#4C51BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M201.694 387.105C231.686 417.098 280.312 417.098 310.305 387.105C325.301 372.109 332.8 352.456 332.8 332.8C332.8 313.144 325.301 293.491 310.305 278.495C295.309 263.498 288 256 275.2 230.4C256 243.2 243.201 320 243.201 345.6C201.694 345.6 179.2 332.8 179.2 332.8C179.2 352.456 186.698 372.109 201.694 387.105Z" fill="white"></path>
-                    </svg>
-                    <span class="text-white text-2xl mx-2 font-semibold">Dashboard</span>
+                    <img class="fill-current" src="/images/svgs/logodep.svg"
+                         alt="Logo département">
+                    <span class="text-white text-2xl mx-2 font-semibold">Tableau de bord</span>
                 </div>
             </div>
 
@@ -28,31 +28,30 @@ $isAdmin = ob_get_clean();
                               d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
                     </svg>
 
-                    <span class="mx-3">Dashboard</span>
+                    <span class="mx-3">Tableau de bord</span>
                 </a>
 
                 <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                   href="/ui-elements">
+                   href="<?= $this->router->generate('adminsList') ?>">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
-                        </path>
+                              d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
                     </svg>
 
-                    <span class="mx-3">UI Elements</span>
+                    <span class="mx-3">Administrateurs</span>
                 </a>
 
                 <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                   href="/tables">
+                   href="#">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                              d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z">
                         </path>
-                    </svg>
 
-                    <span class="mx-3">Tables</span>
+                    </svg>
+                    <span class="mx-3">Actualités</span>
                 </a>
 
                 <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
@@ -60,11 +59,10 @@ $isAdmin = ob_get_clean();
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
-                        </path>
+                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
 
-                    <span class="mx-3">Forms</span>
+                    <span class="mx-3">Événements</span>
                 </a>
             </nav>
         </div>
@@ -73,23 +71,25 @@ $isAdmin = ob_get_clean();
                 <div class="flex items-center">
                     <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none lg:hidden">
                         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2"
+                                  stroke-linecap="round"
                                   stroke-linejoin="round"></path>
                         </svg>
                     </button>
 
-                    <div class="relative mx-4 lg:mx-0">
-                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
-                            <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
-                                <path
-                                        d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                </path>
-                            </svg>
-                        </span>
-
-                        <input class="form-input w-32 sm:w-64 rounded-md pl-10 pr-4 focus:border-indigo-600" type="text"
-                               placeholder="Search">
+                    <div class="relative w-96 text-gray-800">
+                        <label>
+                            <input type="search" name="serch" placeholder="Recherche"
+                                   class="bg-gray-50 w-96 h-10 px-5 pr-10 rounded-full text-xl focus:outline-none">
+                        </label>
+                        <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                            <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                                 viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
+                                 xml:space="preserve" width="512px" height="512px">
+      <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+    </svg>
+                        </button>
                     </div>
                 </div>
 
@@ -100,7 +100,8 @@ $isAdmin = ob_get_clean();
                             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                         d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
                                 </path>
                             </svg>
                         </button>
@@ -160,7 +161,8 @@ $isAdmin = ob_get_clean();
                                  alt="Your avatar">
                         </button>
 
-                        <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"
+                        <div x-show="dropdownOpen" @click="dropdownOpen = false"
+                             class="fixed inset-0 h-full w-full z-10"
                              style="display: none;"></div>
 
                         <div x-show="dropdownOpen"
@@ -178,7 +180,7 @@ $isAdmin = ob_get_clean();
             </header>
             <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                 <div class="container mx-auto px-6 py-8">
-                    <h3 class="text-gray-700 text-3xl font-medium">Dashboard</h3>
+                    <h3 class="text-gray-700 text-3xl font-medium">Tableau de bord</h3>
 
                     <div class="mt-4">
                         <div class="flex flex-wrap -mx-6">
@@ -244,7 +246,8 @@ $isAdmin = ob_get_clean();
                                     <div class="p-3 rounded-full bg-pink-600 bg-opacity-75">
                                         <svg class="h-8 w-8 text-white" viewBox="0 0 28 28" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6.99998 11.2H21L22.4 23.8H5.59998L6.99998 11.2Z" fill="currentColor"
+                                            <path d="M6.99998 11.2H21L22.4 23.8H5.59998L6.99998 11.2Z"
+                                                  fill="currentColor"
                                                   stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
                                             <path
                                                     d="M9.79999 8.4C9.79999 6.08041 11.6804 4.2 14 4.2C16.3196 4.2 18.2 6.08041 18.2 8.4V12.6C18.2 14.9197 16.3196 16.8 14 16.8C11.6804 16.8 9.79999 14.9197 9.79999 12.6V8.4Z"
@@ -274,16 +277,20 @@ $isAdmin = ob_get_clean();
                                     <tr>
                                         <th
                                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            Name</th>
+                                            Name
+                                        </th>
                                         <th
                                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            Title</th>
+                                            Title
+                                        </th>
                                         <th
                                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            Status</th>
+                                            Status
+                                        </th>
                                         <th
                                                 class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            Role</th>
+                                            Role
+                                        </th>
                                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                                     </tr>
                                     </thead>
@@ -318,7 +325,8 @@ $isAdmin = ob_get_clean();
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                            Owner</td>
+                                            Owner
+                                        </td>
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
@@ -354,7 +362,8 @@ $isAdmin = ob_get_clean();
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                            Owner</td>
+                                            Owner
+                                        </td>
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
@@ -390,7 +399,8 @@ $isAdmin = ob_get_clean();
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                            Owner</td>
+                                            Owner
+                                        </td>
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
@@ -426,7 +436,8 @@ $isAdmin = ob_get_clean();
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                            Owner</td>
+                                            Owner
+                                        </td>
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
@@ -462,7 +473,8 @@ $isAdmin = ob_get_clean();
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                            Owner</td>
+                                            Owner
+                                        </td>
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
@@ -498,7 +510,8 @@ $isAdmin = ob_get_clean();
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                            Owner</td>
+                                            Owner
+                                        </td>
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
@@ -534,7 +547,8 @@ $isAdmin = ob_get_clean();
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                            Owner</td>
+                                            Owner
+                                        </td>
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
@@ -570,7 +584,8 @@ $isAdmin = ob_get_clean();
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                            Owner</td>
+                                            Owner
+                                        </td>
 
                                         <td
                                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
