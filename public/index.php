@@ -1,7 +1,7 @@
 <?php
 require '../vendor/autoload.php';
 
-require '../database/Database.php';
+require '../database/database.php';
 $router = new AltoRouter();
 
 
@@ -21,15 +21,14 @@ require '../routes.php';
 
 $match = $router->match();
 
-
 if (is_array($match)) {
     $exploded = explode('@', $match['target']);
 
     if (is_array($exploded) && count($exploded) >= 2) {
-        $path = '../controllers/' . $exploded[0] . '.php';
+        $path = '../app/controllers/' . $exploded[0] . '.php';
         if (file_exists($path)) {
-            require '../controllers/Controller.php';
-            require '../controllers/' . $exploded[0] . '.php';
+            require '../app/controllers/Controller.php';
+            require '../app/controllers/' . $exploded[0] . '.php';
             if (class_exists('\\controllers\\' . $exploded[0])) {
                 $instance = getControllerClassInstance($exploded[0], $router, $db_conn);
                 call_user_func_array(array($instance, $exploded[1]), $match['params']);
@@ -40,13 +39,13 @@ if (is_array($match)) {
             die("Specified controller class not found");
         }
     } else {
-        require '../controllers/Controller.php';
+        require '../app/controllers/Controller.php';
         $instance = getControllerClassInstance('Controller', $router, $db_conn);
         call_user_func_array(array($instance, 'view'), array($match['target'], $match['params']));
     }
 } else {
-    require '../controllers/Controller.php';
-    require '../controllers/ErrorController.php';
+    require '../app/controllers/Controller.php';
+    require '../app/controllers/ErrorController.php';
     $instance = getControllerClassInstance('ErrorController', $router, $db_conn);
     call_user_func_array(array($instance, 'error'), array('error', null));
 }
@@ -57,6 +56,6 @@ function getControllerClassInstance($controller, $router, $db)
         $class = new ReflectionClass('\\controllers\\' . $controller);
         return $class->newInstanceArgs(array($router, $db));
     } catch (ReflectionException $e) {
-        die($e->getMessage() . 'qweqwe');
+        die($e->getMessage());
     }
 }
