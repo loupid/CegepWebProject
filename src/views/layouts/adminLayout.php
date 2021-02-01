@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Département d'informatique</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/tailwind.css" type="text/css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css"/>
@@ -185,8 +185,8 @@
                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
                             <a href="#"
                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Products</a>
-                            <a href="/login"
-                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Logout</a>
+                            <a href="<?=$this->router->generate('adminLogout') ?>"
+                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Se deconnecter</a>
                         </div>
                     </div>
                 </div>

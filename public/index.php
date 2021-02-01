@@ -2,6 +2,7 @@
 session_start();
 require '../vendor/autoload.php';
 require '../app/Session.php';
+require '../app/User.php';
 require '../database/database.php';
 $router = new AltoRouter();
 

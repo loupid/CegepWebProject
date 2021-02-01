@@ -63,7 +63,6 @@ class Controller {
         foreach($data as $k => $v) {
             Session::put($k, $v);
         }
-
         header('Location: '.$url);
         return true;
     }

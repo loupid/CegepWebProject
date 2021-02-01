@@ -2,7 +2,7 @@
 
 
 namespace controllers;
-
+use app\User;
 
 class AdminController extends Controller
 {
@@ -21,17 +21,36 @@ class AdminController extends Controller
         extract($_POST);
 
         $con = $this->getDatabase();
-        $query = $con->prepare("select count(*) as nbr from admins where email = '$email' and password = '$password';");
-        $query->execute();
+        $query = $con->prepare("select count(*) as nbr, id as id from admins where email = ? and password = ?;");
+        $query->execute(array($email, $password));
         $result = $query->fetch();
 
-        $error = array();
-        array_push($error,'Le courriel ou le mot de passe est incorrect');
         if ($result['nbr'] == 1){
-            $this->redirectToRoute('dashboardAdmin');
+            User::logout();
+            User::setUser($email);
+            $this->redirectToRoute('adminDashboard');
         }
-        else $this->redirectToRoute('indexAdmin', [
-            'error'=>$error
+        else $this->redirectToRoute('adminIndex', [
+            'error' => [
+                0 => [
+                    'message' => 'Le courriel ou le mot de passe est incorrect.',
+                    'color' => 'red-600',
+                    'colorIcon' => 'red-700'
+                ]
+            ]
+        ]);
+    }
+
+    public function logout(){
+        User::logout();
+        return $this->redirectToRoute('adminIndex', [
+            'error' => [
+                0 => [
+                    'message' => 'Vous êtes bien déconnecté(e).',
+                    'color' => 'green-500',
+                    'colorIcon' => 'green-700'
+                ]
+            ]
         ]);
     }
 

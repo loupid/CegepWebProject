@@ -30,14 +30,19 @@
 //Home
 $router->map('GET','/','HomeController@index');
 
+
 //Programs
 $router->map('GET', '/programme', 'ProgramController@index', 'indexProgram');
 
+
 //Admin
-$router->map('GET', '/admin', 'AdminController@index', 'indexAdmin');
-$router->map('POST', '/admin/login', 'AdminController@login', 'confirmAdmin');
+$router->map('GET', '/admin', 'AdminController@index', 'adminIndex');
+$router->map('GET', '/admin/logout', 'AdminController@logout', 'adminLogout');
 $router->map('GET', '/admin/dashboard', 'AdminController@dashboard', 'adminDashboard');
 $router->map('GET', '/admin/adminsList', 'AdminController@adminsList', 'adminsList');
+
+$router->map('POST', '/admin/login', 'AdminController@login', 'adminConfirm');
+
 
 //Cours
 $router->map('GET', '/cours', 'CoursesController@index', 'CoursesIndex');

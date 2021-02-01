@@ -4,58 +4,54 @@
     <meta charset="UTF-8">
     <title>Département d'informatique</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/tailwind.css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body class="dark bg-cwc-white">
 <?php
-    if (app\Session::has('error')){
+if (app\Session::has('error')){
         foreach (app\Session::get('error') as $error){
-?>
-<div class="bg-indigo-600">
-    <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between flex-wrap">
-            <div class="w-0 flex-1 flex items-center">
-                <span class="flex p-2 rounded-lg bg-indigo-800">
+            ?>
+            <div x-data="{open: true}" x-show="open" class="absolute w-screen bg-<?= $error['color'] ?>">
+                <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between flex-wrap">
+                        <div class="w-0 flex-1 flex items-center">
+                <span class="flex p-2 rounded-lg bg-<?= $error['colorIcon'] ?>">
                   <!-- Heroicon name: speakerphone -->
                   <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"></path>
                   </svg>
                 </span>
-                <p class="ml-3 font-medium text-white truncate">
+                            <p class="ml-3 font-medium text-white truncate">
                     <span class="md:hidden">
-                        We announced a new product!
+                        <?= $error['message']; ?>
                     </span>
-                    <span class="hidden md:inline">
-                        Big news! We're excited to announce a brand new product.
+                                <span class="hidden md:inline">
+                        Oups ! <?= $error['message']; ?>
                     </span>
-                </p>
+                            </p>
+                        </div>
+                        <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
+                            <button @click="open = false" type="button" class="-mr-1 flex p-2 rounded-md hover:bg-<?= $error['colorIcon'] ?> focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
+                                <span class="sr-only">Dismiss</span>
+                                <!-- Heroicon name: x -->
+                                <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
-                <a href="#" class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50">
-                    Learn more
-                </a>
-            </div>
-            <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
-                <button type="button" class="-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
-                    <span class="sr-only">Dismiss</span>
-                    <!-- Heroicon name: x -->
-                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<?php
+            <?php
         }
     }
 ?>
-<link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css"/>
 
 <div class="min-h-screen flex flex-col items-center justify-center">
     <div class="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
@@ -65,7 +61,7 @@
             </div>
         </div>
         <div class="mt-10">
-            <form method="post" action="<?= $this->router->generate('confirmAdmin') ?>">
+            <form method="post" action="<?= $this->router->generate('adminConfirm') ?>">
                 <div class="flex flex-col mb-6">
                     <div class="relative">
                         <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
