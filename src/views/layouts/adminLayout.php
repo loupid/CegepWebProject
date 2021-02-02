@@ -192,9 +192,9 @@
                 </div>
             </header>
 
-            <div class="h-full bg-cwc-white">
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                 <?= $content ?? '' ?>
-            </div>
+            </main>
         </div>
     </div>
 </div>
