@@ -5,7 +5,6 @@ $selectedItem = ob_get_clean();
 ?>
 <div class="container mx-auto px-6 py-8">
     <h3 class="text-gray-700 text-3xl font-medium">Tableau de bord</h3>
-
     <div class="mt-4">
         <div class="flex flex-wrap -mx-6">
             <div class="w-full px-6 sm:w-1/2 xl:w-1/3">
@@ -154,7 +153,7 @@ $selectedItem = ob_get_clean();
 
                         <td
                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifier</a>
                         </td>
                     </tr>
                     <tr>
@@ -191,7 +190,7 @@ $selectedItem = ob_get_clean();
 
                         <td
                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifier</a>
                         </td>
                     </tr>
                     <tr>
@@ -228,7 +227,7 @@ $selectedItem = ob_get_clean();
 
                         <td
                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifier</a>
                         </td>
                     </tr>
                     <tr>
@@ -265,7 +264,7 @@ $selectedItem = ob_get_clean();
 
                         <td
                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifier</a>
                         </td>
                     </tr>
                     <tr>
@@ -302,7 +301,7 @@ $selectedItem = ob_get_clean();
 
                         <td
                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifier</a>
                         </td>
                     </tr>
                     <tr>
@@ -339,7 +338,7 @@ $selectedItem = ob_get_clean();
 
                         <td
                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifier</a>
                         </td>
                     </tr>
                     <tr>
@@ -376,7 +375,7 @@ $selectedItem = ob_get_clean();
 
                         <td
                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifier</a>
                         </td>
                     </tr>
                     <tr>
@@ -413,7 +412,7 @@ $selectedItem = ob_get_clean();
 
                         <td
                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifier</a>
                         </td>
                     </tr>
                     </tbody>
