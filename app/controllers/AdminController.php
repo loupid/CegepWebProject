@@ -41,6 +41,13 @@ class AdminController extends Controller
         ]);
     }
 
+    public function getAdminsList() {
+        $con = $this->getDatabase();
+        $query = $con->prepare("select CONCAT(firstname, ' ', lastname ) as Administrateur, username as `Nom d''utilisateur`, email as Courriel, from admins;");
+        $query->execute();
+        return $query->fetch();
+    }
+
     public function logout(){
         User::logout();
         return $this->redirectToRoute('adminIndex', [
