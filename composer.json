@@ -5,7 +5,8 @@
     "require": {
         "altorouter/altorouter": "^2.0",
         "ext-pdo": "*",
-      "ext-http": "*"
+      "ext-http": "*",
+      "ext-mysql": "*"
     },
     "autoload": {
     }

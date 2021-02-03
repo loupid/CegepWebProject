@@ -2,7 +2,6 @@
 ob_start();
 ?>adminList<?php
 $selectedItem = ob_get_clean();
-dump($admins);
 ?>
 <h3 class="text-gray-700 text-3xl font-medium">Administrateurs</h3>
 
@@ -22,31 +21,38 @@ dump($admins);
                 <thead>
                 <tr>
                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                        Prénom
+                        Nom
                     </th>
                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                        Nom de famille
+                        Courriel
                     </th>
                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                        Status
+                        Créée le
+                    </th>
+                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                        Dernière connexion le
                     </th>
                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                 </tr>
                 </thead>
 
                 <tbody class="bg-white">
-                <?php foreach ($admin as $admins){?>
+                <?php foreach ($admins as $admin){?>
                 <tr>
                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                        <div class="text-sm leading-5 font-medium text-gray-900">John Doe</div>
+                        <div class="text-sm leading-5 font-medium text-gray-900"><?= $admin->firstname, ' ', $admin->lastname; ?></div>
                     </td>
 
                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                        <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
+                        <div class="text-sm leading-5 text-gray-900"><?= $admin->email; ?></div>
                     </td>
 
                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"><?= $admin->creationdate; ?></span>
+                    </td>
+
+                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"><?= $admin->lastconnectiondate; ?></span>
                     </td>
 
                     <!--Action Row-->

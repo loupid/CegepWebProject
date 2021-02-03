@@ -17,12 +17,12 @@ class AdminController extends Controller
 
     public function adminsList()
     {
-        $query = $this->getDatabase()->prepare("select id, password, firstname, lastname, email, creationdate, lastconnectiondate from admins;");
+        $query = $this->getDatabase()->prepare("select id, firstname, lastname, email, creationdate, lastconnectiondate from admins;");
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
         $query->execute();
         $admins = $query->fetchall();
 
-        return $this->view('admin/adminsList', [ 'admin' => $admins ], 1);
+        return $this->view('admin/adminsList', [ 'admins' => $admins ], 1);
     }
 
     public function create(Request $request)
@@ -35,11 +35,14 @@ class AdminController extends Controller
     public function login()
     {
         extract($_POST);
-
+        $admin = new Admin();
         $con = $this->getDatabase();
         $query = $con->prepare("select count(*) as nbr, id as id from admins where email = ? and password = ?;");
         $query->execute([$email, $password]);
         $result = $query->fetch();
+
+        Admin::update($result['id'], $this->getDatabase(), ['lastconnectiondate' => date("d/m/Y H:i:s")]);
+
 
         if ($result['nbr'] == 1){
             User::logout();
