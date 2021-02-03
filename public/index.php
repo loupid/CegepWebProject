@@ -4,7 +4,8 @@ require '../vendor/autoload.php';
 require '../app/Session.php';
 require '../app/User.php';
 require '../database/database.php';
-require '../models/Admin.php';
+require '../models/modelsConfig.php';
+
 $router = new AltoRouter();
 
 $database_config = require '../config/database.php';

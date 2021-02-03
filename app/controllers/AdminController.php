@@ -2,7 +2,9 @@
 
 
 namespace controllers;
+
 use app\User;
+use http\Env\Request;
 use models\Admin;
 use PDO;
 
@@ -15,26 +17,32 @@ class AdminController extends Controller
 
     public function adminsList()
     {
-        $query = $this->getDatabase()->prepare("select id, password, firstname, lastname, email, creationdate, lastconnectiondate from admins;");
+        $query = $this->getDatabase()->prepare("select id, firstname, lastname, email, creationdate, lastconnectiondate from admins;");
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
         $query->execute();
-        $admins = $query->fetchAll();
-        return $this->view('admin/adminsList', [ 'admin' => $admins ], 1);
+        $admins = $query->fetchall();
+
+        return $this->view('admin/adminsList', [ 'admins' => $admins ], 1);
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        $te = new Admin();
+        $te->create(['']);
         return $this->view('admin/adminCreate', [], 1);
     }
 
     public function login()
     {
         extract($_POST);
-
+        $admin = new Admin();
         $con = $this->getDatabase();
         $query = $con->prepare("select count(*) as nbr, id as id from admins where email = ? and password = ?;");
         $query->execute([$email, $password]);
         $result = $query->fetch();
+
+        Admin::update($result['id'], $this->getDatabase(), ['lastconnectiondate' => date("d/m/Y H:i:s")]);
+
 
         if ($result['nbr'] == 1){
             User::logout();
@@ -50,13 +58,6 @@ class AdminController extends Controller
                 ]
             ]
         ]);
-    }
-
-    public function getAdminsList() {
-        $con = $this->getDatabase();
-        $query = $con->prepare("select CONCAT(firstname, ' ', lastname ) as Administrateur, username as `Nom d''utilisateur`, email as Courriel, from admins;");
-        $query->execute();
-        return $query->fetch();
     }
 
     public function logout(){
