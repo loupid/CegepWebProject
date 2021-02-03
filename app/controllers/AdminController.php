@@ -19,8 +19,6 @@ class AdminController extends Controller
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
         $query->execute();
         $admins = $query->fetchAll();
-        dump($admins);
-
         return $this->view('admin/adminsList', [ 'admin' => $admins ], 1);
     }
 

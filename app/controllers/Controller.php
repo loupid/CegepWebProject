@@ -15,6 +15,11 @@ class Controller {
         $this->db = $db;
     }
 
+    public static function breadcrum() {
+        $crumbs = array_diff(explode("/",$_SERVER["REQUEST_URI"]), [""]);
+        return array_map('ucfirst', $crumbs);
+    }
+
     protected function view(string $view, array $data = [], int $isAdmin = 0)
     {
         // Declare each key/value pair as a variable

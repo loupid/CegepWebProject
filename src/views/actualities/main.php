@@ -1,5 +1,0 @@
-<?=
-$params['age'];
-?>
-<?=
-$params['name'];
