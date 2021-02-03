@@ -6,13 +6,15 @@ namespace controllers;
 
 class NewsController extends Controller
 {
-    public function create()
-    {
+    public function create() {
         return $this->view('Admin/news/newsCreate',[], 1);
     }
 
-    public function newsList()
-    {
+    public function newsList() {
         return $this->view('Admin/news/newsList',[], 1);
+    }
+
+    public function newsEdit() {
+        return $this->view('Admin/news/newsEdit',[], 1);
     }
 }
