@@ -46,7 +46,7 @@ $router->map('GET', '/admin/event/create', 'EventController@create', 'eventCreat
 $router->map('GET', '/admin/news', 'NewsController@newsList', 'newsList');
 $router->map('GET', '/admin/news/create', 'NewsController@create', 'newsCreate');
 
-
+$router->map('GET', '/admin/news/edit-[i:id]', 'NewsController@edit', 'newsEdit');
 $router->map('POST','/admin/connexion','AdminController@login', 'adminConfirm');
 
 
