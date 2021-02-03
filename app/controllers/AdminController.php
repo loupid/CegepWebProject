@@ -16,6 +16,11 @@ class AdminController extends Controller
         return $this->view('admin/adminsList', [], 1);
     }
 
+    public function create()
+    {
+        return $this->view('admin/adminCreate', [], 1);
+    }
+
     public function login()
     {
         extract($_POST);

@@ -40,8 +40,9 @@ $router->map('GET', '/admin', 'AdminController@index', 'adminIndex');
 $router->map('GET', '/admin/logout', 'AdminController@logout', 'adminLogout');
 $router->map('GET', '/admin/dashboard', 'AdminController@dashboard', 'adminDashboard');
 $router->map('GET', '/admin/adminsList', 'AdminController@adminsList', 'adminsList');
+$router->map('GET', '/admin/create', 'AdminController@create', 'adminCreate');
 
-$router->map('POST', '/admin/login', 'AdminController@login', 'adminConfirm');
+$router->map('POST', '/admin/connexion', 'AdminController@login', 'adminConfirm');
 
 
 //Cours
