@@ -2,7 +2,9 @@
 
 
 namespace controllers;
+
 use app\User;
+use http\Env\Request;
 use models\Admin;
 use PDO;
 
@@ -18,14 +20,15 @@ class AdminController extends Controller
         $query = $this->getDatabase()->prepare("select id, password, firstname, lastname, email, creationdate, lastconnectiondate from admins;");
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
         $query->execute();
-        $admins = $query->fetchAll();
-        dump($admins);
+        $admins = $query->fetchall();
 
         return $this->view('admin/adminsList', [ 'admin' => $admins ], 1);
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        $te = new Admin();
+        $te->create(['']);
         return $this->view('admin/adminCreate', [], 1);
     }
 
@@ -52,13 +55,6 @@ class AdminController extends Controller
                 ]
             ]
         ]);
-    }
-
-    public function getAdminsList() {
-        $con = $this->getDatabase();
-        $query = $con->prepare("select CONCAT(firstname, ' ', lastname ) as Administrateur, username as `Nom d''utilisateur`, email as Courriel, from admins;");
-        $query->execute();
-        return $query->fetch();
     }
 
     public function logout(){
