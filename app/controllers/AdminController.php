@@ -3,6 +3,8 @@
 
 namespace controllers;
 use app\User;
+use models\Admin;
+use PDO;
 
 class AdminController extends Controller
 {
@@ -13,7 +15,13 @@ class AdminController extends Controller
 
     public function adminsList()
     {
-        return $this->view('admin/adminsList', [], 1);
+        $query = $this->getDatabase()->prepare("select id, password, firstname, lastname, email, creationdate, lastconnectiondate from admins;");
+        $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
+        $query->execute();
+        $admins = $query->fetchAll();
+        dump($admins);
+
+        return $this->view('admin/adminsList', [ 'admin' => $admins ], 1);
     }
 
     public function login()
@@ -22,7 +30,7 @@ class AdminController extends Controller
 
         $con = $this->getDatabase();
         $query = $con->prepare("select count(*) as nbr, id as id from admins where email = ? and password = ?;");
-        $query->execute(array($email, $password));
+        $query->execute([$email, $password]);
         $result = $query->fetch();
 
         if ($result['nbr'] == 1){

@@ -4,6 +4,7 @@ require '../vendor/autoload.php';
 require '../app/Session.php';
 require '../app/User.php';
 require '../database/database.php';
+require '../models/Admin.php';
 $router = new AltoRouter();
 
 $database_config = require '../config/database.php';
@@ -60,7 +61,7 @@ if (is_array($match)) {
     call_user_func_array(array($instance, 'error'), array('error', null));
 }
 
-function getControllerClassInstance($controller, $router, $db)
+function getControllerClassInstance($controller, $router, $db): object
 {
     try {
         $class = new ReflectionClass('\\controllers\\' . $controller);
