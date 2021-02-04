@@ -25,10 +25,8 @@ class AdminController extends Controller
         return $this->view('admin/adminsList', [ 'admins' => $admins ], 1);
     }
 
-    public function create(Request $request)
+    public function create()
     {
-        $te = new Admin();
-        $te->create(['']);
         return $this->view('admin/adminCreate', [], 1);
     }
 

@@ -6,9 +6,24 @@ use middlewares\AdminMiddleware;
  */
 return [
     "adminDashboard" => [
-        AdminMiddleware::class,
+        AdminMiddleware::class
     ],
     "adminsList" => [
-        AdminMiddleware::class,
+        AdminMiddleware::class
+    ],
+    "adminCreate" => [
+        AdminMiddleware::class
+    ],
+    "eventsList" => [
+        AdminMiddleware::class
+    ],
+    "eventCreate" => [
+        AdminMiddleware::class
+    ],
+    "newsList" => [
+        AdminMiddleware::class
+    ],
+    "newsEdit" => [
+        AdminMiddleware::class
     ]
 ];
