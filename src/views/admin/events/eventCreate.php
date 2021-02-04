@@ -2,7 +2,6 @@
 ob_start();
 ?>events<?php
 $selectedItem = ob_get_clean();
-dump(\controllers\Controller::breadcrum());
 ?>
 <div class="hidden sm:block" aria-hidden="true">
     <div class="py-5">

@@ -2,7 +2,6 @@
 ob_start();
 ?>adminList<?php
 $selectedItem = ob_get_clean();
-dump(\controllers\Controller::breadcrum());
 ?>
 <h3 class="text-gray-700 text-3xl font-medium">Administrateurs</h3>
 <div class="mt-8 flex justify-end">
