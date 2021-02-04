@@ -8,7 +8,7 @@ require '../models/modelsConfig.php';
 
 $router = new AltoRouter();
 
-$database_config = require '../config/database.php';
+$database_config = require '../app/config/database.php';
 $database_config = $database_config['mysql']; // Set to wanted database config name
 
 $database = new Database($database_config['database']);
@@ -18,13 +18,13 @@ $database->setHost($database_config['host'])
     ->setPassword($database_config['password']);
 $db_conn = $database->connect();
 
-require '../config/routes.php';
+require '../app/config/routes.php';
 
 $match = $router->match();
 
 if (is_array($match)) {
 
-    $middlewares = require '../config/middlewares.php';
+    $middlewares = require '../app/config/middlewares.php';
     if(isset($middlewares[$match['name']])) {
         $middleware = $middlewares[$match['name']];
         if(is_array($middleware)) {
