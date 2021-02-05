@@ -5,6 +5,7 @@ require '../app/Session.php';
 require '../app/User.php';
 require '../database/database.php';
 require '../models/modelsConfig.php';
+require '../src/views/components/loading.php';
 
 $router = new AltoRouter();
 
@@ -84,3 +85,9 @@ function callMiddleware($middleware, $route_params, $router, $db) {
         die("Couldn't load specified middleware");
     }
 }
+?>
+<script>
+    $(window).on("load", function () {
+        $("#loading").fadeOut("fast");
+    })
+</script>
