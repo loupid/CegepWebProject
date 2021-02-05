@@ -8,5 +8,16 @@
       <jdbc-url>jdbc:mysql://localhost:3306/webproject</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="shcool" uuid="9ccfcb72-b2cc-40df-babd-2aee9f170580">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://cours.cegep3r.info:3306</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="serverTimezone" value="America/Montreal" />
+      </driver-properties>
+      <time-zone>America/Montreal</time-zone>
+    </data-source>
   </component>
 </project>

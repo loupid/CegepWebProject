@@ -17,7 +17,7 @@ class AdminController extends Controller
 
     public function adminsList()
     {
-        $query = $this->getDatabase()->prepare("select id, firstname, lastname, email, creationdate, lastconnectiondate from admins;");
+        $query = $this->getDatabase()->prepare("select id, firstname, lastname, email, creation_date, last_connection_date from admins;");
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
         $query->execute();
         $admins = $query->fetchall();

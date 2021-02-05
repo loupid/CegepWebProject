@@ -9,8 +9,12 @@ class Admin implements \Model
     public $lastname;
     public $password;
     public $email;
-    public $creationdate;
-    public $lastconnectiondate;
+    public $workphone;
+    public $desk;
+    public $cellphone;
+    public $status;
+    public $creation_date;
+    public $last_connection_date;
 
     public function create($array = [])//['*']
     {
