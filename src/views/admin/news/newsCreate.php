@@ -3,13 +3,13 @@ ob_start();
 ?>actualities<?php
 $selectedItem = ob_get_clean();
 ?>
-<?php ob_start();?>
-<div class="flex text-l font-medium text-gray-700">
-    <?php
-     breadcrum(['adminDashboard', 'newsList', 'newsCreate']);
-    ?>
-</div>
-<?php ob_get_clean()?>
+<?php //ob_start();?>
+<!--<div class="flex text-l font-medium text-gray-700">-->
+<!--    --><?php
+//     breadcrum(['adminDashboard', 'newsList', 'newsCreate']);
+//    ?>
+<!--</div>-->
+<?php //ob_get_clean()?>
 <div class="hidden sm:block" aria-hidden="true">
     <div class="py-5">
         <div class="border-t border-gray-200"></div>

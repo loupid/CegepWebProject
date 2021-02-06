@@ -11,53 +11,45 @@ $selectedItem = ob_get_clean();
 
 <div class="mt-10 sm:mt-0">
     <div class="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form action="<?= $this->router->generate('adminSave') ?>" method="POST">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="first_name" class="block text-sm font-medium text-gray-700">Prénom</label>
-                            <input type="text" name="first_name" id="first_name" autocomplete="given-name"
+                            <label for="firstname" class="block text-sm font-medium text-gray-700">Prénom</label>
+                            <input type="text" name="firstname" id="firstname" autocomplete="given-name"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="last_name" class="block text-sm font-medium text-gray-700">Nom</label>
-                            <input type="text" name="last_name" id="last_name" autocomplete="family-name"
+                            <label for="lastname" class="block text-sm font-medium text-gray-700">Nom</label>
+                            <input type="text" name="lastname" id="lastname" autocomplete="family-name"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
-
-                        <div class="col-span-6 sm:col-span-6 lg:col-span-3">
-                            <label for="username" class="block text-sm font-medium text-gray-700">Nom d'utilisateur</label>
-                            <input type="text" name="username" id="username"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-
-                        <div class="lg:col-span-2"></div>
 
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="email_address" class="block text-sm font-medium text-gray-700">Courriel</label>
-                            <input type="text" name="email_address" id="email_address" autocomplete="email"
+                            <label for="email" class="block text-sm font-medium text-gray-700">Courriel</label>
+                            <input type="text" name="email" id="email" autocomplete="email"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <div class="lg:col-span-2"></div>
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-3">
-                            <label for="phone" class="block text-sm font-medium text-gray-700">Téléphone</label>
-                            <input type="text" name="phone" id="phone" autocomplete="phone"
+                            <label for="workphone" class="block text-sm font-medium text-gray-700">Téléphone</label>
+                            <input type="text" name="phone" id="workphone" autocomplete="phone"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-1">
-                            <label for="post" class="block text-sm font-medium text-gray-700">Poste</label>
-                            <input type="text" name="post" id="post"
+                            <label for="desk" class="block text-sm font-medium text-gray-700">Poste</label>
+                            <input type="text" name="desk" id="desk"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-3">
-                            <label for="cell" class="block text-sm font-medium text-gray-700">Cellulaire</label>
-                            <input type="text" name="cell" id="cell" autocomplete="phone"
+                            <label for="cellphone" class="block text-sm font-medium text-gray-700">Cellulaire</label>
+                            <input type="text" name="cellphone" id="cellphone" autocomplete="phone"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
@@ -71,13 +63,13 @@ $selectedItem = ob_get_clean();
 
                         <div class="col-span-6 sm:col-span-3">
                             <label for="confirm_password" class="block text-sm font-medium text-gray-700">Confirmer le mot de passe</label>
-                            <input type="text" name="confirm_password" id="confirm_password" autocomplete="password"
+                            <input type="password" name="confirm_password" id="confirm_password" autocomplete="password"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <div>
-                            <label for="active_admin" class="block text-sm font-medium text-gray-700">Actif</label>
-                            <input type="checkbox" name="active_admin" id="active_admin" checked
+                            <label for="status" class="block text-sm font-medium text-gray-700">Actif</label>
+                            <input type="checkbox" name="status" id="status" checked
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
                     </div>

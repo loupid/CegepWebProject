@@ -6,22 +6,13 @@ use app\Session;
 
 class Controller {
 
-private $router;
+protected $router;
 private $db;
 
 public function __construct($router, $db)
 {
     $this->router = $router;
     $this->db = $db;
-}
-
-public function breadcrum($names) {
-$crumbs = array_combine($names, array_map('ucfirst', array_diff(explode("/", $_SERVER["REQUEST_URI"]), [""])));
-
-foreach ($names as $key => $value)
-    ?>
-    <a href="<?= $this->router->generate($key) ?>" class="mx-1 hover:text-indigo-600"><?= $value ?></a>>
-<?php
 }
 
 protected function view(string $view, array $data = [], int $isAdmin = 0)
