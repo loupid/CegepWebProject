@@ -18,16 +18,15 @@ class Admin implements \Model
 
     public static function create($db, $array = [])
     {
+        //todo: use rtrim for other creates ex: rtrim($attributes, ",")
         $attributes = "";
         $values = "";
         foreach ($array as $key => $value) {
-            $attributes .= "'".$key."',";
-            $values .= "'".$value."',";
+            $attributes .= "'" . $key . "',";
+            $values .= "'" . $value . "',";
         }
-        dump(rtrim($attributes, ","));
-        dump(rtrim($values, ","));
-        $query = 'INSERT INTO ADMINS VALUES (';
-
+        $query = 'INSERT INTO ADMINS ('.$attributes.'`creation_date`)'.' VALUES ('. $values.')';
+        dump($query);
     }
 
     public static function update($id, $db, $array = [])
@@ -43,7 +42,7 @@ class Admin implements \Model
         $db->prepare($query)->execute();
     }
 
-    public function delete($id)
+    public static function delete($id)
     {
         // TODO: Implement delete() method.
     }
