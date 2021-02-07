@@ -23,24 +23,15 @@ class AdminController extends Controller
         return $this->view('admin/adminsList', ['admin' => $admins], 1);
     }
 
-    public function breadcrum($names)
+    public function create()
     {
-        $crumbs = array_combine($names, array_map('ucfirst', array_diff(explode("/", $_SERVER["REQUEST_URI"]), [""])));
-
-        foreach ($names as $key => $value)
-            ?>
-            <a href="<?= $this->router->generate($key) ?>" class="mx-1 hover:text-indigo-600"><?= $value ?></a>>
-        <?php
+        return $this->view('admin/adminCreate', [], 1);
     }
 
     public function save() {
         extract($_POST);
-        
-    }
-
-    public function create()
-    {
-        return $this->view('admin/adminCreate', [], 1);
+        $con = $this->getDatabase();
+        Admin::create($con, $_POST);
     }
 
     public function login()
@@ -86,6 +77,16 @@ class AdminController extends Controller
                 ]
             ]
         ]);
+    }
+
+    public function breadcrum($names)
+    {
+        $crumbs = array_combine($names, array_map('ucfirst', array_diff(explode("/", $_SERVER["REQUEST_URI"]), [""])));
+
+        foreach ($names as $key => $value)
+            ?>
+            <a href="<?= $this->router->generate($key) ?>" class="mx-1 hover:text-indigo-600"><?= $value ?></a>>
+        <?php
     }
 
     public function dashboard()

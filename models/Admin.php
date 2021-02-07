@@ -16,13 +16,11 @@ class Admin implements \Model
     public $creation_date;
     public $last_connection_date;
 
-    public function create($array = [])//['*']
+    public static function create($db, $array = [])
     {
-        extract($_POST);
-        dump($_POST);
         $attributes = "";
         $values = "";
-        foreach ($_POST as $key => $value) {
+        foreach ($array as $key => $value) {
             $attributes .= "'".$key."',";
             $values .= "'".$value."',";
         }
