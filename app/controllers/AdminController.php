@@ -39,7 +39,7 @@ class AdminController extends Controller
         $query->execute([$email, $password]);
         $result = $query->fetch();
 
-        Admin::update($result['id'], $this->getDatabase(), ['lastconnectiondate' => date("d/m/Y H:i:s")]);
+        Admin::update($result['id'], $this->getDatabase(), ['last_connection_date' => date("d/m/Y H:i:s")]);
 
 
         if ($result['nbr'] == 1){
