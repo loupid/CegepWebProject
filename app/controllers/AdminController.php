@@ -38,23 +38,6 @@ class AdminController extends Controller
         return $this->view('admin/adminCreate', [], 1);
     }
 
-    public function save() {
-        extract($_POST);
-        dump($_POST);
-        $attributes = "";
-        $values = "";
-        foreach ($_POST as $key => $value) {
-            $attributes .= "'".$key."',";
-            $values .= "'".$value."',";
-        }
-        dump(rtrim($attributes, ","));
-        dump(rtrim($values, ","));
-//        $con = $this->getDatabase();
-//        $query = $con->prepare("select count(*) as nbr, id as id from admins where email = ? and password = ?;");
-//        $query->execute([$email, $password]);
-//        $result = $query->fetch();
-    }
-
     public function login()
     {
         extract($_POST);

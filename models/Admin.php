@@ -18,6 +18,16 @@ class Admin implements \Model
 
     public function create($array = [])//['*']
     {
+        extract($_POST);
+        dump($_POST);
+        $attributes = "";
+        $values = "";
+        foreach ($_POST as $key => $value) {
+            $attributes .= "'".$key."',";
+            $values .= "'".$value."',";
+        }
+        dump(rtrim($attributes, ","));
+        dump(rtrim($values, ","));
         $query = 'INSERT INTO ADMINS VALUES (';
 
     }
