@@ -32,7 +32,6 @@ class Admin implements \Model
         $query = 'INSERT INTO ADMINS (' . rtrim($attributes, ",") . ')' . ' VALUES (' . rtrim($values, ",") . ')';
 //        array_push($data, "STR_TO_DATE('".date("d/m/Y H:i:s")."', '%d/%m/%Y %H:%i:%s')");
         $db->prepare($query)->execute($data);
-        $query = 'UPDATE ADMINS SET';
     }
 
     public static function update($id, $db, $array = [])
