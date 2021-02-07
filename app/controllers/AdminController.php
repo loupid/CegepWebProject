@@ -32,6 +32,7 @@ class AdminController extends Controller
         extract($_POST);
         $con = $this->getDatabase();
         Admin::create($con, $_POST);
+        
     }
 
     public function login()

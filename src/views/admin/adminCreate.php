@@ -37,7 +37,7 @@ $selectedItem = ob_get_clean();
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                             <label for="workphone" class="block text-sm font-medium text-gray-700">Téléphone</label>
-                            <input type="text" name="phone" id="workphone" autocomplete="phone"
+                            <input type="text" name="workphone" id="workphone" autocomplete="phone"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
@@ -69,7 +69,7 @@ $selectedItem = ob_get_clean();
 
                         <div>
                             <label for="status" class="block text-sm font-medium text-gray-700">Actif</label>
-                            <input type="checkbox" name="status" id="status" checked
+                            <input type="checkbox" name="status" id="status" value="1" checked
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
                     </div>
@@ -90,4 +90,3 @@ $selectedItem = ob_get_clean();
         <div class="border-t border-gray-200"></div>
     </div>
 </div>
-
