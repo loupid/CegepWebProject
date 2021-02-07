@@ -18,9 +18,9 @@ class Admin implements \Model
 
     public static function create($db, $array = [])
     {
-        //todo: use rtrim for other creates ex: rtrim($attributes, ",")
+        //todo: use rtrim for other creates ex: rtrim($attributes, ",") that remove the last comma ","
         //todo: validate password
-        //todo: add creation_date
+        //todo: verification for a unique email
         $attributes = "";
         $values = "";
         unset($array['confirm_password']);
@@ -29,8 +29,8 @@ class Admin implements \Model
             $attributes .= $key . ",";
             $values .= '?,';
         }
-        $query = 'INSERT INTO ADMINS (' . rtrim($attributes, ",") . ')' . ' VALUES (' . rtrim($values, ",") . ')';
-//        array_push($data, "STR_TO_DATE('".date("d/m/Y H:i:s")."', '%d/%m/%Y %H:%i:%s')");
+        $query = "INSERT INTO ADMINS (" . $attributes . "creation_date ) VALUES (" . $values . "STR_TO_DATE( ?, '%d/%m/%Y %H:%i:%s'))";
+        array_push($data, date("d/m/Y H:i:s"));
         $db->prepare($query)->execute($data);
     }
 
