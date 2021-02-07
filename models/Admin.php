@@ -18,7 +18,7 @@ class Admin implements \Model
 
     public function create($array = [])//['*']
     {
-        // TODO: Implement create() method.
+        $query = 'INSERT INTO ADMINS VALUES (';
 
     }
 
