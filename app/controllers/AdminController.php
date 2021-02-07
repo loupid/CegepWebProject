@@ -32,18 +32,17 @@ class AdminController extends Controller
         extract($_POST);
         $con = $this->getDatabase();
         Admin::create($con, $_POST);
-        
+        $this->adminsList();
     }
 
     public function login()
     {
         extract($_POST);
         $con = $this->getDatabase();
-        $query = $con->prepare("select count(*) as nbr, id as id from admins where email = ? and password = ?;");
-        $query->execute([$email, $password]);
+        $query = $con->prepare("select password from admins where email = ?;");
+        $query->execute(array($email));
         $result = $query->fetch();
-
-        if ($result['nbr'] == 1) {
+        if (password_verify($password, $result['password'])) {
             User::logout();
             User::setUser($email);
             $this->redirectToRoute('adminDashboard');
