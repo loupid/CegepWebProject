@@ -33,6 +33,11 @@ class AdminController extends Controller
         <?php
     }
 
+    public function save() {
+        extract($_POST);
+        
+    }
+
     public function create()
     {
         return $this->view('admin/adminCreate', [], 1);
