@@ -48,6 +48,7 @@ $router->map('GET', '/admin/news/create', 'NewsController@create', 'newsCreate')
 $router->map('GET', '/admin/news/edit-[i:id]', 'NewsController@edit', 'newsEdit');
 
 $router->map('POST','/admin/connexion','AdminController@login', 'adminConfirm');
+$router->map('POST','/admin/save','AdminController@save', 'adminSave');
 
 
 //Cours

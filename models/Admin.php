@@ -16,10 +16,22 @@ class Admin implements \Model
     public $creation_date;
     public $last_connection_date;
 
-    public function create($array = [])//['*']
+    public static function create($db, $array = [])
     {
-        $query = 'INSERT INTO ADMINS VALUES (';
-
+        //todo: use rtrim for other creates ex: rtrim($attributes, ",") that remove the last comma ","
+        //todo: validate password
+        //todo: verification for a unique email
+        $attributes = "";
+        $values = "";
+        unset($array['confirm_password']);
+        $data = array_values($array);
+        foreach ($array as $key => $value) {
+            $attributes .= $key . ",";
+            $values .= '?,';
+        }
+        $query = "INSERT INTO ADMINS (" . $attributes . "creation_date ) VALUES (" . $values . "STR_TO_DATE( ?, '%d/%m/%Y %H:%i:%s'))";
+        array_push($data, date("d/m/Y H:i:s"));
+        $db->prepare($query)->execute($data);
     }
 
     public static function update($id, $db, $array = [])

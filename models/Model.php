@@ -1,6 +1,5 @@
 <?php
 
-
 interface Model
 {
     public function create($array = []);

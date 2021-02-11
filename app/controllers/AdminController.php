@@ -12,7 +12,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return $this->view('login/index',[], 2);
+        return $this->view('login/index', [], 2);
     }
 
     public function adminsList()
@@ -20,9 +20,8 @@ class AdminController extends Controller
         $query = $this->getDatabase()->prepare("select id, firstname, lastname, email, creation_date, last_connection_date from admins;");
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
         $query->execute();
-        $admins = $query->fetchall();
-
-        return $this->view('admin/adminsList', [ 'admins' => $admins ], 1);
+        $admins = $query->fetchAll();
+        return $this->view('admin/adminsList', ['admin' => $admins], 1);
     }
 
     public function create()
@@ -30,10 +29,16 @@ class AdminController extends Controller
         return $this->view('admin/adminCreate', [], 1);
     }
 
+    public function save() {
+        extract($_POST);
+        $con = $this->getDatabase();
+        Admin::create($con, $_POST);
+        
+    }
+
     public function login()
     {
         extract($_POST);
-        $admin = new Admin();
         $con = $this->getDatabase();
         $query = $con->prepare("select count(*) as nbr, id as id from admins where email = ? and password = ?;");
         $query->execute([$email, $password]);
@@ -46,8 +51,7 @@ class AdminController extends Controller
             User::logout();
             User::setUser($email);
             $this->redirectToRoute('adminDashboard');
-        }
-        else $this->redirectToRoute('adminIndex', [
+        } else $this->redirectToRoute('adminIndex', [
             'error' => [
                 0 => [
                     'message' => 'Le courriel ou le mot de passe est incorrect.',
@@ -71,7 +75,18 @@ class AdminController extends Controller
         ]);
     }
 
-    public function dashboard(){
+    public function breadcrum($names)
+    {
+        $crumbs = array_combine($names, array_map('ucfirst', array_diff(explode("/", $_SERVER["REQUEST_URI"]), [""])));
+
+        foreach ($names as $key => $value)
+            ?>
+            <a href="<?= $this->router->generate($key) ?>" class="mx-1 hover:text-indigo-600"><?= $value ?></a>>
+        <?php
+    }
+
+    public function dashboard()
+    {
         return $this->view('admin/dashboard', [], 1);
     }
 }
