@@ -85,9 +85,3 @@ function callMiddleware($middleware, $route_params, $router, $db) {
         die("Couldn't load specified middleware");
     }
 }
-?>
-<!--<script>-->
-<!--    $(window).on("load", function () {-->
-<!--        $("#loading").fadeOut("fast");-->
-<!--    })-->
-<!--</script>-->

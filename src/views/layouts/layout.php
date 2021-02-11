@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
+    <!-- component -->
+    <link rel="stylesheet" href="https://pagecdn.io/lib/font-awesome/5.10.0-11/css/all.min.css" integrity="sha256-p9TTWD+813MlLaxMXMbTA7wN/ArzGyW/L7c5+KkjOkM=" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
@@ -18,6 +20,13 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body class="dark">
+<div id="loading" class="w-screen h-screen fixed block top-0 left-0 bg-white z-50">
+  <span class="text-indigo-600 top-1/2 my-0 mx-auto block relative w-0 h-0" style="
+    top: 50%;
+">
+    <i class="fas fa-circle-notch fa-spin fa-5x"></i>
+  </span>
+</div>
 <!--insert here the top of all page-->
 <div class="relative bg-white shadow">
     <div class="mx-auto px-4 sm:px-6">
@@ -605,6 +614,7 @@
 
 <!--Add script here by a variable -->
 <script type="module" src="/js/app.js"></script>
+<script type="module" src="/js/component.js"></script>
 <?= $script ?? '' ?>
 </body>
 </html>

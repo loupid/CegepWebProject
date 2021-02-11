@@ -8,11 +8,20 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css"/>
+    <!-- component -->
+    <link rel="stylesheet" href="https://pagecdn.io/lib/font-awesome/5.10.0-11/css/all.min.css" integrity="sha256-p9TTWD+813MlLaxMXMbTA7wN/ArzGyW/L7c5+KkjOkM=" crossorigin="anonymous">
+
     <script src="https://unpkg.com/create-file-list"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body>
+<div id="loading" class="w-screen h-screen fixed block top-0 left-0 bg-white z-50">
+  <span class="text-indigo-600 top-1/2 my-0 mx-auto block relative w-0 h-0"
+        style="top: 50%;">
+    <i class="fas fa-circle-notch fa-spin fa-5x"></i>
+  </span>
+</div>
 <div>
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
         <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false"
@@ -202,6 +211,7 @@
 </div>
 
 <!--Add script here by a variable -->
+<script type="module" src="/js/component.js"></script>
 <?= $script ?? '' ?>
 </body>
 </html>

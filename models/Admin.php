@@ -28,7 +28,13 @@ class Admin implements \Model
         $query = 'UPDATE admins SET';
         $comma = ' ';
         foreach ($array as $key => $value){
-            $query .= $comma . $key . " = STR_TO_DATE('".$value."', '%d/%m/%Y %H:%i:%s')";
+            dump($key);
+            if ($key == 'creation_date' || $key == 'last_connection_date'){
+                $query .= $comma . $key . " = STR_TO_DATE('".$value."', '%d/%m/%Y %H:%i:%s')";
+            }
+            else {
+                $query .= $comma . $key . " = '".$value."'";
+            }
             $comma = ', ';
         }
         $query .= ' where id = '.$id;
