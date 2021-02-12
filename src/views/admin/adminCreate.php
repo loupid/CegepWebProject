@@ -3,6 +3,7 @@ ob_start();
 ?>adminList<?php
 $selectedItem = ob_get_clean();
 ?>
+<h3 class="text-gray-700 text-3xl font-medium">Ajout d'administateur</h3>
 <div class="hidden sm:block" aria-hidden="true">
     <div class="py-5">
         <div class="border-t border-gray-200"></div>
@@ -18,19 +19,19 @@ $selectedItem = ob_get_clean();
                         <div class="col-span-6 sm:col-span-3">
                             <label for="firstname" class="block text-sm font-medium text-gray-700">Prénom</label>
                             <input type="text" name="firstname" id="firstname" autocomplete="given-name"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
                             <label for="lastname" class="block text-sm font-medium text-gray-700">Nom</label>
                             <input type="text" name="lastname" id="lastname" autocomplete="family-name"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
                             <label for="email" class="block text-sm font-medium text-gray-700">Courriel</label>
                             <input type="text" name="email" id="email" autocomplete="email"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                         </div>
 
                         <div class="lg:col-span-2"></div>
@@ -38,13 +39,13 @@ $selectedItem = ob_get_clean();
                         <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                             <label for="workphone" class="block text-sm font-medium text-gray-700">Téléphone</label>
                             <input type="text" name="workphone" id="workphone" autocomplete="phone"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                         </div>
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-1">
                             <label for="desk" class="block text-sm font-medium text-gray-700">Poste</label>
                             <input type="text" name="desk" id="desk"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                         </div>
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-3">
@@ -58,13 +59,13 @@ $selectedItem = ob_get_clean();
                         <div class="col-span-6 sm:col-span-3">
                             <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
                             <input type="password" name="password" id="password" autocomplete="password"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
                             <label for="confirm_password" class="block text-sm font-medium text-gray-700">Confirmer le mot de passe</label>
                             <input type="password" name="confirm_password" id="confirm_password" autocomplete="password"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                         </div>
 
                         <div>
