@@ -18,7 +18,6 @@ class Admin implements \Model
 
     public static function create($db, $array = [])
     {
-        //dump(password_verify('test', $hash));
         if ($array['confirm_password'] == $array['password']) {
             $attributes = "";
             $values = "";
