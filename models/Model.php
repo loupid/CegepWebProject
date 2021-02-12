@@ -2,9 +2,9 @@
 
 interface Model
 {
-    public function create($array = []);
+    public static function create($db, $array = []);
 
     public static function update($id, $db, $array = []);
 
-    public function delete($id);
+    public static function delete($id);
 }

@@ -16,6 +16,7 @@ class Admin implements \Model
     public $creation_date;
     public $last_connection_date;
 
+
     public static function create($db, $array = [])
     {
         //todo: use rtrim for other creates ex: rtrim($attributes, ",") that remove the last comma ","
@@ -40,7 +41,6 @@ class Admin implements \Model
         $query = 'UPDATE admins SET';
         $comma = ' ';
         foreach ($array as $key => $value){
-            dump($key);
             if ($key == 'creation_date' || $key == 'last_connection_date'){
                 $query .= $comma . $key . " = STR_TO_DATE('".$value."', '%d/%m/%Y %H:%i:%s')";
             }
@@ -53,7 +53,7 @@ class Admin implements \Model
         $db->prepare($query)->execute();
     }
 
-    public function delete($id)
+    public static function delete($id)
     {
         // TODO: Implement delete() method.
     }
