@@ -3,6 +3,7 @@ session_start();
 require '../vendor/autoload.php';
 require '../app/Session.php';
 require '../app/User.php';
+require '../app/FileManager.php';
 require '../database/database.php';
 require '../models/modelsConfig.php';
 

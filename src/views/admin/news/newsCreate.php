@@ -18,7 +18,7 @@ $selectedItem = ob_get_clean();
 
 <div class="mt-10 sm:mt-0">
     <div class="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form action="<?= $this->router->generate('newsSave') ?>" method="POST" enctype="multipart/form-data">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">
@@ -42,7 +42,6 @@ $selectedItem = ob_get_clean();
                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                       required></textarea>
                         </div>
-
                         <div class="bg-white p7 rounded col-span-6 sm:col-span-6">
                             <label class="block text-sm font-medium text-gray-700">
                                 Photo de couverture
@@ -51,13 +50,14 @@ $selectedItem = ob_get_clean();
                                  class="relative flex flex-col p-4 text-gray-400 border border-gray-200 rounded">
                                 <div x-ref="dnd"
                                      class="relative flex flex-col text-gray-400 border border-gray-200 border-dashed rounded cursor-pointer">
-                                    <input accept="*" type="file" multiple
+                                    <input accept="image/*" type="file"
                                            class="absolute inset-0 z-50 w-full h-full p-0 m-0 outline-none opacity-0 cursor-pointer"
                                            @change="addFiles($event)"
                                            @dragover="$refs.dnd.classList.add('border-blue-400'); $refs.dnd.classList.add('ring-4'); $refs.dnd.classList.add('ring-inset');"
                                            @dragleave="$refs.dnd.classList.remove('border-blue-400'); $refs.dnd.classList.remove('ring-4'); $refs.dnd.classList.remove('ring-inset');"
                                            @drop="$refs.dnd.classList.remove('border-blue-400'); $refs.dnd.classList.remove('ring-4'); $refs.dnd.classList.remove('ring-inset');"
-                                           title=""/>
+                                           name="file"
+                                    />
                                     <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                         <div class="space-y-1 text-center">
                                             <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"
@@ -131,14 +131,12 @@ $selectedItem = ob_get_clean();
                                                                       type="video/mp4">
                                                     </video>
                                                 </template>
-
                                                 <div class="absolute bottom-0 left-0 right-0 flex flex-col p-2 text-xs bg-white bg-opacity-50">
-                        <span class="w-full font-bold text-gray-900 truncate"
-                              x-text="files[index].name">Loading</span>
+                                                    <span class="w-full font-bold text-gray-900 truncate"
+                                                          x-text="files[index].name">Loading</span>
                                                     <span class="text-xs text-gray-900"
                                                           x-text="humanFileSize(files[index].size)">...</span>
                                                 </div>
-
                                                 <div class="absolute inset-0 z-40 transition-colors duration-300"
                                                      @dragenter="dragenter($event)"
                                                      @dragleave="fileDropping = null"
@@ -150,7 +148,6 @@ $selectedItem = ob_get_clean();
                                 </template>
                             </div>
                         </div>
-
                     </div>
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                         <button type="submit"

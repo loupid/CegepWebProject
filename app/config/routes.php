@@ -41,15 +41,20 @@ $router->map('GET', '/admin/logout', 'AdminController@logout', 'adminLogout');
 $router->map('GET', '/admin/dashboard', 'AdminController@dashboard', 'adminDashboard');
 $router->map('GET', '/admin/adminsList', 'AdminController@adminsList', 'adminsList');
 $router->map('GET', '/admin/create', 'AdminController@create', 'adminCreate');
-$router->map('GET', '/admin/events', 'EventController@eventsList', 'eventsList');
-$router->map('GET', '/admin/event/create', 'EventController@create', 'eventCreate');
-$router->map('GET', '/admin/news', 'NewsController@newsList', 'newsList');
-$router->map('GET', '/admin/news/create', 'NewsController@create', 'newsCreate');
-$router->map('GET', '/admin/news/edit-[i:id]', 'NewsController@edit', 'newsEdit');
 
 $router->map('POST','/admin/connexion','AdminController@login', 'adminConfirm');
 $router->map('POST','/admin/save','AdminController@save', 'adminSave');
 
+//events
+$router->map('GET', '/admin/events', 'EventController@eventsList', 'eventsList');
+$router->map('GET', '/admin/event/create', 'EventController@create', 'eventCreate');
+
+//news
+$router->map('GET', '/admin/news', 'NewsController@newsList', 'newsList');
+$router->map('GET', '/admin/news/create', 'NewsController@create', 'newsCreate');
+$router->map('GET', '/admin/news/edit-[i:id]', 'NewsController@edit', 'newsEdit');
+
+$router->map('POST', '/admin/news/save', 'NewsController@save', 'newsSave');
 
 //Cours
 $router->map('GET', '/cours', 'CoursesController@index', 'CoursesIndex');

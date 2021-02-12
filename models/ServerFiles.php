@@ -10,7 +10,7 @@ class ServerFiles implements \Model
     public $name;
     public $path;
 
-    public function create($array = [])
+    public static function create($db, $array = [])
     {
         // TODO: Implement create() method.
     }
@@ -27,7 +27,7 @@ class ServerFiles implements \Model
         $query .= ' where id = '.$id;
         $db->prepare($query)->execute();    }
 
-    public function delete($id)
+    public static function delete($id)
     {
         // TODO: Implement delete() method.
     }

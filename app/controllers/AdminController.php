@@ -4,7 +4,6 @@
 namespace controllers;
 
 use app\User;
-use http\Env\Request;
 use models\Admin;
 use PDO;
 
@@ -21,7 +20,7 @@ class AdminController extends Controller
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
         $query->execute();
         $admins = $query->fetchAll();
-        return $this->view('admin/adminsList', ['admin' => $admins], 1);
+        return $this->view('admin/adminsList', ['admins' => $admins], 1);
     }
 
     public function create()
@@ -30,10 +29,17 @@ class AdminController extends Controller
     }
 
     public function save() {
-        extract($_POST);
         $con = $this->getDatabase();
         Admin::create($con, $_POST);
-        
+        return $this->redirectToRoute('adminsList', [
+            'error' => [
+                0 => [
+                    'message' => 'Un nouvel administrateur est enregistré.',
+                    'color' => 'green-500',
+                    'colorIcon' => 'green-700'
+                ]
+            ]
+        ]);
     }
 
     public function login()
@@ -45,7 +51,6 @@ class AdminController extends Controller
         $result = $query->fetch();
 
         Admin::update($result['id'], $this->getDatabase(), ['last_connection_date' => date("d/m/Y H:i:s")]);
-
 
         if ($result['nbr'] == 1){
             User::logout();
