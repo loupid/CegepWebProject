@@ -34,25 +34,22 @@ class AdminController extends Controller
         return $this->redirectToRoute('adminsList', [
             'error' => [
                 0 => [
-                    'message' => 'Un nouvel administrateur est enregistré.',
                     'color' => 'green-500',
                     'colorIcon' => 'green-700'
                 ]
             ]
         ]);
+                    'message' => 'Un nouvel administrateur est enregistré.',
     }
 
     public function login()
     {
         extract($_POST);
         $con = $this->getDatabase();
-        $query = $con->prepare("select count(*) as nbr, id as id from admins where email = ? and password = ?;");
-        $query->execute([$email, $password]);
+        $query = $con->prepare("select password from admins where email = ?;");
+        $query->execute(array($email));
         $result = $query->fetch();
-
-        Admin::update($result['id'], $this->getDatabase(), ['last_connection_date' => date("d/m/Y H:i:s")]);
-
-        if ($result['nbr'] == 1){
+        if (password_verify($password, $result['password'])) {
             User::logout();
             User::setUser($email);
             $this->redirectToRoute('adminDashboard');
