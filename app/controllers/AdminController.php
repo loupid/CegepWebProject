@@ -16,7 +16,7 @@ class AdminController extends Controller
 
     public function adminsList()
     {
-        $query = $this->getDatabase()->prepare("select id, firstname, lastname, email, creation_date, last_connection_date from admins;");
+        $query = $this->getDatabase()->prepare("select id, firstname, lastname, email, creation_date, last_connection_date, status from admins;");
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
         $query->execute();
         $admins = $query->fetchAll();
@@ -26,6 +26,13 @@ class AdminController extends Controller
     public function create()
     {
         return $this->view('admin/adminCreate', [], 1);
+    }
+
+    public function delete() {
+        $con = $this->getDatabase();
+        $match = $this->router->match();
+        Admin::delete($match['params']['id'], $con);
+        $this->adminsList();
     }
 
     public function save() {
@@ -90,5 +97,9 @@ class AdminController extends Controller
     public function dashboard()
     {
         return $this->view('admin/dashboard', [], 1);
+    }
+
+    public function update() {
+        return $this->view('admin/adminEdit', [], 1);
     }
 }
