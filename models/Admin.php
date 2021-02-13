@@ -53,8 +53,9 @@ class Admin implements \Model
         $db->prepare($query)->execute();
     }
 
-    public static function delete($id)
+    public static function delete($id, $db)
     {
-        // TODO: Implement delete() method.
+        $query = "DELETE FROM admins WHERE id = '" . $id."'";
+        $db->prepare($query)->execute();
     }
 }

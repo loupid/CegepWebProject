@@ -41,7 +41,8 @@ $router->map('GET', '/admin/logout', 'AdminController@logout', 'adminLogout');
 $router->map('GET', '/admin/dashboard', 'AdminController@dashboard', 'adminDashboard');
 $router->map('GET', '/admin/adminsList', 'AdminController@adminsList', 'adminsList');
 $router->map('GET', '/admin/create', 'AdminController@create', 'adminCreate');
-
+$router->map('GET','/admin/delete-[i:id]','AdminController@delete', 'adminDelete');
+$router->map('GET','/admin/edit-[i:id]','AdminController@update', 'adminEdit');
 $router->map('POST','/admin/connexion','AdminController@login', 'adminConfirm');
 $router->map('POST','/admin/save','AdminController@save', 'adminSave');
 
