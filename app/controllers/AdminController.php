@@ -38,50 +38,31 @@ class AdminController extends Controller
     public function save() {
         $con = $this->getDatabase();
         Admin::create($con, $_POST);
-        return $this->redirectToRoute('adminsList', [
-            'error' => [
-                0 => [
-                    'color' => 'green-500',
-                    'message' => 'Un nouvel administrateur est enregistré.',
-                    'colorIcon' => 'green-700'
-                ]
-            ]
-        ]);
+        return $this->redirectToRoute('adminsList');
     }
 
     public function login()
     {
         extract($_POST);
         $con = $this->getDatabase();
-        $query = $con->prepare("select password from admins where email = ?;");
+        $query = $con->prepare("select id, password from admins where email = ?;");
         $query->execute(array($email));
         $result = $query->fetch();
         if (password_verify($password, $result['password'])) {
             User::logout();
             User::setUser($email);
+            Admin::update($result['id'], $this->getDatabase(), ['last_connection_date' => date("d/m/Y H:i:s")]);
             $this->redirectToRoute('adminDashboard');
-        } else $this->redirectToRoute('adminIndex', [
-            'error' => [
-                0 => [
-                    'message' => 'Le courriel ou le mot de passe est incorrect.',
-                    'color' => 'red-600',
-                    'colorIcon' => 'red-700'
-                ]
-            ]
-        ]);
+        } else{
+            $this->addNotification('loginError');
+            $this->redirectToRoute('adminIndex');
+        }
     }
 
     public function logout(){
         User::logout();
-        return $this->redirectToRoute('adminIndex', [
-            'error' => [
-                0 => [
-                    'message' => 'Vous êtes bien déconnecté(e).',
-                    'color' => 'green-500',
-                    'colorIcon' => 'green-700'
-                ]
-            ]
-        ]);
+        $this->addNotification('logout');
+        return $this->redirectToRoute('adminIndex');
     }
 
     public function breadcrum($names)
@@ -89,7 +70,7 @@ class AdminController extends Controller
         $crumbs = array_combine($names, array_map('ucfirst', array_diff(explode("/", $_SERVER["REQUEST_URI"]), [""])));
 
         foreach ($names as $key => $value)
-            ?>
+        ?>
             <a href="<?= $this->router->generate($key) ?>" class="mx-1 hover:text-indigo-600"><?= $value ?></a>>
         <?php
     }

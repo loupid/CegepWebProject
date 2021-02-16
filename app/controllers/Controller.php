@@ -18,10 +18,10 @@ class Controller
 
     protected function view(string $view, array $data = [], int $isAdmin = 0)
     {
-// Declare each key/value pair as a variable
+        // Declare each key/value pair as a variable
         extract($data);
 
-// Construct the view with the variables
+        // Construct the view with the variables
         try {
             if ($isAdmin == 0 || $isAdmin == 1) {
                 ob_start();
@@ -63,15 +63,18 @@ class Controller
     {
         $url = $this->router->generate($route);
 
+        //maybe to change this to extract($data);
         foreach ($data as $k => $v) {
             Session::put($k, $v);
         }
+
         header('Location: ' . $url);
         return true;
     }
 
-    protected function addNotification($data){
+    protected function addNotification($notificationName)
+    {
         $message = require __DIR__ . '/../../app/config/messageNotify.php';
-        Session::put('notif', $message[$data]);
+        Session::put('notif', $message[$notificationName]);
     }
 }

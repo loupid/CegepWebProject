@@ -40,4 +40,9 @@ class Middleware
         return true;
     }
 
+    protected function addNotification($notificationName)
+    {
+        $message = require __DIR__ . '/../../app/config/messageNotify.php';
+        Session::put('notif', $message[$notificationName]);
+    }
 }
