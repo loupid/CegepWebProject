@@ -25,9 +25,10 @@ class ServerFiles implements \Model
             $comma = ', ';
         }
         $query .= ' where id = '.$id;
-        $db->prepare($query)->execute();    }
+        $db->prepare($query)->execute();
+    }
 
-    public static function delete($id)
+    public static function delete($id, $db)
     {
         // TODO: Implement delete() method.
     }

@@ -15,7 +15,17 @@ class News implements \Model
 
     public static function create($db, $array = [])
     {
-        // TODO: Implement create() method.
+        $attributes = "";
+        $values = "";
+        $data = array_values($array);
+        $comma = " ";
+        foreach ($array as $key => $value) {
+            $attributes .= $comma . $key;
+            $values .= $comma . '?';
+            $comma = ',';
+        }
+        $query = "INSERT INTO news (" . $attributes . " ) VALUES (" . $values . ")";
+        $db->prepare($query)->execute($data);
     }
 
     public static function update($id, $db, $array = [])
@@ -23,8 +33,10 @@ class News implements \Model
         // TODO: Implement update() method.
     }
 
-    public static function delete($id)
+    public static function delete($id, $db)
     {
         // TODO: Implement delete() method.
     }
+
+
 }
