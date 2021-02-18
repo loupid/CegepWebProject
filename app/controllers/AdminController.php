@@ -16,7 +16,7 @@ class AdminController extends Controller
 
     public function adminsList()
     {
-        $query = $this->getDatabase()->prepare("select id, firstname, lastname, email, creation_date, last_connection_date, status from admins;");
+        $query = $this->getDatabase()->prepare("select * from admins;");
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
         $query->execute();
         $admins = $query->fetchAll();
@@ -71,7 +71,7 @@ class AdminController extends Controller
 
         foreach ($names as $key => $value)
         ?>
-            <a href="<?= $this->router->generate($key) ?>" class="mx-1 hover:text-indigo-600"><?= $value ?></a>>
+            <a href="<?= $this->router->generate($key) ?>" class="mx-1 hover:text-indigo-600"><?= $value ?></a>
         <?php
     }
 

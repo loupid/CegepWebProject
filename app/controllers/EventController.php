@@ -1,10 +1,6 @@
 <?php
 
-
 namespace controllers;
-
-
-use http\Env\Request;
 
 class EventController extends Controller
 {
@@ -18,7 +14,7 @@ class EventController extends Controller
         return $this->view('Admin/events/eventsList',[], 1);
     }
 
-    public function save(Request $request){
-        dump($request);
+    public function save(){
+
     }
 }

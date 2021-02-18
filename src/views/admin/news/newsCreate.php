@@ -22,12 +22,15 @@ $selectedItem = ob_get_clean();
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">
+
                         <div class="col-span-6 sm:col-span-4">
                             <label for="title" class="block text-sm font-medium text-gray-700">Titre</label>
                             <input type="text" name="title" id="title" autocomplete="title"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                    required>
                         </div>
+
+                        <input type="hidden" name="publisher_id">
 
                         <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                             <label for="link" class="block text-sm font-medium text-gray-700">Lien/source</label>
@@ -36,12 +39,32 @@ $selectedItem = ob_get_clean();
                                    required>
                         </div>
 
+                        <input type="hidden" name="file_id">
+
+                        <div class="col-span-6 sm:col-span-6 lg:col-span-3">
+                            <label for="link" class="block text-sm font-medium text-gray-700">Catégorie</label>
+                            <input name="category" type="text" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" list="categories">
+                            <datalist id="categories" class="hidden mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                <option>Évènementielle</option>
+                                <option>Évènementielle</option>
+                                <option>Scolaire</option>
+                                <option>Technologique</option>
+                            </datalist>
+                        </div>
+
                         <div class="col-span-6 sm:col-span-6">
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                             <textarea name="description" id="description" rows="8" autocomplete="description"
                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                       required></textarea>
                         </div>
+
+                        <div>
+                            <label for="hide" class="block text-sm font-medium text-gray-700">Caché</label>
+                            <input type="checkbox" name="hide" id="hide" value="1" checked
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+
                         <div class="bg-white p7 rounded col-span-6 sm:col-span-6">
                             <label class="block text-sm font-medium text-gray-700">
                                 Photo de couverture
@@ -56,8 +79,7 @@ $selectedItem = ob_get_clean();
                                            @dragover="$refs.dnd.classList.add('border-blue-400'); $refs.dnd.classList.add('ring-4'); $refs.dnd.classList.add('ring-inset');"
                                            @dragleave="$refs.dnd.classList.remove('border-blue-400'); $refs.dnd.classList.remove('ring-4'); $refs.dnd.classList.remove('ring-inset');"
                                            @drop="$refs.dnd.classList.remove('border-blue-400'); $refs.dnd.classList.remove('ring-4'); $refs.dnd.classList.remove('ring-inset');"
-                                           name="file"
-                                    />
+                                           name="file">
                                     <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                         <div class="space-y-1 text-center">
                                             <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"

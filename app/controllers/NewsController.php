@@ -4,6 +4,7 @@ namespace controllers;
 
 use app\FileManager;
 use models\News;
+use PDO;
 
 class NewsController extends Controller
 {
@@ -22,10 +23,21 @@ class NewsController extends Controller
     }
 
     public function newsList() {
-        return $this->view('Admin/news/newsList',[], 1);
+        $query = $this->getDatabase()->prepare("select * from news;");
+        $query->setFetchMode(PDO::FETCH_CLASS, News::class);
+        $query->execute();
+        $newsList = $query->fetchAll();
+        return $this->view('Admin/news/newsList',['newsList' => $newsList], 1);
     }
 
     public function newsEdit() {
         return $this->view('Admin/news/newsEdit',[], 1);
+    }
+
+    public function delete() {
+        $con = $this->getDatabase();
+        $match = $this->router->match();
+        News::delete($match['params']['id'], $con);
+        $this->newsList();
     }
 }

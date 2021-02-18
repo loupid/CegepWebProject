@@ -1,4 +1,5 @@
 <?php
+
 return[
     'addNews' => [
         0 => [
