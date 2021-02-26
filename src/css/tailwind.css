@@ -5,3 +5,29 @@
 .code{
     @apply text-cwc-red;
 }
+@responsive {
+    .wh-640 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .wh-768 {
+        width: 384px;
+        height: 384px;
+    }
+
+    .wh-1024 {
+        width: 512px;
+        height: 512px;
+    }
+
+    .wh-1280 {
+        width: 640px;
+        height: 640px;
+    }
+
+    .wh-1536 {
+        width: 768px;
+        height: 768px;
+    }
+}

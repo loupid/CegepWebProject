@@ -32073,6 +32073,31 @@ select {
   color: rgba(183, 7, 57, var(--tw-text-opacity));
 }
 
+.wh-640 {
+  width: 250px;
+  height: 250px;
+}
+
+.wh-768 {
+  width: 384px;
+  height: 384px;
+}
+
+.wh-1024 {
+  width: 512px;
+  height: 512px;
+}
+
+.wh-1280 {
+  width: 640px;
+  height: 640px;
+}
+
+.wh-1536 {
+  width: 768px;
+  height: 768px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -63318,6 +63343,31 @@ select {
   .sm\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .sm\:wh-640 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .sm\:wh-768 {
+    width: 384px;
+    height: 384px;
+  }
+
+  .sm\:wh-1024 {
+    width: 512px;
+    height: 512px;
+  }
+
+  .sm\:wh-1280 {
+    width: 640px;
+    height: 640px;
+  }
+
+  .sm\:wh-1536 {
+    width: 768px;
+    height: 768px;
   }
 }
 
@@ -94567,6 +94617,31 @@ select {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .md\:wh-640 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .md\:wh-768 {
+    width: 384px;
+    height: 384px;
+  }
+
+  .md\:wh-1024 {
+    width: 512px;
+    height: 512px;
+  }
+
+  .md\:wh-1280 {
+    width: 640px;
+    height: 640px;
+  }
+
+  .md\:wh-1536 {
+    width: 768px;
+    height: 768px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -125814,6 +125889,31 @@ select {
   .lg\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .lg\:wh-640 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .lg\:wh-768 {
+    width: 384px;
+    height: 384px;
+  }
+
+  .lg\:wh-1024 {
+    width: 512px;
+    height: 512px;
+  }
+
+  .lg\:wh-1280 {
+    width: 640px;
+    height: 640px;
+  }
+
+  .lg\:wh-1536 {
+    width: 768px;
+    height: 768px;
   }
 }
 
@@ -157063,6 +157163,31 @@ select {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .xl\:wh-640 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .xl\:wh-768 {
+    width: 384px;
+    height: 384px;
+  }
+
+  .xl\:wh-1024 {
+    width: 512px;
+    height: 512px;
+  }
+
+  .xl\:wh-1280 {
+    width: 640px;
+    height: 640px;
+  }
+
+  .xl\:wh-1536 {
+    width: 768px;
+    height: 768px;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -188310,5 +188435,30 @@ select {
   .\32xl\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .\32xl\:wh-640 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .\32xl\:wh-768 {
+    width: 384px;
+    height: 384px;
+  }
+
+  .\32xl\:wh-1024 {
+    width: 512px;
+    height: 512px;
+  }
+
+  .\32xl\:wh-1280 {
+    width: 640px;
+    height: 640px;
+  }
+
+  .\32xl\:wh-1536 {
+    width: 768px;
+    height: 768px;
   }
 }

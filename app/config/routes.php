@@ -59,3 +59,6 @@ $router->map('POST', '/admin/news/save', 'NewsController@save', 'newsSave');
 
 //Cours
 $router->map('GET', '/cours', 'CoursesController@index', 'CoursesIndex');
+
+//Pictures
+$router->map('GET', '/pictures', 'PicturesController@index', 'PicturesIndex');
