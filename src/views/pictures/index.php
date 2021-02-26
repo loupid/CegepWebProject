@@ -1,16 +1,14 @@
 <div class="div-fixed flex flex-col items-center">
     <!-- Vidéo de présentation -->
-    <div class="center">
-        <h2 class="sm:text-5xl text-4xl font-medium text-gray-900 p-3">Images du département</h2>
-    </div>
+        <h2 class="justify-center items-center sm:text-5xl text-xl font-medium text-gray-900 p-3 overflow-y-auto">Images du département</h2>
     <br>
-    <div class="wh-640 md:wh-768 lg:wh-1024 xl:wh-1280 2xl:wh-1536">
+    <div class="wh-init sm:wh-640 md:wh-768 lg:wh-1024 xl:wh-1280 2xl:wh-1536">
         <a-scene embedded="true" vr-mode-ui="enabled: false">
             <a-sky id="source" src="/images/360/IMG_20210211_135420_784.jpg" rotation="0 -90 0"></a-sky>
         </a-scene>
     </div>
     <br>
-    <div class="grid grid-cols-4 auto-rows-auto gap-5 font-bold text-white">
+    <div class="grid grid-cols-2 sm:grid-cols-4 auto-rows-auto gap-5 font-bold text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl">
         <a id="img1" class="bg-indigo-700 rounded-lg justify-center items-center transform scale-90 hover:scale-100 transition-transform cursor-pointer p-5">Image 1</a>
         <a id="img2" class="bg-indigo-700 rounded-lg justify-center items-center transform scale-90 hover:scale-100 transition-transform cursor-pointer p-5">Image 2</a>
         <a id="img3" class="bg-indigo-700 rounded-lg justify-center items-center transform scale-90 hover:scale-100 transition-transform cursor-pointer p-5">Image 3</a>

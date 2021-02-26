@@ -32073,29 +32073,35 @@ select {
   color: rgba(183, 7, 57, var(--tw-text-opacity));
 }
 
-.wh-640 {
+.wh-init
+    {
   width: 250px;
   height: 250px;
 }
 
+.wh-640 {
+  width: 500px;
+  height: 500px;
+}
+
 .wh-768 {
-  width: 384px;
-  height: 384px;
+  width: 650px;
+  height: 650px;
 }
 
 .wh-1024 {
-  width: 512px;
-  height: 512px;
+  width: 750px;
+  height: 750px;
 }
 
 .wh-1280 {
-  width: 640px;
-  height: 640px;
+  width: 900px;
+  height: 900px;
 }
 
 .wh-1536 {
-  width: 768px;
-  height: 768px;
+  width: 1000px;
+  height: 1000px;
 }
 
 @media (min-width: 640px) {
@@ -63345,29 +63351,35 @@ select {
             animation: bounce 1s infinite;
   }
 
-  .sm\:wh-640 {
+  .sm\:wh-init
+    {
     width: 250px;
     height: 250px;
   }
 
+  .sm\:wh-640 {
+    width: 500px;
+    height: 500px;
+  }
+
   .sm\:wh-768 {
-    width: 384px;
-    height: 384px;
+    width: 650px;
+    height: 650px;
   }
 
   .sm\:wh-1024 {
-    width: 512px;
-    height: 512px;
+    width: 750px;
+    height: 750px;
   }
 
   .sm\:wh-1280 {
-    width: 640px;
-    height: 640px;
+    width: 900px;
+    height: 900px;
   }
 
   .sm\:wh-1536 {
-    width: 768px;
-    height: 768px;
+    width: 1000px;
+    height: 1000px;
   }
 }
 
@@ -94618,29 +94630,35 @@ select {
             animation: bounce 1s infinite;
   }
 
-  .md\:wh-640 {
+  .md\:wh-init
+    {
     width: 250px;
     height: 250px;
   }
 
+  .md\:wh-640 {
+    width: 500px;
+    height: 500px;
+  }
+
   .md\:wh-768 {
-    width: 384px;
-    height: 384px;
+    width: 650px;
+    height: 650px;
   }
 
   .md\:wh-1024 {
-    width: 512px;
-    height: 512px;
+    width: 750px;
+    height: 750px;
   }
 
   .md\:wh-1280 {
-    width: 640px;
-    height: 640px;
+    width: 900px;
+    height: 900px;
   }
 
   .md\:wh-1536 {
-    width: 768px;
-    height: 768px;
+    width: 1000px;
+    height: 1000px;
   }
 }
 
@@ -125891,29 +125909,35 @@ select {
             animation: bounce 1s infinite;
   }
 
-  .lg\:wh-640 {
+  .lg\:wh-init
+    {
     width: 250px;
     height: 250px;
   }
 
+  .lg\:wh-640 {
+    width: 500px;
+    height: 500px;
+  }
+
   .lg\:wh-768 {
-    width: 384px;
-    height: 384px;
+    width: 650px;
+    height: 650px;
   }
 
   .lg\:wh-1024 {
-    width: 512px;
-    height: 512px;
+    width: 750px;
+    height: 750px;
   }
 
   .lg\:wh-1280 {
-    width: 640px;
-    height: 640px;
+    width: 900px;
+    height: 900px;
   }
 
   .lg\:wh-1536 {
-    width: 768px;
-    height: 768px;
+    width: 1000px;
+    height: 1000px;
   }
 }
 
@@ -157164,29 +157188,35 @@ select {
             animation: bounce 1s infinite;
   }
 
-  .xl\:wh-640 {
+  .xl\:wh-init
+    {
     width: 250px;
     height: 250px;
   }
 
+  .xl\:wh-640 {
+    width: 500px;
+    height: 500px;
+  }
+
   .xl\:wh-768 {
-    width: 384px;
-    height: 384px;
+    width: 650px;
+    height: 650px;
   }
 
   .xl\:wh-1024 {
-    width: 512px;
-    height: 512px;
+    width: 750px;
+    height: 750px;
   }
 
   .xl\:wh-1280 {
-    width: 640px;
-    height: 640px;
+    width: 900px;
+    height: 900px;
   }
 
   .xl\:wh-1536 {
-    width: 768px;
-    height: 768px;
+    width: 1000px;
+    height: 1000px;
   }
 }
 
@@ -188437,28 +188467,34 @@ select {
             animation: bounce 1s infinite;
   }
 
-  .\32xl\:wh-640 {
+  .\32xl\:wh-init
+    {
     width: 250px;
     height: 250px;
   }
 
+  .\32xl\:wh-640 {
+    width: 500px;
+    height: 500px;
+  }
+
   .\32xl\:wh-768 {
-    width: 384px;
-    height: 384px;
+    width: 650px;
+    height: 650px;
   }
 
   .\32xl\:wh-1024 {
-    width: 512px;
-    height: 512px;
+    width: 750px;
+    height: 750px;
   }
 
   .\32xl\:wh-1280 {
-    width: 640px;
-    height: 640px;
+    width: 900px;
+    height: 900px;
   }
 
   .\32xl\:wh-1536 {
-    width: 768px;
-    height: 768px;
+    width: 1000px;
+    height: 1000px;
   }
 }
