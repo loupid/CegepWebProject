@@ -51,6 +51,8 @@ $router->map('POST','/admin/save','AdminController@save', 'adminSave');
 $router->map('GET', '/admin/events', 'EventController@eventsList', 'eventsList');
 $router->map('GET', '/admin/event/create', 'EventController@create', 'eventCreate');
 
+$router->map('GET', '/evenements', 'EventController@getAll', 'eventsGetAll');
+
 //news
 $router->map('GET', '/admin/news', 'NewsController@newsList', 'newsList');
 $router->map('GET', '/admin/news/create', 'NewsController@create', 'newsCreate');
