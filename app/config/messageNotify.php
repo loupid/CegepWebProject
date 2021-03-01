@@ -8,6 +8,13 @@ return[
             'colorIcon' => 'green-700'
         ]
     ],
+    'updateNews' => [
+        0 => [
+            'message' => 'Une actualité a été modifié avec succès.',
+            'color' => 'green-500',
+            'colorIcon' => 'green-700'
+        ]
+    ],
     'addAdmin' => [
         0 => [
             'message' => 'Un nouvel administrateur est enregistré.',
@@ -15,7 +22,7 @@ return[
             'colorIcon' => 'green-700'
         ]
     ],
-    'accesError' => [
+    'authError' => [
         0 => [
             'message' => "Vous n'y avez pas accès. Veuillez vous connecter.",
             'color' => 'red-600',

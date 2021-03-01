@@ -51,6 +51,8 @@ class AdminController extends Controller
         if (password_verify($password, $result['password'])) {
             User::logout();
             User::setUser($email);
+            User::setUserId($result['id']);
+            User::login();
             Admin::update($result['id'], $this->getDatabase(), ['last_connection_date' => date("d/m/Y H:i:s")]);
             $this->redirectToRoute('adminDashboard');
         } else{

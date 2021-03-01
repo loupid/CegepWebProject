@@ -2,13 +2,15 @@
 
 namespace models;
 
+use http\Message;
+
 class News implements \Model
 {
     public $id;
     public $title;
     public $publisher_id;
     public $link;
-    public $file_id;
+    public $file_name;
     public $category;
     public $description;
     public $hide;
@@ -25,8 +27,7 @@ class News implements \Model
             $comma = ',';
         }
         $query = "INSERT INTO news (" . $attributes . " ) VALUES (" . $values . ")";
-        dump($query);
-        //$db->prepare($query)->execute($data);
+        $db->prepare($query)->execute($data);
     }
 
     public static function update($id, $db, $array = [])
@@ -39,7 +40,7 @@ class News implements \Model
             $comma = ', ';
         }
         $query .= ' where id = '.$id;
-        //$db->prepare($query)->execute();
+        $db->prepare($query)->execute();
     }
 
     public static function delete($id, $db)

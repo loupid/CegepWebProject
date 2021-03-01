@@ -27,15 +27,15 @@ function select(config) {
         },
 
         focusNextOption: function () {
-            if (this.focusedOptionIndex === null) return this.focusedOptionIndex = Object.keys(this.options).length - 1
+            if (this.focusedOptionIndex === null) return this.focusedOptionIndex = Object.keys(this.options).length - 1;
 
-            if (this.focusedOptionIndex + 1 >= Object.keys(this.options).length) return
+            if (this.focusedOptionIndex + 1 >= Object.keys(this.options).length) return;
 
-            this.focusedOptionIndex++
+            this.focusedOptionIndex++;
 
             this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
                 block: "center",
-            })
+            });
         },
 
         focusPreviousOption: function () {

@@ -18,32 +18,30 @@ $selectedItem = ob_get_clean();
 
 <div class="mt-10 sm:mt-0">
     <div class="mt-5 md:mt-0 md:col-span-2">
-        <form action="<?= $this->router->generate('newsSave') ?>" method="POST" enctype="multipart/form-data">
+        <form action="<?= $this->router->generate('newsUpdate') ?>" method="POST" enctype="multipart/form-data">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">
-
+                        <?PHP dump($news); ?>
                         <div class="col-span-6 sm:col-span-4">
                             <label for="title" class="block text-sm font-medium text-gray-700">Titre</label>
                             <input type="text" name="title" id="title" autocomplete="title"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                   required>
+                                   required value="<?= $news->title ?>">
                         </div>
-
-                        <input type="hidden" name="publisher_id">
 
                         <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                             <label for="link" class="block text-sm font-medium text-gray-700">Lien/source</label>
                             <input type="text" name="link" id="link"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                   required>
+                                   required value="<?= $news->link ?>">
                         </div>
 
-                        <input type="hidden" name="file_name">
+                        <input type="hidden" name="file_name" value="<?= $news->file_name ?>">
 
                         <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                             <label for="category" class="block text-sm font-medium text-gray-700">Catégorie</label>
-                            <div x-data="select({ data : setCategorySelectBox(), emptyOptionsMessage: 'Aucun donnée disponible.', name: 'category', placeholder: 'Sélectionnez une catégorie', value: getKey(setCategorySelectBox().test)})"
+                            <div x-data="select({ data : setCategorySelectBox(), emptyOptionsMessage: 'Aucun donnée disponible.', name: 'category', placeholder: 'Sélectionnez une catégorie', value: getKey('<?= $news->category ?>')})"
                                  x-init="init()"
                                  @click.away="closeListbox()"
                                  @keydown.escape="closeListbox()"
@@ -127,12 +125,12 @@ $selectedItem = ob_get_clean();
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                             <textarea name="description" id="description" rows="8" autocomplete="description"
                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                      required></textarea>
+                                      required><?= $news->description ?></textarea>
                         </div>
 
                         <div>
                             <label for="hide" class="block text-sm font-medium text-gray-700">Caché</label>
-                            <input type="checkbox" name="hide" id="hide" value="1" checked
+                            <input type="checkbox" id="hide" name="hide" value="1" <?= $news->hide ? 'checked':''?>
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
@@ -262,6 +260,7 @@ $selectedItem = ob_get_clean();
 
 <?php ob_start(); ?>
 <script src="/js/selectSearchBox.js"></script>
+<script src="/js/checkbox.js"></script>
 <script src="/js/newsCreate.js"></script>
 <?php $script = ob_get_clean(); ?>
 

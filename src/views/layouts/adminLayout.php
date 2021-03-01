@@ -14,6 +14,8 @@
     <script src="https://unpkg.com/create-file-list"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script type="module" src="/js/component.js"></script>
+    <script src="/js/init.js"></script>
 </head>
 <body>
 <div id="loading" class="w-screen h-screen fixed block top-0 left-0 bg-white z-50">
@@ -137,81 +139,68 @@
                         </svg>
                     </button>
 
-                    <div class="relative w-96 text-gray-800">
-                        <label>
-                            <input type="search" name="serch" placeholder="Recherche"
-                                   class="bg-gray-50 w-96 h-10 px-5 pr-10 rounded-full text-xl focus:outline-none">
-                        </label>
-                        <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-                            <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
-                                 viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
-                                 xml:space="preserve" width="512px" height="512px">
-                                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
-                            </svg>
-                        </button>
-                    </div>
                 </div>
 
                 <div class="flex items-center">
-                    <div x-data="{ notificationOpen: false }" class="relative">
-                        <button @click="notificationOpen = ! notificationOpen"
-                                class="flex mx-4 text-gray-600 focus:outline-none">
-                            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                        d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                </path>
-                            </svg>
-                        </button>
-
-                        <div x-show="notificationOpen" @click="notificationOpen = false"
-                             class="fixed inset-0 h-full w-full z-10" style="display: none;"></div>
-
-                        <div x-show="notificationOpen"
-                             class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl overflow-hidden z-10"
-                             style="width: 20rem; display: none;">
-                            <a href="#"
-                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
-                                     alt="avatar">
-                                <p class="text-sm mx-2">
-                                    <span class="font-bold" href="#">Sara Salah</span> replied on the <span
-                                            class="font-bold text-indigo-400" href="#">Upload Image</span> artical . 2m
-                                </p>
-                            </a>
-                            <a href="#"
-                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                     src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
-                                     alt="avatar">
-                                <p class="text-sm mx-2">
-                                    <span class="font-bold" href="#">Slick Net</span> start following you . 45m
-                                </p>
-                            </a>
-                            <a href="#"
-                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                     src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
-                                     alt="avatar">
-                                <p class="text-sm mx-2">
-                                    <span class="font-bold" href="#">Jane Doe</span> Like Your reply on <span
-                                            class="font-bold text-indigo-400" href="#">Test with TDD</span> artical . 1h
-                                </p>
-                            </a>
-                            <a href="#"
-                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                     src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=398&amp;q=80"
-                                     alt="avatar">
-                                <p class="text-sm mx-2">
-                                    <span class="font-bold" href="#">Abigail Bennett</span> start following you . 3h
-                                </p>
-                            </a>
-                        </div>
-                    </div>
+<!--NOTIFICATION SECTION-->
+<!--                    <div x-data="{ notificationOpen: false }" class="relative">-->
+<!--                        <button @click="notificationOpen = ! notificationOpen"-->
+<!--                                class="flex mx-4 text-gray-600 focus:outline-none">-->
+<!--                            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                <path-->
+<!--                                        d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"-->
+<!--                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"-->
+<!--                                        stroke-linejoin="round">-->
+<!--                                </path>-->
+<!--                            </svg>-->
+<!--                        </button>-->
+<!---->
+<!--                        <div x-show="notificationOpen" @click="notificationOpen = false"-->
+<!--                             class="fixed inset-0 h-full w-full z-10" style="display: none;"></div>-->
+<!---->
+<!--                        <div x-show="notificationOpen"-->
+<!--                             class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl overflow-hidden z-10"-->
+<!--                             style="width: 20rem; display: none;">-->
+<!--                            <a href="#"-->
+<!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
+<!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
+<!--                                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"-->
+<!--                                     alt="avatar">-->
+<!--                                <p class="text-sm mx-2">-->
+<!--                                    <span class="font-bold" href="#">Sara Salah</span> replied on the <span-->
+<!--                                            class="font-bold text-indigo-400" href="#">Upload Image</span> artical . 2m-->
+<!--                                </p>-->
+<!--                            </a>-->
+<!--                            <a href="#"-->
+<!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
+<!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
+<!--                                     src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"-->
+<!--                                     alt="avatar">-->
+<!--                                <p class="text-sm mx-2">-->
+<!--                                    <span class="font-bold" href="#">Slick Net</span> start following you . 45m-->
+<!--                                </p>-->
+<!--                            </a>-->
+<!--                            <a href="#"-->
+<!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
+<!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
+<!--                                     src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"-->
+<!--                                     alt="avatar">-->
+<!--                                <p class="text-sm mx-2">-->
+<!--                                    <span class="font-bold" href="#">Jane Doe</span> Like Your reply on <span-->
+<!--                                            class="font-bold text-indigo-400" href="#">Test with TDD</span> artical . 1h-->
+<!--                                </p>-->
+<!--                            </a>-->
+<!--                            <a href="#"-->
+<!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
+<!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
+<!--                                     src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=398&amp;q=80"-->
+<!--                                     alt="avatar">-->
+<!--                                <p class="text-sm mx-2">-->
+<!--                                    <span class="font-bold" href="#">Abigail Bennett</span> start following you . 3h-->
+<!--                                </p>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                     <div x-data="{ dropdownOpen: false }" class="relative">
                         <button @click="dropdownOpen = ! dropdownOpen"
@@ -230,8 +219,6 @@
                              style="display: none;">
                             <a href="#"
                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
-                            <a href="#"
-                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Products</a>
                             <a href="<?=$this->router->generate('adminLogout') ?>"
                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Se deconnecter</a>
                         </div>
@@ -249,7 +236,6 @@
 </div>
 
 <!--Add script here by a variable -->
-<script type="module" src="/js/component.js"></script>
 <?= $script ?? '' ?>
 </body>
 </html>

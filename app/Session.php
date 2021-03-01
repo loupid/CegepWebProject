@@ -7,7 +7,6 @@ class Session
     public static function get($key){
         $value = $_SESSION[$key];
         self::forget($key);
-
         return $value;
     }
 
@@ -26,5 +25,4 @@ class Session
     public static function forget($key){
         unset($_SESSION[$key]);
     }
-
 }

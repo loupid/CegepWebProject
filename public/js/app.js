@@ -115,6 +115,3 @@ btnClose.addEventListener('click', () => {
 btnOpen.addEventListener('click', () => {
     mobileMenu.classList.remove('hidden')
 })
-
-
-
