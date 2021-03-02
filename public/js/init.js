@@ -1,4 +1,4 @@
-function setCategorySelectBox() {
+function setNewsCategorySelectBox() {
     return {
         event: 'Évènementielle',
         school: 'Para-Scolaire',
@@ -7,9 +7,26 @@ function setCategorySelectBox() {
     }
 }
 
-function getKey(value){
-    for (let key in setCategorySelectBox()){
-        if (setCategorySelectBox()[key] === value){
+function getNewsKey(value){
+    for (let key in setNewsCategorySelectBox()){
+        if (setNewsCategorySelectBox()[key] === value){
+            return key;
+        }
+    }
+}
+
+function setEventCategorySelectBox() {
+    return {
+        event: 'Évènementielle',
+        school: 'Para-Scolaire',
+        info: 'Information',
+        tech: 'Technologique',
+    }
+}
+
+function getEventKey(value){
+    for (let key in setNewsCategorySelectBox()){
+        if (setNewsCategorySelectBox()[key] === value){
             return key;
         }
     }

@@ -43,7 +43,7 @@ $selectedItem = ob_get_clean();
 
                         <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                             <label for="category" class="block text-sm font-medium text-gray-700">Catégorie</label>
-                            <div x-data="select({ data : setCategorySelectBox(), emptyOptionsMessage: 'Aucun donnée disponible.', name: 'category', placeholder: 'Sélectionnez une catégorie', value: getKey(setCategorySelectBox().test)})"
+                            <div x-data="select({ data : setNewsCategorySelectBox(), emptyOptionsMessage: 'Aucun donnée disponible.', name: 'category', placeholder: 'Sélectionnez une catégorie', value: getKey(setNewsCategorySelectBox()['event'])})"
                                  x-init="init()"
                                  @click.away="closeListbox()"
                                  @keydown.escape="closeListbox()"
@@ -262,6 +262,6 @@ $selectedItem = ob_get_clean();
 
 <?php ob_start(); ?>
 <script src="/js/selectSearchBox.js"></script>
-<script src="/js/newsCreate.js"></script>
+<script src="/js/dragableFile.js"></script>
 <?php $script = ob_get_clean(); ?>
 

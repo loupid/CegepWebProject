@@ -1,5 +1,4 @@
 $(document).ready(() =>{
-    let ids = [];
     //that create function to use c
     $.extend($.expr[':'], {
         'containsi': function(elem, i, match, array)
@@ -11,23 +10,15 @@ $(document).ready(() =>{
 
     function setIds(searchText){
         $('table > tbody  > tr').each((index, tr) => {
+            $(tr).hide();
             $(tr).find(`td:containsi(${searchText})`).each((x,y) => {
-                ids.push(index);
+                $(tr).show();
             })
         });
     }
 
-    function manageGrid(){
-        $('table > tbody  > tr').each(function(index, tr) {
-            if (ids.includes(index)){
-                $(tr).show();
-            } else $(tr).hide();
-        });
-    }
     $('#searchButton').on('submit', (e) =>{
         e.preventDefault();
         setIds($('#searchBox').val());
-        manageGrid();
-        ids = [];
     })
 });
