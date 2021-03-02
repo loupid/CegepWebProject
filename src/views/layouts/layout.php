@@ -91,7 +91,7 @@
                          class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 hidden">
                         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                <a href="<?= $this->router->generate('coursesIndex') ?>" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                     <!-- Heroicon name: chart-bar -->
                                     <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

@@ -61,4 +61,4 @@ $router->map('POST', '/admin/news/save', 'NewsController@created', 'newsSave');
 $router->map('POST','/admin/news/update','NewsController@updated', 'newsUpdate');
 
 //Cours
-$router->map('GET', '/cours', 'CoursesController@index', 'CoursesIndex');
+$router->map('GET', '/cours', 'CoursesController@index', 'coursesIndex');
