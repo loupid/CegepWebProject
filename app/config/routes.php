@@ -28,7 +28,7 @@
  */
 
 //Home
-$router->map('GET','/','HomeController@index');
+$router->map('GET', '/', 'HomeController@index');
 
 
 //Programs
@@ -41,10 +41,10 @@ $router->map('GET', '/admin/logout', 'AdminController@logout', 'adminLogout');
 $router->map('GET', '/admin/dashboard', 'AdminController@dashboard', 'adminDashboard');
 $router->map('GET', '/admin/adminsList', 'AdminController@adminsList', 'adminsList');
 $router->map('GET', '/admin/create', 'AdminController@create', 'adminCreate');
-$router->map('GET','/admin/delete-[i:id]','AdminController@delete', 'adminDelete');
-$router->map('GET','/admin/edit-[i:id]','AdminController@update', 'adminEdit');
-$router->map('POST','/admin/connexion','AdminController@login', 'adminConfirm');
-$router->map('POST','/admin/save','AdminController@save', 'adminSave');
+$router->map('GET', '/admin/delete-[i:id]', 'AdminController@delete', 'adminDelete');
+$router->map('GET', '/admin/edit-[i:id]', 'AdminController@update', 'adminEdit');
+$router->map('POST', '/admin/connexion', 'AdminController@login', 'adminConfirm');
+$router->map('POST', '/admin/save', 'AdminController@save', 'adminSave');
 
 //events
 $router->map('GET', '/admin/events', 'EventController@eventsList', 'eventsList');
@@ -58,7 +58,7 @@ $router->map('GET', '/admin/news/edit-[i:id]', 'NewsController@edit', 'newsEdit'
 $router->map('POST', '/admin/news/save', 'NewsController@save', 'newsSave');
 
 //Cours
-$router->map('GET', '/cours', 'CoursesController@index', 'CoursesIndex');
+$router->map('GET', '/cours', 'CoursesController@index', 'coursesIndex');
 
 //Pictures
-$router->map('GET', '/pictures', 'PicturesController@index', 'PicturesIndex');
+$router->map('GET', '/locaux', 'PicturesController@index', 'picturesIndex');
