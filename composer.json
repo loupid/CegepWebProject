@@ -6,7 +6,8 @@
         "altorouter/altorouter": "^2.0",
         "ext-pdo": "*",
       "ext-http": "*",
-      "ext-mysql": "*"
+      "ext-mysql": "*",
+      "ext-json": "*"
     },
     "autoload": {
     }

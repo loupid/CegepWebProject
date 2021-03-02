@@ -65,7 +65,7 @@ $selectedItem = ob_get_clean();
         </div>
 
         <div class="antialiased sans-serif mx-2 -mt-12">
-            <div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
+            <div x-data="app({ events : <?=str_replace('"', "'", $events)?> })" x-init="[initDate(), getNoOfDays()]" x-cloak>
                 <div class="container mx-auto px-4 py-2 md:py-24">
                     <div class="text-gray-700 mb-2 text-2xl font-medium">
                         Calendrier
@@ -135,22 +135,22 @@ $selectedItem = ob_get_clean();
                                         <div style="height: 80px;" class="overflow-y-auto mt-1">
                                             <div
                                                     class="absolute top-0 right-0 mt-2 mr-2 inline-flex items-center justify-center rounded-full text-sm w-6 h-6 bg-gray-700 text-white leading-none"
-                                                    x-show="events.filter(e => e.event_date === new Date(year, month, date).toDateString()).length"
-                                                                                            x-text="events.filter(e => e.event_date === new Date(year, month, date).toDateString()).length"></div>
+                                                    x-show="events.filter(e => e.start_date === new Date(year, month, date).toDateString()).length"
+                                                    x-text="events.filter(e => e.start_date === new Date(year, month, date).toDateString()).length"></div>
 
                                             <template
-                                                    x-for="event in events.filter(e => new Date(e.event_date).toDateString() ===  new Date(year, month, date).toDateString() )">
-                                                <div @click="showEventModal(event.event_title, date)"
+                                                    x-for="event in events.filter(e => new Date(e.start_date).toDateString() ===  new Date(year, month, date).toDateString())">
+                                                <div @click="showEventModal(event)"
                                                      class="px-2 py-1 rounded-lg mt-1 overflow-hidden border"
                                                      :class="{
-												'border-blue-200 text-blue-800 bg-blue-100 hover:bg-blue-300': event.event_theme === 'blue',
-												'border-red-200 text-red-800 bg-red-100 hover:bg-red-300': event.event_theme === 'red',
-												'border-yellow-200 text-yellow-800 bg-yellow-100 hover:bg-yellow-300': event.event_theme === 'yellow',
-												'border-green-200 text-green-800 bg-green-100 hover:bg-green-300': event.event_theme === 'green',
-												'border-purple-200 text-purple-800 bg-purple-100 hover:bg-purple-300': event.event_theme === 'purple'
+												'border-blue-200 text-blue-800 bg-blue-100 hover:bg-blue-300': event.category === 'technologique',
+												'border-red-200 text-red-800 bg-red-100 hover:bg-red-300': event.category === 'Jeux videos',
+												'border-yellow-200 text-yellow-800 bg-yellow-100 hover:bg-yellow-300': event.category === 'yellow',
+												'border-green-200 text-green-800 bg-green-100 hover:bg-green-300': event.category === 'green',
+												'border-purple-200 text-purple-800 bg-purple-100 hover:bg-purple-300': event.category === 'purple'
 											}"
                                                 >
-                                                    <p x-text="event.event_title"
+                                                    <p x-text="event.title"
                                                        class="text-sm truncate leading-tight"></p>
                                                 </div>
                                             </template>
@@ -180,17 +180,33 @@ $selectedItem = ob_get_clean();
                             <h2 class="font-bold text-2xl mb-6 text-gray-800 border-b pb-2">Détails d'événement</h2>
 
                             <div class="mb-4">
-                                <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Event
-                                    title</label>
+                                <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Titre</label>
                                 <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
-                                       type="text" x-model="event_title" readonly>
+                                       type="text" x-model="title" readonly>
                             </div>
 
                             <div class="mb-4">
-                                <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Event
-                                    date</label>
+                                <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Organisé par</label>
                                 <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
-                                       type="text" x-model="event_date" readonly>
+                                       type="text" x-model="organizer" readonly>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Adresse</label>
+                                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
+                                       type="text" x-model="address" readonly>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Prix</label>
+                                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
+                                       type="text" x-model="price" readonly>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Date</label>
+                                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
+                                       type="text" x-model="start_date" readonly>
                             </div>
                         </div>
                     </div>
@@ -204,60 +220,20 @@ $selectedItem = ob_get_clean();
         const MONTH_NAMES = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
         const DAYS = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
 
-        function app() {
+        function app(e) {
             return {
                 month: '',
                 year: '',
                 no_of_days: [],
                 blankdays: [],
                 days: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
-
-                events: [
-                    {
-                        event_date: new Date(2021, 1, 1),
-                        event_title: "test1",
-                        event_theme: 'blue'
-                    },
-
-                    {
-                        event_date: new Date(2021, 1, 10),
-                        event_title: "test2",
-                        event_theme: 'red'
-                    },
-
-                    {
-                        event_date: new Date(2021, 1, 16),
-                        event_title: "test3",
-                        event_theme: 'green'
-                    }
-                ],
-                event_title: '',
-                event_date: '',
-                event_theme: 'blue',
-
-                themes: [
-                    {
-                        value: "blue",
-                        label: "Blue Theme"
-                    },
-                    {
-                        value: "red",
-                        label: "Red Theme"
-                    },
-                    {
-                        value: "yellow",
-                        label: "Yellow Theme"
-                    },
-                    {
-                        value: "green",
-                        label: "Green Theme"
-                    },
-                    {
-                        value: "purple",
-                        label: "Purple Theme"
-                    }
-                ],
-
+                events: e.events,
+                title: '',
+                start_date: '',
+                category: 'technologique',
+                organizer: '',
+                address: '',
+                price: '',
                 openEventModal: false,
 
                 initDate() {
@@ -274,12 +250,14 @@ $selectedItem = ob_get_clean();
                     return today.toDateString() === d.toDateString();
                 },
 
-                showEventModal(title, date) {
+                showEventModal(event) {
                     // open the modal
                     this.openEventModal = true;
-                    this.event_date = new Date(this.year, this.month, date).toDateString();
-                    debugger;
-                    this.event_title = title;
+                    this.start_date = event.start_date;
+                    this.title = event.title;
+                    this.category = event.category;
+                    this.organizer = event.organizer;
+                    this.price = event.price + '$';
                 },
 
                 getNoOfDays() {

@@ -20,7 +20,6 @@ class Controller
     {
         // Declare each key/value pair as a variable
         extract($data);
-
         // Construct the view with the variables
         try {
             if ($isAdmin == 0 || $isAdmin == 1) {

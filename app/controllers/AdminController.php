@@ -5,6 +5,7 @@ namespace controllers;
 
 use app\User;
 use models\Admin;
+use models\Event;
 use PDO;
 
 class AdminController extends Controller
@@ -79,7 +80,11 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return $this->view('admin/dashboard', [], 1);
+        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price from events;");
+        $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
+        $query->execute();
+        $events = $query->fetchAll();
+        return $this->view('admin/dashboard', ['events'=>json_encode($events)], 1);
     }
 
     public function update() {
