@@ -19,7 +19,7 @@ class EventController extends Controller
     }
 
     public function create() {
-        return $this->view('Admin/events/eventsCreate',[], 1);
+        return $this->view('Admin/events/eventCreate',[], 1);
     }
 
     public function created(){
