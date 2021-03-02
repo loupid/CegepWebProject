@@ -29,7 +29,7 @@ class EventController extends Controller
         //this will get the imageName
         $data['file_name'] = FileManager::getFileName();
         $data['publisher_id'] = User::getUserId();
-        Events::create($this->getDatabase(), $data);
+        Event::create($this->getDatabase(), $data);
         $this->addNotification('addEvents');
         return $this->redirectToRoute('eventsList');
     }
@@ -56,7 +56,7 @@ class EventController extends Controller
         }
 
         $data['publisher_id'] = User::getUserId();
-        Events::update(Session::get('eventsId'), $this->getDatabase(), $data);
+        Event::update(Session::get('eventsId'), $this->getDatabase(), $data);
         $this->addNotification('updateEvents');
         return $this->redirectToRoute('eventsList');
     }
@@ -64,7 +64,7 @@ class EventController extends Controller
     public function delete() {
         $con = $this->getDatabase();
         $match = $this->router->match();
-        Events::delete($match['params']['id'], $con);
+        Event::delete($match['params']['id'], $con);
         $this->eventsList();
     }
 }

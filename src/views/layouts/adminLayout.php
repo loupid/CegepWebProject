@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script type="module" src="/js/component.js"></script>
     <script src="/js/init.js"></script>
+    <script src="/js/admin.js"></script>
 </head>
 <body>
 <div id="loading" class="w-screen h-screen fixed block top-0 left-0 bg-white z-50">
@@ -141,7 +142,7 @@
                     </button>
 
                     <div class="relative w-96 text-gray-800">
-                        <form action="">
+                        <form id="searchButton">
                             <label>
                                 <input type="search" id="searchBox" name="search" placeholder="Recherche"
                                        class="bg-gray-50 w-96 h-10 px-5 pr-10 rounded-full text-xl focus:outline-none">
@@ -159,6 +160,7 @@
                 </div>
 
                 <div class="flex items-center">
+
 <!--NOTIFICATION SECTION-->
 <!--                    <div x-data="{ notificationOpen: false }" class="relative">-->
 <!--                        <button @click="notificationOpen = ! notificationOpen"-->
