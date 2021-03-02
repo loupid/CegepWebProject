@@ -2,19 +2,69 @@
 
 namespace controllers;
 
+use app\FileManager;
+use app\Session;
+use app\User;
+use models\Event;
+use PDO;
+
 class EventController extends Controller
 {
-    public function create()
-    {
-        return $this->view('Admin/events/eventCreate',[], 1);
+    public function eventsList() {
+        $query = $this->getDatabase()->prepare("select * from events;");
+        $query->setFetchMode(PDO::FETCH_CLASS, Events::class);
+        $query->execute();
+        $eventsList = $query->fetchAll();
+        return $this->view('Admin/events/eventsList',['eventsList' => $eventsList], 1);
     }
 
-    public function eventsList()
-    {
-        return $this->view('Admin/events/eventsList',[], 1);
+    public function create() {
+        return $this->view('Admin/events/eventsCreate',[], 1);
     }
 
-    public function save(){
+    public function created(){
+        $data = $_POST;
+        //this will save the image in the folder images/UploadedImages/
+        FileManager::saveFile();
+        //this will get the imageName
+        $data['file_name'] = FileManager::getFileName();
+        $data['publisher_id'] = User::getUserId();
+        Events::create($this->getDatabase(), $data);
+        $this->addNotification('addEvents');
+        return $this->redirectToRoute('eventsList');
+    }
 
+    public function update($id) {
+        $query = $this->getDatabase()->prepare("select * from events where id = ?;");
+        $query->setFetchMode(PDO::FETCH_CLASS, Events::class);
+        $query->execute([0=>$id]);
+        $events = $query->fetch();
+        Session::put('eventsId',$id);
+        return $this->view('Admin/events/eventsEdit',['events' => $events], 1);
+    }
+
+    public function updated(){
+        $data = $_POST;
+        //this will save the image in the folder images/UploadedImages/
+        FileManager::saveFile();
+        if (FileManager::getFileName() !== $data['file_name']){
+            $data['file_name'] = FileManager::getFileName();
+        }
+
+        if (!isset($data['hide'])){
+            $data['hide'] = 0;
+        }
+
+        $data['publisher_id'] = User::getUserId();
+        Events::update(Session::get('eventsId'), $this->getDatabase(), $data);
+        $this->addNotification('updateEvents');
+        return $this->redirectToRoute('eventsList');
+    }
+
+    public function delete() {
+        $con = $this->getDatabase();
+        $match = $this->router->match();
+        Events::delete($match['params']['id'], $con);
+        $this->eventsList();
     }
 }

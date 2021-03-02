@@ -22,7 +22,6 @@ $selectedItem = ob_get_clean();
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">
-                        <?PHP dump($news); ?>
                         <div class="col-span-6 sm:col-span-4">
                             <label for="title" class="block text-sm font-medium text-gray-700">Titre</label>
                             <input type="text" name="title" id="title" autocomplete="title"
@@ -119,17 +118,18 @@ $selectedItem = ob_get_clean();
                                     </ul>
                                 </div>
                             </div>
+                            <button x-ref="test"></button>
                         </div>
 
                         <div class="col-span-6 sm:col-span-6">
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                             <textarea name="description" id="description" rows="8" autocomplete="description"
-                                      class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                      class="mt-1 p-1.5 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                       required><?= $news->description ?></textarea>
                         </div>
 
-                        <div>
-                            <label for="hide" class="block text-sm font-medium text-gray-700">Caché</label>
+                        <div class="flex">
+                            <label for="hide" class="block text-sm font-medium text-gray-700 mr-2">Ne pas publier</label>
                             <input type="checkbox" id="hide" name="hide" value="1" <?= $news->hide ? 'checked':''?>
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
@@ -260,7 +260,6 @@ $selectedItem = ob_get_clean();
 
 <?php ob_start(); ?>
 <script src="/js/selectSearchBox.js"></script>
-<script src="/js/checkbox.js"></script>
 <script src="/js/newsCreate.js"></script>
 <?php $script = ob_get_clean(); ?>
 

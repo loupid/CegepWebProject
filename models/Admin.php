@@ -30,6 +30,7 @@ class Admin implements \Model
                 $values .= '?,';
             }
             $query = "INSERT INTO ADMINS (" . $attributes . "creation_date ) VALUES (" . $values . "STR_TO_DATE( ?, '%d/%m/%Y %H:%i:%s'))";
+            //add the value for the date in the array $data
             array_push($data, date("d/m/Y H:i:s"));
             $db->prepare($query)->execute($data);
         } //todo error message
@@ -38,18 +39,18 @@ class Admin implements \Model
     public static function update($id, $db, $array = [])
     {
         // TODO: Implement update() method.
-        $query = 'UPDATE admins SET';
-        $comma = ' ';
+        $query = "UPDATE admins SET";
+        $comma = " ";
         foreach ($array as $key => $value){
-            if ($key == 'creation_date' || $key == 'last_connection_date'){
+            if ($key == "creation_date" || $key == "last_connection_date"){
                 $query .= $comma . $key . " = STR_TO_DATE('".$value."', '%d/%m/%Y %H:%i:%s')";
             }
             else {
                 $query .= $comma . $key . " = '".$value."'";
             }
-            $comma = ', ';
+            $comma = ", ";
         }
-        $query .= ' where id = '.$id;
+        $query .= " where id = ".$id;
         $db->prepare($query)->execute();
     }
 

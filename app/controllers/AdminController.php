@@ -32,7 +32,7 @@ class AdminController extends Controller
         $con = $this->getDatabase();
         $match = $this->router->match();
         Admin::delete($match['params']['id'], $con);
-        $this->adminsList();
+        return $this->redirectToRoute('adminsList');
     }
 
     public function save() {
@@ -79,6 +79,9 @@ class AdminController extends Controller
 
     public function dashboard()
     {
+        $events = json_encode(array(
+
+        ));
         return $this->view('admin/dashboard', [], 1);
     }
 

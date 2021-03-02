@@ -65,6 +65,6 @@ class NewsController extends Controller
         $con = $this->getDatabase();
         $match = $this->router->match();
         News::delete($match['params']['id'], $con);
-        $this->newsList();
+        $this->redirectToRoute('newsList');
     }
 }

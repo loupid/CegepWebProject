@@ -143,13 +143,12 @@ $selectedItem = ob_get_clean();
                                                 <div @click="showEventModal(event.event_title, date)"
                                                      class="px-2 py-1 rounded-lg mt-1 overflow-hidden border"
                                                      :class="{
-												'border-blue-200 text-blue-800 bg-blue-100 hover:bg-blue-300': event.event_theme === 'blue',
-												'border-red-200 text-red-800 bg-red-100 hover:bg-red-300': event.event_theme === 'red',
-												'border-yellow-200 text-yellow-800 bg-yellow-100 hover:bg-yellow-300': event.event_theme === 'yellow',
-												'border-green-200 text-green-800 bg-green-100 hover:bg-green-300': event.event_theme === 'green',
-												'border-purple-200 text-purple-800 bg-purple-100 hover:bg-purple-300': event.event_theme === 'purple'
-											}"
-                                                >
+                                                     'border-blue-200 text-blue-800 bg-blue-100 hover:bg-blue-300': event.event_theme === 'blue',
+                                                     'border-red-200 text-red-800 bg-red-100 hover:bg-red-300': event.event_theme === 'red',
+                                                     'border-yellow-200 text-yellow-800 bg-yellow-100 hover:bg-yellow-300': event.event_theme === 'yellow',
+                                                     'border-green-200 text-green-800 bg-green-100 hover:bg-green-300': event.event_theme === 'green',
+                                                     'border-purple-200 text-purple-800 bg-purple-100 hover:bg-purple-300': event.event_theme === 'purple'
+                                                     }">
                                                     <p x-text="event.event_title"
                                                        class="text-sm truncate leading-tight"></p>
                                                 </div>
@@ -214,19 +213,19 @@ $selectedItem = ob_get_clean();
 
                 events: [
                     {
-                        event_date: new Date(2021, 1, 1),
+                        event_date: new Date(2021, 2, 1),
                         event_title: "test1",
                         event_theme: 'blue'
                     },
 
                     {
-                        event_date: new Date(2021, 1, 10),
+                        event_date: new Date(2021, 2, 10),
                         event_title: "test2",
                         event_theme: 'red'
                     },
 
                     {
-                        event_date: new Date(2021, 1, 16),
+                        event_date: new Date(2021, 2, 16),
                         event_title: "test3",
                         event_theme: 'green'
                     }
@@ -278,7 +277,6 @@ $selectedItem = ob_get_clean();
                     // open the modal
                     this.openEventModal = true;
                     this.event_date = new Date(this.year, this.month, date).toDateString();
-                    debugger;
                     this.event_title = title;
                 },
 
