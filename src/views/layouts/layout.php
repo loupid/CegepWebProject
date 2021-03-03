@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
     <!-- component -->
     <link rel="stylesheet" href="https://pagecdn.io/lib/font-awesome/5.10.0-11/css/all.min.css" integrity="sha256-p9TTWD+813MlLaxMXMbTA7wN/ArzGyW/L7c5+KkjOkM=" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js" integrity="sha512-/gO16YMp20RIqCZXZyvMlzALQqEoiDU0akshw25wFiXCRGl+0p/HPWkOd8HWFn6bnatGhxakGLfYhWaPPVQIyA==" crossorigin="anonymous"></script>
 
     <link rel="dns-prefetch" href="//unpkg.com" />
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
@@ -109,20 +110,19 @@
                                     </div>
                                 </a>
 
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                <a href="<?= $this->router->generate('picturesIndex') ?>" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                     <!-- Heroicon name: cursor-click -->
                                     <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                     </svg>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
-                                            Test2
+                                            Locaux
                                         </p>
                                         <p class="mt-1 text-sm text-gray-500">
-                                            Ceci est un exemple
+                                            Images 360 du département
                                         </p>
                                     </div>
                                 </a>

@@ -28,7 +28,7 @@
  */
 
 //Home
-$router->map('GET','/','HomeController@index');
+$router->map('GET', '/', 'HomeController@index');
 
 
 //Programs
@@ -62,3 +62,7 @@ $router->map('POST','/admin/news/update','NewsController@updated', 'newsUpdate')
 
 //Cours
 $router->map('GET', '/cours', 'CoursesController@index', 'coursesIndex');
+
+//Pictures
+$router->map('GET', '/locaux', 'PicturesController@index', 'picturesIndex');
+$router->map('GET', '/locaux', 'PicturesController@index', 'picturesIndex');

@@ -5,3 +5,35 @@
 .code{
     @apply text-cwc-red;
 }
+@responsive {
+    .wh-init
+    {
+        width: 250px;
+        height: 250px;
+    }
+
+    .wh-640 {
+        width: 500px;
+        height: 500px;
+    }
+
+    .wh-768 {
+        width: 650px;
+        height: 650px;
+    }
+
+    .wh-1024 {
+        width: 750px;
+        height: 750px;
+    }
+
+    .wh-1280 {
+        width: 900px;
+        height: 900px;
+    }
+
+    .wh-1536 {
+        width: 1000px;
+        height: 1000px;
+    }
+}
