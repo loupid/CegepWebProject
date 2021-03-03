@@ -1,10 +1,10 @@
 <div class="flex flex-col items-center">
-    <h2 class="justify-center items-center sm:text-5xl text-xl font-medium text-gray-800 mb-5 p-3 overflow-y-auto">
+    <h2 class="justify-center items-center text-4xl font-thin text-blue-900 text-xl text-center font-extrabold text-gray-700 mb-5 p-3 overflow-y-auto">
         Images du département</h2>
     <div id="btn_next" class="hidden md:flex swiper-button-next w-16 h-16 text-xs rounded-full text-indigo-600"></div>
-    <div class="rounded-lg">
+    <div class="rounded-lg mb-12">
         <div class=" rounded-lg wh-init rounded-lg sm:wh-640 md:wh-768 lg:wh-1024 xl:wh-1280 2xl:wh-1536">
-            <a-scene embedded="true" vr-mode-ui="enabled: false">
+            <a-scene embedded="true" vr-mode-ui="enabled: true">
                 <a-sky id="source" src="/images/360/1.jpg" rotation="0 -90 0"></a-sky>
             </a-scene>
         </div>
