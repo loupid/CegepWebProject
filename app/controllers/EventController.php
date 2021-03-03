@@ -30,7 +30,7 @@ class EventController extends Controller
         $data['file_name'] = FileManager::getFileName();
         $data['publisher_id'] = User::getUserId();
         Event::create($this->getDatabase(), $data);
-        $this->addNotification('addEvents');
+        $this->addNotification('addEvent');
         return $this->redirectToRoute('eventsList');
     }
 

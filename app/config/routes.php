@@ -17,15 +17,16 @@
 /*
  * https://developer.mozilla.org/fr/docs/Web/HTTP/M%C3%A9thode
  * Method:
- *  GET
- *  POST
- *  GET|POST
- * --------------------------------------------------------------------------------------------*
- *  By exemple if you want to change the name of the user will with the id 3                   *
- *  you will have a get method with a parameters i:id afther you have change the name          *
- *  you will have a post method with all the new informations to update the user with the id 3 *
- * --------------------------------------------------------------------------------------------*
+ * GET
+ * POST
+ * GET|POST
+ *--------------------------------------------------------------------------------------------*
+ * By exemple if you want to change the name of the user will with the id 3                   *
+ * you will have a get method with a parameters i:id afther you have change the name          *
+ * you will have a post method with all the new informations to update the user with the id 3 *
+ *--------------------------------------------------------------------------------------------*
  */
+
 
 //Home
 $router->map('GET','/','HomeController@index');
@@ -33,6 +34,7 @@ $router->map('GET','/','HomeController@index');
 
 //Programs
 $router->map('GET', '/programme', 'ProgramController@index', 'indexProgram');
+
 
 //Admin
 $router->map('GET', '/admin', 'AdminController@index', 'adminIndex');
@@ -47,11 +49,14 @@ $router->map('POST','/admin/connexion','AdminController@login', 'adminConfirm');
 $router->map('POST','/admin/created','AdminController@save', 'adminCreated');
 $router->map('POST','/admin/updated','AdminController@save', 'adminUpdated');
 
+
 //events
 $router->map('GET', '/admin/events', 'EventController@eventsList', 'eventsList');
 $router->map('GET', '/admin/event/create', 'EventController@create', 'eventCreate');
 
-$router->map('POST', '/admin/event/created', 'EventController@create', 'eventCreated');
+$router->map('POST', '/admin/event/created', 'EventController@created', 'eventCreated');
+$router->map('POST', '/admin/event/updated', 'EventController@updated', 'eventUpdated');
+
 
 //news
 $router->map('GET', '/admin/news', 'NewsController@newsList', 'newsList');

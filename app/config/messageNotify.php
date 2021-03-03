@@ -8,6 +8,13 @@ return[
             'colorIcon' => 'green-700'
         ]
     ],
+    'addEvent' => [
+        0 => [
+            'message' => 'Un nouvel évènement a été ajouté.',
+            'color' => 'green-500',
+            'colorIcon' => 'green-700'
+        ]
+    ],
     'updateNews' => [
         0 => [
             'message' => 'Une actualité a été modifié avec succès.',

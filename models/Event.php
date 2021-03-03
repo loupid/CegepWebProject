@@ -25,18 +25,21 @@ class Event implements \Model
         // TODO: Implement create() method.
         $attributes = "";
         $values = "";
+        $comma = " ";
         $data = array_values($array);
         foreach ($array as $key => $value) {
             if ($key == 'start_date' || $key == 'end_date'){
-                $attributes .= $key . ",";
-                $values .= "STR_TO_DATE( ?, '%d/%m/%Y %H:%i:%s'),";
+                $attributes .= $comma . $key ;
+                $values .= $comma . "STR_TO_DATE( ?, '%d/%m/%Y %H:%i:%s')";
             } else {
-                $attributes .= $key . ",";
-                $values .= '?,';
+                $attributes .= $comma . $key;
+                $values .= $comma . '?';
             }
+            $comma = ",";
         }
         $query = "INSERT INTO events (" . $attributes.") VALUES (" . $values . ")";
         dump($query);
+        dump($data);
         $db->prepare($query)->execute($data);
     }
 
