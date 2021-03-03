@@ -53,6 +53,8 @@ $router->map('POST','/admin/updated','AdminController@save', 'adminUpdated');
 //events
 $router->map('GET', '/admin/events', 'EventController@eventsList', 'eventsList');
 $router->map('GET', '/admin/event/create', 'EventController@create', 'eventCreate');
+$router->map('GET', '/admin/event/update/[i:id]', 'EventController@update', 'eventUpdate');
+$router->map('GET', '/admin/event/delete/[i:id]','EventController@delete', 'eventDelete');
 
 $router->map('POST', '/admin/event/created', 'EventController@created', 'eventCreated');
 $router->map('POST', '/admin/event/updated', 'EventController@updated', 'eventUpdated');

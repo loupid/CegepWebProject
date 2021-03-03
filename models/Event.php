@@ -38,9 +38,9 @@ class Event implements \Model
             $comma = ",";
         }
         $query = "INSERT INTO events (" . $attributes.") VALUES (" . $values . ")";
-        dump($query);
-        dump($data);
-        $db->prepare($query)->execute($data);
+        $test = $db->prepare($query);
+        $test->execute($data);
+        //dump($test->errorInfo());
     }
 
     public static function update($id, $db, $array = [])

@@ -24,6 +24,7 @@ class NewsController extends Controller
 
     public function created(){
         $data = $_POST;
+        dump($_POST);
         //this will save the image in the folder images/UploadedImages/
         FileManager::saveFile();
         //this will get the imageName

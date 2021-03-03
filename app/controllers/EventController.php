@@ -12,7 +12,7 @@ class EventController extends Controller
 {
     public function eventsList() {
         $query = $this->getDatabase()->prepare("select * from events;");
-        $query->setFetchMode(PDO::FETCH_CLASS, Events::class);
+        $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute();
         $eventsList = $query->fetchAll();
         return $this->view('Admin/events/eventsList',['eventsList' => $eventsList], 1);
@@ -24,6 +24,8 @@ class EventController extends Controller
 
     public function created(){
         $data = $_POST;
+        $data['start_date'] = date("d/m/Y H:i:s", strtotime($data['start_date']));
+        $data['end_date'] = date("d/m/Y H:i:s", strtotime($data['end_date']));
         //this will save the image in the folder images/UploadedImages/
         FileManager::saveFile();
         //this will get the imageName
@@ -36,11 +38,11 @@ class EventController extends Controller
 
     public function update($id) {
         $query = $this->getDatabase()->prepare("select * from events where id = ?;");
-        $query->setFetchMode(PDO::FETCH_CLASS, Events::class);
+        $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute([0=>$id]);
-        $events = $query->fetch();
+        $event = $query->fetch();
         Session::put('eventsId',$id);
-        return $this->view('Admin/events/eventsEdit',['events' => $events], 1);
+        return $this->view('Admin/events/eventEdit',['event' => $event], 1);
     }
 
     public function updated(){

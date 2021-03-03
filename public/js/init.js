@@ -25,8 +25,8 @@ function setEventCategorySelectBox() {
 }
 
 function getEventKey(value){
-    for (let key in setNewsCategorySelectBox()){
-        if (setNewsCategorySelectBox()[key] === value){
+    for (let key in setEventCategorySelectBox()){
+        if (setEventCategorySelectBox()[key] === value){
             return key;
         }
     }

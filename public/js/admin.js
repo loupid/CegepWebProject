@@ -1,5 +1,5 @@
-$(document).ready(() =>{
-    //that create function to use c
+$(document).ready(() => {
+    //that create function to use containsi
     $.extend($.expr[':'], {
         'containsi': function(elem, i, match, array)
         {
@@ -8,7 +8,7 @@ $(document).ready(() =>{
         }
     });
 
-    function setIds(searchText){
+    function gridManaging(searchText){
         $('table > tbody  > tr').each((index, tr) => {
             $(tr).hide();
             $(tr).find(`td:containsi(${searchText})`).each((x,y) => {
@@ -19,6 +19,6 @@ $(document).ready(() =>{
 
     $('#searchButton').on('submit', (e) =>{
         e.preventDefault();
-        setIds($('#searchBox').val());
+        gridManaging($('#searchBox').val());
     })
 });
