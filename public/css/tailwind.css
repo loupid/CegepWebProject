@@ -27463,6 +27463,34 @@ select {
   text-overflow: clip;
 }
 
+.hover\:truncate:hover {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hover\:overflow-ellipsis:hover {
+  text-overflow: ellipsis;
+}
+
+.hover\:overflow-clip:hover {
+  text-overflow: clip;
+}
+
+.focus\:truncate:focus {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.focus\:overflow-ellipsis:focus {
+  text-overflow: ellipsis;
+}
+
+.focus\:overflow-clip:focus {
+  text-overflow: clip;
+}
+
 .italic {
   font-style: italic;
 }
@@ -58812,6 +58840,34 @@ select {
     text-overflow: clip;
   }
 
+  .sm\:hover\:truncate:hover {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sm\:hover\:overflow-ellipsis:hover {
+    text-overflow: ellipsis;
+  }
+
+  .sm\:hover\:overflow-clip:hover {
+    text-overflow: clip;
+  }
+
+  .sm\:focus\:truncate:focus {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sm\:focus\:overflow-ellipsis:focus {
+    text-overflow: ellipsis;
+  }
+
+  .sm\:focus\:overflow-clip:focus {
+    text-overflow: clip;
+  }
+
   .sm\:italic {
     font-style: italic;
   }
@@ -90088,6 +90144,34 @@ select {
   }
 
   .md\:overflow-clip {
+    text-overflow: clip;
+  }
+
+  .md\:hover\:truncate:hover {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .md\:hover\:overflow-ellipsis:hover {
+    text-overflow: ellipsis;
+  }
+
+  .md\:hover\:overflow-clip:hover {
+    text-overflow: clip;
+  }
+
+  .md\:focus\:truncate:focus {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .md\:focus\:overflow-ellipsis:focus {
+    text-overflow: ellipsis;
+  }
+
+  .md\:focus\:overflow-clip:focus {
     text-overflow: clip;
   }
 
@@ -121370,6 +121454,34 @@ select {
     text-overflow: clip;
   }
 
+  .lg\:hover\:truncate:hover {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .lg\:hover\:overflow-ellipsis:hover {
+    text-overflow: ellipsis;
+  }
+
+  .lg\:hover\:overflow-clip:hover {
+    text-overflow: clip;
+  }
+
+  .lg\:focus\:truncate:focus {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .lg\:focus\:overflow-ellipsis:focus {
+    text-overflow: ellipsis;
+  }
+
+  .lg\:focus\:overflow-clip:focus {
+    text-overflow: clip;
+  }
+
   .lg\:italic {
     font-style: italic;
   }
@@ -152649,6 +152761,34 @@ select {
     text-overflow: clip;
   }
 
+  .xl\:hover\:truncate:hover {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .xl\:hover\:overflow-ellipsis:hover {
+    text-overflow: ellipsis;
+  }
+
+  .xl\:hover\:overflow-clip:hover {
+    text-overflow: clip;
+  }
+
+  .xl\:focus\:truncate:focus {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .xl\:focus\:overflow-ellipsis:focus {
+    text-overflow: ellipsis;
+  }
+
+  .xl\:focus\:overflow-clip:focus {
+    text-overflow: clip;
+  }
+
   .xl\:italic {
     font-style: italic;
   }
@@ -183925,6 +184065,34 @@ select {
   }
 
   .\32xl\:overflow-clip {
+    text-overflow: clip;
+  }
+
+  .\32xl\:hover\:truncate:hover {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .\32xl\:hover\:overflow-ellipsis:hover {
+    text-overflow: ellipsis;
+  }
+
+  .\32xl\:hover\:overflow-clip:hover {
+    text-overflow: clip;
+  }
+
+  .\32xl\:focus\:truncate:focus {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .\32xl\:focus\:overflow-ellipsis:focus {
+    text-overflow: ellipsis;
+  }
+
+  .\32xl\:focus\:overflow-clip:focus {
     text-overflow: clip;
   }
 

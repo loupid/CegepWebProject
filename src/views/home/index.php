@@ -17,7 +17,7 @@
             </button>
         </div>
     </div>
-    <img class="h-72 mx-auto rounded-lg" src="/images/miscs/code.png" alt="code">
+    <img class="h-72 mt-8 lg:mt-0 mx-auto rounded-lg" src="/images/miscs/code.png" alt="code">
 </section>
 
 <section class="lg:flex justify-center mx-auto my-16 p-10">

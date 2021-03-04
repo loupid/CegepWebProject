@@ -1,8 +1,7 @@
 <div class="flex-col mx-auto flex items-center justify-center pt-8 px-8">
     <?php foreach ($events as $event) { ?>
         <div class="flex flex-col w-full bg-white mb-8 rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5">
-            <img class="w-full h-64 bg-top bg-cover rounded-t" src="/images/UploadedImages/<?= $event->file_name; ?>"
-                 alt="evenement">
+            <div class="w-full h-64 bg-top bg-cover rounded-t" style="background-image: url('/images/UploadedImages/<?= $event->file_name?>'); background-position: center; background-size:cover;"></div>
             <div class="flex flex-col w-full md:flex-row">
                 <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
                     <div class="md:text-3xl"><?php
@@ -10,21 +9,15 @@
                         echo $dateObj->format('M');
                         ?>
                     </div>
-                    <div class="md:text-6xl"><?php
-                        $dateObj = DateTime::createFromFormat('Y-m-d H:i:s', $event->start_date);
-                        echo $dateObj->format('j')
-                        ?></div>
-                    <div class="md:text-xl"><?php
-                        $dateObj = DateTime::createFromFormat('Y-m-d H:i:s', $event->start_date);
-                        echo $dateObj->format('g a')
-                        ?></div>
+                    <div class="md:text-6xl"><?= $dateObj->format('j') ?></div>
+                    <div class="md:text-xl"><?= $dateObj->format('g a') ?></div>
                 </div>
                 <div class="p-4 font-normal text-gray-800 md:w-3/4">
                     <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800"><?= $event->title; ?></h1>
                     <p class="leading-normal"><?= $event->description; ?></p>
                     <div class="flex flex-row items-center mt-4 text-gray-900">
                         <div class="flex-col w-2/3">
-                            <div class="flex">
+                            <div class="flex mb-1">
                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke="currentColor" aria-hidden="true">
@@ -33,7 +26,7 @@
                                 </svg>
                                 Organisé par <?= $event->organizer; ?>
                             </div>
-                            <div class="flex">
+                            <div class="flex mb-1">
                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke="currentColor" aria-hidden="true">
@@ -53,11 +46,13 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                           d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 </svg>
-                                <?= $event->address; ?>
+                                <a target="_blank" class="hover:text-indigo-600"
+                                   href="https://www.google.com/maps/place/<?= $event->address; ?>"><?= $event->address; ?>
+                                </a>
                             </div>
                         </div>
                         <div class="w-1/3 flex-col justify-end align-bottom">
-                            <div class="flex">
+                            <div class="flex mb-1">
                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke="currentColor" aria-hidden="true">

@@ -19,7 +19,8 @@ class NewsController extends Controller
     }
 
     public function getAll() {
-        $query = $this->getDatabase()->prepare("select * from news;");
+        //todo: add creation date
+        $query = $this->getDatabase()->prepare("select title, link, category, description, file_name, /*creation_date,*/ concat(a.firstname, ' ', a.lastname) as publisher from news n inner join admins a where n.publisher_id = a.id;;");
         $query->setFetchMode(PDO::FETCH_CLASS, News::class);
         $query->execute();
         $newsList = $query->fetchAll();

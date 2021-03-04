@@ -252,7 +252,7 @@
 
                 <div class="relative">
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-                    <button id="btn-news" role="menuitem" type="button"
+                    <button id="btn-news" role="menuitem" type="button" onclick="window.location = '<?= $this->router->generate('newsIndex') ?>'"
                             class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600">
                         <span>Actualités</span>
                         <!--
@@ -517,7 +517,7 @@
         <div class="lg:flex">
             <div class="w-full lg:w-2/5">
                 <div>
-                    <a href="#">
+                    <a href="/">
                         <img class="dark:hidden inline-block" src="/images/svgs/darklogodep.svg"
                              alt="Logo département">
                     </a>

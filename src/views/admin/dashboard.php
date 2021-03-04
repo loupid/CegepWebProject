@@ -65,7 +65,8 @@ $selectedItem = ob_get_clean();
         </div>
 
         <div class="antialiased sans-serif mx-2 -mt-12">
-            <div x-data="app({ events : <?=str_replace('"', "'", $events)?> })" x-init="[initDate(), getNoOfDays()]" x-cloak>
+            <div x-data="app({ events : <?= str_replace('"', "'", $events) ?> })" x-init="[initDate(), getNoOfDays()]"
+                 x-cloak>
                 <div class="container mx-auto px-4 py-2 md:py-24">
                     <div class="text-gray-700 mb-2 text-2xl font-medium">
                         Calendrier
@@ -164,7 +165,7 @@ $selectedItem = ob_get_clean();
 
                 <!-- Modal -->
                 <div style=" background-color: rgba(0, 0, 0, 0.8)"
-                     class="fixed z-40 top-0 right-0 left-0 bottom-0 h-full w-full"
+                     class="fixed z-40 top-0 right-0 left-0 bottom-0 h-full w-full overflow-y-scroll"
                      x-show.transition.opacity="openEventModal">
                     <div class="p-4 max-w-xl mx-auto relative absolute left-0 right-0 overflow-hidden mt-24">
                         <div class="shadow absolute right-0 top-0 w-10 h-10 rounded-full bg-white text-gray-500 hover:text-gray-800 inline-flex items-center justify-center cursor-pointer"
@@ -186,7 +187,8 @@ $selectedItem = ob_get_clean();
                             </div>
 
                             <div class="mb-4">
-                                <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Organisé par</label>
+                                <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Organisé
+                                    par</label>
                                 <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
                                        type="text" x-model="organizer" readonly>
                             </div>
@@ -203,10 +205,17 @@ $selectedItem = ob_get_clean();
                                        type="text" x-model="price" readonly>
                             </div>
 
-                            <div class="mb-4">
-                                <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Date</label>
-                                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
-                                       type="text" x-model="start_date" readonly>
+                            <div class="mb-4 flex">
+                                <div class="mr-auto">
+                                    <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Date de début</label>
+                                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
+                                           type="text" x-model="start_date" readonly>
+                                </div>
+                                <div class="ml-auto">
+                                    <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Date de fin</label>
+                                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
+                                           type="text" x-model="end_date" readonly>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -230,6 +239,7 @@ $selectedItem = ob_get_clean();
                 events: e.events,
                 title: '',
                 start_date: '',
+                end_date: '',
                 category: 'technologique',
                 organizer: '',
                 address: '',
@@ -254,8 +264,10 @@ $selectedItem = ob_get_clean();
                     // open the modal
                     this.openEventModal = true;
                     this.start_date = event.start_date;
+                    this.end_date = event.end_date;
                     this.title = event.title;
                     this.category = event.category;
+                    this.address = event.address;
                     this.organizer = event.organizer;
                     this.price = event.price + '$';
                 },
