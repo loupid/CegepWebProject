@@ -16,7 +16,7 @@
                         ?></div>
                     <div class="md:text-xl"><?php
                         $dateObj = DateTime::createFromFormat('Y-m-d H:i:s', $event->start_date);
-                        echo $dateObj->format('ga')
+                        echo $dateObj->format('g a')
                         ?></div>
                 </div>
                 <div class="p-4 font-normal text-gray-800 md:w-3/4">
