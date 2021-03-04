@@ -30,10 +30,10 @@ $selectedItem = ob_get_clean();
                         Descriptions
                     </th>
                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                        Caché
+                        Publiée
                     </th>
                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-                    </tr>
+                </tr>
                 </thead>
                 <tbody class="bg-white">
                 <?php foreach ($newsList as $news){?>
@@ -51,7 +51,7 @@ $selectedItem = ob_get_clean();
                         </td>
 
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <?= ($news->hide)? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'?>"><?= ($news->hide)? "Caché" : "N'est pas Caché"; ?></span>
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <?= (!$news->hide)? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'?>"><?= (!$news->hide)? "Publiée" : "Non publiée"; ?></span>
                         </td>
 
                         <!--Action Row-->

@@ -8,9 +8,9 @@ return[
             'colorIcon' => 'green-700'
         ]
     ],
-    'updateNews' => [
+    'addEvent' => [
         0 => [
-            'message' => 'Une actualité a été modifié avec succès.',
+            'message' => 'Un nouvel évènement a été ajouté.',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
@@ -18,6 +18,34 @@ return[
     'addAdmin' => [
         0 => [
             'message' => 'Un nouvel administrateur est enregistré.',
+            'color' => 'green-500',
+            'colorIcon' => 'green-700'
+        ]
+    ],
+    'updateNews' => [
+        0 => [
+            'message' => 'Une actualité a été modifié avec succès.',
+            'color' => 'green-500',
+            'colorIcon' => 'green-700'
+        ]
+    ],
+    'updateEvent' => [
+        0 => [
+            'message' => 'Un évènement a été modifié avec succès.',
+            'color' => 'green-500',
+            'colorIcon' => 'green-700'
+        ]
+    ],
+    'updateAdmin' => [
+        0 => [
+            'message' => 'Un administrateur a été modifié avec succès.',
+            'color' => 'green-500',
+            'colorIcon' => 'green-700'
+        ]
+    ],
+    'updateAdminProfil' => [
+        0 => [
+            'message' => 'Votre profil a été modifié avec succès.',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]

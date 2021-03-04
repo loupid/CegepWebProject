@@ -30,6 +30,7 @@ class Admin implements \Model
                 $values .= '?,';
             }
             $query = "INSERT INTO ADMINS (" . $attributes . "creation_date ) VALUES (" . $values . "STR_TO_DATE( ?, '%d/%m/%Y %H:%i:%s'))";
+            //add the value for the date in the array $data
             array_push($data, date("d/m/Y H:i:s"));
             $db->prepare($query)->execute($data);
         } //todo error message
@@ -38,24 +39,44 @@ class Admin implements \Model
     public static function update($id, $db, $array = [])
     {
         // TODO: Implement update() method.
-        $query = 'UPDATE admins SET';
-        $comma = ' ';
-        foreach ($array as $key => $value){
-            if ($key == 'creation_date' || $key == 'last_connection_date'){
-                $query .= $comma . $key . " = STR_TO_DATE('".$value."', '%d/%m/%Y %H:%i:%s')";
+        if ($array['confirm_password'] == $array['password']) {
+            $query = "UPDATE admins SET";
+            $comma = " ";
+            $array['password'] = password_hash($array['password'], PASSWORD_BCRYPT);
+            unset($array['confirm_password']);
+            foreach ($array as $key => $value) {
+                if ($key == "creation_date" || $key == "last_connection_date") {
+                    $query .= $comma . $key . " = STR_TO_DATE('" . $value . "', '%d/%m/%Y %H:%i:%s')";
+                } else {
+                    $query .= $comma . $key . " = '" . $value . "'";
+                }
+                $comma = ", ";
             }
-            else {
-                $query .= $comma . $key . " = '".$value."'";
-            }
-            $comma = ', ';
+            $query .= " where id = " . $id;
+            $db->prepare($query)->execute();
         }
-        $query .= ' where id = '.$id;
-        $db->prepare($query)->execute();
+        else {
+            $query = "UPDATE admins SET";
+            $comma = " ";
+        }
     }
 
     public static function delete($id, $db)
     {
-        $query = "DELETE FROM admins WHERE id = '" . $id."'";
+        $query = "DELETE FROM admins WHERE id = '" . $id . "'";
+        $db->prepare($query)->execute();
+    }
+
+    private function executeQuery($query){
+        foreach ($array as $key => $value) {
+            if ($key == "creation_date" || $key == "last_connection_date") {
+                $query .= $comma . $key . " = STR_TO_DATE('" . $value . "', '%d/%m/%Y %H:%i:%s')";
+            } else {
+                $query .= $comma . $key . " = '" . $value . "'";
+            }
+            $comma = ", ";
+        }
+        $query .= " where id = " . $id;
         $db->prepare($query)->execute();
     }
 }

@@ -27,6 +27,7 @@ class News implements \Model
             $comma = ',';
         }
         $query = "INSERT INTO news (" . $attributes . " ) VALUES (" . $values . ")";
+        dump($query);
         $db->prepare($query)->execute($data);
     }
 

@@ -43,7 +43,7 @@ $selectedItem = ob_get_clean();
 
                         <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                             <label for="category" class="block text-sm font-medium text-gray-700">Catégorie</label>
-                            <div x-data="select({ data : setCategorySelectBox(), emptyOptionsMessage: 'Aucun donnée disponible.', name: 'category', placeholder: 'Sélectionnez une catégorie', value: getKey(setCategorySelectBox().test)})"
+                            <div x-data="select({ data : setNewsCategorySelectBox(), emptyOptionsMessage: 'Aucun donnée disponible.', name: 'category', placeholder: 'Sélectionnez une catégorie', value: 'event'})"
                                  x-init="init()"
                                  @click.away="closeListbox()"
                                  @keydown.escape="closeListbox()"
@@ -126,13 +126,13 @@ $selectedItem = ob_get_clean();
                         <div class="col-span-6 sm:col-span-6">
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                             <textarea name="description" id="description" rows="8" autocomplete="description"
-                                      class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                      class="mt-1 p-1.5 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                       required></textarea>
                         </div>
 
-                        <div>
-                            <label for="hide" class="block text-sm font-medium text-gray-700">Caché</label>
-                            <input type="checkbox" name="hide" id="hide" value="1" checked
+                        <div class="flex">
+                            <label for="hide" class="block text-sm font-medium text-gray-700 mr-2">Ne pas publier</label>
+                            <input type="checkbox" name="hide" id="hide" value="1"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
@@ -241,6 +241,7 @@ $selectedItem = ob_get_clean();
                                 </template>
                             </div>
                         </div>
+
                     </div>
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                         <button type="submit"
@@ -259,9 +260,7 @@ $selectedItem = ob_get_clean();
     </div>
 </div>
 
-
 <?php ob_start(); ?>
 <script src="/js/selectSearchBox.js"></script>
-<script src="/js/newsCreate.js"></script>
+<script src="/js/dragableFile.js"></script>
 <?php $script = ob_get_clean(); ?>
-

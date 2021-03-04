@@ -24,6 +24,7 @@ class NewsController extends Controller
 
     public function created(){
         $data = $_POST;
+        dump($_POST);
         //this will save the image in the folder images/UploadedImages/
         FileManager::saveFile();
         //this will get the imageName
@@ -65,6 +66,6 @@ class NewsController extends Controller
         $con = $this->getDatabase();
         $match = $this->router->match();
         News::delete($match['params']['id'], $con);
-        $this->newsList();
+        $this->redirectToRoute('newsList');
     }
 }

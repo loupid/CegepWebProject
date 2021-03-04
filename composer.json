@@ -3,11 +3,7 @@
         "symfony/var-dumper": "^5.2"
     },
     "require": {
-        "altorouter/altorouter": "^2.0",
-        "ext-pdo": "*",
-      "ext-http": "*",
-      "ext-mysql": "*",
-      "ext-json": "*"
+      "altorouter/altorouter": "^2.0"
     },
     "autoload": {
     }

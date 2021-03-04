@@ -14,7 +14,6 @@ function dataFileDnD() {
         remove(index) {
             let files = [...this.files];
             files.splice(index, 1);
-
             this.files = createFileList(files);
         },
         drop(e) {

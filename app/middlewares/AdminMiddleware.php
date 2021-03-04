@@ -16,5 +16,4 @@ class AdminMiddleware extends Middleware implements IMiddleware
             return $this->redirectToRoute('adminIndex');
         }
     }
-
 }
