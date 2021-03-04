@@ -43,7 +43,7 @@ return[
             'colorIcon' => 'green-700'
         ]
     ],
-    'updateAdminProfils' => [
+    'updateAdminProfil' => [
         0 => [
             'message' => 'Votre profil a été modifié avec succès.',
             'color' => 'green-500',

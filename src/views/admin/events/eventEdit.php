@@ -11,7 +11,7 @@ $selectedItem = ob_get_clean();
 
     <div class="mt-10 sm:mt-0">
         <div class="mt-5 md:mt-0 md:col-span-2">
-            <form action="<?= $this->router->generate('eventUpdated') ?>" method="POST">
+            <form action="<?= $this->router->generate('eventUpdated') ?>" method="POST" enctype="multipart/form-data">
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
                         <div class="grid grid-cols-6 gap-6">
@@ -19,7 +19,7 @@ $selectedItem = ob_get_clean();
                                 <label for="title" class="block text-sm font-medium text-gray-700">Titre</label>
                                 <input type="text" name="title" id="title" autocomplete="title"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                       required>
+                                       required value="<?= $event->title ?>">
                             </div>
 
                             <input type="hidden" name="publisher_id">
@@ -29,7 +29,7 @@ $selectedItem = ob_get_clean();
                                        class="block text-sm font-medium text-gray-700">Organisateur</label>
                                 <input type="text" name="organizer" id="organizer"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                       required>
+                                       required value="<?= $event->organizer ?>">
                             </div>
 
                             <div class="col-span-6 sm:col-span-6 lg:col-span-3">
@@ -118,26 +118,28 @@ $selectedItem = ob_get_clean();
                                 <label for="start_date" class="block text-sm font-medium text-gray-700">Début</label>
                                 <input type="datetime-local" name="start_date" id="start_date"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                       required>
+                                       required value="<?=date("Y-m-d\TH:i:s", strtotime($event->start_date)) ?>">
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="end_date" class="block text-sm font-medium text-gray-700">Fin</label>
                                 <input type="datetime-local" name="end_date" id="end_date"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                       required>
+                                       required value="<?= date("Y-m-d\TH:i:s", strtotime($event->end_date)) ?>">
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
                                 <label for="address" class="block text-sm font-medium text-gray-700">Adresse</label>
                                 <input type="text" name="address" id="address" autocomplete="address"
-                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                       value="<?= $event->address ?>">
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
                                 <label for="link" class="block text-sm font-medium text-gray-700">Lien</label>
                                 <input type="text" name="link" id="link" autocomplete="link"
-                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                       value="<?= $event->link ?>">
                             </div>
 
                             <div class="col-span-6 sm:col-span-6">
@@ -145,23 +147,24 @@ $selectedItem = ob_get_clean();
                                        class="block text-sm font-medium text-gray-700">Description</label>
                                 <textarea name="description" id="description" rows="4" autocomplete="description"
                                           class="mt-1 p-1.5 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                          required></textarea>
+                                          required><?= $event->description ?></textarea>
                             </div>
 
 
                             <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                                 <label for="price" class="block text-sm font-medium text-gray-700">Prix</label>
                                 <input type="number" step="0.01" min="0" name="price" id="price" autocomplete="price"
-                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                       value="<?= $event->price ?>">
                             </div>
 
                             <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                                 <label for="hide" class="block text-sm font-medium text-gray-700 mr-2">Ne pas publier</label>
                                 <input type="checkbox" name="hide" id="hide" value="1"
-                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md" <?= $event->hide ? 'checked':''?>>
+                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"<?= $event->hide ? 'checked':''?>>
                             </div>
 
-                            <div class="bg-white p7 rounded col-span-6 sm:col-span-6">0
+                            <div class="bg-white p7 rounded col-span-6 sm:col-span-6">
                                 <label class="block text-sm font-medium text-gray-700">
                                     Photo de couverture
                                 </label>

@@ -47,9 +47,12 @@ class EventController extends Controller
 
     public function updated(){
         $data = $_POST;
+        $data['start_date'] = date("d/m/Y H:i:s", strtotime($data['start_date']));
+        $data['end_date'] = date("d/m/Y H:i:s", strtotime($data['end_date']));
         //this will save the image in the folder images/UploadedImages/
         FileManager::saveFile();
-        if (FileManager::getFileName() !== $data['file_name']){
+
+        if (FileManager::getFileName() !== $data['file_name'] && isset($data['file_name'])){
             $data['file_name'] = FileManager::getFileName();
         }
 

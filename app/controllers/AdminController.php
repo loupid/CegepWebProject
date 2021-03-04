@@ -24,7 +24,7 @@ class AdminController extends Controller
     {
         $query = $this->getDatabase()->prepare("select * from admins where id != ?;");
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
-        $query->execute([0=>User::getUserId()]);
+        $query->execute([0 => User::getUserId()]);
         $admins = $query->fetchAll();
         return $this->view('admin/adminsList', ['admins' => $admins], 1);
     }
@@ -52,6 +52,11 @@ class AdminController extends Controller
 
     public function updated() {
         $data = $_POST;
+
+        if (!isset($data['active'])){
+            $data['active'] = 0;
+        }
+
         Admin::update(Session::get('adminId'), $this->getDatabase(), $data);
         $this->addNotification('updateAdmin');
         return $this->redirectToRoute('adminsList');
@@ -68,6 +73,11 @@ class AdminController extends Controller
 
     public function updatedProfil() {
         $data = $_POST;
+
+        if (!isset($data['active'])){
+            $data['active'] = 0;
+        }
+
         Admin::update(Session::get('adminId'), $this->getDatabase(), $data);
         $this->addNotification('updateAdminProfil');
         return $this->redirectToRoute('adminsList');
