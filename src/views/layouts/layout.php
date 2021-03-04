@@ -246,7 +246,7 @@
                     </div>
                 </div>
 
-                <a href="#" class="text-base font-medium text-gray-900 hover:text-indigo-600">
+                <a href="<?= $this->router->generate('eventsIndex') ?>" class="text-base font-medium text-gray-900 hover:text-indigo-600">
                     Événements
                 </a>
 
