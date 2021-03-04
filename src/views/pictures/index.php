@@ -3,7 +3,7 @@
         Images du département</h2>
     <div id="btn_next" class="hidden md:flex swiper-button-next w-16 h-16 text-xs rounded-full text-indigo-600"></div>
     <div class="rounded-lg mb-12">
-        <div class=" rounded-lg wh-init rounded-lg sm:wh-640 md:wh-768 lg:wh-1024 xl:wh-1280 2xl:wh-1536">
+        <div class="rounded-lg w-96 h-96">
             <a-scene embedded="true" vr-mode-ui="enabled: true">
                 <a-sky id="source" src="/images/360/1.jpg" rotation="0 -90 0"></a-sky>
             </a-scene>

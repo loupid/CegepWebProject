@@ -65,4 +65,3 @@ $router->map('GET', '/cours', 'CoursesController@index', 'coursesIndex');
 
 //Pictures
 $router->map('GET', '/locaux', 'PicturesController@index', 'picturesIndex');
-$router->map('GET', '/locaux', 'PicturesController@index', 'picturesIndex');
