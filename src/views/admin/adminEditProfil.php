@@ -10,7 +10,7 @@ $selectedItem = ob_get_clean();
 </div>
 <div class="mt-10 sm:mt-0">
     <div class="mt-5 md:mt-0 md:col-span-2">
-        <form action="<?= $this->router->generate('adminUpdated') ?>" method="POST">
+        <form action="<?=$this->router->generate('adminUpdatedProfil')?>" method="POST">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">
@@ -52,19 +52,19 @@ $selectedItem = ob_get_clean();
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->cellphone ?>">
                         </div>
 
-                        <div class="lg:col-span-3"></div>
+                        <div class="lg:col-span-2"></div>
 
-<!--                        <div class="col-span-6 sm:col-span-3">-->
-<!--                            <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>-->
-<!--                            <input type="password" name="password" id="password" autocomplete="password"-->
-<!--                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">-->
-<!--                        </div>-->
-<!---->
-<!--                        <div class="col-span-6 sm:col-span-3">-->
-<!--                            <label for="confirm_password" class="block text-sm font-medium text-gray-700">Confirmer le mot de passe</label>-->
-<!--                            <input type="password" name="confirm_password" id="confirm_password" autocomplete="password"-->
-<!--                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">-->
-<!--                        </div>-->
+                        <div class="col-span-6 sm:col-span-3">
+                            <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+                            <input type="password" name="password" id="password" autocomplete="password"
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3">
+                            <label for="confirm_password" class="block text-sm font-medium text-gray-700">Confirmer le mot de passe</label>
+                            <input type="password" name="confirm_password" id="confirm_password" autocomplete="password"
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
 
                         <div>
                             <label for="status" class="block text-sm font-medium text-gray-700">Actif</label>

@@ -59,7 +59,7 @@ class EventController extends Controller
 
         $data['publisher_id'] = User::getUserId();
         Event::update(Session::get('eventsId'), $this->getDatabase(), $data);
-        $this->addNotification('updateEvents');
+        $this->addNotification('updateEvent');
         return $this->redirectToRoute('eventsList');
     }
 

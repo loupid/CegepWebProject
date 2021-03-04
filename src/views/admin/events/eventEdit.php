@@ -158,10 +158,10 @@ $selectedItem = ob_get_clean();
                             <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                                 <label for="hide" class="block text-sm font-medium text-gray-700 mr-2">Ne pas publier</label>
                                 <input type="checkbox" name="hide" id="hide" value="1"
-                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md" <?= $event->hide ? 'checked':''?>>
                             </div>
 
-                            <div class="bg-white p7 rounded col-span-6 sm:col-span-6">
+                            <div class="bg-white p7 rounded col-span-6 sm:col-span-6">0
                                 <label class="block text-sm font-medium text-gray-700">
                                     Photo de couverture
                                 </label>
