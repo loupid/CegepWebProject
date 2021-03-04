@@ -1,9 +1,7 @@
-<section class="flex pt-8 mx-auto justify-center flex">
-    <div class="px-8 w-2/5 py-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+<section class="lg:flex pt-8 mx-auto items-center">
+    <div class="px-8 py-4 bg-white mx-auto dark:bg-gray-800 rounded-lg shadow-md lg:w-2/5">
         <div class="mt-2">
-            <a href="#"
-               class="text-2xl text-gray-900 dark:text-white font-bold">Construis ton avenir avec nous
-            </a>
+            <h2 class="text-2xl text-gray-900 dark:text-white font-bold">Construis ton avenir avec nous </h2>
             <ul class="pt-2 list-none md:list-disc md:ml-4">
                 <li class="mt-2 text-gray-800 dark:text-gray-300">Acquiers les compétences de demain.</li>
                 <li class="mt-2 text-gray-800 dark:text-gray-300">Apprend à résoudre des problèmes efficacement.</li>
@@ -19,23 +17,23 @@
             </button>
         </div>
     </div>
-    <img class="h-72 rounded-lg ml-8" src="/images/miscs/code.png" alt="code">
+    <img class="h-72 mx-auto rounded-lg" src="/images/miscs/code.png" alt="code">
 </section>
 
-<section class="flex justify-center mx-auto my-16 p-10">
-    <div class="w-1/3 text-center justify-center">
+<section class="lg:flex justify-center mx-auto my-16 p-10">
+    <div class="lg:w-1/3 text-center justify-center">
         <img class="dark:hidden inline-block" src="/images/svgs/tutoring.svg" alt="Tutorat">
         <h3 class="text-blue-800 text-2xl font-bold">Tutorat</h3>
         <p class="text-center text-lg text-gray-700">Profites de la motivation et du dévouement de nos tuteurs pour
             favoriser ta réussite ou partager tes connaissances!</p>
     </div>
-    <div class="w-1/3 text-center">
+    <div class="lg:w-1/3 text-center">
         <img class="dark:hidden inline-block pb-2" src="/images/svgs/diploma.svg" alt="Diplome">
         <h3 class="text-blue-800 text-2xl font-bold">Diplôme reconnu</h3>
         <p class="text-center text-lg text-gray-700">Profites de la formule DEC-BAC afin d'obtenir deux diplômes en 5
             ans!</p>
     </div>
-    <div class="w-1/3 text-center">
+    <div class="lg:w-1/3 text-center">
         <img class="dark:hidden inline-block" src="/images/svgs/internship.svg" alt="Stage et emplois">
         <h3 class="text-blue-800 text-2xl font-bold">Carrière professionnelle épanouie</h3>
         <p class="text-center text-lg text-gray-700">Profites de l’alternance travail-études qui te permet de réaliser
@@ -187,6 +185,6 @@
     </div>
 </section>
 
-<?php ob_start();?>
+<?php ob_start(); ?>
 <script src="/js/carousel.js"></script>
-<?php $script = ob_get_clean();?>
+<?php $script = ob_get_clean(); ?>

@@ -18,6 +18,14 @@ class NewsController extends Controller
         return $this->view('Admin/news/newsList',['newsList' => $newsList], 1);
     }
 
+    public function getAll() {
+        $query = $this->getDatabase()->prepare("select * from news;");
+        $query->setFetchMode(PDO::FETCH_CLASS, News::class);
+        $query->execute();
+        $newsList = $query->fetchAll();
+        return $this->view('news/index',['newsList' => $newsList], 0);
+    }
+
     public function create() {
         return $this->view('Admin/news/newsCreate',[], 1);
     }
