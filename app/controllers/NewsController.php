@@ -18,6 +18,15 @@ class NewsController extends Controller
         return $this->view('Admin/news/newsList',['newsList' => $newsList], 1);
     }
 
+    public function getAll() {
+        //todo: add creation date
+        $query = $this->getDatabase()->prepare("select n.id, title, link, category, description, file_name, /*creation_date,*/ concat(a.firstname, ' ', a.lastname) as publisher from news n inner join admins a where n.publisher_id = a.id;");
+        $query->setFetchMode(PDO::FETCH_CLASS, News::class);
+        $query->execute();
+        $newsList = $query->fetchAll();
+        return $this->view('news/index',['newsList' => $newsList], 0);
+    }
+
     public function create() {
         return $this->view('Admin/news/newsCreate',[], 1);
     }
@@ -42,6 +51,15 @@ class NewsController extends Controller
         $news = $query->fetch();
         Session::put('newsId',$id);
         return $this->view('Admin/news/newsEdit',['news' => $news], 1);
+    }
+
+    public function getNews($id) {
+        $query = $this->getDatabase()->prepare("select n.id, title, link, category, description, file_name, /*creation_date,*/ concat(a.firstname, ' ', a.lastname) as publisher from news n inner join admins a where n.publisher_id = a.id and n.id = ?;");
+        $query->setFetchMode(PDO::FETCH_CLASS, News::class);
+        $query->execute([0=>$id]);
+        $news = $query->fetch();
+        Session::put('newsId',$id);
+        return $this->view('news/newsDetails',['news' => $news], 0);
     }
 
     public function updated(){
