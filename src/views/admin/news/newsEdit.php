@@ -22,7 +22,6 @@ $selectedItem = ob_get_clean();
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">
-                        <?PHP dump($news); ?>
                         <div class="col-span-6 sm:col-span-4">
                             <label for="title" class="block text-sm font-medium text-gray-700">Titre</label>
                             <input type="text" name="title" id="title" autocomplete="title"

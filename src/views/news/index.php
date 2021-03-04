@@ -17,7 +17,7 @@
                         <?= substr($news->description, 0, 200) . '...' ?>
                     </p>
                 </div>
-                <button type="button" onclick="window.location = '<?= $this->router->generate('indexProgram') ?>'"
+                <button type="button" onclick="window.location = '<?= $this->router->generate('newsDetails', ['id'=>$news->id]) ?>'"
                         class="bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300">
                     Lire la suite
                 </button>
