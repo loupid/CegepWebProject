@@ -1,5 +1,5 @@
 <div class="p-8">
-    <div class="md:p-8 p-2 rounded-lg mx-auto bg-white w-2/3">
+    <div class="md:p-8 p-2 rounded-lg mx-auto bg-white w-4/5">
         <div class="mb-4">
             <img class="rounded-lg w-full"
                  src="/images/UploadedImages/<?= $news->file_name ?>"

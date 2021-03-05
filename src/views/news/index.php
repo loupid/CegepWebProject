@@ -22,7 +22,7 @@
                     Lire la suite
                 </button>
             </div>
-            <div class="flex items-center ml-8 my-2 absolute inset-x-0 bottom-0 space-x-2">
+            <div class="flex items-center lg:ml-8 my-2 lg:absolute lg:inset-x-0 lg:bottom-0 space-x-2">
                 <div>
                     <p class="text-gray-900 font-semibold"><?= $news->publisher ?></p>
                     <p class="text-gray-500 font-semibold text-sm">
