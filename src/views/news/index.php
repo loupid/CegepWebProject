@@ -41,4 +41,3 @@
         </div>
     <?php } ?>
 </div>
-<!--End of parent div-->

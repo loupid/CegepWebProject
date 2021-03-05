@@ -71,6 +71,55 @@
     </div>
 </section>
 
+
+<section>
+    <h2 class=" ml-8 mt-8 text-gray-800 dark:text-gray-100 text-3xl font-bold">Actualités</h2>
+    <div class="p-8 grid grid-cols-1 md:grid-cols-3 gap-3 my-auto">
+        <?php foreach ($newsList as $news) { ?>
+            <div class="md:p-8 p-2 rounded-lg bg-white relative">
+                <div class="mb-4">
+                    <img class="rounded-lg w-full"
+                         src="/images/UploadedImages/<?= $news->file_name ?>"
+                         alt="news_image"/>
+
+                    <p class="text-indigo-500 font-semibold text-base mt-2"><?= $news->category ?></p>
+
+                    <h1 class="font-semibold mb-2 text-gray-900 leading-none text-xl mt-1 capitalize truncate">
+                        <?= $news->title ?>
+                    </h1>
+
+                    <div class="max-w-full h-36">
+                        <p class="text-base font-medium tracking-wide text-gray-600 mt-1">
+                            <?= substr($news->description, 0, 200) . '...' ?>
+                        </p>
+                    </div>
+                    <button type="button"
+                            onclick="window.location = '<?= $this->router->generate('newsDetails', ['id' => $news->id]) ?>'"
+                            class="bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300">
+                        Lire la suite
+                    </button>
+                </div>
+                <div class="flex items-center lg:ml-8 my-2 lg:absolute lg:inset-x-0 lg:bottom-0 space-x-2">
+                    <div>
+                        <p class="text-gray-900 font-semibold"><?= $news->publisher ?></p>
+                        <p class="text-gray-500 font-semibold text-sm">
+                            <!--                   todo: add creation date-->
+                            <?php
+                            $dateObj = DateTime::createFromFormat('Y-m-d H:i:s', '2021-03-23 02:29:49');
+                            echo $dateObj->format('j M Y');
+                            ?>
+                            &middot; <?php
+                            $estimation = ceil((str_word_count($news->description) / 130));
+                            echo $estimation . ($estimation > 1 ? ' minutes' : ' minute');
+                            ?> de lecture
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+</section>
+
 <section class="mt-16 pb-16" style="font-family:Roboto,serif">
     <h1 class="text-4xl font-thin text-blue-900 text-xl text-center font-extrabold text-gray-700 mt-10">
         Nos étudiants témoignent</h1>
