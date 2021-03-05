@@ -35,7 +35,7 @@ class LinksController extends Controller
     public function created()
     {
         Link::create($this->getDatabase(), $_POST);
-        return $this->redirectToRoute('linksIndex');
+        return $this->redirectToRoute('linksList');
     }
 
     /* Pourquoi est-ce que le edit a un param et le delete non? Pourquoi ne pas utiliser la même chose? */
@@ -50,9 +50,16 @@ class LinksController extends Controller
         return $this->view('admin/links/linksEdit', ['link' => $link], 1);
     }
 
+    public function updated(){
+        $data = $_POST;
+        Link::update(Session::get('linkId'), $this->getDatabase(), $data);
+        return $this->redirectToRoute('linksList');
+    }
+
     public function delete()
     {
         $match = $this->router->match();
         Link::delete($match['params']['id'], $this->getDatabase());
+        return $this->redirectToRoute('linksList');
     }
 }

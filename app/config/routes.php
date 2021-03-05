@@ -91,4 +91,4 @@ $router->map('GET', '/admin/links/update/[i:id]', 'LinksController@update', 'lin
 $router->map('GET', '/admin/links/delete/[i:id]', 'LinksController@delete', 'linksDelete');
 
 $router->map('POST', '/admin/links/save', 'LinksController@created', 'linksSave');
-$router->map('POST', '/admin/links/update', 'LinksController@updated', 'linksUpdated');
+$router->map('POST', '/admin/links/updated', 'LinksController@updated', 'linksUpdated');
