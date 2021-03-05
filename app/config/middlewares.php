@@ -32,7 +32,7 @@ return [
     "newsCreate" => [
         AdminMiddleware::class
     ],
-    "newsEdit" => [
+    "newsUpdate" => [
         AdminMiddleware::class
     ]
 ];

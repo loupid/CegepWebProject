@@ -35,8 +35,14 @@ $router->map('GET', '/', 'HomeController@index');
 //Programs
 $router->map('GET', '/programme', 'ProgramController@index', 'indexProgram');
 
+
 //Cours
-$router->map('GET', '/cours', 'CoursesController@index', 'CoursesIndex');
+$router->map('GET', '/cours', 'CoursesController@index', 'coursesIndex');
+
+
+//Pictures
+$router->map('GET', '/locaux', 'PicturesController@index', 'picturesIndex');
+
 
 //Admin
 $router->map('GET', '/admin', 'AdminController@index', 'adminIndex');
@@ -44,7 +50,7 @@ $router->map('GET', '/admin/logout', 'AdminController@logout', 'adminLogout');
 $router->map('GET', '/admin/dashboard', 'AdminController@dashboard', 'adminDashboard');
 $router->map('GET', '/admin/adminsList', 'AdminController@adminsList', 'adminsList');
 $router->map('GET', '/admin/create', 'AdminController@create', 'adminCreate');
-$router->map('GET', '/admin/update/[i:id]','AdminController@update', 'adminEdit');
+$router->map('GET', '/admin/update/[i:id]','AdminController@update', 'adminUpdate');
 $router->map('GET', '/admin/updateprofil/[i:id]','AdminController@updateProfil', 'adminUpdateProfil');
 $router->map('GET', '/admin/delete/[i:id]','AdminController@delete', 'adminDelete');
 
@@ -67,21 +73,16 @@ $router->map('POST', '/admin/event/updated', 'EventController@updated', 'eventUp
 
 
 //news
-$router->map('GET', '/admin/news', 'NewsController@newsList', 'newsList');
 $router->map('GET', '/actualites', 'NewsController@getAll', 'newsIndex');
 $router->map('GET', '/actualites/[i:id]','NewsController@getNews', 'newsDetails');
+$router->map('GET', '/admin/news', 'NewsController@newsList', 'newsList');
 $router->map('GET', '/admin/news/create', 'NewsController@create', 'newsCreate');
-$router->map('GET', '/admin/news/update/[i:id]', 'NewsController@update', 'newsEdit');
+$router->map('GET', '/admin/news/update/[i:id]', 'NewsController@update', 'newsUpdate');
 $router->map('GET', '/admin/news/delete/[i:id]','NewsController@delete', 'newsDelete');
 
-$router->map('POST','/admin/news/created', 'NewsController@created', 'newsSave');
-$router->map('POST','/admin/news/updated','NewsController@updated', 'newsUpdate');
+$router->map('POST','/admin/news/created', 'NewsController@created', 'newsCreated');
+$router->map('POST','/admin/news/updated','NewsController@updated', 'newsUpdated');
 
-//Cours
-$router->map('GET', '/cours', 'CoursesController@index', 'coursesIndex');
-
-//Pictures
-$router->map('GET', '/locaux', 'PicturesController@index', 'picturesIndex');
 
 //links
 $router->map('GET', '/links', 'LinksController@index', 'linksIndex');
@@ -90,5 +91,5 @@ $router->map('GET', '/admin/links/create', 'LinksController@create', 'linksCreat
 $router->map('GET', '/admin/links/update/[i:id]', 'LinksController@update', 'linksUpdate');
 $router->map('GET', '/admin/links/delete/[i:id]', 'LinksController@delete', 'linksDelete');
 
-$router->map('POST', '/admin/links/save', 'LinksController@created', 'linksSave');
-$router->map('POST', '/admin/links/update', 'LinksController@updated', 'linksUpdated');
+$router->map('POST', '/admin/links/created', 'LinksController@created', 'linksCreated');
+$router->map('POST', '/admin/links/updated', 'LinksController@updated', 'linksUpdated');
