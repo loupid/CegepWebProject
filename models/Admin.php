@@ -29,7 +29,7 @@ class Admin implements \Model
                 $attributes .= $key . ",";
                 $values .= '?,';
             }
-            $query = "INSERT INTO ADMINS (" . $attributes . "creation_date ) VALUES (" . $values . "STR_TO_DATE( ?, '%d/%m/%Y %H:%i:%s'))";
+            $query = "INSERT INTO ADMINS (" . $attributes . "creation_date) VALUES (" . $values . "STR_TO_DATE( ?, '%d/%m/%Y %H:%i:%s'))";
             //add the value for the date in the array $data
             array_push($data, date("d/m/Y H:i:s"));
             $db->prepare($query)->execute($data);
@@ -58,25 +58,22 @@ class Admin implements \Model
         else {
             $query = "UPDATE admins SET";
             $comma = " ";
+            foreach ($array as $key => $value) {
+                if ($key == "creation_date" || $key == "last_connection_date") {
+                    $query .= $comma . $key . " = STR_TO_DATE('" . $value . "', '%d/%m/%Y %H:%i:%s')";
+                } else {
+                    $query .= $comma . $key . " = '" . $value . "'";
+                }
+                $comma = ", ";
+            }
+            $query .= " where id = " . $id;
+            $db->prepare($query)->execute();
         }
     }
 
     public static function delete($id, $db)
     {
         $query = "DELETE FROM admins WHERE id = '" . $id . "'";
-        $db->prepare($query)->execute();
-    }
-
-    private function executeQuery($query){
-        foreach ($array as $key => $value) {
-            if ($key == "creation_date" || $key == "last_connection_date") {
-                $query .= $comma . $key . " = STR_TO_DATE('" . $value . "', '%d/%m/%Y %H:%i:%s')";
-            } else {
-                $query .= $comma . $key . " = '" . $value . "'";
-            }
-            $comma = ", ";
-        }
-        $query .= " where id = " . $id;
         $db->prepare($query)->execute();
     }
 }

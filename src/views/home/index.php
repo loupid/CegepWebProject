@@ -71,6 +71,14 @@
     </div>
 </section>
 
+
+<section>
+    <h2 class=" ml-8 mt-8 text-gray-800 dark:text-gray-100 text-3xl font-bold">Actualités</h2>
+    <?php
+    include '../src/views/news/index.php';
+    ?>
+</section>
+
 <section class="mt-16 pb-16" style="font-family:Roboto,serif">
     <h1 class="text-4xl font-thin text-blue-900 text-xl text-center font-extrabold text-gray-700 mt-10">
         Nos étudiants témoignent</h1>

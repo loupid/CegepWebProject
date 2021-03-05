@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '07f8b8905d7fec9ba96a2f079459831af535bda0',
+    'reference' => '3f043bb6e642c1923754a2150c3e9f43e447e4ec',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '07f8b8905d7fec9ba96a2f079459831af535bda0',
+      'reference' => '3f043bb6e642c1923754a2150c3e9f43e447e4ec',
     ),
     'altorouter/altorouter' => 
     array (
@@ -49,12 +49,12 @@
     ),
     'symfony/var-dumper' => 
     array (
-      'pretty_version' => 'v5.2.3',
-      'version' => '5.2.3.0',
+      'pretty_version' => 'v5.2.4',
+      'version' => '5.2.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => '72ca213014a92223a5d18651ce79ef441c12b694',
+      'reference' => '6a81fec0628c468cf6d5c87a4d003725e040e223',
     ),
   ),
 );
