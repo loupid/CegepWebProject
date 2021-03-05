@@ -71,7 +71,6 @@
     </div>
 </section>
 
-
 <section>
     <h2 class=" ml-8 mt-8 text-gray-800 dark:text-gray-100 text-3xl font-bold">Actualités</h2>
     <?php
