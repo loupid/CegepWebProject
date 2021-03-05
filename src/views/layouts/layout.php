@@ -11,11 +11,14 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
     <!-- component -->
-    <link rel="stylesheet" href="https://pagecdn.io/lib/font-awesome/5.10.0-11/css/all.min.css" integrity="sha256-p9TTWD+813MlLaxMXMbTA7wN/ArzGyW/L7c5+KkjOkM=" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js" integrity="sha512-/gO16YMp20RIqCZXZyvMlzALQqEoiDU0akshw25wFiXCRGl+0p/HPWkOd8HWFn6bnatGhxakGLfYhWaPPVQIyA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pagecdn.io/lib/font-awesome/5.10.0-11/css/all.min.css"
+          integrity="sha256-p9TTWD+813MlLaxMXMbTA7wN/ArzGyW/L7c5+KkjOkM=" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js"
+            integrity="sha512-/gO16YMp20RIqCZXZyvMlzALQqEoiDU0akshw25wFiXCRGl+0p/HPWkOd8HWFn6bnatGhxakGLfYhWaPPVQIyA=="
+            crossorigin="anonymous"></script>
 
-    <link rel="dns-prefetch" href="//unpkg.com" />
-    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//unpkg.com"/>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 
@@ -28,6 +31,7 @@
         .modal {
             transition: opacity 0.25s ease;
         }
+
         body.modal-active {
             overflow-x: hidden;
             overflow-y: visible !important;
@@ -70,8 +74,9 @@
 
                 <div class="relative">
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-<!--                    isset($this) ? $this->router->generate('indexProgram') : $router->generate('indexProgram')                  -->
-                    <button id="btn-program" type="button" onclick="window.location = '<?= $this->router->generate('indexProgram') ?>'"
+                    <!--                    isset($this) ? $this->router->generate('indexProgram') : $router->generate('indexProgram')                  -->
+                    <button id="btn-program" type="button"
+                            onclick="window.location = '<?= $this->router->generate('indexProgram') ?>'"
                             class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 ">
                         <span>Programme</span>
                         <!--
@@ -92,7 +97,8 @@
                          class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 hidden">
                         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                <a href="<?= $this->router->generate('coursesIndex') ?>" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                <a href="<?= $this->router->generate('coursesIndex') ?>"
+                                   class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                     <!-- Heroicon name: chart-bar -->
                                     <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -110,12 +116,14 @@
                                     </div>
                                 </a>
 
-                                <a href="<?= $this->router->generate('picturesIndex') ?>" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                <a href="<?= $this->router->generate('picturesIndex') ?>"
+                                   class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                     <!-- Heroicon name: cursor-click -->
                                     <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                                     </svg>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
@@ -148,118 +156,108 @@
                     </div>
                 </div>
 
-                <div class="relative">
-                    <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-                    <button id="btn-students" role="menuitem" type="button"
-                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 ">
-                        <span>Étudiants</span>
-                        <!--
-                          Heroicon name: chevron-down
+                <!--                section etudiants a venir-->
+                <!--                <div class="relative">-->
+                <!--                    <button id="btn-students" role="menuitem" type="button"-->
+                <!--                            class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 ">-->
+                <!--                        <span>Étudiants</span>-->
+                <!--                          Heroicon name: chevron-down-->
+                <!---->
+                <!--                          Item active: "text-gray-600", Item inactive: "text-gray-400"-->
+                <!--                        <svg class="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"-->
+                <!--                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"-->
+                <!--                             aria-hidden="true">-->
+                <!--                            <path fill-rule="evenodd"-->
+                <!--                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"-->
+                <!--                                  clip-rule="evenodd"/>-->
+                <!--                        </svg>-->
+                <!--                    </button>-->
+                <!---->
+                <!--                    <div id="students-dropdown" class="absolute z-10 mt-3 px-2 w-screen max-w-md sm:px-0 hidden">-->
+                <!--                        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">-->
+                <!--                            <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">-->
+                <!--                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">-->
+                <!--                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"-->
+                <!--                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"-->
+                <!--                                         stroke="currentColor" aria-hidden="true">-->
+                <!--                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
+                <!--                                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>-->
+                <!--                                    </svg>-->
+                <!--                                    <div class="ml-4">-->
+                <!--                                        <p class="text-base font-medium text-gray-900">-->
+                <!--                                            Projets des étudiants-->
+                <!--                                        </p>-->
+                <!--                                        <p class="mt-1 text-sm text-gray-500">-->
+                <!--                                            Lorem ipsum...-->
+                <!--                                        </p>-->
+                <!--                                    </div>-->
+                <!--                                </a>-->
+                <!---->
+                <!--                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">-->
+                <!--                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"-->
+                <!--                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"-->
+                <!--                                         stroke="currentColor" aria-hidden="true">-->
+                <!--                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
+                <!--                                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>-->
+                <!--                                    </svg>-->
+                <!--                                    <div class="ml-4">-->
+                <!--                                        <p class="text-base font-medium text-gray-900">-->
+                <!--                                            Bourse-->
+                <!--                                        </p>-->
+                <!--                                        <p class="mt-1 text-sm text-gray-500">-->
+                <!--                                            Liste des bourses disponibles-->
+                <!--                                        </p>-->
+                <!--                                    </div>-->
+                <!--                                </a>-->
+                <!---->
+                <!--                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">-->
+                <!--                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"-->
+                <!--                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"-->
+                <!--                                         stroke="currentColor" aria-hidden="true">-->
+                <!--                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
+                <!--                                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>-->
+                <!--                                    </svg>-->
+                <!--                                    <div class="ml-4">-->
+                <!--                                        <p class="text-base font-medium text-gray-900">-->
+                <!--                                            Témoignages d'étudiants-->
+                <!--                                        </p>-->
+                <!--                                        <p class="mt-1 text-sm text-gray-500">-->
+                <!--                                            Lorem ipsum-->
+                <!--                                        </p>-->
+                <!--                                    </div>-->
+                <!--                                </a>-->
+                <!---->
+                <!--                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">-->
+                <!--                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"-->
+                <!--                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"-->
+                <!--                                         stroke="currentColor" aria-hidden="true">-->
+                <!--                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
+                <!--                                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>-->
+                <!--                                    </svg>-->
+                <!--                                    <div class="ml-4">-->
+                <!--                                        <p class="text-base font-medium text-gray-900">-->
+                <!--                                            Palmarès et alumni-->
+                <!--                                        </p>-->
+                <!--                                        <p class="mt-1 text-sm text-gray-500">-->
+                <!--                                            Lorem ipsum...-->
+                <!--                                        </p>-->
+                <!--                                    </div>-->
+                <!--                                </a>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
 
-                          Item active: "text-gray-600", Item inactive: "text-gray-400"
-                        -->
-                        <svg class="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                             aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                  clip-rule="evenodd"/>
-                        </svg>
-                    </button>
-
-                    <div id="students-dropdown" class="absolute z-10 mt-3 px-2 w-screen max-w-md sm:px-0 hidden">
-                        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                            <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                    <!-- Heroicon name: calendar -->
-                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                    </svg>
-                                    <div class="ml-4">
-                                        <p class="text-base font-medium text-gray-900">
-                                            Projets des étudiants
-                                        </p>
-                                        <p class="mt-1 text-sm text-gray-500">
-                                            Lorem ipsum...
-                                        </p>
-                                    </div>
-                                </a>
-
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                    <!-- Heroicon name: shield-check -->
-                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                                    </svg>
-                                    <div class="ml-4">
-                                        <p class="text-base font-medium text-gray-900">
-                                            Bourse
-                                        </p>
-                                        <p class="mt-1 text-sm text-gray-500">
-                                            Liste des bourses disponibles
-                                        </p>
-                                    </div>
-                                </a>
-
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                    <!-- Heroicon name: shield-check -->
-                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                                    </svg>
-                                    <div class="ml-4">
-                                        <p class="text-base font-medium text-gray-900">
-                                            Témoignages d'étudiants
-                                        </p>
-                                        <p class="mt-1 text-sm text-gray-500">
-                                            Lorem ipsum
-                                        </p>
-                                    </div>
-                                </a>
-
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                    <!-- Heroicon name: shield-check -->
-                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                                    </svg>
-                                    <div class="ml-4">
-                                        <p class="text-base font-medium text-gray-900">
-                                            Palmarès et alumni
-                                        </p>
-                                        <p class="mt-1 text-sm text-gray-500">
-                                            Lorem ipsum...
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="<?= $this->router->generate('eventsIndex') ?>" class="text-base font-medium text-gray-900 hover:text-indigo-600">
+                <a href="<?= $this->router->generate('eventsIndex') ?>"
+                   class="text-base font-medium text-gray-900 hover:text-indigo-600">
                     Événements
                 </a>
 
                 <div class="relative">
-                    <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-                    <button id="btn-news" role="menuitem" type="button" onclick="window.location = '<?= $this->router->generate('newsIndex') ?>'"
+                    <button id="btn-news" role="menuitem" type="button"
+                            onclick="window.location = '<?= $this->router->generate('newsIndex') ?>'"
                             class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600">
                         <span>Actualités</span>
-                        <!--
-                          Heroicon name: chevron-down
-
-                          Item active: "text-gray-600", Item inactive: "text-gray-400"
-                        -->
                         <svg class="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                              aria-hidden="true">
@@ -273,7 +271,6 @@
                         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                                 <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                    <!-- Heroicon name: calendar -->
                                     <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke="currentColor" aria-hidden="true">
@@ -344,15 +341,9 @@
                 </div>
 
                 <div class="relative">
-                    <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
                     <button id="btn-more" role="menuitem" type="button"
                             class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 ">
                         <span>Plus</span>
-                        <!--
-                          Heroicon name: chevron-down
-
-                          Item active: "text-gray-600", Item inactive: "text-gray-400"
-                        -->
                         <svg class="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                              aria-hidden="true">
@@ -365,26 +356,25 @@
                     <div id="more-dropdown" class="absolute z-10 mt-3 px-2 w-screen max-w-md sm:px-0 hidden">
                         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                    <!-- Heroicon name: calendar -->
+                                <a href="" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                     <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                                     </svg>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
                                             Liens utiles
                                         </p>
                                         <p class="mt-1 text-sm text-gray-500">
-                                            bla bla bla
+                                            Des liens qui pourraient t'aider dans ton cheminement scolaire et vie
+                                            étudiante
                                         </p>
                                     </div>
                                 </a>
 
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                    <!-- Heroicon name: shield-check -->
+                                <a href="" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                     <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke="currentColor" aria-hidden="true">
@@ -396,7 +386,7 @@
                                             Ressources
                                         </p>
                                         <p class="mt-1 text-sm text-gray-500">
-                                            Ressources du département et du Cégep à ta disposition
+                                            Les ressources du département et du Cégep sont à ta disposition
                                         </p>
                                     </div>
                                 </a>
@@ -419,7 +409,6 @@
                         <button id="btn-close-mobile-menu" type="button"
                                 class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                             <span class="sr-only">Close menu</span>
-                            <!-- Heroicon name: x -->
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -430,46 +419,68 @@
                 </div>
                 <div class="mt-6">
                     <nav class="grid gap-y-8">
-                        <a href="<?= $this->router->generate('indexProgram') ?>" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                            <!-- Heroicon name: chart-bar -->
+                        <a href="/"
+                           class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
                                  fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                            <span class="ml-3 text-base font-medium text-gray-900">
+                Accueil
+              </span>
+                        </a>
+                        <a href="<?= $this->router->generate('indexProgram') ?>"
+                           class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                            <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
                             <span class="ml-3 text-base font-medium text-gray-900">
                 Programme
               </span>
                         </a>
-                        <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                            <!-- Heroicon name: cursor-click -->
+                        <a href="<?= $this->router->generate('coursesIndex') ?>"
+                           class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
                                  fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+                                      d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
                             </svg>
                             <span class="ml-3 text-base font-medium text-gray-900">
                 Cours
               </span>
                         </a>
-                        <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                            <!-- Heroicon name: shield-check -->
+                        <a href="<?= $this->router->generate('picturesIndex') ?>"
+                           class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
                                  fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                            <span class="ml-3 text-base font-medium text-gray-900">
+                Locaux
+              </span>
+                        </a>
+                        <a href="<?= $this->router->generate('eventsIndex') ?>"
+                           class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                            <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                             <span class="ml-3 text-base font-medium text-gray-900">
                 Événements
               </span>
                         </a>
 
-                        <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                            <!-- Heroicon name: view-grid -->
+                        <a href="<?= $this->router->generate('newsIndex') ?>"
+                           class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
                                  fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                                      d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
                             </svg>
                             <span class="ml-3 text-base font-medium text-gray-900">
                 Actualités
@@ -481,19 +492,11 @@
             <div class="py-6 px-5 space-y-6">
                 <div class="grid grid-cols-2 gap-y-4 gap-x-8">
                     <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                        Test1
+                        Liens utiles
                     </a>
 
                     <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                        Test2
-                    </a>
-
-                    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                        Test3
-                    </a>
-
-                    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                        Test4
+                        Ressources
                     </a>
                 </div>
                 <div>
@@ -510,7 +513,6 @@
 <div class="h-full bg-cwc-white">
     <?= $content ?? '' ?>
 </div>
-<!--insert here to bottom of all page-->
 
 <footer class="bg-white border-t-2 dark:bg-gray-800">
     <div class="container mx-auto px-6 py-4">
@@ -569,7 +571,8 @@
                         <a href="https://www.cegeptr.qc.ca/" target="_blank"
                            class="mx-2 text-gray-700 dark:text-gray-200 hover:text-blue-700 dark:hover:text-gray-400"
                            aria-label="Linkden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current -mt-1" viewBox="0 0 4000 4000">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current -mt-1"
+                                 viewBox="0 0 4000 4000">
                                 <g id="layout-cegep" fill="currentcolor" stroke="none">
                                     <path d="M1590 2540 l0 -810 -405 0 -405 0 0 -405 0 -405 1225 0 1225 0 0 135 0 135 -1087 2 -1088 3 -3 133 -3 132 411 0 410 0 0 945 0 945 -140 0 -140 0 0 -810z"/>
                                     <path d="M2140 2405 l0 -945 545 0 545 0 0 135 0 135 -410 0 -410 0 0 810 0 810 -135 0 -135 0 0 -945z"/>
@@ -583,34 +586,51 @@
             <div class="mt-6 lg:mt-0 lg:flex-1">
                 <div class="grid gap-2 grid-cols-1 sm:grid-cols-1 md:grid-cols-3">
                     <div>
-                        <h3 class="text-gray-700 dark:text-white uppercase">Programme</h3>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Cours</a>
-                        <a href="#"
-                           class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Test2</a>
+                        <h3 class="text-gray-700 dark:text-white uppercase">Département</h3>
+                        <a href="<?= $this->router->generate('indexProgram') ?>"
+                           class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Programme</a>
+                        <a href="<?= $this->router->generate('coursesIndex') ?>"
+                           class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Cours</a>
                     </div>
 
                     <div>
-                        <h3 class="text-gray-700 dark:text-white uppercase">Étudiants</h3>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Projets
-                            des étudiants
-                            cloud</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Bourse
-                        </a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Témoignages
-                            d'étudiants
-                        </a> <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Palmarès
-                            et
-                            alumni
-                        </a>
+                        <h3 class="text-gray-700 dark:text-white uppercase">Plus</h3>
+                        <a href="<?= $this->router->generate('newsIndex') ?>"
+                           class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Actualités</a>
+                        <a href="<?= $this->router->generate('eventsIndex') ?>"
+                           class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Événemets</a>
+                        <a href=""
+                           class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Liens
+                            utiles</a>
+                        <a href=""
+                           class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Ressources</a>
                     </div>
+
+                    <!--section etudiants a venir-->
+                    <!--                    <div>-->
+                    <!--                        <h3 class="text-gray-700 dark:text-white uppercase">Étudiants</h3>-->
+                    <!--                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Projets-->
+                    <!--                            des étudiants-->
+                    <!--                            cloud</a>-->
+                    <!--                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Bourse-->
+                    <!--                        </a>-->
+                    <!--                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Témoignages-->
+                    <!--                            d'étudiants-->
+                    <!--                        </a> <a href="#"-->
+                    <!--                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Palmarès-->
+                    <!--                            et-->
+                    <!--                            alumni-->
+                    <!--                        </a>-->
+                    <!--                    </div>-->
 
                     <div>
                         <h3 class="text-gray-700 dark:text-white uppercase">Nous joindre</h3>
                         <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400">819 376-1721 poste: 3706</span>
                         <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400">david.b.brouillette@cegeptr.qc.ca</span>
                         <a href="https://www.google.com/maps/place/C%C3%A9gep+de+Trois-Rivi%C3%A8res/@46.3551699,-72.5766428,15z/data=!4m8!1m2!2m1!1spavillon+science+cegep+trois-rivieres!3m4!1s0x0:0x799f8b93d17aae1e!8m2!3d46.3545664!4d-72.5729316"
-                           target="_blank" class="block mt-6 text-sm hover:text-indigo-600 text-gray-600 dark:text-gray-400">Pavillon des Sciences
+                           target="_blank"
+                           class="block mt-6 text-sm hover:text-indigo-600 text-gray-600 dark:text-gray-400">Pavillon
+                            des Sciences
                             3500, rue de Courval, C.P. 97, G9A 5E6</a>
                     </div>
                 </div>
