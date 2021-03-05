@@ -27,8 +27,8 @@ let newsDropdown = document.getElementById('news-dropdown')
 let btnNews = document.getElementById('btn-news')
 let moreDropdown = document.getElementById('more-dropdown')
 let btnMore = document.getElementById('btn-more')
-let studentsDropdown = document.getElementById('students-dropdown')
-let btnStudents = document.getElementById('btn-students')
+// let studentsDropdown = document.getElementById('students-dropdown')
+// let btnStudents = document.getElementById('btn-students')
 let mobileMenu = document.getElementById('mobile-menu')
 let btnClose = document.getElementById('btn-close-mobile-menu')
 let btnOpen = document.getElementById('btn-open-mobile-menu')
@@ -38,7 +38,7 @@ btnProgram.addEventListener('mouseover', () => {
         progDropdown.classList.remove('hidden')
         newsDropdown.classList.add('hidden')
         moreDropdown.classList.add('hidden')
-        studentsDropdown.classList.add('hidden')
+        // studentsDropdown.classList.add('hidden')
     }
 })
 
@@ -53,7 +53,7 @@ btnNews.addEventListener('mouseover', () => {
         newsDropdown.classList.remove('hidden')
         progDropdown.classList.add('hidden')
         moreDropdown.classList.add('hidden')
-        studentsDropdown.classList.add('hidden')
+        // studentsDropdown.classList.add('hidden')
     }
 })
 
@@ -68,7 +68,7 @@ btnMore.addEventListener('mouseover', () => {
         moreDropdown.classList.remove('hidden')
         newsDropdown.classList.add('hidden')
         progDropdown.classList.add('hidden')
-        studentsDropdown.classList.add('hidden')
+        // studentsDropdown.classList.add('hidden')
     }
 })
 
@@ -78,20 +78,20 @@ moreDropdown.addEventListener('mouseleave', () => {
     }
 })
 
-btnStudents.addEventListener('mouseover', () => {
-    if (studentsDropdown.classList.contains('hidden')) {
-        studentsDropdown.classList.remove('hidden')
-        newsDropdown.classList.add('hidden')
-        moreDropdown.classList.add('hidden')
-        progDropdown.classList.add('hidden')
-    }
-})
+// btnStudents.addEventListener('mouseover', () => {
+//     if (studentsDropdown.classList.contains('hidden')) {
+//         studentsDropdown.classList.remove('hidden')
+//         newsDropdown.classList.add('hidden')
+//         moreDropdown.classList.add('hidden')
+//         progDropdown.classList.add('hidden')
+//     }
+// })
 
-studentsDropdown.addEventListener('mouseleave', () => {
-    if (!studentsDropdown.classList.contains('hidden')) {
-        studentsDropdown.classList.add('hidden')
-    }
-})
+// studentsDropdown.addEventListener('mouseleave', () => {
+//     if (!studentsDropdown.classList.contains('hidden')) {
+//         studentsDropdown.classList.add('hidden')
+//     }
+// })
 
 $(document).click(function () {
     if (this.id !== 'program-dropdown' && this.id !== 'btn-program') {
@@ -103,9 +103,9 @@ $(document).click(function () {
     if (this.id !== 'more-dropdown' && this.id !== 'btn-more') {
         $("#more-dropdown").addClass('hidden');
     }
-    if (this.id !== 'students-dropdown' && this.id !== 'btn-students') {
-        $("#students-dropdown").addClass('hidden');
-    }
+    // if (this.id !== 'students-dropdown' && this.id !== 'btn-students') {
+    //     $("#students-dropdown").addClass('hidden');
+    // }
 });
 
 btnClose.addEventListener('click', () => {
