@@ -19,8 +19,7 @@ class NewsController extends Controller
     }
 
     public function getAll() {
-        //todo: add creation date
-        $query = $this->getDatabase()->prepare("select n.id, title, link, category, description, file_name, /*creation_date,*/ concat(a.firstname, ' ', a.lastname) as publisher from news n inner join admins a where n.publisher_id = a.id;");
+        $query = $this->getDatabase()->prepare("select n.id, title, link, category, description, file_name, n.creation_date, concat(a.firstname, ' ', a.lastname) as publisher from news n inner join admins a where n.publisher_id = a.id order by creation_date desc;");
         $query->setFetchMode(PDO::FETCH_CLASS, News::class);
         $query->execute();
         $newsList = $query->fetchAll();
@@ -28,7 +27,7 @@ class NewsController extends Controller
     }
 
     public function getNews($id) {
-        $query = $this->getDatabase()->prepare("select n.id, title, link, category, description, file_name, /*creation_date,*/ concat(a.firstname, ' ', a.lastname) as publisher from news n inner join admins a where n.publisher_id = a.id and n.id = ?;");
+        $query = $this->getDatabase()->prepare("select n.id, title, link, category, description, file_name, n.creation_date, concat(a.firstname, ' ', a.lastname) as publisher from news n inner join admins a where n.publisher_id = a.id and n.id = ? order by creation_date desc;");
         $query->setFetchMode(PDO::FETCH_CLASS, News::class);
         $query->execute([0=>$id]);
         $news = $query->fetch();

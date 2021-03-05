@@ -29,7 +29,6 @@ class News implements \Model
 
         //add the creation date for the news
         array_push($data, date("d/m/Y H:i:s"));
-        //dump($query);
         $db->prepare($query)->execute($data);
     }
 

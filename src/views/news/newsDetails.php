@@ -21,9 +21,8 @@
             <div>
                 <p class="text-gray-900 font-semibold"><?= $news->publisher ?></p>
                 <p class="text-gray-500 font-semibold text-sm">
-                    <!-- todo: add creation date -->
                     <?php
-                    $dateObj = DateTime::createFromFormat('Y-m-d H:i:s', '2021-03-23 02:29:49');
+                    $dateObj = DateTime::createFromFormat('Y-m-d H:i:s', $news->creation_date);
                     echo $dateObj->format('j M Y');
                     ?>
                     &middot; <?php
