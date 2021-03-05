@@ -48,6 +48,7 @@ $router->map('GET', '/admin/update/[i:id]','AdminController@update', 'adminEdit'
 $router->map('GET', '/admin/updateprofil/[i:id]','AdminController@updateProfil', 'adminUpdateProfil');
 $router->map('GET', '/admin/delete/[i:id]','AdminController@delete', 'adminDelete');
 
+
 $router->map('POST','/admin/connexion','AdminController@login', 'adminConfirm');
 $router->map('POST','/admin/created','AdminController@created', 'adminCreated');
 $router->map('POST','/admin/updated','AdminController@updated', 'adminUpdated');
@@ -81,3 +82,13 @@ $router->map('GET', '/cours', 'CoursesController@index', 'coursesIndex');
 
 //Pictures
 $router->map('GET', '/locaux', 'PicturesController@index', 'picturesIndex');
+
+//links
+$router->map('GET', '/links', 'LinksController@index', 'linksIndex');
+$router->map('GET', '/admin/links', 'LinksController@linksList', 'linksList');
+$router->map('GET', '/admin/links/create', 'LinksController@create', 'linksCreate');
+$router->map('GET', '/admin/links/update/[i:id]', 'LinksController@update', 'linksUpdate');
+$router->map('GET', '/admin/links/delete/[i:id]', 'LinksController@delete', 'linksDelete');
+
+$router->map('POST', '/admin/links/save', 'LinksController@created', 'linksSave');
+$router->map('POST', '/admin/links/update', 'LinksController@updated', 'linksUpdated');
