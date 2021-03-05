@@ -40,7 +40,6 @@ class Event implements \Model
         $query = "INSERT INTO events (" . $attributes.") VALUES (" . $values . ")";
         $test = $db->prepare($query);
         $test->execute($data);
-        //dump($test->errorInfo());
     }
 
     public static function update($id, $db, $array = [])

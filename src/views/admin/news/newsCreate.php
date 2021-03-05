@@ -136,6 +136,7 @@ $selectedItem = ob_get_clean();
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-5 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
+
                         <div class="bg-white p7 rounded col-span-6 sm:col-span-6">
                             <label class="block text-sm font-medium text-gray-700">
                                 Photo de couverture
@@ -150,7 +151,8 @@ $selectedItem = ob_get_clean();
                                            @dragover="$refs.dnd.classList.add('border-blue-400'); $refs.dnd.classList.add('ring-4'); $refs.dnd.classList.add('ring-inset');"
                                            @dragleave="$refs.dnd.classList.remove('border-blue-400'); $refs.dnd.classList.remove('ring-4'); $refs.dnd.classList.remove('ring-inset');"
                                            @drop="$refs.dnd.classList.remove('border-blue-400'); $refs.dnd.classList.remove('ring-4'); $refs.dnd.classList.remove('ring-inset');"
-                                           name="file">
+                                           name="file"
+                                           required>
                                     <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                         <div class="space-y-1 text-center">
                                             <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"
@@ -241,7 +243,6 @@ $selectedItem = ob_get_clean();
                                 </template>
                             </div>
                         </div>
-
                     </div>
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                         <button type="submit"

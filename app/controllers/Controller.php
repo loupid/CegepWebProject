@@ -74,6 +74,12 @@ class Controller
     protected function addNotification($notificationName)
     {
         $message = require __DIR__ . '/../../app/config/messageNotify.php';
-        Session::put('notif', $message[$notificationName]);
+        Session::put('notifAdmin', $message[$notificationName]);
+    }
+
+    protected function addLoginNotification($notificationName)
+    {
+        $message = require __DIR__ . '/../../app/config/messageNotify.php';
+        Session::put('notifLogin', $message[$notificationName]);
     }
 }

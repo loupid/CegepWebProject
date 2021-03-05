@@ -58,8 +58,8 @@ class AdminController extends Controller
     public function updated() {
         $data = $_POST;
 
-        if (!isset($data['active'])){
-            $data['active'] = 0;
+        if (!isset($data['status'])){
+            $data['status'] = 0;
         }
 
         Admin::update(Session::get('adminId'), $this->getDatabase(), $data);
@@ -79,8 +79,13 @@ class AdminController extends Controller
     public function updatedProfil() {
         $data = $_POST;
 
-        if (!isset($data['active'])){
-            $data['active'] = 0;
+        if (!isset($data['status'])) {
+            $data['status'] = 0;
+        }
+
+        if ($data['password'] === "" || $data['confirm_password'] === ""){
+            unset($data['password']);
+            unset($data['confirm_password']);
         }
 
         Admin::update(Session::get('adminId'), $this->getDatabase(), $data);
@@ -97,27 +102,28 @@ class AdminController extends Controller
 
     public function login()
     {
-        extract($_POST);
+        $data = $_POST;
         $con = $this->getDatabase();
         $query = $con->prepare("select id, password from admins where email = ?;");
-        $query->execute(array($email));
+        $query->execute(array($data['email']));
         $result = $query->fetch();
-        if (password_verify($password, $result['password'])) {
+        if (password_verify($data['password'], $result['password'])) {
             User::logout();
-            User::setUser($email);
+            User::setUser($data['email']);
             User::setUserId($result['id']);
             User::login();
             Admin::update($result['id'], $this->getDatabase(), ['last_connection_date' => date("d/m/Y H:i:s")]);
+            $this->addNotification('loginSuccess');
             $this->redirectToRoute('adminDashboard');
         } else{
-            $this->addNotification('loginError');
+            $this->addLoginNotification('loginError');
             $this->redirectToRoute('adminIndex');
         }
     }
 
     public function logout(){
         User::logout();
-        $this->addNotification('logout');
+        $this->addLoginNotification('logout');
         return $this->redirectToRoute('adminIndex');
     }
 

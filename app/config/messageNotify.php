@@ -64,11 +64,18 @@ return[
             'colorIcon' => 'red-700'
         ]
     ],
-    'logout' => [
+    'loginSuccess' => [
         0 => [
-            'message' => 'Vous êtes bien déconnecté(e).',
+            'message' => 'Connexion réussi.',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
+    ],
+    'logout' => [
+    0 => [
+        'message' => 'Vous êtes bien déconnecté(e).',
+        'color' => 'green-500',
+        'colorIcon' => 'green-700'
     ]
+]
 ];

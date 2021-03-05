@@ -68,10 +68,10 @@ $router->map('POST', '/admin/event/updated', 'EventController@updated', 'eventUp
 //news
 $router->map('GET', '/admin/news', 'NewsController@newsList', 'newsList');
 $router->map('GET', '/actualites', 'NewsController@getAll', 'newsIndex');
+$router->map('GET', '/actualites/[i:id]','NewsController@getNews', 'newsDetails');
 $router->map('GET', '/admin/news/create', 'NewsController@create', 'newsCreate');
 $router->map('GET', '/admin/news/update/[i:id]', 'NewsController@update', 'newsEdit');
 $router->map('GET', '/admin/news/delete/[i:id]','NewsController@delete', 'newsDelete');
-$router->map('GET','/actualites/[i:id]','NewsController@getNews', 'newsDetails');
 
 $router->map('POST','/admin/news/created', 'NewsController@created', 'newsSave');
 $router->map('POST','/admin/news/updated','NewsController@updated', 'newsUpdate');

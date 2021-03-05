@@ -37,12 +37,11 @@ class Middleware
         }
 
         header('Location: '.$url);
-        return true;
     }
 
-    protected function addNotification($notificationName)
+    protected function addLoginNotification($notificationName)
     {
         $message = require __DIR__ . '/../../app/config/messageNotify.php';
-        Session::put('notif', $message[$notificationName]);
+        Session::put('notifLogin', $message[$notificationName]);
     }
 }

@@ -14,13 +14,22 @@ return [
     "adminCreate" => [
         AdminMiddleware::class
     ],
+    "adminUpdate" => [
+        AdminMiddleware::class
+    ],
     "eventsList" => [
         AdminMiddleware::class
     ],
     "eventCreate" => [
         AdminMiddleware::class
     ],
+    "eventUpdate" => [
+        AdminMiddleware::class
+    ],
     "newsList" => [
+        AdminMiddleware::class
+    ],
+    "newsCreate" => [
         AdminMiddleware::class
     ],
     "newsEdit" => [
