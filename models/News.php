@@ -14,6 +14,7 @@ class News implements \Model
     public $category;
     public $description;
     public $hide;
+    public $creation_date;
 
     public static function create($db, $array = [])
     {
@@ -26,8 +27,8 @@ class News implements \Model
             $values .= $comma . '?';
             $comma = ',';
         }
-        $query = "INSERT INTO news (" . $attributes . " ) VALUES (" . $values . ")";
-        dump($query);
+        $query = "INSERT INTO news (" . $attributes . "creation_date) VALUES (" . $values . "STR_TO_DATE( ?, '%d/%m/%Y %H:%i:%s'))";
+        array_push($data, date("d/m/Y H:i:s"));
         $db->prepare($query)->execute($data);
     }
 
