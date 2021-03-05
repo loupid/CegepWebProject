@@ -261,6 +261,7 @@ $selectedItem = ob_get_clean();
                 },
 
                 showEventModal(event) {
+                    debugger;
                     // open the modal
                     this.openEventModal = true;
                     this.start_date = event.start_date;

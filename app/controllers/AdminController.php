@@ -18,11 +18,11 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price from events;");
+        $query = $this->getDatabase()->prepare("select title, start_date, end_date, category, organizer, address, price from events;");
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute();
         $events = $query->fetchAll();
-        return $this->view('admin/dashboard', ['events'=>json_encode($events)], 1);
+        return $this->view('admin/dashboard', ['events'=> json_encode($events)], 1);
     }
 
     public function adminsList()
