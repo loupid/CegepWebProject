@@ -23,9 +23,6 @@ class News implements \Model
         $data = array_values($array);
         $comma = " ";
         foreach ($array as $key => $value) {
-            if ($key == "creation_date"){
-
-            }
             $attributes .= $comma . $key;
             $values .= $comma . '?';
             $comma = ',';
