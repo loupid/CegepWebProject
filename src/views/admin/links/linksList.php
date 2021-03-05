@@ -3,7 +3,7 @@ ob_start();
 ?>links<?php
 $selectedItem = ob_get_clean();
 ?>
-<h3 class="text-gray-700 text-3xl font-medium">Actualités</h3>
+<h3 class="text-gray-700 text-3xl font-medium">Liens utiles</h3>
 <div class="mt-8 flex justify-end">
     <a href="<?= $this->router->generate('linksCreate') ?>" class="mx-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
