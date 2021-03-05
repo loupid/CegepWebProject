@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css"/>
     <!-- component -->
-    <link rel="stylesheet" href="https://pagecdn.io/lib/font-awesome/5.10.0-11/css/all.min.css" integrity="sha256-p9TTWD+813MlLaxMXMbTA7wN/ArzGyW/L7c5+KkjOkM=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pagecdn.io/lib/font-awesome/5.10.0-11/css/all.min.css"
+          integrity="sha256-p9TTWD+813MlLaxMXMbTA7wN/ArzGyW/L7c5+KkjOkM=" crossorigin="anonymous">
 
     <script src="https://unpkg.com/create-file-list"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,9 +26,9 @@
   </span>
 </div>
 <div>
-<?php
-    if (app\Session::has('notif')){
-        foreach (app\Session::get('notif') as $notif){
+    <?php
+    if (app\Session::has('notif')) {
+        foreach (app\Session::get('notif') as $notif) {
             ?>
             <div x-data="{open: true}" x-show="open" class="relative z-30 w-screen bg-<?= $notif['color'] ?>">
                 <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
@@ -35,8 +36,10 @@
                         <div class="w-0 flex-1 flex items-center">
                             <span class="flex p-2 rounded-lg bg-<?= $notif['colorIcon'] ?>">
                                 <!-- Heroicon name: speakerphone -->
-                                <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"></path>
+                                <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"></path>
                                 </svg>
                             </span>
                             <p class="ml-3 font-medium text-white truncate">
@@ -49,11 +52,14 @@
                             </p>
                         </div>
                         <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
-                            <button @click="open = false" type="button" class="-mr-1 flex p-2 rounded-md hover:bg-<?= $notif['colorIcon'] ?> focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
+                            <button @click="open = false" type="button"
+                                    class="-mr-1 flex p-2 rounded-md hover:bg-<?= $notif['colorIcon'] ?> focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
                                 <span class="sr-only">Dismiss</span>
                                 <!-- Heroicon name: x -->
-                                <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M6 18L18 6M6 6l12 12"/>
                                 </svg>
                             </button>
                         </div>
@@ -63,7 +69,7 @@
             <?php
         }
     }
-?>
+    ?>
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
         <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false"
              class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
@@ -78,10 +84,10 @@
                 </div>
             </div>
 
-            <nav x-data="{ selecteditem: '<?= $selectedItem;?>' }" class="mt-10">
+            <nav x-data="{ selecteditem: '<?= $selectedItem; ?>' }" class="mt-10">
                 <a :class=" selecteditem === 'dashboard' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' "
                    @click="selecteditem = 'dashboard'" class="flex items-center mt-4 py-2 px-6"
-                   href="<?=$this->router->generate('adminDashboard'); ?>">
+                   href="<?= $this->router->generate('adminDashboard'); ?>">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -94,7 +100,7 @@
 
                 <a :class=" selecteditem === 'adminList' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' "
                    @click="selecteditem = 'adminList'" class="flex items-center mt-4 py-2 px-6"
-                   href="<?=$this->router->generate('adminsList'); ?>">
+                   href="<?= $this->router->generate('adminsList'); ?>">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -105,7 +111,7 @@
 
                 <a :class=" selecteditem === 'actualities' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' "
                    @click="selecteditem = 'actualities'" class="flex items-center mt-4 py-2 px-6"
-                   href="<?=$this->router->generate('newsList'); ?>">
+                   href="<?= $this->router->generate('newsList'); ?>">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -118,7 +124,7 @@
 
                 <a :class=" selecteditem === 'events' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' "
                    @click="selecteditem = 'events'" class="flex items-center mt-4 py-2 px-6"
-                   href="<?=$this->router->generate('eventsList') ?>">
+                   href="<?= $this->router->generate('eventsList') ?>">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -126,6 +132,18 @@
                     </svg>
                     <span class="mx-3">Événements</span>
                 </a>
+
+                <a :class=" selecteditem === 'links' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' "
+                   @click="selecteditem = 'links'" class="flex items-center mt-4 py-2 px-6"
+                   href="<?= $this->router->generate('linksList') ?>">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                    <span class="mx-3">Liens utiles</span>
+                </a>
+
             </nav>
         </div>
         <div class="flex-1 flex flex-col overflow-hidden">
@@ -142,65 +160,65 @@
                 </div>
 
                 <div class="flex items-center">
-<!--NOTIFICATION SECTION-->
-<!--                    <div x-data="{ notificationOpen: false }" class="relative">-->
-<!--                        <button @click="notificationOpen = ! notificationOpen"-->
-<!--                                class="flex mx-4 text-gray-600 focus:outline-none">-->
-<!--                            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--                                <path-->
-<!--                                        d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"-->
-<!--                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"-->
-<!--                                        stroke-linejoin="round">-->
-<!--                                </path>-->
-<!--                            </svg>-->
-<!--                        </button>-->
-<!---->
-<!--                        <div x-show="notificationOpen" @click="notificationOpen = false"-->
-<!--                             class="fixed inset-0 h-full w-full z-10" style="display: none;"></div>-->
-<!---->
-<!--                        <div x-show="notificationOpen"-->
-<!--                             class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl overflow-hidden z-10"-->
-<!--                             style="width: 20rem; display: none;">-->
-<!--                            <a href="#"-->
-<!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
-<!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
-<!--                                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"-->
-<!--                                     alt="avatar">-->
-<!--                                <p class="text-sm mx-2">-->
-<!--                                    <span class="font-bold" href="#">Sara Salah</span> replied on the <span-->
-<!--                                            class="font-bold text-indigo-400" href="#">Upload Image</span> artical . 2m-->
-<!--                                </p>-->
-<!--                            </a>-->
-<!--                            <a href="#"-->
-<!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
-<!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
-<!--                                     src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"-->
-<!--                                     alt="avatar">-->
-<!--                                <p class="text-sm mx-2">-->
-<!--                                    <span class="font-bold" href="#">Slick Net</span> start following you . 45m-->
-<!--                                </p>-->
-<!--                            </a>-->
-<!--                            <a href="#"-->
-<!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
-<!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
-<!--                                     src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"-->
-<!--                                     alt="avatar">-->
-<!--                                <p class="text-sm mx-2">-->
-<!--                                    <span class="font-bold" href="#">Jane Doe</span> Like Your reply on <span-->
-<!--                                            class="font-bold text-indigo-400" href="#">Test with TDD</span> artical . 1h-->
-<!--                                </p>-->
-<!--                            </a>-->
-<!--                            <a href="#"-->
-<!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
-<!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
-<!--                                     src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=398&amp;q=80"-->
-<!--                                     alt="avatar">-->
-<!--                                <p class="text-sm mx-2">-->
-<!--                                    <span class="font-bold" href="#">Abigail Bennett</span> start following you . 3h-->
-<!--                                </p>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                    <!--NOTIFICATION SECTION-->
+                    <!--                    <div x-data="{ notificationOpen: false }" class="relative">-->
+                    <!--                        <button @click="notificationOpen = ! notificationOpen"-->
+                    <!--                                class="flex mx-4 text-gray-600 focus:outline-none">-->
+                    <!--                            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                    <!--                                <path-->
+                    <!--                                        d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"-->
+                    <!--                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"-->
+                    <!--                                        stroke-linejoin="round">-->
+                    <!--                                </path>-->
+                    <!--                            </svg>-->
+                    <!--                        </button>-->
+                    <!---->
+                    <!--                        <div x-show="notificationOpen" @click="notificationOpen = false"-->
+                    <!--                             class="fixed inset-0 h-full w-full z-10" style="display: none;"></div>-->
+                    <!---->
+                    <!--                        <div x-show="notificationOpen"-->
+                    <!--                             class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl overflow-hidden z-10"-->
+                    <!--                             style="width: 20rem; display: none;">-->
+                    <!--                            <a href="#"-->
+                    <!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
+                    <!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
+                    <!--                                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"-->
+                    <!--                                     alt="avatar">-->
+                    <!--                                <p class="text-sm mx-2">-->
+                    <!--                                    <span class="font-bold" href="#">Sara Salah</span> replied on the <span-->
+                    <!--                                            class="font-bold text-indigo-400" href="#">Upload Image</span> artical . 2m-->
+                    <!--                                </p>-->
+                    <!--                            </a>-->
+                    <!--                            <a href="#"-->
+                    <!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
+                    <!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
+                    <!--                                     src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"-->
+                    <!--                                     alt="avatar">-->
+                    <!--                                <p class="text-sm mx-2">-->
+                    <!--                                    <span class="font-bold" href="#">Slick Net</span> start following you . 45m-->
+                    <!--                                </p>-->
+                    <!--                            </a>-->
+                    <!--                            <a href="#"-->
+                    <!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
+                    <!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
+                    <!--                                     src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"-->
+                    <!--                                     alt="avatar">-->
+                    <!--                                <p class="text-sm mx-2">-->
+                    <!--                                    <span class="font-bold" href="#">Jane Doe</span> Like Your reply on <span-->
+                    <!--                                            class="font-bold text-indigo-400" href="#">Test with TDD</span> artical . 1h-->
+                    <!--                                </p>-->
+                    <!--                            </a>-->
+                    <!--                            <a href="#"-->
+                    <!--                               class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">-->
+                    <!--                                <img class="h-8 w-8 rounded-full object-cover mx-1"-->
+                    <!--                                     src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=398&amp;q=80"-->
+                    <!--                                     alt="avatar">-->
+                    <!--                                <p class="text-sm mx-2">-->
+                    <!--                                    <span class="font-bold" href="#">Abigail Bennett</span> start following you . 3h-->
+                    <!--                                </p>-->
+                    <!--                            </a>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
 
                     <div x-data="{ dropdownOpen: false }" class="relative">
                         <button @click="dropdownOpen = ! dropdownOpen"
@@ -219,8 +237,9 @@
                              style="display: none;">
                             <a href="#"
                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
-                            <a href="<?=$this->router->generate('adminLogout') ?>"
-                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Se deconnecter</a>
+                            <a href="<?= $this->router->generate('adminLogout') ?>"
+                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Se
+                                deconnecter</a>
                         </div>
                     </div>
                 </div>
@@ -228,7 +247,7 @@
 
             <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                 <div class="container mx-auto px-6 py-8">
-                <?= $content ?? '' ?>
+                    <?= $content ?? '' ?>
                 </div>
             </main>
         </div>
