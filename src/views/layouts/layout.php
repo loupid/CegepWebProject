@@ -26,7 +26,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script type="module" src="/js/component.js"></script>
+    <script type="module" src="js/component.js"></script>
     <style>
         .modal {
             transition: opacity 0.25s ease;
@@ -51,8 +51,8 @@
     <div class="mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
             <div class="flex justify-start">
-                <a href="/" class="inline-block mr-4">
-                    <img class="dark:hidden inline-block" src="/images/svgs/darklogodep.svg" alt="Logo département">
+                <a href="<?= $this->router->generate('index') ?>" class="inline-block mr-4">
+                    <img class="dark:hidden inline-block" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/darklogodep.svg" alt="Logo département">
                 </a>
             </div>
             <div class="-mr-2 -my-2 md:hidden">
@@ -68,7 +68,7 @@
                 </button>
             </div>
             <nav class="hidden md:flex space-x-10">
-                <a href="/" class="text-base font-medium text-gray-900 hover:text-indigo-600">
+                <a href="<?= $this->router->generate('index') ?>" class="text-base font-medium text-gray-900 hover:text-indigo-600">
                     Accueil
                 </a>
 
