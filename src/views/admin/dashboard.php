@@ -22,7 +22,7 @@ $selectedItem = ob_get_clean();
                 </div>
 
                 <div class="mx-5">
-                    <h4 class="text-2xl font-semibold text-gray-700">8</h4>
+                    <h4 class="text-2xl font-semibold text-gray-700"><?= $counts[0]["adminsCount"] ?></h4>
                     <div class="text-gray-500">Administrateurs</div>
                 </div>
             </div>
@@ -41,7 +41,7 @@ $selectedItem = ob_get_clean();
                 </div>
 
                 <div class="mx-5">
-                    <h4 class="text-2xl font-semibold text-gray-700">21</h4>
+                    <h4 class="text-2xl font-semibold text-gray-700"><?= $counts[0]["newsCount"] ?></h4>
                     <div class="text-gray-500">Actualités</div>
                 </div>
             </div>
@@ -58,7 +58,7 @@ $selectedItem = ob_get_clean();
                 </div>
 
                 <div class="mx-5">
-                    <h4 class="text-2xl font-semibold text-gray-700">24</h4>
+                    <h4 class="text-2xl font-semibold text-gray-700"><?= $counts[0]["eventsCount"] ?></h4>
                     <div class="text-gray-500">Événements</div>
                 </div>
             </div>
