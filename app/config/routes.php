@@ -85,7 +85,7 @@ $router->map('POST','/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/news/
 
 
 //links
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/links', 'LinksController@index', 'linksIndex');
+$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/liens-utiles', 'LinksController@index', 'linksIndex');
 $router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/links', 'LinksController@linksList', 'linksList');
 $router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/links/create', 'LinksController@create', 'linksCreate');
 $router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/links/update/[i:id]', 'LinksController@update', 'linksUpdate');
