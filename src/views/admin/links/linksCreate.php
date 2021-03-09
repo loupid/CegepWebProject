@@ -64,7 +64,7 @@ $selectedItem = ob_get_clean();
 
 
 <?php ob_start(); ?>
-<script src="/js/links.js"></script>
+<script src="/H2021/420626RI/Equipe_1/cegepwebproject/publicjs/links.js"></script>
 <?php $script = ob_get_clean(); ?>
 
 

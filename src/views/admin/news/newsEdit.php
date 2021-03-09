@@ -261,7 +261,7 @@ $selectedItem = ob_get_clean();
 
 
 <?php ob_start(); ?>
-<script src="/js/selectSearchBox.js"></script>
-<script src="/js/dragableFile.js"></script>
+<script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/selectSearchBox.js"></script>
+<script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/dragableFile.js"></script>
 <?php $script = ob_get_clean(); ?>
 

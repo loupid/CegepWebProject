@@ -5,7 +5,7 @@
     <title>Département d'informatique</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/H2021/420626RI/Equipe_1/cegepwebproject/public/css/tailwind.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script type="module" src="js/component.js"></script>
+    <script type="module" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/component.js"></script>
     <style>
         .modal {
             transition: opacity 0.25s ease;
@@ -402,7 +402,7 @@
             <div class="pt-5 pb-6 px-5">
                 <div class="flex items-center justify-between">
                     <div>
-                        <img class="h-8 w-auto" src="/images/svgs/darklogodep.svg"
+                        <img class="h-8 w-auto" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/darklogodep.svg"
                              alt="darklogodep">
                     </div>
                     <div class="-mr-2">
@@ -521,7 +521,7 @@
                 <div>
                     <div class="flex">
                         <a href="/">
-                            <img class="dark:hidden inline-block" src="/images/svgs/darklogodep.svg"
+                            <img class="dark:hidden inline-block" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/darklogodep.svg"
                                  alt="Logo département">
                         </a>
 
@@ -649,8 +649,7 @@
 </footer>
 
 <!--Add script here by a variable -->
-<script type="module" src="/js/app.js"></script>
-<script type="module" src="/js/component.js"></script>
+<script type="module" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/app.js"></script>
 <?= $script ?? '' ?>
 </body>
 </html>

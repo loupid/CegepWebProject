@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Département d'informatique</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/tailwind.css" type="text/css">
+    <link rel="stylesheet" href="/H2021/420626RI/Equipe_1/cegepwebproject/public/css/tailwind.css" type="text/css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css"/>
@@ -15,9 +15,9 @@
     <script src="https://unpkg.com/create-file-list"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script type="module" src="/js/component.js"></script>
-    <script src="/js/init.js"></script>
-    <script src="/js/admin.js"></script>
+    <script type="module" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/component.js"></script>
+    <script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/init.js"></script>
+    <script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/admin.js"></script>
 </head>
 <body>
 <div id="loading" class="w-screen h-screen fixed block top-0 left-0 bg-white z-50">
@@ -79,7 +79,7 @@
              class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
             <div class="flex items-center justify-center mt-8">
                 <div class="flex items-center">
-                    <img class="fill-current" src="/images/svgs/logodep.svg"
+                    <img class="fill-current" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/logodep.svg"
                          alt="Logo département">
                     <span class="text-white text-2xl mx-2 font-semibold">Tableau de bord</span>
                 </div>
