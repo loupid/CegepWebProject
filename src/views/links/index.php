@@ -1,5 +1,9 @@
-<div class="grid grid-cols-1 md:grid-cols-2 gap-2 my-auto px-4 py-8">
-    <?php foreach ($linkList as $link) { ?>
+<?php
+if (!empty($linkList)) { ?>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 my-auto px-4 py-8">
+    <?php foreach ($linkList
+
+                   as $link) { ?>
         <div class="bg-white w-full flex items-center p-1 rounded-xl shadow border">
             <div class="flex-grow p-3">
                 <div class="font-semibold text-gray-700">
@@ -26,5 +30,8 @@
             <div class="p-2">
             </div>
         </div>
-    <?php } ?>
-</div>
+        </div>
+    <?php }
+} else { ?>
+    <img class="my-8 mx-auto rounded-lg shadow-md" src="/images/miscs/newsmeme.png" alt="meme">
+<?php } ?>
