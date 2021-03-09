@@ -1,5 +1,8 @@
-<div class="p-8 grid grid-cols-1 md:grid-cols-3 gap-3 my-auto">
-    <?php foreach ($newsList as $news) { ?>
+<?php
+if (!empty($newsList)) { ?>
+    <div class="p-8 grid grid-cols-1 md:grid-cols-3 gap-3 my-auto">
+    <?php
+    foreach ($newsList as $news) { ?>
         <div class="md:p-8 p-2 rounded-lg bg-white relative">
             <div class="mb-4">
                 <img class="rounded-lg w-full"
@@ -17,7 +20,8 @@
                         <?= substr($news->description, 0, 200) . '...' ?>
                     </p>
                 </div>
-                <button type="button" onclick="window.location = '<?= $this->router->generate('newsDetails', ['id'=>$news->id]) ?>'"
+                <button type="button"
+                        onclick="window.location = '<?= $this->router->generate('newsDetails', ['id' => $news->id]) ?>'"
                         class="bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300">
                     Lire la suite
                 </button>
@@ -38,5 +42,8 @@
                 </div>
             </div>
         </div>
-    <?php } ?>
-</div>
+        </div>
+    <?php }
+} else { ?>
+    <img class="my-8 mx-auto rounded-lg shadow-md" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/miscs/newsmeme.png" alt="meme">
+<?php } ?>
