@@ -85,7 +85,7 @@ $router->map('POST','/admin/news/updated','NewsController@updated', 'newsUpdated
 
 
 //links
-$router->map('GET', '/links', 'LinksController@index', 'linksIndex');
+$router->map('GET', '/liens-utiles', 'LinksController@index', 'linksIndex');
 $router->map('GET', '/admin/links', 'LinksController@linksList', 'linksList');
 $router->map('GET', '/admin/links/create', 'LinksController@create', 'linksCreate');
 $router->map('GET', '/admin/links/update/[i:id]', 'LinksController@update', 'linksUpdate');

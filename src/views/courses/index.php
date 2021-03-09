@@ -1,17 +1,17 @@
 <div id="cours" class="div-fixed flex flex-col items-center">
-    <div id="legende" class="bg-white mr-40 ml-40 pb-10 rounded-2xl text-3xl mt-5">
-        <h2 class="text-4xl font-medium text-gray-900 p-3">Légende du nombre d'heures par semaine.</h2>
-        <div class="pl-6">
+    <div id="legende" class="bg-white mr-40 ml-40 pb-10 rounded-2xl shadow-md mt-5">
+        <h2 class="text-2xl text-gray-900 dark:text-white font-bold p-3">Légende du nombre d'heures par semaine</h2>
+        <div class="pl-6 text-xl text-gray-800 dark:text-gray-300">
             <p>Exemple: 1-2-3</p>
-            <p>1: Cours théoriques.</p>
-            <p>2: Laboratoires ou stages.</p>
-            <p>3: Travail personnel.</p>
+            <p>1: Cours théoriques</p>
+            <p>2: Laboratoires ou stages</p>
+            <p>3: Travail personnel</p>
         </div>
     </div>
     <br>
-    <div id="s1" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl">
-        <H2 class="sm:text-5xl text-4xl font-medium text-gray-900 p-3">Session 1</H2>
-        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-3xl text-white text-center">
+    <div id="s1" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl shadow-md">
+        <H2 class="sm:text-3xl text-2xl font-medium text-gray-900 p-3">Session 1</H2>
+        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-2xl text-white text-center">
             <!-- Cours de base -->
 
             <!-- Écriture et littérature -->
@@ -73,9 +73,9 @@
         </div>
     </div>
     <br>
-    <div id="s2" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl">
-        <H2 class="sm:text-5xl text-4xl font-medium text-gray-900 p-3">Session 2</H2>
-        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-3xl text-white text-center">
+    <div id="s2" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl shadow-md">
+        <H2 class="sm:text-3xl text-2xl font-medium text-gray-900 p-3">Session 2</H2>
+        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-2xl text-white text-center">
             <!-- Cours de base -->
 
             <!-- Littérature et imaginaire -->
@@ -130,9 +130,9 @@
         </div>
     </div>
     <br>
-    <div id="s3" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl">
-        <H2 class="sm:text-5xl text-4xl font-medium text-gray-900 p-3">Session 3</H2>
-        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-3xl text-white text-center">
+    <div id="s3" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl shadow-md">
+        <H2 class="sm:text-3xl text-2xl font-medium text-gray-900 p-3">Session 3</H2>
+        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-2xl text-white text-center">
             <!-- Cours de base -->
 
             <!-- Littérature québécoise -->
@@ -175,9 +175,9 @@
         </div>
     </div>
     <br>
-    <div id="s4" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl">
-        <H2 class="sm:text-5xl text-4xl font-medium text-gray-900 p-3">Session 4</H2>
-        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-3xl text-white text-center">
+    <div id="s4" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl shadow-md">
+        <H2 class="sm:text-3xl text-2xl font-medium text-gray-900 p-3">Session 4</H2>
+        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-2xl text-white text-center">
             <!-- Cours de base -->
 
             <!-- Cours complémentaire 1 -->
@@ -220,9 +220,9 @@
         </div>
     </div>
     <br>
-    <div id="s5" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl">
-        <H2 class="sm:text-5xl text-4xl font-medium text-gray-900 p-3">Session 5</H2>
-        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-3xl text-white text-center">
+    <div id="s5" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl shadow-md">
+        <H2 class="sm:text-3xl text-2xl font-medium text-gray-900 p-3">Session 5</H2>
+        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-2xl text-white text-center">
             <!-- Cours de base -->
 
             <!-- Pratique de la communication -->
@@ -271,9 +271,9 @@
         </div>
     </div>
     <br>
-    <div id="s6" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl">
-        <H2 class="sm:text-5xl text-4xl font-medium text-gray-900 p-3">Session 6</H2>
-        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-3xl text-white text-center">
+    <div id="s6" class="bg-white xl:mr-40 ml-5 mr-5 xl:ml-40 pb-10 pr-2 pl-2 rounded-2xl shadow-md mb-12">
+        <H2 class="sm:text-3xl text-2xl font-medium text-gray-900 p-3">Session 6</H2>
+        <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto gap-10 mr-0 ml-0 text-2xl text-white text-center">
             <!-- Cours de programme -->
 
             <!-- Domaines d'exploration technologique II -->

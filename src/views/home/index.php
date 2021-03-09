@@ -64,7 +64,6 @@
                 <div class="flex items-center justify-center lg:justify-end lg:h-full">
                     <iframe class="w-full h-full object-cover object-center rounded-md shadow"
                             src="https://www.youtube.com/embed/B_oODXSMmhs" allowfullscreen></iframe>
-
                 </div>
             </div>
         </div>
@@ -72,10 +71,14 @@
 </section>
 
 <section>
-    <h2 class=" ml-8 mt-8 text-gray-800 dark:text-gray-100 text-3xl font-bold">Actualités</h2>
-    <?php
-    include '../src/views/news/index.php';
-    ?>
+    <?php if (!empty($newsList)) {
+        ?>
+        <h2 class=" ml-8 mt-8 text-gray-800 dark:text-gray-100 text-3xl font-bold">Actualités</h2>
+        <?php
+        include '../src/views/news/index.php';
+        ?>
+        <?php
+    } ?>
 </section>
 
 <section class="mt-16 pb-16" style="font-family:Roboto,serif">
@@ -85,7 +88,7 @@
         <div id="slider" class="swiper-container w-full">
             <div class="swiper-wrapper">
                 <div class="swiper-slide bg-cover bg-center">
-                    <div class="container px-6 md:px-20">
+                    <div class="container px-6 md:px-20 mx-auto">
                         <div class="relative mx-auto h-52 w-52 md:h-96 md:w-96">
                             <div class="card bg-indigo-300 shadow-md inline-block rounded-3xl absolute bottom-0 transform -rotate-12 h-52 w-52 md:h-96 md:w-96"></div>
                             <div class="card bg-indigo-200 shadow-lg inline-block rounded-3xl absolute bottom-0 transform -rotate-6 h-52 w-52 md:h-96 md:w-96"></div>
