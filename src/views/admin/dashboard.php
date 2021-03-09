@@ -67,7 +67,7 @@ $selectedItem = ob_get_clean();
         <div class="antialiased sans-serif mx-2 -mt-12">
             <div x-data="app({ events : <?= str_replace('"', "'", $events) ?> })" x-init="[initDate(), getNoOfDays()]"
                  x-cloak>
-                <div class="container mx-auto px-4 py-2 md:py-24">
+                <div class="container mx-auto px-4 py-16">
                     <div class="text-gray-700 mb-2 text-2xl font-medium">
                         Calendrier
                     </div>

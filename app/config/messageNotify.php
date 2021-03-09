@@ -3,49 +3,49 @@
 return[
     'addNews' => [
         0 => [
-            'message' => 'Une nouvelle actualité a été ajouté.',
+            'message' => 'Une nouvelle actualité a été ajoutée!',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
     ],
     'addEvent' => [
         0 => [
-            'message' => 'Un nouvel évènement a été ajouté.',
+            'message' => 'Un nouvel évènement a été ajouté!',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
     ],
     'addAdmin' => [
         0 => [
-            'message' => 'Un nouvel administrateur est enregistré.',
+            'message' => 'Un nouvel administrateur a été enregistré!',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
     ],
     'updateNews' => [
         0 => [
-            'message' => 'Une actualité a été modifié avec succès.',
+            'message' => 'Une actualité a été modifié avec succès!',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
     ],
     'updateEvent' => [
         0 => [
-            'message' => 'Un évènement a été modifié avec succès.',
+            'message' => 'Un évènement a été modifié avec succès!',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
     ],
     'updateAdmin' => [
         0 => [
-            'message' => 'Un administrateur a été modifié avec succès.',
+            'message' => 'Un administrateur a été modifié avec succès!',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
     ],
     'updateAdminProfil' => [
         0 => [
-            'message' => 'Votre profil a été modifié avec succès.',
+            'message' => 'Votre profil a été modifié avec succès!',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
@@ -59,14 +59,14 @@ return[
     ],
     'loginError' => [
         0 => [
-            'message' => 'Le courriel ou le mot de passe est incorrect.',
+            'message' => 'Le courriel ou le mot de passe sont incorrects',
             'color' => 'red-600',
             'colorIcon' => 'red-700'
         ]
     ],
     'loginSuccess' => [
         0 => [
-            'message' => 'Connexion réussi.',
+            'message' => 'Connexion réussie.',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
