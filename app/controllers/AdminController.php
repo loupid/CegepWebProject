@@ -22,7 +22,14 @@ class AdminController extends Controller
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute();
         $events = $query->fetchAll();
-        return $this->view('admin/dashboard', ['events'=> json_encode($events)], 1);
+
+        $query = $this->getDatabase()->prepare("SELECT (SELECT COUNT(*) FROM admins) as adminsCount, (SELECT COUNT(*) FROM events) as eventsCount, (SELECT COUNT(*) FROM news) as newsCount;");
+        $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
+        $query->execute();
+        $count = $query->fetchAll();
+        dump($count);
+
+        return $this->view('admin/dashboard', ['events' => json_encode($events)], 1);
     }
 
     public function adminsList()
@@ -39,26 +46,29 @@ class AdminController extends Controller
         return $this->view('admin/adminCreate', [], 1);
     }
 
-    public function created() {
+    public function created()
+    {
         $con = $this->getDatabase();
         Admin::create($con, $_POST);
         $this->addNotification('addAdmin');
         return $this->redirectToRoute('adminsList');
     }
 
-    public function update($id) {
+    public function update($id)
+    {
         $query = $this->getDatabase()->prepare("select * from Admins where id = ?;");
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
-        $query->execute([0=>$id]);
+        $query->execute([0 => $id]);
         $admin = $query->fetch();
-        Session::put('adminId',$id);;
-        return $this->view('admin/adminEdit', ['admin'=>$admin], 1);
+        Session::put('adminId', $id);;
+        return $this->view('admin/adminEdit', ['admin' => $admin], 1);
     }
 
-    public function updated() {
+    public function updated()
+    {
         $data = $_POST;
 
-        if (!isset($data['status'])){
+        if (!isset($data['status'])) {
             $data['status'] = 0;
         }
 
@@ -67,23 +77,25 @@ class AdminController extends Controller
         return $this->redirectToRoute('adminsList');
     }
 
-    public function updateProfil($id) {
+    public function updateProfil($id)
+    {
         $query = $this->getDatabase()->prepare("select * from Admins where id = ?;");
         $query->setFetchMode(PDO::FETCH_CLASS, Admin::class);
-        $query->execute([0=>$id]);
+        $query->execute([0 => $id]);
         $admin = $query->fetch();
-        Session::put('adminId',$id);;
+        Session::put('adminId', $id);;
         return $this->view('admin/adminEditProfil', ['admin' => $admin], 1);
     }
 
-    public function updatedProfil() {
+    public function updatedProfil()
+    {
         $data = $_POST;
 
         if (!isset($data['status'])) {
             $data['status'] = 0;
         }
 
-        if ($data['password'] === "" || $data['confirm_password'] === ""){
+        if ($data['password'] === "" || $data['confirm_password'] === "") {
             unset($data['password']);
             unset($data['confirm_password']);
         }
@@ -93,7 +105,8 @@ class AdminController extends Controller
         return $this->redirectToRoute('adminsList');
     }
 
-    public function delete() {
+    public function delete()
+    {
         $con = $this->getDatabase();
         $match = $this->router->match();
         Admin::delete($match['params']['id'], $con);
@@ -115,13 +128,14 @@ class AdminController extends Controller
             Admin::update($result['id'], $this->getDatabase(), ['last_connection_date' => date("d/m/Y H:i:s")]);
             $this->addNotification('loginSuccess');
             $this->redirectToRoute('adminDashboard');
-        } else{
+        } else {
             $this->addLoginNotification('loginError');
             $this->redirectToRoute('adminIndex');
         }
     }
 
-    public function logout(){
+    public function logout()
+    {
         User::logout();
         $this->addLoginNotification('logout');
         return $this->redirectToRoute('adminIndex');
@@ -132,7 +146,7 @@ class AdminController extends Controller
         $crumbs = array_combine($names, array_map('ucfirst', array_diff(explode("/", $_SERVER["REQUEST_URI"]), [""])));
 
         foreach ($names as $key => $value)
-        ?>
+            ?>
             <a href="<?= $this->router->generate($key) ?>" class="mx-1 hover:text-indigo-600"><?= $value ?></a>
         <?php
     }
