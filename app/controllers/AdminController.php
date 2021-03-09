@@ -7,6 +7,7 @@ use app\Session;
 use app\User;
 use models\Admin;
 use models\Event;
+use models\News;
 use PDO;
 
 class AdminController extends Controller
@@ -24,12 +25,10 @@ class AdminController extends Controller
         $events = $query->fetchAll();
 
         $query = $this->getDatabase()->prepare("SELECT (SELECT COUNT(*) FROM admins) as adminsCount, (SELECT COUNT(*) FROM events) as eventsCount, (SELECT COUNT(*) FROM news) as newsCount;");
-        $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
+        $query->setFetchMode(2);
         $query->execute();
-        $count = $query->fetchAll();
-        dump($count);
-
-        return $this->view('admin/dashboard', ['events' => json_encode($events)], 1);
+        $counts = $query->fetchAll();
+        return $this->view('admin/dashboard', ['events'=> json_encode($events), 'counts' => $counts], 1);
     }
 
     public function adminsList()
