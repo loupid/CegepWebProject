@@ -52,7 +52,7 @@ $selectedItem = ob_get_clean();
                             <label for="desk" class="block text-sm font-medium text-gray-700">Poste</label>
                             <input type="text" name="desk" id="desk"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                   required>
+                                   >
                         </div>
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-3">
@@ -60,7 +60,8 @@ $selectedItem = ob_get_clean();
                             <input type="text" name="cellphone" id="cellphone" autocomplete="phone"
                                    pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$|^\d{10}$"
                                    placeholder="(123) 456-7890"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                            required>
                         </div>
 
                         <div class="lg:col-span-2"></div>

@@ -34,5 +34,14 @@ return [
     ],
     "newsUpdate" => [
         AdminMiddleware::class
+    ],
+    "linksList" => [
+        AdminMiddleware::class
+    ],
+    "linksCreate" => [
+        AdminMiddleware::class
+    ],
+    "linksUpdate" => [
+        AdminMiddleware::class
     ]
 ];

@@ -17,19 +17,22 @@ $selectedItem = ob_get_clean();
                         <div class="col-span-6 sm:col-span-3">
                             <label for="firstname" class="block text-sm font-medium text-gray-700">Prénom</label>
                             <input type="text" name="firstname" id="firstname" autocomplete="given-name"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->firstname ?>">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->firstname ?>"
+                                   required>
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
                             <label for="lastname" class="block text-sm font-medium text-gray-700">Nom</label>
                             <input type="text" name="lastname" id="lastname" autocomplete="family-name"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->lastname ?>">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->lastname ?>"
+                                   required>
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
                             <label for="email" class="block text-sm font-medium text-gray-700">Courriel</label>
                             <input type="text" name="email" id="email" autocomplete="email"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->email ?>">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->email ?>"
+                                   required>
                         </div>
 
                         <div class="lg:col-span-2"></div>
@@ -37,7 +40,8 @@ $selectedItem = ob_get_clean();
                         <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                             <label for="workphone" class="block text-sm font-medium text-gray-700">Téléphone</label>
                             <input type="text" name="workphone" id="workphone" autocomplete="phone"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->workphone ?>">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->workphone ?>"
+                                   required>
                         </div>
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-1">
@@ -49,22 +53,11 @@ $selectedItem = ob_get_clean();
                         <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                             <label for="cellphone" class="block text-sm font-medium text-gray-700">Cellulaire</label>
                             <input type="text" name="cellphone" id="cellphone" autocomplete="phone"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->cellphone ?>">
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="<?= $admin->cellphone ?>"
+                                   required>
                         </div>
 
                         <div class="lg:col-span-3"></div>
-
-<!--                        <div class="col-span-6 sm:col-span-3">-->
-<!--                            <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>-->
-<!--                            <input type="password" name="password" id="password" autocomplete="password"-->
-<!--                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">-->
-<!--                        </div>-->
-<!---->
-<!--                        <div class="col-span-6 sm:col-span-3">-->
-<!--                            <label for="confirm_password" class="block text-sm font-medium text-gray-700">Confirmer le mot de passe</label>-->
-<!--                            <input type="password" name="confirm_password" id="confirm_password" autocomplete="password"-->
-<!--                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">-->
-<!--                        </div>-->
 
                         <div>
                             <label for="status" class="block text-sm font-medium text-gray-700">Actif</label>
