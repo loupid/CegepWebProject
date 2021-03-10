@@ -15,8 +15,7 @@ $selectedItem = ob_get_clean();
 
 <div class="flex flex-col mt-2">
     <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-        <div
-                class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+        <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
             <table class="min-w-full">
                 <thead>
                 <tr>
@@ -74,3 +73,40 @@ $selectedItem = ob_get_clean();
         </div>
     </div>
 </div>
+
+<script>
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'md:w-32 bg-green-500 hover:bg-green-600 text-white font-bold p-2 rounded-lg transition ease-in-out duration-300 mx-4',
+            cancelButton: 'md:w-32 bg-red-600 hover:bg-red-700 text-white font-bold p-2 rounded-lg transition ease-in-out duration-300 mx-4'
+        },
+        buttonsStyling: false
+    });
+
+    function validDelete(id){
+        swalWithBootstrapButtons.fire({
+            title: 'Voulez vous vraiment supprimer ce lien?',
+            text: "Cette action est irréversible!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Oui, supprimer le!',
+            cancelButtonText: 'Non, annuler!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire(
+                    'Supprimer!',
+                    `Le lien à été supprimé.`,
+                    'success'
+                );
+                window.location = "/admin/links/delete/"+id ;
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                swalWithBootstrapButtons.fire(
+                    'Annulation',
+                    'Ne vous inquiétez pas, rien ne sera supprimé :)',
+                    'error'
+                )
+            }
+        })
+    }
+</script>
