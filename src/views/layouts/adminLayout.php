@@ -32,7 +32,7 @@
     if (app\Session::has('notifAdmin')){
         foreach (app\Session::get('notifAdmin') as $notif){
             ?>
-            <div x-data="{open: true}" x-show="open" class="relative z-30 w-screen bg-<?= $notif['color'] ?>">
+            <div x-data="{open: true}" x-show="open" class="relative z-30 w-full bg-<?= $notif['color'] ?>">
                 <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between flex-wrap">
                         <div class="w-0 flex-1 flex items-center">

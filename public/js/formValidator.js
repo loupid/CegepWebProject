@@ -172,14 +172,13 @@ $(document).ready(function () {
             }
         }
 
-
         if (price.val() !== undefined) {
             debugger;
             if (price.val().toString().length >= 12) {
                 price.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le prix ne peut pas excéder 10 chiffres avant la virgule et deux chiffres après. *</span>");
                 price.select();
                 return;
-            }else if (price.val() <= 0) {
+            }else if (price.val() < 0) {
                 price.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le prix doit être plus grand que 0. *</span>");
                 price.select();
                 return;
@@ -200,7 +199,7 @@ $(document).ready(function () {
                 password.select();
                 return;
             } else if (password.val().length > 128) {
-                password.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le mot de passe ne peut pas excéder 128 charactères. *</span>");
+                password.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La mot de passe ne peut pas excéder 128 charactères. *</span>");
                 password.select();
                 return;
             }
@@ -208,11 +207,11 @@ $(document).ready(function () {
 
         if (confirm_password.val() !== undefined) {
             if (confirm_password.val().trim().length === 0) {
-                confirm_password.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La mot de passe ne peut pas être vide. *</span>");
+                confirm_password.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La confirmation de mot de passe ne peut pas être vide. *</span>");
                 confirm_password.select();
                 return;
             } else if (confirm_password.val().length > 128) {
-                confirm_password.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le mot de passe ne peut pas excéder 128 charactères. *</span>");
+                confirm_password.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La confirmation de mot de passe ne peut pas excéder 128 charactères. *</span>");
                 confirm_password.select();
                 return;
             }

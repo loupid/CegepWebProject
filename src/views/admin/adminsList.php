@@ -83,15 +83,15 @@ $selectedItem = ob_get_clean();
 </div>
 
 <script>
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'md:w-32 bg-green-500 hover:bg-green-600 text-white font-bold p-2 rounded-lg transition ease-in-out duration-300 mx-4',
+            cancelButton: 'md:w-32 bg-red-600 hover:bg-red-700 text-white font-bold p-2 rounded-lg transition ease-in-out duration-300 mx-4'
+        },
+        buttonsStyling: false
+    });
+
     function validDelete(id){
-        debugger;
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-                confirmButton: 'md:w-32 bg-green-500 hover:bg-green-600 text-white font-bold p-2 rounded-lg transition ease-in-out duration-300 mx-4',
-                cancelButton: 'md:w-32 bg-red-600 hover:bg-red-700 text-white font-bold p-2 rounded-lg transition ease-in-out duration-300 mx-4'
-            },
-            buttonsStyling: false
-        })
 
         swalWithBootstrapButtons.fire({
             title: 'Voulez vous vraiment supprimer cet administrateur?',
