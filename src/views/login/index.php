@@ -91,13 +91,13 @@ if (app\Session::has('notifLogin')){
                     </div>
                 </div>
 
-                <div class="flex items-center mb-6 -mt-4">
-                    <div class="flex ml-auto">
-                        <a href="#" class="inline-flex text-xs sm:text-sm text-blue-500 hover:text-blue-700">
-                            Vous avez oubliez votre mot de passe?
-                        </a>
-                    </div>
-                </div>
+<!--                <div class="flex items-center mb-6 -mt-4">-->
+<!--                    <div class="flex ml-auto">-->
+<!--                        <a href="#" class="inline-flex text-xs sm:text-sm text-blue-500 hover:text-blue-700">-->
+<!--                            Vous avez oubliez votre mot de passe?-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
 
                 <div class="flex w-full">
                     <button type="submit"
