@@ -15,6 +15,7 @@
     <script src="https://unpkg.com/create-file-list"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script type="module" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/component.js"></script>
     <script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/init.js"></script>
     <script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/admin.js"></script>
@@ -31,7 +32,7 @@
     if (app\Session::has('notifAdmin')) {
         foreach (app\Session::get('notifAdmin') as $notif) {
             ?>
-            <div x-data="{open: true}" x-show="open" class="relative z-30 w-screen bg-<?= $notif['color'] ?>">
+            <div x-data="{open: true}" x-show="open" class="relative z-30 w-full bg-<?= $notif['color'] ?>">
                 <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between flex-wrap">
                         <div class="w-0 flex-1 flex items-center">

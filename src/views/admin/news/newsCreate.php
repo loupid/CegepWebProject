@@ -18,7 +18,7 @@ $selectedItem = ob_get_clean();
 
 <div class="mt-10 sm:mt-0">
     <div class="mt-5 md:mt-0 md:col-span-2">
-        <form action="<?= $this->router->generate('newsCreated') ?>" method="POST" enctype="multipart/form-data">
+        <form id="Form" action="<?= $this->router->generate('newsCreated') ?>" method="POST" enctype="multipart/form-data">
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">
@@ -26,8 +26,7 @@ $selectedItem = ob_get_clean();
                         <div class="col-span-6 sm:col-span-4">
                             <label for="title" class="block text-sm font-medium text-gray-700">Titre</label>
                             <input type="text" name="title" id="title" autocomplete="title"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                   required>
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <input type="hidden" name="publisher_id">
@@ -35,8 +34,7 @@ $selectedItem = ob_get_clean();
                         <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                             <label for="link" class="block text-sm font-medium text-gray-700">Lien/source</label>
                             <input type="text" name="link" id="link"
-                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                   required>
+                                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <input type="hidden" name="file_name">
@@ -77,7 +75,7 @@ $selectedItem = ob_get_clean();
                                         </span>
                                     </button>
                                 </span>
-                                <input type="hidden" name="category" x-bind:value="options[value]">
+                                <input type="hidden" name="category" id="category" x-bind:value="options[value]">
                                 <div x-show="open"
                                      x-transition:leave="transition ease-in duration-100"
                                      x-transition:leave-start="opacity-100"
@@ -126,8 +124,7 @@ $selectedItem = ob_get_clean();
                         <div class="col-span-6 sm:col-span-6">
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                             <textarea name="description" id="description" rows="8" autocomplete="description"
-                                      class="mt-1 p-1.5 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                      required></textarea>
+                                      class="mt-1 p-1.5 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
                         </div>
 
                         <div class="flex">
@@ -245,7 +242,7 @@ $selectedItem = ob_get_clean();
                         </div>
                     </div>
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                        <button type="submit"
+                        <button id="send" type="submit"
                                 class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             Publier
                         </button>
@@ -264,4 +261,5 @@ $selectedItem = ob_get_clean();
 <?php ob_start(); ?>
 <script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/selectSearchBox.js"></script>
 <script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/dragableFile.js"></script>
+<script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/formValidator.js"></script>
 <?php $script = ob_get_clean(); ?>
