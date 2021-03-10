@@ -11,7 +11,7 @@ $selectedItem = ob_get_clean();
 
     <div class="mt-10 sm:mt-0">
         <div class="mt-5 md:mt-0 md:col-span-2">
-            <form action="<?= $this->router->generate('eventUpdated') ?>" method="POST" enctype="multipart/form-data">
+            <form id="Form" action="<?= $this->router->generate('eventUpdated') ?>" method="POST" enctype="multipart/form-data">
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
                         <div class="grid grid-cols-6 gap-6">
@@ -19,7 +19,7 @@ $selectedItem = ob_get_clean();
                                 <label for="title" class="block text-sm font-medium text-gray-700">Titre</label>
                                 <input type="text" name="title" id="title" autocomplete="title"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                       required value="<?= $event->title ?>">
+                                       value="<?=$event->title?>">
                             </div>
 
                             <input type="hidden" name="publisher_id">
@@ -29,7 +29,7 @@ $selectedItem = ob_get_clean();
                                        class="block text-sm font-medium text-gray-700">Organisateur</label>
                                 <input type="text" name="organizer" id="organizer"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                       required value="<?= $event->organizer ?>">
+                                       value="<?= $event->organizer ?>">
                             </div>
 
                             <div class="col-span-6 sm:col-span-6 lg:col-span-3">
@@ -118,14 +118,14 @@ $selectedItem = ob_get_clean();
                                 <label for="start_date" class="block text-sm font-medium text-gray-700">Début</label>
                                 <input type="datetime-local" name="start_date" id="start_date"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                       required value="<?=date("Y-m-d\TH:i:s", strtotime($event->start_date)) ?>">
+                                       value="<?=date("Y-m-d\TH:i:s", strtotime($event->start_date)) ?>">
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="end_date" class="block text-sm font-medium text-gray-700">Fin</label>
                                 <input type="datetime-local" name="end_date" id="end_date"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                       required value="<?= date("Y-m-d\TH:i:s", strtotime($event->end_date)) ?>">
+                                       value="<?= date("Y-m-d\TH:i:s", strtotime($event->end_date)) ?>">
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
@@ -147,7 +147,7 @@ $selectedItem = ob_get_clean();
                                        class="block text-sm font-medium text-gray-700">Description</label>
                                 <textarea name="description" id="description" rows="4" autocomplete="description"
                                           class="mt-1 p-1.5 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                          required><?= $event->description ?></textarea>
+                                          ><?= $event->description ?></textarea>
                             </div>
 
 
@@ -178,7 +178,8 @@ $selectedItem = ob_get_clean();
                                                @dragover="$refs.dnd.classList.add('border-blue-400'); $refs.dnd.classList.add('ring-4'); $refs.dnd.classList.add('ring-inset');"
                                                @dragleave="$refs.dnd.classList.remove('border-blue-400'); $refs.dnd.classList.remove('ring-4'); $refs.dnd.classList.remove('ring-inset');"
                                                @drop="$refs.dnd.classList.remove('border-blue-400'); $refs.dnd.classList.remove('ring-4'); $refs.dnd.classList.remove('ring-inset');"
-                                               name="file">
+                                               name="file"
+                                               required>
                                         <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                             <div class="space-y-1 text-center">
                                                 <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"
@@ -274,7 +275,7 @@ $selectedItem = ob_get_clean();
                             </div>
                         </div>
                     </div>
-                    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                    <div id="send" class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                         <button type="submit"
                                 class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             Sauvegarder
@@ -294,4 +295,5 @@ $selectedItem = ob_get_clean();
 <?php ob_start(); ?>
     <script src="/js/selectSearchBox.js"></script>
     <script src="/js/dragableFile.js"></script>
+    <script src="/js/formValidator.js"></script>
 <?php $script = ob_get_clean(); ?>
