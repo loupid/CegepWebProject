@@ -68,7 +68,7 @@ $selectedItem = ob_get_clean();
                                         </span>
                                     </button>
                                 </span>
-                                    <input type="hidden" name="category" x-bind:value="options[value]">
+                                    <input type="hidden" name="category" id="category" x-bind:value="options[value]">
                                     <div x-show="open"
                                          x-transition:leave="transition ease-in duration-100"
                                          x-transition:leave-start="opacity-100"

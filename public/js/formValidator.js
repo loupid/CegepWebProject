@@ -193,7 +193,7 @@ $(document).ready(function () {
                 price.select();
                 return;
             }else if (price.val() < 0) {
-                price.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le prix doit être plus grand que 0. *</span>");
+                price.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le prix doit être plus grand ou égal à 0. *</span>");
                 price.select();
                 return;
             }

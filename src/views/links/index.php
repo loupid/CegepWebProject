@@ -1,9 +1,6 @@
-<?php
-if (!empty($linkList)) { ?>
+<?php if (!empty($linkList)) { ?>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2 my-auto px-4 py-8">
-    <?php foreach ($linkList
-
-                   as $link) { ?>
+    <?php foreach ($linkList as $link) { ?>
         <div class="bg-white w-full flex items-center p-1 rounded-xl shadow border">
             <div class="flex-grow p-3">
                 <div class="font-semibold text-gray-700">
@@ -30,9 +27,9 @@ if (!empty($linkList)) { ?>
             <div class="p-2">
             </div>
         </div>
-        </div>
-    <?php }
-} else { ?>
+    <?php }?>
+    </div>
+<?php } else { ?>
     <div class="py-8">
         <img class="mx-auto rounded-lg shadow-md"
              src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/miscs/linksmeme.png" alt="meme">

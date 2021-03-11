@@ -62,9 +62,11 @@ class NewsController extends Controller
 
     public function updated(){
         $data = $_POST;
+
         //this will save the image in the folder images/UploadedImages/
         FileManager::saveFile();
-        if (FileManager::getFileName() !== $data['file_name']){
+
+        if (FileManager::getFileName() !== $data['file_name'] && FileManager::getFileName() !== ''){
             $data['file_name'] = FileManager::getFileName();
         }
 
@@ -73,8 +75,10 @@ class NewsController extends Controller
         }
 
         $data['publisher_id'] = User::getUserId();
+
         News::update(Session::get('newsId'), $this->getDatabase(), $data);
         $this->addNotification('updateNews');
+
         return $this->redirectToRoute('newsList');
     }
 
