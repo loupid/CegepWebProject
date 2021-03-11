@@ -188,8 +188,8 @@ $(document).ready(function () {
         }
 
         if (price.val() !== undefined) {
-            if (price.val().toString().length >= 12) {
-                price.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le prix ne peut pas excéder 10 chiffres avant la virgule et deux chiffres après. *</span>");
+            if (price.val().toString().length >= 12 || price.val().toString().length === 0) {
+                price.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le prix doit avoir maximum 10 chiffres avant la virgule et deux chiffres après. *</span>");
                 price.select();
                 return;
             }else if (price.val() < 0) {
