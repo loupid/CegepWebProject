@@ -425,6 +425,7 @@
                                     Accueil
                                 </span>
                             </a>
+
                             <a href="<?= $this->router->generate('indexProgram') ?>"
                                class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
@@ -436,6 +437,7 @@
                                     Programme
                                 </span>
                             </a>
+
                             <a href="<?= $this->router->generate('coursesIndex') ?>"
                                class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
@@ -447,6 +449,7 @@
                                     Cours
                                 </span>
                             </a>
+
                             <a href="<?= $this->router->generate('picturesIndex') ?>"
                                class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
@@ -458,6 +461,7 @@
                                     Locaux
                                 </span>
                             </a>
+
                             <a href="<?= $this->router->generate('eventsIndex') ?>"
                                class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
@@ -481,6 +485,7 @@
                                     Actualités
                                 </span>
                             </a>
+
                             <a href="<?= $this->router->generate('linksIndex') ?>"
                                class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"

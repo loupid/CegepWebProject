@@ -33,7 +33,7 @@ $selectedItem = ob_get_clean();
 
                             <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                                 <label for="category" class="block text-sm font-medium text-gray-700">Catégorie</label>
-                                <div x-data="select({ data : setEventCategorySelectBox(), emptyOptionsMessage: 'Aucun donnée disponible.', name: 'category', placeholder: 'Sélectionnez une catégorie', value: 'event'})"
+                                <div x-data="select({ data : setEventCategorySelectBox(), emptyOptionsMessage: 'Aucun donnée disponible.', name: 'category', placeholder: 'Sélectionnez une catégorie', value: 'tech'})"
                                      x-init="init()"
                                      @click.away="closeListbox()"
                                      @keydown.escape="closeListbox()"
@@ -67,7 +67,7 @@ $selectedItem = ob_get_clean();
                                         </span>
                                     </button>
                                 </span>
-                                    <input type="hidden" name="category" x-bind:value="options[value]">
+                                    <input type="hidden" name="category" id="category" x-bind:value="options[value]">
                                     <div x-show="open"
                                          x-transition:leave="transition ease-in duration-100"
                                          x-transition:leave-start="opacity-100"
@@ -121,7 +121,7 @@ $selectedItem = ob_get_clean();
 
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="end_date" class="block text-sm font-medium text-gray-700">Fin</label>
-                                <input type="datetime-local" name="end_date" id="end_date"
+                                <input type="datetime-local" name="end_date" id="end_date" :min="new Date().toISOString().slice(0,-8)"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
 
