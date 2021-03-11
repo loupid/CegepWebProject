@@ -36,7 +36,7 @@
                 <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between flex-wrap">
                         <div class="w-0 flex-1 flex items-center">
-                            <span class="flex p-2 rounded-lg bg-<?= $notif['colorIcon'] ?>">
+                            <span class="flex p-2 rounded-lg bg-<?=$notif['colorIcon']?>">
                                 <!-- Heroicon name: speakerphone -->
                                 <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
                                      viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -254,10 +254,9 @@
                              class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
                              style="display: none;">
                             <a href="<?= $this->router->generate('adminUpdateProfil', ['id' => app\User::getUserId()]) ?>"
-                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
+                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profil</a>
                             <a href="<?= $this->router->generate('adminLogout') ?>"
-                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Se
-                                deconnecter</a>
+                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Se déconnecter</a>
                         </div>
                     </div>
                 </div>
@@ -268,6 +267,7 @@
                     <?= $content ?? '' ?>
                 </div>
             </main>
+
         </div>
     </div>
 </div>

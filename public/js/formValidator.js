@@ -24,6 +24,9 @@ $(document).ready(function () {
         let start_date = $('#start_date');
         let end_date = $('#end_date');
 
+        let emailRegex = new RegExp(/^[\w\-.]+@([\w-]+\.)+[\w-]{2,4}$/);
+        let phoneRegex = new RegExp(/^\([0-9]{3}\) [0-9]{3}\-[0-9]{4}$/);
+
         if (title.val() !== undefined) {
             if (title.val().length > 256) {
                 title.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le titre ne peut pas excéder 256 charactères. *</span>");
@@ -133,6 +136,9 @@ $(document).ready(function () {
                 email.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le courriel ne peut pas être vide. *</span>");
                 email.select();
                 return;
+            } else if (emailRegex.test(email.val())){
+                email.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le courriel n'est pas valide. *</span>");
+                email.select();
             }
         }
 
@@ -145,6 +151,10 @@ $(document).ready(function () {
                 workphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone ne peut pas être vide. *</span>");
                 workphone.select();
                 return;
+            } else if (phoneRegex.test(workphone.val())){
+                workphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone invalide. *</span>");
+                workphone.select();
+                return;
             }
         }
 
@@ -155,6 +165,10 @@ $(document).ready(function () {
                 return;
             } else if (cellphone.val().trim().length === 0) {
                 cellphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone cellulaire ne peut pas être vide. *</span>");
+                cellphone.select();
+                return;
+            } else if (phoneRegex.test(cellphone.val())){
+                cellphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone cellulaire invalide. *</span>");
                 cellphone.select();
                 return;
             }
@@ -173,7 +187,6 @@ $(document).ready(function () {
         }
 
         if (price.val() !== undefined) {
-            debugger;
             if (price.val().toString().length >= 12) {
                 price.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le prix ne peut pas excéder 10 chiffres avant la virgule et deux chiffres après. *</span>");
                 price.select();

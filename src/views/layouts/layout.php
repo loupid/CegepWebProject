@@ -68,7 +68,7 @@
                     </button>
                 </div>
                 <nav class="hidden md:flex space-x-10">
-                    <a href="/" class="text-base font-medium text-gray-900 hover:text-indigo-600">
+                    <a href="<?= $this->router->generate('index') ?>" class="text-base font-medium text-gray-900 hover:text-indigo-600">
                         Accueil
                     </a>
 
@@ -520,7 +520,7 @@
                     <div>
                         <div class="flex">
                             <a href="/">
-                                <img class="dark:hidden inline-block" src="/images/svgs/darklogodep.svg"
+                                <img class="dark:hidden inline-block" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/darklogodep.svg"
                                      alt="Logo département">
                             </a>
 
