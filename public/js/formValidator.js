@@ -136,9 +136,10 @@ $(document).ready(function () {
                 email.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le courriel ne peut pas être vide. *</span>");
                 email.select();
                 return;
-            } else if (emailRegex.test(email.val())){
+            } else if (!emailRegex.test(email.val())){
                 email.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le courriel n'est pas valide. *</span>");
                 email.select();
+                return
             }
         }
 
@@ -151,7 +152,7 @@ $(document).ready(function () {
                 workphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone ne peut pas être vide. *</span>");
                 workphone.select();
                 return;
-            } else if (phoneRegex.test(workphone.val())){
+            } else if (!phoneRegex.test(workphone.val())){
                 workphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone invalide. *</span>");
                 workphone.select();
                 return;
@@ -167,7 +168,7 @@ $(document).ready(function () {
                 cellphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone cellulaire ne peut pas être vide. *</span>");
                 cellphone.select();
                 return;
-            } else if (phoneRegex.test(cellphone.val())){
+            } else if (!phoneRegex.test(cellphone.val())){
                 cellphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone cellulaire invalide. *</span>");
                 cellphone.select();
                 return;

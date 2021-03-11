@@ -33,5 +33,8 @@ if (!empty($linkList)) { ?>
         </div>
     <?php }
 } else { ?>
-    <img class="my-8 mx-auto rounded-lg shadow-md" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/miscs/newsmeme.png" alt="meme">
+    <div class="py-8">
+        <img class="mx-auto rounded-lg shadow-md"
+             src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/miscs/linksmeme.png" alt="meme">
+    </div>
 <?php } ?>

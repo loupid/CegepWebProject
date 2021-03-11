@@ -1,9 +1,12 @@
 function setNewsCategorySelectBox() {
     return {
-        event: 'Évènementielle',
-        school: 'Para-Scolaire',
-        info: 'Information',
-        tech: 'Technologique',
+        culture: 'Culture',
+        sport: 'Sport',
+        tech: 'Technologie',
+        game: 'Jeux vidéo',
+        science: 'Science',
+        finance: 'Finance',
+        education: 'Éducation',
     }
 }
 
@@ -17,10 +20,14 @@ function getNewsKey(value){
 
 function setEventCategorySelectBox() {
     return {
-        event: 'Évènementielle',
-        school: 'Para-Scolaire',
-        info: 'Information',
-        tech: 'Technologique',
+        business: 'Entreprenariat',
+        sport: 'Sport',
+        tech: 'Technologie',
+        game: 'Jeux vidéo',
+        science: 'Science',
+        webinar: 'Webinaire',
+        show: 'Spectacle',
+        conference: 'Conférence',
     }
 }
 

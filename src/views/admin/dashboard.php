@@ -144,12 +144,15 @@ $selectedItem = ob_get_clean();
                                                 <div @click="showEventModal(event)"
                                                      class="px-2 py-1 rounded-lg mt-1 overflow-hidden border"
                                                      :class="{
-												'border-blue-200 text-blue-800 bg-blue-100 hover:bg-blue-300': event.category === 'technologique',
-												'border-red-200 text-red-800 bg-red-100 hover:bg-red-300': event.category === 'Jeux videos',
-												'border-yellow-200 text-yellow-800 bg-yellow-100 hover:bg-yellow-300': event.category === 'yellow',
-												'border-green-200 text-green-800 bg-green-100 hover:bg-green-300': event.category === 'green',
-												'border-purple-200 text-purple-800 bg-purple-100 hover:bg-purple-300': event.category === 'purple'
-											}"
+                                                     'border-blue-200 text-blue-800 bg-blue-100 hover:bg-blue-300': event.category === 'Technologie',
+                                                     'border-red-200 text-red-800 bg-red-100 hover:bg-red-300': event.category === 'Sport',
+                                                     'border-yellow-200 text-yellow-800 bg-yellow-100 hover:bg-yellow-300': event.category === 'Jeux video',
+                                                     'border-green-200 text-green-800 bg-green-100 hover:bg-green-300': event.category === 'Entreprenariat',
+                                                     'border-purple-200 text-purple-800 bg-purple-100 hover:bg-purple-300': event.category === 'Webinaire',
+                                                     'border-orange-200 text-orange-800 bg-orange-100 hover:bg-orange-300': event.category === 'Science',
+                                                     'border-pink-200 text-pink-800 bg-pink-100 hover:bg-pink-300': event.category === 'Spectacle',
+                                                     'border-indigo-200 text-indigo-800 bg-indigo-100 hover:bg-indigo-300': event.category === 'Conference'
+                                                     }"
                                                 >
                                                     <p x-text="event.title"
                                                        class="text-sm truncate leading-tight"></p>
@@ -207,12 +210,14 @@ $selectedItem = ob_get_clean();
 
                             <div class="mb-4 flex">
                                 <div class="mr-auto">
-                                    <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Date de début</label>
+                                    <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Date de
+                                        début</label>
                                     <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
                                            type="text" x-model="start_date" readonly>
                                 </div>
                                 <div class="ml-auto">
-                                    <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Date de fin</label>
+                                    <label class="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Date de
+                                        fin</label>
                                     <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-600"
                                            type="text" x-model="end_date" readonly>
                                 </div>
@@ -240,7 +245,7 @@ $selectedItem = ob_get_clean();
                 title: '',
                 start_date: '',
                 end_date: '',
-                category: 'technologique',
+                category: 'Technologie',
                 organizer: '',
                 address: '',
                 price: '',
