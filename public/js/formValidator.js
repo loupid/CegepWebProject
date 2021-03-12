@@ -176,11 +176,12 @@ $(document).ready(function () {
         }
 
         if (description.val() !== undefined) {
-            if (description.val().length > 256) {
-                description.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La description ne peut pas excéder 256 charactères. *</span>");
-                description.select();
-                return;
-            } else if (description.val().trim().length === 0) {
+            // if (description.val().length > 256) {
+            //     description.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La description ne peut pas excéder 256 charactères. *</span>");
+            //     description.select();
+            //     return;
+            // } else
+            if (description.val().trim().length === 0) {
                 description.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La description ne peut pas être vide. *</span>");
                 description.select();
                 return;
