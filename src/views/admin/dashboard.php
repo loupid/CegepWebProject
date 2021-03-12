@@ -146,12 +146,12 @@ $selectedItem = ob_get_clean();
                                                      :class="{
                                                      'border-blue-200 text-blue-800 bg-blue-100 hover:bg-blue-300': event.category === 'Technologie',
                                                      'border-red-200 text-red-800 bg-red-100 hover:bg-red-300': event.category === 'Sport',
-                                                     'border-yellow-200 text-yellow-800 bg-yellow-100 hover:bg-yellow-300': event.category === 'Jeux video',
+                                                     'border-yellow-200 text-yellow-800 bg-yellow-100 hover:bg-yellow-300': event.category === 'Jeux vidéo',
                                                      'border-green-200 text-green-800 bg-green-100 hover:bg-green-300': event.category === 'Entreprenariat',
                                                      'border-purple-200 text-purple-800 bg-purple-100 hover:bg-purple-300': event.category === 'Webinaire',
                                                      'border-orange-200 text-orange-800 bg-orange-100 hover:bg-orange-300': event.category === 'Science',
                                                      'border-pink-200 text-pink-800 bg-pink-100 hover:bg-pink-300': event.category === 'Spectacle',
-                                                     'border-indigo-200 text-indigo-800 bg-indigo-100 hover:bg-indigo-300': event.category === 'Conference'
+                                                     'border-indigo-200 text-indigo-800 bg-indigo-100 hover:bg-indigo-300': event.category === 'Conférence'
                                                      }"
                                                 >
                                                     <p x-text="event.title"
