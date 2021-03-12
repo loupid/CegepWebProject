@@ -47,7 +47,7 @@ $selectedItem = ob_get_clean();
                         </td>
 
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <span class="text-sm leading-5 text-gray-900"><?= $event->description; ?></span>
+                            <span class="text-sm leading-5 text-gray-900"><?= substr($event->description, 0, 50); ?></span>
                         </td>
 
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">

@@ -1,5 +1,5 @@
 <?php if (!empty($linkList)) { ?>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 my-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto px-4 py-8">
     <?php foreach ($linkList as $link) { ?>
         <div class="bg-white w-full flex items-center p-1 rounded-xl shadow border">
             <div class="flex-grow p-3">
@@ -12,7 +12,7 @@
                 <div class="flex">
                     <a href="//<?= $link->link ?>" target="_blank"
                        class="font-semibold text-sm text-gray-700 mr-auto hover:text-indigo-600">
-                        <?= $link->link ?>
+                        Consulter le lien
                     </a>
                     <div class="flex ml-auto mb-1">
                         <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
