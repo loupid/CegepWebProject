@@ -3,7 +3,7 @@ namespace middlewares;
 
 use app\Session;
 
-class Middleware
+abstract class Middleware
 {
     private $router;
     private $db;
