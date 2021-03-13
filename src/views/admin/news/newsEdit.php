@@ -259,8 +259,8 @@ $selectedItem = ob_get_clean();
 
 
 <?php ob_start(); ?>
-<script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/selectSearchBox.js"></script>
-<script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/dragableFile.js"></script>
-<script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/formValidator.js"></script>
+<script src="/js/selectSearchBox.js"></script>
+<script src="/js/dragableFile.js"></script>
+<script src="/js/formValidator.js"></script>
 <?php $script = ob_get_clean(); ?>
 

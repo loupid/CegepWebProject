@@ -108,7 +108,7 @@ $selectedItem = ob_get_clean();
                     `L'administrateur à été supprimé.`,
                     'success'
                 );
-                window.location = "/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/delete/"+id ;
+                window.location = "/admin/delete/"+id ;
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 swalWithBootstrapButtons.fire(
                     'Annulation',

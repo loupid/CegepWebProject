@@ -100,7 +100,7 @@ $selectedItem = ob_get_clean();
                     `L'actualité à été supprimé.`,
                     'success'
                 );
-                window.location = "/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/news/delete/"+id ;
+                window.location = "/admin/news/delete/"+id ;
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 swalWithBootstrapButtons.fire(
                     'Annulation',

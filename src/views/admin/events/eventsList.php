@@ -100,7 +100,7 @@ $selectedItem = ob_get_clean();
                     `L'évènement à été supprimé.`,
                     'success'
                 );
-                window.location = "/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/event/delete/"+id ;
+                window.location = "/admin/event/delete/"+id ;
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 swalWithBootstrapButtons.fire(
                     'Annulation',

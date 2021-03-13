@@ -5,7 +5,7 @@
     <title>Département d'informatique</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/H2021/420626RI/Equipe_1/cegepwebproject/public/css/tailwind.css">
+    <link rel="stylesheet" href="/css/tailwind.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script type="module" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/component.js"></script>
+    <script type="module" src="/js/component.js"></script>
     <style>
         .modal {
             transition: opacity 0.25s ease;
@@ -53,7 +53,7 @@
                 <div class="flex justify-start">
                     <a href="<?= $this->router->generate('index') ?>" class="inline-block mr-4">
                         <img class="dark:hidden inline-block"
-                             src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/darklogodep.svg"
+                             src="/images/svgs/darklogodep.svg"
                              alt="Logo département">
                     </a>
                 </div>
@@ -404,7 +404,7 @@
             <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                 <div class="pt-5 pb-6 px-5">
                     <div class="flex">
-                        <img class="h-8 w-auto mr-auto" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/darklogodep.svg" alt="darklogodep">
+                        <img class="h-8 w-auto mr-auto" src="/images/svgs/darklogodep.svg" alt="darklogodep">
                         <button id="btn-close-mobile-menu" type="button" class="bg-white rounded-md p-2 ml-auto inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                             <span class="sr-only">Close menu</span>
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -516,7 +516,7 @@
                             <div class="flex">
                                 <a href="/">
                                     <img class="dark:hidden inline-block"
-                                         src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/darklogodep.svg"
+                                         src="/images/svgs/darklogodep.svg"
                                          alt="Logo département">
                                 </a>
 
@@ -653,7 +653,7 @@
     </div>
 
     <!--Add script here by a variable -->
-    <script type="module" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/app.js"></script>
+    <script type="module" src="/js/app.js"></script>
     <?= $script ?? '' ?>
 </body>
 </html>

@@ -29,67 +29,67 @@
 
 
 //Home
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/', 'HomeController@index','index');
+$router->map('GET', '/', 'HomeController@index','index');
 
 
 //Programs
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/programme', 'ProgramController@index', 'indexProgram');
+$router->map('GET', '/programme', 'ProgramController@index', 'indexProgram');
 
 
 //Cours
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/cours', 'CoursesController@index', 'coursesIndex');
+$router->map('GET', '/cours', 'CoursesController@index', 'coursesIndex');
 
 
 //Pictures
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/locaux', 'PicturesController@index', 'picturesIndex');
+$router->map('GET', '/locaux', 'PicturesController@index', 'picturesIndex');
 
 
 //Admin
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin', 'AdminController@index', 'adminIndex');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/logout', 'AdminController@logout', 'adminLogout');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/dashboard', 'AdminController@dashboard', 'adminDashboard');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/adminsList', 'AdminController@adminsList', 'adminsList');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/create', 'AdminController@create', 'adminCreate');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/update/[i:id]','AdminController@update', 'adminUpdate');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/updateprofil/[i:id]','AdminController@updateProfil', 'adminUpdateProfil');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/delete/[i:id]','AdminController@delete', 'adminDelete');
+$router->map('GET', '/admin', 'AdminController@index', 'adminIndex');
+$router->map('GET', '/admin/logout', 'AdminController@logout', 'adminLogout');
+$router->map('GET', '/admin/dashboard', 'AdminController@dashboard', 'adminDashboard');
+$router->map('GET', '/admin/adminsList', 'AdminController@adminsList', 'adminsList');
+$router->map('GET', '/admin/create', 'AdminController@create', 'adminCreate');
+$router->map('GET', '/admin/update/[i:id]','AdminController@update', 'adminUpdate');
+$router->map('GET', '/admin/updateprofil/[i:id]','AdminController@updateProfil', 'adminUpdateProfil');
+$router->map('GET', '/admin/delete/[i:id]','AdminController@delete', 'adminDelete');
 
 
-$router->map('POST','/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/connexion','AdminController@login', 'adminConfirm');
-$router->map('POST','/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/created','AdminController@created', 'adminCreated');
-$router->map('POST','/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/updated','AdminController@updated', 'adminUpdated');
-$router->map('POST','/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/updatedprofil','AdminController@updatedProfil', 'adminUpdatedProfil');
+$router->map('POST','/admin/connexion','AdminController@login', 'adminConfirm');
+$router->map('POST','/admin/created','AdminController@created', 'adminCreated');
+$router->map('POST','/admin/updated','AdminController@updated', 'adminUpdated');
+$router->map('POST','/admin/updatedprofil','AdminController@updatedProfil', 'adminUpdatedProfil');
 
 
 //events
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/evenements', 'EventController@getAll', 'eventsIndex');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/events', 'EventController@eventsList', 'eventsList');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/event/create', 'EventController@create', 'eventCreate');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/event/update/[i:id]', 'EventController@update', 'eventUpdate');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/event/delete/[i:id]','EventController@delete', 'eventDelete');
+$router->map('GET', '/evenements', 'EventController@getAll', 'eventsIndex');
+$router->map('GET', '/admin/events', 'EventController@eventsList', 'eventsList');
+$router->map('GET', '/admin/event/create', 'EventController@create', 'eventCreate');
+$router->map('GET', '/admin/event/update/[i:id]', 'EventController@update', 'eventUpdate');
+$router->map('GET', '/admin/event/delete/[i:id]','EventController@delete', 'eventDelete');
 
-$router->map('POST', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/event/created', 'EventController@created', 'eventCreated');
-$router->map('POST', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/event/updated', 'EventController@updated', 'eventUpdated');
+$router->map('POST', '/admin/event/created', 'EventController@created', 'eventCreated');
+$router->map('POST', '/admin/event/updated', 'EventController@updated', 'eventUpdated');
 
 
 //news
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/actualites', 'NewsController@getAll', 'newsIndex');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/actualites/[i:id]','NewsController@getNews', 'newsDetails');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/news', 'NewsController@newsList', 'newsList');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/news/create', 'NewsController@create', 'newsCreate');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/news/update/[i:id]', 'NewsController@update', 'newsUpdate');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/news/delete/[i:id]','NewsController@delete', 'newsDelete');
+$router->map('GET', '/actualites', 'NewsController@getAll', 'newsIndex');
+$router->map('GET', '/actualites/[i:id]','NewsController@getNews', 'newsDetails');
+$router->map('GET', '/admin/news', 'NewsController@newsList', 'newsList');
+$router->map('GET', '/admin/news/create', 'NewsController@create', 'newsCreate');
+$router->map('GET', '/admin/news/update/[i:id]', 'NewsController@update', 'newsUpdate');
+$router->map('GET', '/admin/news/delete/[i:id]','NewsController@delete', 'newsDelete');
 
-$router->map('POST','/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/news/created', 'NewsController@created', 'newsCreated');
-$router->map('POST','/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/news/updated','NewsController@updated', 'newsUpdated');
+$router->map('POST','/admin/news/created', 'NewsController@created', 'newsCreated');
+$router->map('POST','/admin/news/updated','NewsController@updated', 'newsUpdated');
 
 
 //links
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/liens-utiles', 'LinksController@index', 'linksIndex');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/links', 'LinksController@linksList', 'linksList');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/links/create', 'LinksController@create', 'linksCreate');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/links/update/[i:id]', 'LinksController@update', 'linksUpdate');
-$router->map('GET', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/links/delete/[i:id]', 'LinksController@delete', 'linksDelete');
+$router->map('GET', '/liens-utiles', 'LinksController@index', 'linksIndex');
+$router->map('GET', '/admin/links', 'LinksController@linksList', 'linksList');
+$router->map('GET', '/admin/links/create', 'LinksController@create', 'linksCreate');
+$router->map('GET', '/admin/links/update/[i:id]', 'LinksController@update', 'linksUpdate');
+$router->map('GET', '/admin/links/delete/[i:id]', 'LinksController@delete', 'linksDelete');
 
-$router->map('POST', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/links/created', 'LinksController@created', 'linksCreated');
-$router->map('POST', '/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/links/updated', 'LinksController@updated', 'linksUpdated');
+$router->map('POST', '/admin/links/created', 'LinksController@created', 'linksCreated');
+$router->map('POST', '/admin/links/updated', 'LinksController@updated', 'linksUpdated');
