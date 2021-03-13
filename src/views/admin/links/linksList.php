@@ -3,6 +3,7 @@ ob_start();
 ?>links<?php
 $selectedItem = ob_get_clean();
 ?>
+
 <h3 class="text-gray-700 text-3xl font-medium">Liens utiles</h3>
 <div class="mt-8 flex justify-end">
     <a href="<?= $this->router->generate('linksCreate') ?>" class="mx-2">
@@ -46,7 +47,7 @@ $selectedItem = ob_get_clean();
                         </td>
 
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <span class="text-sm leading-5 text-gray-900"><?= $link->description; ?></span>
+                            <span class="text-sm leading-5 text-gray-900"><?= substr($link->description, 0, 50); ?></span>
                         </td>
 
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
@@ -99,7 +100,7 @@ $selectedItem = ob_get_clean();
                     `Le lien à été supprimé.`,
                     'success'
                 );
-                window.location = "/H2021/420626RI/Equipe_1/cegepwebproject/public/admin/links/delete/"+id ;
+                window.location = "/admin/links/delete/"+id ;
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 swalWithBootstrapButtons.fire(
                     'Annulation',

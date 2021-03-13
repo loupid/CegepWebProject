@@ -12,7 +12,7 @@
                 <div class="flex">
                     <a href="//<?= $link->link ?>" target="_blank"
                        class="font-semibold text-sm text-gray-700 mr-auto hover:text-indigo-600">
-                        <?= $link->link ?>
+                        Consulter le lien
                     </a>
                     <div class="flex ml-auto mb-1">
                         <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
@@ -32,6 +32,6 @@
 <?php } else { ?>
     <div class="py-8">
         <img class="mx-auto rounded-lg shadow-md"
-             src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/miscs/linksmeme.png" alt="meme">
+             src="/images/miscs/linksmeme.png" alt="meme">
     </div>
 <?php } ?>

@@ -1,6 +1,6 @@
 <?php
 
-interface Model
+interface IModel
 {
     public static function create($db, $array = []);
 

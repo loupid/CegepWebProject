@@ -2,7 +2,7 @@
 
 namespace models;
 
-class Link implements \Model
+class Link implements \IModel
 {
     public $id;
     public $title;
@@ -27,13 +27,13 @@ class Link implements \Model
 
     public static function update($id, $db, $array = [])
     {
-        $query = 'UPDATE links SET';
+        $query = "UPDATE links SET";
         $comma = ' ';
         foreach ($array as $key => $value) {
             $query .= $comma . $key . " = '" . $value . "'";
             $comma = ', ';
         }
-        $query .= ' where id = ' . $id;
+        $query .= " where id = " . $id;
         $db->prepare($query)->execute();
     }
 

@@ -2,7 +2,7 @@
 
 namespace models;
 
-class News implements \Model
+class News implements \IModel
 {
     public $id;
     public $title;
@@ -35,13 +35,13 @@ class News implements \Model
     public static function update($id, $db, $array = [])
     {
         // TODO: Implement update() method.
-        $query = 'UPDATE news SET';
+        $query = "UPDATE news SET";
         $comma = ' ';
         foreach ($array as $key => $value){
             $query .= $comma . $key . " = '".$value."'";
             $comma = ', ';
         }
-        $query .= ' where id = '.$id;
+        $query .= " where id = ".$id;
         $db->prepare($query)->execute();
     }
 

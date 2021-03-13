@@ -57,6 +57,7 @@ if (is_array($match)) {
         $instance = getControllerClassInstance('Controller', $router, $db_conn);
         call_user_func_array(array($instance, 'view'), array($match['target'], $match['params']));
     }
+        
 } else {
     require '../app/controllers/Controller.php';
     require '../app/controllers/ErrorController.php';

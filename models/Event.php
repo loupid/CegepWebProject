@@ -4,7 +4,7 @@
 namespace models;
 
 
-class Event implements \Model
+class Event implements \IModel
 {
     public $id;
     public $publisher_id;
@@ -44,7 +44,7 @@ class Event implements \Model
 
     public static function update($id, $db, $array = [])
     {
-        // TODO: Implement update() method.
+        // TODO: Implement update() method. Avoid sql injection
         $query = "UPDATE events SET";
         $comma = ' ';
         foreach ($array as $key => $value){

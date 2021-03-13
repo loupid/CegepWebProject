@@ -2,7 +2,7 @@
 //put here the same properties as the DB
 namespace models;
 
-class Admin implements \Model
+class Admin implements \IModel
 {
     public $id;
     public $firstname;

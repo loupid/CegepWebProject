@@ -4,7 +4,7 @@
         foreach ($events as $event) { ?>
             <div class="flex flex-col w-full bg-white mb-8 rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5">
                 <div class="w-full h-64 bg-top bg-cover rounded-t"
-                     style="background-image: url('/H2021/420626RI/Equipe_1/cegepwebproject/public/images/UploadedImages/<?= $event->file_name ?>'); background-position: center; background-size:cover;"></div>
+                     style="background-image: url('/images/UploadedImages/<?= $event->file_name === '' ? 'default.png' : $event->file_name ?>'); background-position: center; background-size:cover;"></div>
                 <div class="flex flex-col w-full md:flex-row">
                     <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
                         <div class="md:text-3xl"><?php
@@ -36,9 +36,9 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                               d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
                                     </svg>
-                                    <a class="hover:text-indigo-600" href="https://<?= $event->link; ?>"
+                                    <a class="hover:text-indigo-600" href="//<?= $event->link; ?>"
                                        target="_blank">
-                                        <?= $event->link; ?>
+                                        Consulter le lien
                                     </a>
                                 </div>
                                 <div class="flex">
@@ -81,6 +81,6 @@
             </div>
         <?php }
     } else { ?>
-        <img class="mb-8 rounded-md shadow-md" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/miscs/eventsmeme.png" alt="meme">
+        <img class="mb-8 rounded-md shadow-md" src="/images/miscs/eventsmeme.png" alt="meme">
     <?php } ?>
 </div>

@@ -5,6 +5,7 @@
 .code{
     @apply text-cwc-red;
 }
+
 @responsive {
     .wh-init
     {

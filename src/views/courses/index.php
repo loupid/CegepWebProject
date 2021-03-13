@@ -342,4 +342,4 @@
     </div>
 </div>
 <!-- Include du javascript pour les modals. Doit être exécuté après la génération du html -->
-<script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/cours.js"></script>
+<script src="/js/cours.js"></script>

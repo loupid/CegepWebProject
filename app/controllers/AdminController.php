@@ -10,7 +10,7 @@ use models\Event;
 use models\News;
 use PDO;
 
-class AdminController extends Controller
+class AdminController extends Controller implements IController
 {
     public function index()
     {
@@ -104,7 +104,7 @@ class AdminController extends Controller
         return $this->redirectToRoute('adminsList');
     }
 
-    public function delete()
+    public function delete($id)
     {
         $con = $this->getDatabase();
         $match = $this->router->match();

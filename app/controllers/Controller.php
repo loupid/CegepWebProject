@@ -4,7 +4,7 @@ namespace controllers;
 
 use app\Session;
 
-class Controller
+abstract class Controller
 {
 
     protected $router;

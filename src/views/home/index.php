@@ -10,31 +10,31 @@
         </div>
 
         <div class="flex mt-6 justify-between">
-            <img class="h-16 dark:hidden inline-block" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/nouscegep.svg" alt="Nous le cegep">
+            <img class="h-16 dark:hidden inline-block" src="/images/svgs/nouscegep.svg" alt="Nous le cegep">
             <button type="button" onclick="window.location = '<?= $this->router->generate('indexProgram') ?>'"
                     class="md:w-32 bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300">
                 Découvrir
             </button>
         </div>
     </div>
-    <img class="h-72 mt-8 lg:mt-0 mx-auto rounded-lg" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/miscs/code.png" alt="code">
+    <img class="h-72 mt-8 lg:mt-0 mx-auto rounded-lg" src="/images/miscs/code.png" alt="code">
 </section>
 
 <section class="lg:flex justify-center mx-auto my-16 p-10">
     <div class="lg:w-1/3 text-center justify-center">
-        <img class="dark:hidden inline-block" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/tutoring.svg" alt="Tutorat">
+        <img class="dark:hidden inline-block" src="/images/svgs/tutoring.svg" alt="Tutorat">
         <h3 class="text-blue-800 text-2xl font-bold">Tutorat</h3>
         <p class="text-center text-lg text-gray-700">Profites de la motivation et du dévouement de nos tuteurs pour
             favoriser ta réussite ou partager tes connaissances!</p>
     </div>
     <div class="lg:w-1/3 text-center">
-        <img class="dark:hidden inline-block pb-2" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/diploma.svg" alt="Diplome">
+        <img class="dark:hidden inline-block pb-2" src="/images/svgs/diploma.svg" alt="Diplome">
         <h3 class="text-blue-800 text-2xl font-bold">Diplôme reconnu</h3>
         <p class="text-center text-lg text-gray-700">Profites de la formule DEC-BAC afin d'obtenir deux diplômes en 5
             ans!</p>
     </div>
     <div class="lg:w-1/3 text-center">
-        <img class="dark:hidden inline-block" src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/svgs/internship.svg" alt="Stage et emplois">
+        <img class="dark:hidden inline-block" src="/images/svgs/internship.svg" alt="Stage et emplois">
         <h3 class="text-blue-800 text-2xl font-bold">Carrière professionnelle épanouie</h3>
         <p class="text-center text-lg text-gray-700">Profites de l’alternance travail-études qui te permet de réaliser
             deux stages rémunérés en entreprise!</p>
@@ -196,5 +196,5 @@
 </section>
 
 <?php ob_start(); ?>
-<script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/carousel.js"></script>
+<script src="/js/carousel.js"></script>
 <?php $script = ob_get_clean(); ?>

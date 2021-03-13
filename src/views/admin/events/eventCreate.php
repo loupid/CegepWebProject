@@ -173,7 +173,8 @@ $selectedItem = ob_get_clean();
                                                @dragover="$refs.dnd.classList.add('border-blue-400'); $refs.dnd.classList.add('ring-4'); $refs.dnd.classList.add('ring-inset');"
                                                @dragleave="$refs.dnd.classList.remove('border-blue-400'); $refs.dnd.classList.remove('ring-4'); $refs.dnd.classList.remove('ring-inset');"
                                                @drop="$refs.dnd.classList.remove('border-blue-400'); $refs.dnd.classList.remove('ring-4'); $refs.dnd.classList.remove('ring-inset');"
-                                               name="file">
+                                               name="file"
+                                               required>
                                         <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                             <div class="space-y-1 text-center">
                                                 <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"
@@ -287,7 +288,7 @@ $selectedItem = ob_get_clean();
     </div>
 
 <?php ob_start(); ?>
-	<script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/selectSearchBox.js"></script>
-	<script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/dragableFile.js"></script>
-    <script src="/H2021/420626RI/Equipe_1/cegepwebproject/public/js/formValidator.js"></script>
+	<script src="/js/selectSearchBox.js"></script>
+	<script src="/js/dragableFile.js"></script>
+    <script src="/js/formValidator.js"></script>
 <?php $script = ob_get_clean(); ?>

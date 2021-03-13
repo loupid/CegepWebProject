@@ -2,7 +2,7 @@
     <div class="md:p-8 p-2 rounded-lg mx-auto bg-white w-4/5">
         <div class="mb-4">
             <img class="rounded-lg w-full"
-                 src="/H2021/420626RI/Equipe_1/cegepwebproject/public/images/UploadedImages/<?= $news->file_name ?>"
+                 src="/images/UploadedImages/<?= $news->file_name === '' ? 'default.png' : $news->file_name ?>"
                  alt="news_image"/>
 
             <p class="text-indigo-500 font-semibold text-base mt-2"><?= $news->category ?></p>
