@@ -535,7 +535,12 @@
             <?= $content ?? '' ?>
         </div>
 
-        <footer class="bg-white bottom-0 border-t-2 dark:bg-gray-800">
+
+
+
+
+
+        <footer class="bottom-0 border-t-2" style=" background-image: -webkit-linear-gradient(left, #092d74, #061f50)">
             <div class="container mx-auto px-6 py-4">
                 <div class="lg:flex">
                     <div class="w-full lg:w-2/5">
@@ -543,18 +548,18 @@
                             <div class="flex">
                                 <a href="/">
                                     <img class="dark:hidden inline-block"
-                                         src="/images/svgs/darklogodep.svg"
+                                         src="/images/svgs/logodep.svg"
                                          alt="Logo département">
                                 </a>
 
-                                <p class=" ml-2 text-gray-900 dark:text-gray-400 max-w-md w-64">Le département
+                                <p class=" ml-2 text-white max-w-md w-64">Le département
                                     d'informatique du
                                     Cégep de Trois-Rivières</p>
                             </div>
 
-                            <div class="flex mt-4 -mx-2">
+                            <div class="flex mt-4 mx-2 mr-4">
                                 <a href="https://www.facebook.com/cegep3r.info" target="_blank"
-                                   class="mx-2 text-gray-700 dark:text-gray-200 hover:text-blue-700 dark:hover:text-gray-400"
+                                   class="mx-2 text-gray-600 hover:text-blue-700"
                                    aria-label="Facebook">
                                     <svg class="h-4 w-4 fill-current" viewBox="0 0 512 512">
                                         <path d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"/>
@@ -562,7 +567,7 @@
                                 </a>
 
                                 <a href="https://www.youtube.com/user/cegeptroisrivieres" target="_blank"
-                                   class="mx-2 text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-gray-400"
+                                   class="mx-2 text-gray-600 hover:text-red-600"
                                    aria-label="Youtube">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current"
                                          viewBox="0 0 24 24">
@@ -571,7 +576,7 @@
                                 </a>
 
                                 <a href="https://twitter.com/cegeptr" target="_blank"
-                                   class="mx-2 text-gray-700 dark:text-gray-200 hover:text-blue-400 dark:hover:text-gray-400"
+                                   class="mx-2 text-gray-600 hover:text-blue-400"
                                    aria-label="Twitter">
                                     <svg class="h-4 w-4 fill-current" viewBox="0 0 512 512">
                                         <path d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"/>
@@ -579,7 +584,7 @@
                                 </a>
 
                                 <a href="https://www.instagram.com/cegeptr/" target="_blank"
-                                   class="mx-2 text-gray-700 dark:text-gray-200 hover:text-pink-600 dark:hover:text-gray-400"
+                                   class="mx-2 text-gray-600 hover:text-pink-600"
                                    aria-label="Instagram">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current"
                                          viewBox="0 0 24 24">
@@ -588,7 +593,7 @@
                                 </a>
 
                                 <a href="https://ca.linkedin.com/school/cegeptr/" target="_blank"
-                                   class="mx-2 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-gray-400"
+                                   class="mx-2 text-gray-600 hover:text-blue-600"
                                    aria-label="Linkden">
                                     <svg class="h-4 w-4 fill-current" viewBox="0 0 512 512">
                                         <path d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"/>
@@ -596,7 +601,7 @@
                                 </a>
 
                                 <a href="https://www.cegeptr.qc.ca/" target="_blank"
-                                   class="mx-2 text-gray-700 dark:text-gray-200 hover:text-blue-700 dark:hover:text-gray-400"
+                                   class="mx-2 text-gray-600 hover:text-blue-700"
                                    aria-label="Linkden">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current -mt-1"
                                          viewBox="0 0 4000 4000">
@@ -613,21 +618,21 @@
                     <div class="mt-6 lg:mt-0 lg:flex-1">
                         <div class="grid gap-2 grid-cols-1 sm:grid-cols-1 md:grid-cols-3">
                             <div>
-                                <h3 class="text-gray-700 dark:text-white uppercase">Département</h3>
+                                <h3 class="text-gray-400 dark:text-white uppercase">Département</h3>
                                 <a href="<?= $this->router->generate('indexProgram') ?>"
-                                   class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Programme</a>
+                                   class="block mt-2 text-sm text-gray-600  hover:text-red-700">Locaux</a>
                                 <a href="<?= $this->router->generate('coursesIndex') ?>"
-                                   class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Cours</a>
+                                   class="block mt-2 text-sm text-gray-600  hover:text-red-700">Service</a>
                             </div>
 
                             <div>
-                                <h3 class="text-gray-700 dark:text-white uppercase">Plus</h3>
+                                <h3 class="text-gray-400 dark:text-white uppercase">Plus</h3>
                                 <a href="<?= $this->router->generate('newsIndex') ?>"
-                                   class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Actualités</a>
+                                   class="block mt-2 text-sm text-gray-600 hover:text-red-700">Actualités</a>
                                 <a href="<?= $this->router->generate('eventsIndex') ?>"
-                                   class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Événemets</a>
+                                   class="block mt-2 text-sm text-gray-600 hover:text-red-700">Événements</a>
                                 <a href=""
-                                   class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Liens
+                                   class="block mt-2 text-sm text-gray-600 hover:text-red-700">Liens
                                     utiles</a>
                                 <!--                        <a href=""-->
                                 <!--                           class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600">Ressources</a>-->
@@ -651,15 +656,15 @@
                             <!--                    </div>-->
 
                             <div>
-                                <h3 class="text-gray-700 dark:text-white uppercase">Nous joindre</h3>
+                                <h3 class="text-gray-400 uppercase">Nous joindre</h3>
                                 <a href="tel:819-376-1721p3706"
-                                   class="block mt-2 text-sm text-gray-600 dark:text-gray-400">819
+                                   class="block mt-2 text-sm text-gray-600 hover:text-red-700">819
                                     376-1721 poste: 3706</a>
                                 <a href="mailto:david.b.brouillette@cegeptr.qc.ca"
-                                   class="block mt-2 text-sm text-gray-600 dark:text-gray-400">david.b.brouillette@cegeptr.qc.ca</a>
+                                   class="block mt-2 text-sm text-gray-600 hover:text-red-700">david.b.brouillette@cegeptr.qc.ca</a>
                                 <a href="https://www.google.com/maps/place/C%C3%A9gep+de+Trois-Rivi%C3%A8res/@46.3551699,-72.5766428,15z/data=!4m8!1m2!2m1!1spavillon+science+cegep+trois-rivieres!3m4!1s0x0:0x799f8b93d17aae1e!8m2!3d46.3545664!4d-72.5729316"
                                    target="_blank"
-                                   class="block mt-6 text-sm hover:text-indigo-600 text-gray-600 dark:text-gray-400">Pavillon
+                                   class="block mt-6 text-sm text-gray-600 hover:text-red-700">Pavillon
                                     des Sciences
                                     3500, rue de Courval, C.P. 97, G9A 5E6</a>
                             </div>
@@ -670,7 +675,7 @@
                 <hr class="h-px my-6 bg-gray-300 dark:bg-gray-700 border-none">
 
                 <div>
-                    <p class="text-center text-gray-800 dark:text-white">Tous droits réservés - © Département
+                    <p class="text-center text-gray-600 dark:text-white">Tous droits réservés - © Département
                         d'informatique
                         du
                         Cégep de Trois-Rivières - 2021</p>
