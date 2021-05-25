@@ -43,5 +43,60 @@ return [
     ],
     "linksUpdate" => [
         AdminMiddleware::class
+    ],
+    "ordersIndex" => [
+        AdminMiddleware::class
+    ],
+    "ordersCreate" => [
+        AdminMiddleware::class
+    ],
+    "ordersEdit" => [
+        AdminMiddleware::class
+    ],
+    "ordersDelete" => [
+        AdminMiddleware::class
+    ],
+    "ordersCreated" => [
+        AdminMiddleware::class
+    ],
+    "ordersEdited" => [
+        AdminMiddleware::class
+    ],
+    "offersIndex" => [
+        AdminMiddleware::class
+    ],
+    "offersCreate" => [
+        AdminMiddleware::class
+    ],
+    "offersEdit" => [
+        AdminMiddleware::class
+    ],
+    "offersDelete" => [
+        AdminMiddleware::class
+    ],
+    "offersCreated" => [
+        AdminMiddleware::class
+    ],
+    "offersEdited" => [
+        AdminMiddleware::class
+    ],
+    "clothesIndex" => [
+        AdminMiddleware::class
+    ],
+    "clothesCreate" => [
+        AdminMiddleware::class
+    ],
+    "clothesEdit" => [
+        AdminMiddleware::class
+    ],
+    "clothesDelete" => [
+        AdminMiddleware::class
+    ],
+    "clothesCreated" => [
+        AdminMiddleware::class
+    ],
+    "clothesEdited" => [
+        AdminMiddleware::class
     ]
+
 ];
