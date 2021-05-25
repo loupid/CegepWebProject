@@ -11,7 +11,7 @@ class ClothesController extends Controller
     public function ordersIndex()
     {
         #TODO: Get data to be sent to the view
-        return $this->view('admin/clothes/orders/ordersList', [], 1);
+        return $this->view('admin/clothes/orders/ordersList', ['events'=>$test], 1);
     }
 
     #Redirects to the edit page
