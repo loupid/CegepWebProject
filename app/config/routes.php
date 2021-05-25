@@ -62,6 +62,7 @@ $router->map('POST','/admin/updatedprofil','AdminController@updatedProfil', 'adm
 
 //services
 $router->map('GET', '/services', 'ServiceController@index', 'serviceIndex');
+$router->map('POST', '/job', 'ServiceController@getJob', 'getJob');
 
 //events
 $router->map('GET', '/evenements', 'EventController@getAll', 'eventsIndex');
