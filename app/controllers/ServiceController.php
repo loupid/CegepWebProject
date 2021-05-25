@@ -2,10 +2,7 @@
 
 namespace controllers;
 
-use app\FileManager;
-use app\Session;
-use app\User;
-use models\Event;
+use models\Job;
 use PDO;
 
 class ServiceController extends Controller
@@ -14,18 +11,22 @@ class ServiceController extends Controller
 
     public function index()
     {
-        return $this->view('services/index');
-    }
-
-
-    public function getAll()
-    {
-        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events;");
-        $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
+        $query = $this->getDatabase()->prepare("select * from jobs where `show` = 0");
+        $query->setFetchMode(PDO::FETCH_CLASS, Job::class);
         $query->execute();
-        $events = $query->fetchAll();
-        return $this->view('events/index', ['events' => $events], 0);
+        $jobs = $query->fetchAll();
+        return $this->view('services/index', ['jobs' => $jobs]);
     }
 
+    public function getJob()
+    {
+        $data = $_POST;
 
+
+        $query = $this->getDatabase()->prepare("select * from jobs where `id` = ?");
+//        $query->setFetchMode(PDO::FETCH_CLASS, Job::class);
+        $query->execute([0 => $data['id']]);
+        $job = $query->fetch();
+        echo json_encode($job);
+    }
 }
