@@ -42,6 +42,7 @@ if (is_array($match)) {
         $path = '../app/controllers/' . $exploded[0] . '.php';
         if (file_exists($path)) {
             require '../app/controllers/Controller.php';
+            require '../app/controllers/IController.php';
             require '../app/controllers/' . $exploded[0] . '.php';
             if (class_exists('\\controllers\\' . $exploded[0])) {
                 $instance = getControllerClassInstance($exploded[0], $router, $db_conn);
