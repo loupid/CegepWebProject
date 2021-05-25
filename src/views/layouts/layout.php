@@ -489,6 +489,17 @@
                                 </span>
                             </a>
 
+							<a href="<?= $this->router->generate('serviceIndex') ?>"
+									class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+								<svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+										fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+								</svg>
+								<span class="ml-3 text-base font-medium text-gray-900">
+                                    Services
+                                </span>
+							</a>
                             <a href="<?= $this->router->generate('eventsIndex') ?>"
                                class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"

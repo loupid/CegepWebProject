@@ -11,7 +11,7 @@ $router = new AltoRouter();
 
 $database_config = require '../app/config/database.php';
 //$database_config = $database_config['mysql']; // Set to wanted database config name
-$database_config = $database_config['mysqlSchool']; // Set to wanted database config name
+$database_config = $database_config['local']; // Set to wanted database config name
 
 $database = new Database($database_config['database']);
 $database->setHost($database_config['host'])
