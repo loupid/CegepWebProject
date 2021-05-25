@@ -21,8 +21,8 @@ for (let i = 0; i < btn.length; i++) {
     })
 }
 
-let progDropdown = document.getElementById('program-dropdown')
-let btnProgram = document.getElementById('btn-program')
+//let progDropdown = document.getElementById('program-dropdown')
+//let btnProgram = document.getElementById('btn-program')
 // let newsDropdown = document.getElementById('news-dropdown')
 // let btnNews = document.getElementById('btn-news')
 let moreDropdown = document.getElementById('more-dropdown')
@@ -33,20 +33,20 @@ let mobileMenu = document.getElementById('mobile-menu')
 let btnClose = document.getElementById('btn-close-mobile-menu')
 let btnOpen = document.getElementById('btn-open-mobile-menu')
 
-btnProgram.addEventListener('mouseover', () => {
-    if (progDropdown.classList.contains('hidden')) {
-        progDropdown.classList.remove('hidden')
+//btnProgram.addEventListener('mouseover', () => {
+//    if (progDropdown.classList.contains('hidden')) {
+//        progDropdown.classList.remove('hidden')
         // newsDropdown.classList.add('hidden')
-        moreDropdown.classList.add('hidden')
+//        moreDropdown.classList.add('hidden')
         // studentsDropdown.classList.add('hidden')
-    }
-})
+//    }
+//})
 
-progDropdown.addEventListener('mouseleave', () => {
-    if (!progDropdown.classList.contains('hidden')) {
-        progDropdown.classList.add('hidden')
-    }
-})
+//progDropdown.addEventListener('mouseleave', () => {
+//    if (!progDropdown.classList.contains('hidden')) {
+//        progDropdown.classList.add('hidden')
+ //   }
+//})
 
 // btnNews.addEventListener('mouseover', () => {
 //     if (newsDropdown.classList.contains('hidden')) {
@@ -67,7 +67,7 @@ btnMore.addEventListener('mouseover', () => {
     if (moreDropdown.classList.contains('hidden')) {
         moreDropdown.classList.remove('hidden')
         // newsDropdown.classList.add('hidden')
-        progDropdown.classList.add('hidden')
+        //progDropdown.classList.add('hidden')
         // studentsDropdown.classList.add('hidden')
     }
 })
@@ -94,9 +94,9 @@ moreDropdown.addEventListener('mouseleave', () => {
 // })
 
 $(document).click(function () {
-    if (this.id !== 'program-dropdown' && this.id !== 'btn-program') {
-        $("#program-dropdown").addClass('hidden');
-    }
+    //if (this.id !== 'program-dropdown' && this.id !== 'btn-program') {
+    //    $("#program-dropdown").addClass('hidden');
+    //}
     // if (this.id !== 'news-dropdown' && this.id !== 'btn-news') {
     //     $("#news-dropdown").addClass('hidden');
     // }

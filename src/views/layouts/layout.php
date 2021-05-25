@@ -46,18 +46,24 @@
     <i class="fas fa-circle-notch fa-spin fa-5x"></i>
   </span>
 </div>
-<div class="flex flex-col justify-between">
-    <div class="relative bg-white shadow">
+<div class="flex flex-col">
+    <div class="relative" style=" background-image: -webkit-linear-gradient(left, #092d74, #061f50)">
         <div class="mx-auto px-4 sm:px-6">
-            <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-                <div class="flex justify-start">
-                    <a href="<?= $this->router->generate('index') ?>" class="inline-block mr-4">
-                        <img class="dark:hidden inline-block"
-                             src="/images/svgs/darklogodep.svg"
+            <div class="flex items-center md:space-x-10 w-full">
+                <div class="flex justify-start w-auto">
+                    <a href="<?= $this->router->generate('index') ?>" class="inline-block">
+                        <img class="dark:hidden inline-block w-full"
+                             src="/images/svgs/logodep.svg"
                              alt="Logo département">
                     </a>
                 </div>
+                <div class="flex justify-start w-full">
+                    <p class="text-base font-medium text-white md:flex inline-flex items-center text-base py-6">
+                    Informatique | Trois-Rivières
+                    </p>
+                 </div>
                 <div class="-mr-2 -my-2 md:hidden">
+
                     <button id="btn-open-mobile-menu" type="button"
                             class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                         <span class="sr-only">Open menu</span>
@@ -69,25 +75,59 @@
                         </svg>
                     </button>
                 </div>
-                <nav class="hidden md:flex space-x-10">
-                    <a href="<?= $this->router->generate('index') ?>"
-                       class="text-base font-medium text-gray-900 hover:text-indigo-600">
-                        Accueil
+                
+                <div class= "flex md:justify-end w-full">
+                <nav class= "hidden md:flex space-x-10">
+
+
+                    <a href="<?= $this->router->generate('newsIndex') ?>"
+                       class="text-base font-medium text-white hover:text-red-700 hover:bg-white py-4 px-3 rounded">
+                       Actualités
                     </a>
 
-                    <div class="relative">
+                    <a href="<?= $this->router->generate('eventsIndex') ?>"
+                       class="text-base font-medium text-white hover:text-red-700 hover:bg-white py-4 px-3 rounded">
+                        Événements
+                    </a>
+
+                    <a href="<?= $this->router->generate('linksIndex') ?>"
+                       class="text-base font-medium text-white hover:text-red-700 hover:bg-white py-4 px-3 rounded">
+                       Liens utiles
+                    </a>
+                    
+                    <a href="<?= $this->router->generate('newsIndex') ?>"
+                       class="text-base font-medium text-white hover:text-red-700 hover:bg-white py-4 px-3 rounded">
+                       Service
+                    </a>
+
+                    <a href="<?= $this->router->generate('picturesIndex') ?>"
+                        class="text-base font-medium text-white hover:text-red-700 hover:bg-white py-4 px-3 rounded">
+                        Locaux
+                    </a>
+
+                    
+
+
+
+
+                    <!--<a href="<?= $this->router->generate('index') ?>"
+                       class="text-base font-medium text-gray-900 hover:text-indigo-600">
+                        Accueil
+                    </a>-->
+
+                    <!-- <div class="relative">-->
                         <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
                         <!--                    isset($this) ? $this->router->generate('indexProgram') : $router->generate('indexProgram')                  -->
-                        <button id="btn-program" type="button"
+                         <!--<button id="btn-program" type="button"
                                 onclick="window.location = '<?= $this->router->generate('indexProgram') ?>'"
                                 class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 ">
-                            <span>Programme</span>
+                            <span>Programme</span> -->
                             <!--
                               Heroicon name: chevron-down
 
                               Item active: "text-gray-600", Item inactive: "text-gray-400"
                             -->
-                            <svg class="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                            <!--<svg class="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                  aria-hidden="true">
                                 <path fill-rule="evenodd"
@@ -99,17 +139,17 @@
                         <div id="program-dropdown"
                              class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 hidden">
                             <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                                <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                    <a href="<?= $this->router->generate('coursesIndex') ?>"
-                                       class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">-->
+                                   <!-- <a href="<?= $this->router->generate('coursesIndex') ?>"
+                                       class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">-->
                                         <!-- Heroicon name: chart-bar -->
-                                        <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        <!-- <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                              stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                   d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
                                         </svg>
-                                        <div class="ml-4">
+                                          <div class="ml-4">
                                             <p class="text-base font-medium text-gray-900">
                                                 Cours
                                             </p>
@@ -117,12 +157,12 @@
                                                 La liste complète des cours par session
                                             </p>
                                         </div>
-                                    </a>
+                                    </a>-->
 
-                                    <a href="<?= $this->router->generate('picturesIndex') ?>"
-                                       class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                     <!--<a href="<?= $this->router->generate('picturesIndex') ?>"
+                                       class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">-->
                                         <!-- Heroicon name: cursor-click -->
-                                        <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        <!-- <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                              stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -137,14 +177,14 @@
                                             </p>
                                         </div>
                                     </a>
-                                </div>
-                                <div class="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
+                                </div>-->
+                                <!-- <div class="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                                     <div class="flow-root">
                                         <a href="https://www.cegeptr.qc.ca/futurs-etudiants/inscription/"
                                            target="_blank"
                                            class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
-                                            <!-- Heroicon name: play -->
-                                            <svg class="flex-shrink-0 h-6 w-6 text-gray-400"
+                                           --> <!-- Heroicon name: play -->
+                                           <!--  <svg class="flex-shrink-0 h-6 w-6 text-gray-400"
                                                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                  stroke="currentColor" aria-hidden="true">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -155,10 +195,10 @@
                                             <span class="ml-3">S'inscrire au programme</span>
                                         </a>
                                     </div>
-                                </div>
-                            </div>
+                                </div>-->
+                           <!-- </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!--                section etudiants a venir-->
                     <!--                <div class="relative">-->
@@ -252,24 +292,8 @@
                     <!--                    </div>-->
                     <!--                </div>-->
 
-                    <a href="<?= $this->router->generate('eventsIndex') ?>"
-                       class="text-base font-medium text-gray-900 hover:text-indigo-600">
-                        Événements
-                    </a>
 
-                    <div class="relative">
-                        <button id="btn-news" role="menuitem" type="button"
-                                onclick="window.location = '<?= $this->router->generate('newsIndex') ?>'"
-                                class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600">
-                            <span>Actualités</span>
-                            <!--                        <svg class="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"-->
-                            <!--                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"-->
-                            <!--                             aria-hidden="true">-->
-                            <!--                            <path fill-rule="evenodd"-->
-                            <!--                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"-->
-                            <!--                                  clip-rule="evenodd"/>-->
-                            <!--                        </svg>-->
-                        </button>
+
 
                         <!--                    <div id="news-dropdown" class="absolute z-10 mt-3 px-2 w-screen max-w-md sm:px-0 hidden">-->
                         <!--                        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">-->
@@ -340,9 +364,8 @@
                         <!--                            </div>-->
                         <!--                        </div>-->
                         <!--                    </div>-->
-                    </div>
 
-                    <div class="relative">
+                     <!--<div class="relative">
                         <button id="btn-more" role="menuitem" type="button"
                                 class="group bg-white rounded-md text-gray-900 inline-flex items-center text-base font-medium hover:text-indigo-600 ">
                             <span>Plus</span>
@@ -353,29 +376,30 @@
                                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                                       clip-rule="evenodd"/>
                             </svg>
-                        </button>
+                        </button>-->
 
-                        <div id="more-dropdown" class="absolute z-10 mt-3 px-2 w-screen max-w-md sm:px-0 hidden">
+                       <!-- <div id="more-dropdown" class="absolute z-10 mt-3 px-2 w-screen max-w-md sm:px-0 hidden">
                             <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                                 <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                    <a href="<?= $this->router->generate('linksIndex') ?> "
-                                       class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                        <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                    <a href="<?= $this->router->generate('picturesIndex') ?>"
+                                       class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">-->
+                                        <!-- Heroicon name: cursor-click -->
+                                          <!--  <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                             stroke="currentColor" aria-hidden="true">
+                                             stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                                         </svg>
                                         <div class="ml-4">
                                             <p class="text-base font-medium text-gray-900">
-                                                Liens utiles
+                                                Locaux
                                             </p>
                                             <p class="mt-1 text-sm text-gray-500">
-                                                Des liens qui pourraient t'aider dans ton cheminement scolaire et vie
-                                                étudiante
+                                                Images 360 du département
                                             </p>
                                         </div>
-                                    </a>
+                                    </a>-->
+                                    
 
                                     <!--                                <a href="" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">-->
                                     <!--                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"-->
@@ -393,10 +417,13 @@
                                     <!--                                        </p>-->
                                     <!--                                    </div>-->
                                     <!--                                </a>-->
-                                </div>
+                                <!--    </div>
                             </div>
-                        </div>
-                </nav>
+                        </div>-->
+                       
+
+                    </nav>
+                    </div>
             </div>
         </div>
 
