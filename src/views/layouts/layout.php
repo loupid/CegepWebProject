@@ -50,7 +50,7 @@
     <div class="relative bg-white shadow">
         <div class="mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-                <div class="flex justify-start">
+                <div class="flex justify-end">
                     <a href="<?= $this->router->generate('index') ?>" class="inline-block mr-4">
                         <img class="dark:hidden inline-block"
                              src="/images/svgs/darklogodep.svg"
