@@ -6,7 +6,7 @@ return [
     "local" => [
         'database' => 'cegep',
         'host' => 'localhost',
-        'port' => 3306,
+        'port' => 3308,
         'username' => 'root',
         'password' => '',
     ],

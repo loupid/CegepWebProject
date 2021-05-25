@@ -1,3 +1,6 @@
+<head>
+
+</head>
 <section id="tutorat">
 <div class="relative bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto">
@@ -122,31 +125,14 @@
 
   </div>
 </div>
-</div>
+
 </section>
 
-<script>
-
-$(document).ready(function(e)
-{
-  $("#formulaireinscription").hide();
-})
-$("#inscription").click(function(e)
-{
-  $("#formulaireinscription").show();
-})
-
-$("#cancel").click(function(e)
-{
-  $("#formulaireinscription").hide();
-})
 
 
-<section id = "job" class = "p-5">
-	<!-- component -->
+
 <section id="job" class="p-5">
     <!-- component -->
-
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
         <?php
         if (!empty($jobs)) {
@@ -288,5 +274,3 @@ $("#cancel").click(function(e)
     </dialog>
 
 </section>
-
-</script>

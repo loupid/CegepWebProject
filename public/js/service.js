@@ -40,3 +40,17 @@ function modalClose(key) {
         document.body.removeAttribute('style');
     }, 100);
 }
+
+
+$(document).ready(function (e) {
+    $("#formulaireinscription").hide();
+
+    $("#inscription").on('click', function (e) {
+        debugger
+        $("#formulaireinscription").show();
+    })
+
+    $("#cancel").click(function (e) {
+        $("#formulaireinscription").hide();
+    })
+})
