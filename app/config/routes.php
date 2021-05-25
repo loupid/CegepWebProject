@@ -99,8 +99,8 @@ $router->map('POST', '/admin/links/updated', 'LinksController@updated', 'linksUp
 $router->map('GET', '/admin/clothes/orders', 'ClothesController@ordersIndex', 'ordersIndex');
 $router->map('GET', '/admin/clothes/orders/create', 'ClothesController@ordersCreate', 'ordersCreate');
 $router->map('GET', '/admin/clothes/orders/update/[i:id]', 'ClothesController@ordersEdit', 'ordersEdit');
+$router->map('GET', '/admin/clothes/orders/delete/[i:id]', 'ClothesController@ordersDelete', 'ordersDelete');
 
-$router->map('POST', '/admin/clothes/orders/delete/[i:id]', 'ClothesController@ordersDelete', 'ordersDelete');
 $router->map('POST', '/admin/clothes/orders/created', 'ClothesController@ordersCreated', 'ordersCreated');
 $router->map('POST', '/admin/clothes/orders/updated', 'ClothesController@ordersEdited', 'ordersEdited');
 
@@ -108,8 +108,8 @@ $router->map('POST', '/admin/clothes/orders/updated', 'ClothesController@ordersE
 $router->map('GET', '/admin/clothes/offers', 'ClothesController@offersIndex', 'offersIndex');
 $router->map('GET', '/admin/clothes/offers/create', 'ClothesController@offersCreate', 'offersCreate');
 $router->map('GET', '/admin/clothes/offers/update/[i:id]', 'ClothesController@offersEdit', 'offersEdit');
+$router->map('GET', '/admin/clothes/offers/delete/[i:id]', 'ClothesController@offersDelete', 'offersDelete');
 
-$router->map('POST', '/admin/clothes/offers/delete/[i:id]', 'ClothesController@offersDelete', 'offersDelete');
 $router->map('POST', '/admin/clothes/offers/created', 'ClothesController@offersCreated', 'offersCreated');
 $router->map('POST', '/admin/clothes/offers/updated', 'ClothesController@offersEdited', 'offersEdited');
 
@@ -117,7 +117,7 @@ $router->map('POST', '/admin/clothes/offers/updated', 'ClothesController@offersE
 $router->map('GET', '/admin/clothes', 'ClothesController@clothesIndex', 'clothesIndex');
 $router->map('GET', '/admin/clothes/create', 'ClothesController@clothesCreate', 'clothesCreate');
 $router->map('GET', '/admin/clothes/update/[i:id]', 'ClothesController@clothesEdit', 'clothesEdit');
+$router->map('GET', '/admin/clothes/delete/[i:id]', 'ClothesController@clothesDelete', 'clothesDelete');
 
-$router->map('POST', '/admin/clothes/delete/[i:id]', 'ClothesController@clothesDelete', 'clothesDelete');
 $router->map('POST', "/admin/clothes/created", 'ClothesController@clothesCreated', 'clothesCreated');
 $router->map('POST', "/admin/clothes/updated", 'ClothesController@clothesEdited', 'clothesEdited');
