@@ -23,7 +23,7 @@
 <body>
 <div id="loading" class="w-screen h-screen fixed block top-0 left-0 bg-white z-50">
   <span class="text-indigo-600 top-1/2 my-0 mx-auto block relative w-0 h-0"
-        style="top: 50%;">
+        style="top: 50%; color: #da1a32;">
     <i class="fas fa-circle-notch fa-spin fa-5x"></i>
   </span>
 </div>
