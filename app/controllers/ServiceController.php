@@ -11,7 +11,7 @@ class ServiceController extends Controller
 
     public function index()
     {
-        $query = $this->getDatabase()->prepare("select * from jobs where `hide` = 1");
+        $query = $this->getDatabase()->prepare("select * from jobs where `hide` = 0");
         $query->setFetchMode(PDO::FETCH_CLASS, Job::class);
         $query->execute();
         $jobs = $query->fetchAll();
