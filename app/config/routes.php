@@ -109,3 +109,11 @@ $router->map('GET', '/admin/tutorat/delete/[i:matricule]','TutoratController@del
 $router->map('GET', '/admin/tutorat/delete','TutoratController@deleteAll', 'tutoratDeleteAll');
 $router->map('POST', '/services/ajout', 'TutoratController@created', 'tutoratCreate');
 
+//job
+$router->map('GET', '/admin/offre', 'JobController@index', 'jobIndex');
+$router->map('GET', '/admin/offre/create', 'JobController@create', 'jobCreate');
+$router->map('GET', '/admin/offre/update/[i:id]', 'JobController@update', 'jobUpdate');
+$router->map('GET', '/admin/offre/delete/[i:id]','JobController@delete', 'jobDelete');
+
+$router->map('POST', '/admin/offre/created', 'JobController@created', 'jobCreated');
+$router->map('POST', '/admin/offre/updated', 'JobController@updated', 'jobUpdated');

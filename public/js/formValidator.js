@@ -24,8 +24,17 @@ $(document).ready(function () {
         let start_date = $('#start_date');
         let end_date = $('#end_date');
 
+        let employer = $('#employer');
+        let city = $('#city');
+        let salairy = $('#salairy');
+        let phone = $('#phone');
+        let duration = $('#duration');
+        let skills = $('#skills');
+
+
         let emailRegex = new RegExp(/^[\w\-.]+@([\w-]+\.)+[\w-]{2,4}$/);
         let phoneRegex = new RegExp(/^\([0-9]{3}\) [0-9]{3}\-[0-9]{4}$/);
+
 
         if (title.val() !== undefined) {
             if (title.val().length > 256) {
@@ -35,6 +44,41 @@ $(document).ready(function () {
             } else if (title.val().trim().length === 0) {
                 title.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le titre ne peut pas être vide. *</span>");
                 title.select();
+                return;
+            }
+        }
+
+        if (employer.val() !== undefined) {
+            if (employer.val().length > 256) {
+                employer.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* L'employeur ne peut pas excéder 256 charactères. *</span>");
+                employer.select();
+                return;
+            } else if (employer.val().trim().length === 0) {
+                employer.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* L'employeur ne peut pas être vide. *</span>");
+                employer.select();
+                return;
+            }
+        }
+        if (city.val() !== undefined) {
+            if (city.val().length > 256) {
+                city.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La ville ne peut pas excéder 256 charactères. *</span>");
+                city.select();
+                return;
+            } else if (city.val().trim().length === 0) {
+                city.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La ville ne peut pas être vide. *</span>");
+                city.select();
+                return;
+            }
+        }
+        if (salairy.val() !== undefined) {
+            // if (salairy.val().length > 256) {
+            //     salairy.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La salairy ne peut pas excéder 256 charactères. *</span>");
+            //     salairy.select();
+            //     return;
+            // } else
+            if (salairy.val().trim().length === 0) {
+                salairy.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le salaire ne peut pas être vide. *</span>");
+                salairy.select();
                 return;
             }
         }
@@ -58,7 +102,18 @@ $(document).ready(function () {
                 return;
             }
         }
-
+        if (duration.val() !== undefined) {
+            // if (duration.val().length > 256) {
+            //     duration.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La duration ne peut pas excéder 256 charactères. *</span>");
+            //     duration.select();
+            //     return;
+            // } else
+            if (duration.val().trim().length === 0) {
+                duration.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La durée ne peut pas être vide. *</span>");
+                duration.select();
+                return;
+            }
+        }
         if (end_date.val() !== undefined) {
             if (end_date.val().trim().length === 0) {
                 end_date.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La date de fin ne peut pas être vide. *</span>");
@@ -136,7 +191,7 @@ $(document).ready(function () {
                 email.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le courriel ne peut pas être vide. *</span>");
                 email.select();
                 return;
-            } else if (!emailRegex.test(email.val())){
+            } else if (!emailRegex.test(email.val())) {
                 email.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le courriel n'est pas valide. *</span>");
                 email.select();
                 return
@@ -152,7 +207,7 @@ $(document).ready(function () {
                 workphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone ne peut pas être vide. *</span>");
                 workphone.select();
                 return;
-            } else if (!phoneRegex.test(workphone.val())){
+            } else if (!phoneRegex.test(workphone.val())) {
                 workphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone invalide. *</span>");
                 workphone.select();
                 return;
@@ -168,7 +223,7 @@ $(document).ready(function () {
                 cellphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone cellulaire ne peut pas être vide. *</span>");
                 cellphone.select();
                 return;
-            } else if (!phoneRegex.test(cellphone.val())){
+            } else if (!phoneRegex.test(cellphone.val())) {
                 cellphone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone cellulaire invalide. *</span>");
                 cellphone.select();
                 return;
@@ -187,13 +242,25 @@ $(document).ready(function () {
                 return;
             }
         }
+        if (skills.val() !== undefined) {
+            // if (skills.val().length > 256) {
+            //     skills.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La skills ne peut pas excéder 256 charactères. *</span>");
+            //     skills.select();
+            //     return;
+            // } else
+            if (skills.val().trim().length === 0) {
+                skills.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La skills ne peut pas être vide. *</span>");
+                skills.select();
+                return;
+            }
+        }
 
         if (price.val() !== undefined) {
             if (price.val().toString().length >= 12 || price.val().toString().length === 0) {
                 price.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le prix doit avoir maximum 10 chiffres avant la virgule et deux chiffres après. *</span>");
                 price.select();
                 return;
-            }else if (price.val() < 0) {
+            } else if (price.val() < 0) {
                 price.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le prix doit être plus grand ou égal à 0. *</span>");
                 price.select();
                 return;
@@ -231,6 +298,21 @@ $(document).ready(function () {
                 return;
             }
         }
+
+        if (phone.val() !== undefined) {
+            if (phone.val().length > 15) {
+                phone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone ne peut pas excéder 15 chiffres. *</span>");
+                phone.select();
+                return;
+            } else if (phone.val().trim().length === 0) {
+                phone.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le téléphone ne peut pas être vide. *</span>");
+                phone.select();
+                return;
+            }
+        }
+
+
+
 
         $('#Form').submit();
     });

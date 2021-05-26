@@ -13,35 +13,39 @@
         <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
         </div>
 
-        <!--
-          Mobile menu, show/hide based on menu open state.
+                    <!--
+                      Mobile menu, show/hide based on menu open state.
 
-          Entering: "duration-150 ease-out"
-            From: "opacity-0 scale-95"
-            To: "opacity-100 scale-100"
-          Leaving: "duration-100 ease-in"
-            From: "opacity-100 scale-100"
-            To: "opacity-0 scale-95"
-        -->
-        <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-          <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-            <div class="px-5 pt-4 flex items-center justify-between">
-              <div>
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
-              </div>
-              <div class="-mr-2">
-                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                  <span class="sr-only">Close main menu</span>
-                  <!-- Heroicon name: outline/x -->
-                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                      Entering: "duration-150 ease-out"
+                        From: "opacity-0 scale-95"
+                        To: "opacity-100 scale-100"
+                      Leaving: "duration-100 ease-in"
+                        From: "opacity-100 scale-100"
+                        To: "opacity-0 scale-95"
+                    -->
+                    <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+                        <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                            <div class="px-5 pt-4 flex items-center justify-between">
+                                <div>
+                                    <img class="h-8 w-auto"
+                                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
+                                </div>
+                                <div class="-mr-2">
+                                    <button type="button"
+                                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                        <span class="sr-only">Close main menu</span>
+                                        <!-- Heroicon name: outline/x -->
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                             viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                  d="M6 18L18 6M6 6l12 12"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
       <main class="mt-10 mx-auto max-w-full px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex flex-row">
         <div class="sm:text-center lg:text-left">
@@ -61,7 +65,6 @@
                 S'inscrire maintenant
               </a>
             </div>
-          </div>
         </div>
 
         <div class="min-w-screen bg-gray-200 flex items-center justify-center px-5 py-5 flex-col">
@@ -246,7 +249,7 @@
                   </span>
                     </a>
                     <div class="flex items-center flex-wrap ">
-                        <a href="#" onclick="openModal('modal_job',<?= $job->id ?>)"
+                        <a href="javascript:void(0)" onclick="openModal('modal_job',<?= $job->id ?>)"
                            class="block tracking-widest uppercase text-center shadow bg-indigo-600 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">
                             consulter
                         </a>
@@ -265,10 +268,10 @@
     <dialog id="modal_job" class="bg-transparent z-0 relative w-screen h-screen">
         <div class="p-7 flex justify-center items-center fixed left-0 top-0 w-full h-full bg-gray-900 bg-opacity-50 z-50 transition-opacity duration-300 opacity-0">
 
-            <div class="flex flex-col items-start w-1/2">
-                <div class="px-7 overflow-x-hidden overflow-y-auto">
+            <div class="flex flex-col items-start">
+                <div style="width: 50rem" class="px-7 overflow-x-hidden overflow-y-auto">
                     <!-- This example requires Tailwind CSS v2.0+ -->
-                    <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+                    <div class="bg-white shadow overflow-hidden sm:rounded-lg ">
 
                         <div class="p-7 flex items-center w-full">
                             <div id="title" class="text-gray-900 font-bold text-lg">Nom du poste</div>
