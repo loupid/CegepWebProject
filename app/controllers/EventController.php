@@ -10,30 +10,56 @@ use PDO;
 
 class EventController extends Controller
 {
-    
-    
     public function getAll()
     {
-        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events;");
+        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events order by start_date desc;");
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute();
         $events = $query->fetchAll();
-        return $this->view('events/index', ['events' => $events], 0);
+        return $this->view('events/index', ['events' => $events, 'ordreActif' => ''], 0);
     }
-    
-    public function eventsList() {
+    //filtre event
+    public function getAllWhere()
+    {
+        $action = "";
+        if (!empty($_POST['search'])) {
+            $action = $_POST['search'];
+        }
+        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events where upper(title) like upper( :search ) order by start_date desc;");
+        $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
+        $query->execute(array(':search' => '%'.$action.'%'));
+        $events = $query->fetchAll();
+        return $this->view('events/index', ['events' => $events, 'search' => $action, 'ordreActif' => ''], 0);
+    }
+
+    public function getAllWhereOA(){
+        $action = "";
+        if (!empty($_POST['search'])) {
+            $action = $_POST['search'];
+        }
+        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events where upper(title) like upper( :search ) order by title asc;");
+        $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
+        $query->execute(array(':search' => '%'.$action.'%'));
+        $events = $query->fetchAll();
+        return $this->view('events/index', ['events' => $events, 'search' => $action, 'ordreActif' => 'nom'], 0);
+    }
+
+    public function eventsList()
+    {
         $query = $this->getDatabase()->prepare("select * from events;");
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute();
         $eventsList = $query->fetchAll();
-        return $this->view('Admin/events/eventsList',['eventsList' => $eventsList], 1);
+        return $this->view('Admin/events/eventsList', ['eventsList' => $eventsList], 1);
     }
 
-    public function create() {
-        return $this->view('Admin/events/eventCreate',[], 1);
+    public function create()
+    {
+        return $this->view('Admin/events/eventCreate', [], 1);
     }
 
-    public function created(){
+    public function created()
+    {
         $data = $_POST;
         $data['start_date'] = date("d/m/Y H:i:s", strtotime($data['start_date']));
         $data['end_date'] = date("d/m/Y H:i:s", strtotime($data['end_date']));
@@ -47,16 +73,18 @@ class EventController extends Controller
         return $this->redirectToRoute('eventsList');
     }
 
-    public function update($id) {
+    public function update($id)
+    {
         $query = $this->getDatabase()->prepare("select * from events where id = ?;");
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute([0=>$id]);
         $event = $query->fetch();
-        Session::put('eventsId',$id);
-        return $this->view('Admin/events/eventEdit',['event' => $event], 1);
+        Session::put('eventsId', $id);
+        return $this->view('Admin/events/eventEdit', ['event' => $event], 1);
     }
 
-    public function updated(){
+    public function updated()
+    {
         $data = $_POST;
 
         $data['start_date'] = date("d/m/Y H:i:s", strtotime($data['start_date']));
@@ -65,11 +93,11 @@ class EventController extends Controller
         //this will save the image in the folder images/UploadedImages/
         FileManager::saveFile();
 
-        if (FileManager::getFileName() !== $data['file_name'] && FileManager::getFileName() !== ''){
+        if (FileManager::getFileName() !== $data['file_name'] && FileManager::getFileName() !== '') {
             $data['file_name'] = FileManager::getFileName();
         }
 
-        if (!isset($data['hide'])){
+        if (!isset($data['hide'])) {
             $data['hide'] = 0;
         }
 
@@ -81,7 +109,8 @@ class EventController extends Controller
         return $this->redirectToRoute('eventsList');
     }
 
-    public function delete() {
+    public function delete()
+    {
         $con = $this->getDatabase();
         $match = $this->router->match();
         Event::delete($match['params']['id'], $con);

@@ -25,6 +25,18 @@ class NewsController extends Controller
         $newsList = $query->fetchAll();
         return $this->view('news/index',['newsList' => $newsList], 0);
     }
+    //Recherche actualite
+    public function getAllWhere() {
+      $action = "";
+      if (!empty($_GET['search'])) {
+        $action = $_GET['search'];
+      }
+        $query = $this->getDatabase()->prepare("select n.id, title, link, category, description, file_name, n.creation_date, concat(a.firstname, ' ', a.lastname) as publisher from news n inner join admins a where n.publisher_id = a.id and upper(title) like upper( :search ) order by creation_date desc;");
+        $query->setFetchMode(PDO::FETCH_CLASS, News::class);
+        $query->execute(array(':search' => '%'.$action.'%'));
+        $newsList = $query->fetchAll();
+        return $this->view('news/index',['newsList' => $newsList], 0);
+    }
 
     public function getNews($id) {
         $query = $this->getDatabase()->prepare("select n.id, title, link, category, description, file_name, n.creation_date, concat(a.firstname, ' ', a.lastname) as publisher from news n inner join admins a where n.publisher_id = a.id and n.id = ? order by creation_date desc;");
