@@ -118,7 +118,7 @@ $selectedItem = ob_get_clean();
                         </div>
                         <div class="col-span-4 col-span-6 lg:col-span-2">
                             <label for="price" class="block text-sm font-medium text-gray-700">Salaire</label>
-                            <input type="number" step="0.01" min="0" max="9999999999.99" name="salairy" id="salairy"
+                            <input type="number" step="0.25" min="0" max="9999999999.99" name="salairy" id="salairy"
                                    autocomplete="price"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
@@ -145,7 +145,7 @@ $selectedItem = ob_get_clean();
 
                         <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                             <label for="duration" class="block text-sm font-medium text-gray-700">Durée (Semaine)</label>
-                            <input type="number" name="duration" id="duration" min="0"
+                            <input type="number" name="duration" id="duration" min="0" max="52"
                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 

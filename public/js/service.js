@@ -13,8 +13,12 @@ function openModal(key, id) {
             $('#category').text(data['category']);
             $('#phone').text(data['phone']);
             $('#email_modal').text(data['email']);
-            $('#salairy').text(data['salairy']);
-            $('#duration').text(data['duration']);
+            if (data['salairy'] === '0') {
+                $('#salairy').text("À discuter");
+            } else {
+                $('#salairy').text(data['salairy'] + "$/h");
+            }
+            $('#duration').text(data['duration'] + " semaines");
             $('#description').text(data['description']);
             $('#skills').text(data['skills']);
             document.getElementById(key).showModal();
@@ -65,6 +69,7 @@ $(document).ready(function (e) {
 
 
     $("#confirm").click(function (e) {
+        debugger
         let matricule, nom, prenom, courriel, type, cours;
 
         matricule = $("#matricule").val().trim();
@@ -78,24 +83,31 @@ $(document).ready(function (e) {
         if (matricule.length != 7) {
             $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs matricule doit contenir 7 chiffres.</span>');
             $("#msgerreur").show();
+            e.preventDefault()
         } else if (prenom.length == 0) {
             $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs prénom ne peut pas être vide.</span>');
             $("#msgerreur").show();
+            e.preventDefault()
         } else if (nom.length == 0) {
             $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs nom ne peut pas être vide.</span>');
             $("#msgerreur").show();
+            e.preventDefault()
         } else if (courriel.length == 0) {
             $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs courriel ne peut pas être vide.</span>');
             $("#msgerreur").show();
+            e.preventDefault()
         } else if (nom.length > 250) {
             $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs nom ne peut pas être excéder plus de 250 caractères.</span>');
             $("#msgerreur").show();
+            e.preventDefault()
         } else if (prenom.length > 250) {
             $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs prénom ne peut pas être excéder plus de 250 caractères.</span>');
             $("#msgerreur").show();
+            e.preventDefault()
         } else if (courriel.length > 250) {
             $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs courriel ne peut pas être excéder plus de 250 caractères.</span>');
             $("#msgerreur").show();
+            e.preventDefault()
         } else {
             type = $('#typeinscription').find(":selected").val();
             cours = $('#cours').find(":selected").val();

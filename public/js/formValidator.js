@@ -80,6 +80,10 @@ $(document).ready(function () {
                 salairy.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le salaire ne peut pas être vide. *</span>");
                 salairy.select();
                 return;
+            }else if(salairy.val() < 0){
+                salairy.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* Le salaire doit être plus grand que 0 *</span>");
+                salairy.select();
+                return;
             }
         }
 
@@ -110,6 +114,10 @@ $(document).ready(function () {
             // } else
             if (duration.val().trim().length === 0) {
                 duration.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La durée ne peut pas être vide. *</span>");
+                duration.select();
+                return;
+            } else if (duration.val() < 0) {
+                duration.after("<span class=\"text-sm leading-5 text-red-500 error-message\">* La durée ne peut pas être moins d'une semaine *</span>");
                 duration.select();
                 return;
             }
@@ -310,8 +318,6 @@ $(document).ready(function () {
                 return;
             }
         }
-
-
 
 
         $('#Form').submit();
