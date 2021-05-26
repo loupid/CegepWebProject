@@ -134,10 +134,16 @@
     <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/phooto-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="">
   </div>
 </div>
-<div class="flex h-screen bg-gray-200 items-center justify-center  mt-16 mb-36" style="height:fit-content;" id = "formulaireinscription">
+
+<form class="flex h-screen bg-gray-200 items-center justify-center  mt-16 mb-36" style="height:fit-content;" id = "formulaireinscription" action="<?= $this->router->generate('tutoratCreate') ?>" method="POST" enctype="multipart/form-data">
   <div class="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
 
-
+  <div id = "msgerreur" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative ml-16 mr-16 mt-10" role="alert">
+  <span class="block sm:inline" id = "message">L'inscription n'a pas été complété en raison d'une erreur dans l'un des champs.</span>
+  <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+    <svg id = "errorclose" class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+  </span>
+  </div>
     <div class="flex justify-center">
       <div class="flex">
         <h1 class="text-gray-600 font-bold md:text-2xl text-xl pt-12">Inscription au service de tutorat par les pairs</h1>
@@ -145,40 +151,40 @@
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Matricule</label>
-      <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="=number" placeholder="Matricule" />
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="matricule">Matricule</label>
+      <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Matricule" id="matricule" name="matricule"/>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
       <div class="grid grid-cols-1">
-        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Prénom</label>
-        <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Prénom" />
+        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="prenom">Prénom</label>
+        <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Prénom" id="prenom" name="prenom"/>
       </div>
       <div class="grid grid-cols-1">
-        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Nom</label>
-        <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Nom" />
+        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="nom">Nom</label>
+        <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Nom" id="nom" name="nom"/>
       </div>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Courriel</label>
-      <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Courriel" />
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="courriel">Courriel</label>
+      <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="email" placeholder="Courriel" id="email" name="courriel"/>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Type d'inscription</label>
-      <select class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
-        <option>Etudiant demandant de l'aide</option>
-        <option>Tuteur</option>
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="statut">Type d'inscription</label>
+      <select class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" id="typeinscription" name="statut">
+        <option value="0">Etudiant demandant de l'aide</option>
+        <option value="1">Tuteur</option>
       </select>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Cours</label>
-      <select class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
-        <option>420-116-RI - Introduction à la programmation</option>
-        <option>420-124-RI - Développement WEB I</option>
-        <option>420-215-RI - Programmation orientée objet</option>
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="cours">Cours</label>
+      <select class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" id="cours" name="cours">
+        <option value="420-116-RI - Introduction à la programmation">420-116-RI - Introduction à la programmation</option>
+        <option value="420-124-RI - Développement WEB I">420-124-RI - Développement WEB I</option>
+        <option value="420-215-RI - Programmation orientée objet">420-215-RI - Programmation orientée objet</option>
       </select>
     </div>
 
@@ -188,7 +194,7 @@
     </div>
 
   </div>
-</div>
+</form>
 </div>
 </section>
 
@@ -324,6 +330,7 @@ html{
 $(document).ready(function(e)
 {
   $("#formulaireinscription").hide();
+  $("#msgerreur").hide();
 })
 $("#inscription").click(function(e)
 {
@@ -336,11 +343,69 @@ $("#cancel").click(function(e)
 })
 
 
+$("#errorclose").click(function(e)
+{
+  $("#msgerreur").hide();
+})
+
+$("#confirm").click(function(e)
+{
+  let matricule, nom, prenom, courriel, type, cours;
+
+  matricule = $("#matricule").val().trim();
+  nom = $("#nom").val().trim();
+  prenom = $("#prenom").val().trim();
+  courriel = $("#email").val().trim();
+  type = $("#typeinscription").val().trim();
+  cours = $("#cours").val().trim();
 
 
+  if (matricule.length != 7) 
+  { 
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs matricule doit contenir 7 chiffres.</span>');
+    $("#msgerreur").show();
+  }
+  else if (prenom.length == 0)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs prénom ne peut pas être vide.</span>');
+    $("#msgerreur").show();
+  }
+  else if (nom.length == 0)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs nom ne peut pas être vide.</span>');
+    $("#msgerreur").show();
+  }
+  else if (courriel.length == 0)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs courriel ne peut pas être vide.</span>');
+    $("#msgerreur").show();
+  }
+  else if (nom.length > 250)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs nom ne peut pas être excéder plus de 250 caractères.</span>');
+    $("#msgerreur").show();
+  }
 
+  else if (prenom.length > 250)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs prénom ne peut pas être excéder plus de 250 caractères.</span>');
+    $("#msgerreur").show();
+  }
 
+  else if (courriel.length > 250)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs courriel ne peut pas être excéder plus de 250 caractères.</span>');
+    $("#msgerreur").show();
+  }
 
+  else
+  {
+    type = $('#typeinscription').find(":selected").val();
+    cours = $('#cours').find(":selected").val();
+  }
+
+  
+})
 
     function openModal(key) {
         document.getElementById(key).showModal();
