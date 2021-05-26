@@ -4,7 +4,14 @@ ob_start();
 $selectedItem = ob_get_clean();
 ?>
 <h3 class="text-gray-700 text-3xl font-medium">Liste des inscriptions au tutorat</h3>
-
+<div class="mt-8 flex justify-end">
+<a onclick="validDelete()" class="mx-2 text-gray-200 dark:text-gray-200 hover:text-red-300 dark:hover:text-gray-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke="red" stroke-width="2" d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke="red" stroke-width="2" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z""></path>
+        </svg>
+    </a>
+</div>
 <div class="flex flex-col mt-2">
     <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
         <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
@@ -77,6 +84,7 @@ $selectedItem = ob_get_clean();
 </div>
 
 <script>
+
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             confirmButton: 'md:w-32 bg-green-500 hover:bg-green-600 text-white font-bold p-2 rounded-lg transition ease-in-out duration-300 mx-4',
@@ -102,6 +110,34 @@ $selectedItem = ob_get_clean();
                     'success'
                 );
                 window.location = "/admin/tutorat/delete/"+matricule;
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                swalWithBootstrapButtons.fire(
+                    'Annulation',
+                    'Ne vous inquiétez pas, rien ne sera supprimé :)',
+                    'error'
+                )
+            }
+        })
+    }
+
+
+    function validDelete(){
+        swalWithBootstrapButtons.fire({
+            title: 'Voulez vous vraiment supprimer la liste complete ?',
+            text: "Cette action est irréversible!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Oui, supprimer la!',
+            cancelButtonText: 'Non, annuler!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire(
+                    'Supprimer!',
+                    `La liste à été supprimé.`,
+                    'success'
+                );
+                window.location = "/admin/tutorat/delete";
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 swalWithBootstrapButtons.fire(
                     'Annulation',

@@ -21,4 +21,18 @@ class TutoratController extends Controller
         InscriptionTutorat::delete($match['params']['matricule'], $con);
         $this->index();
     }
+
+    public function deleteAll() {
+        $con = $this->getDatabase();
+        $match = $this->router->match();
+        InscriptionTutorat::deleteAll($con);
+        $this->index();
+    }
+
+    public function created(){
+        $data = $_POST;
+        InscriptionTutorat::create($this->getDatabase(), $data);
+        /*$this->addNotification('addEvent');*/
+        return $this->redirectToRoute('serviceIndex');
+    }
 }

@@ -1,5 +1,5 @@
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <section id="tutorat">
 <div class="relative bg-white overflow-hidden">
@@ -134,10 +134,16 @@
     <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/phooto-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="">
   </div>
 </div>
-<div class="flex h-screen bg-gray-200 items-center justify-center  mt-16 mb-36" style="height:fit-content;" id = "formulaireinscription">
+
+<form class="flex h-screen bg-gray-200 items-center justify-center  mt-16 mb-36" style="height:fit-content;" id = "formulaireinscription" action="<?= $this->router->generate('tutoratCreate') ?>" method="POST" enctype="multipart/form-data">
   <div class="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
 
-
+  <div id = "msgerreur" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative ml-16 mr-16 mt-10" role="alert">
+  <span class="block sm:inline" id = "message">L'inscription n'a pas été complété en raison d'une erreur dans l'un des champs.</span>
+  <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+    <svg id = "errorclose" class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+  </span>
+  </div>
     <div class="flex justify-center">
       <div class="flex">
         <h1 class="text-gray-600 font-bold md:text-2xl text-xl pt-12">Inscription au service de tutorat par les pairs</h1>
@@ -145,40 +151,40 @@
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Matricule</label>
-      <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="=number" placeholder="Matricule" />
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="matricule">Matricule</label>
+      <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Matricule" id="matricule" name="matricule"/>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
       <div class="grid grid-cols-1">
-        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Prénom</label>
-        <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Prénom" />
+        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="prenom">Prénom</label>
+        <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Prénom" id="prenom" name="prenom"/>
       </div>
       <div class="grid grid-cols-1">
-        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Nom</label>
-        <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Nom" />
+        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="nom">Nom</label>
+        <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Nom" id="nom" name="nom"/>
       </div>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Courriel</label>
-      <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Courriel" />
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="courriel">Courriel</label>
+      <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="email" placeholder="Courriel" id="email" name="courriel"/>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Type d'inscription</label>
-      <select class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
-        <option>Etudiant demandant de l'aide</option>
-        <option>Tuteur</option>
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="statut">Type d'inscription</label>
+      <select class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" id="typeinscription" name="statut">
+        <option value="0">Etudiant demandant de l'aide</option>
+        <option value="1">Tuteur</option>
       </select>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Cours</label>
-      <select class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
-        <option>420-116-RI - Introduction à la programmation</option>
-        <option>420-124-RI - Développement WEB I</option>
-        <option>420-215-RI - Programmation orientée objet</option>
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="cours">Cours</label>
+      <select class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" id="cours" name="cours">
+        <option value="420-116-RI - Introduction à la programmation">420-116-RI - Introduction à la programmation</option>
+        <option value="420-124-RI - Développement WEB I">420-124-RI - Développement WEB I</option>
+        <option value="420-215-RI - Programmation orientée objet">420-215-RI - Programmation orientée objet</option>
       </select>
     </div>
 
@@ -189,63 +195,232 @@
 
   </div>
 </div>
-</div>
+
 </section>
 
 
 
 
+<section id="job" class="p-5">
+    <!-- component -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+        <?php
+        if (!empty($jobs)) {
+            foreach ($jobs as $job) { ?>
+                <div class="bg-white h-full text-left px-4 py-4  justify-end border-t-2 border-gray-900">
+                    <a class="flex items-center flex-wrap">
+                        <div class="w-20 h-20">
+                            <?php if ($job->category == 'Stage') { ?>
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="briefcase"
+                                     class=" svg-inline--fa fa-briefcase fa-w-16" role="img"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 512 512">
+                                    <path fill="currentColor"
+                                          d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"></path>
+                                </svg>
+                            <?php } else { ?>
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="school"
+                                     class="svg-inline--fa fa-school fa-w-20" role="img"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 640 512">
+                                    <path fill="currentColor"
+                                          d="M0 224v272c0 8.84 7.16 16 16 16h80V192H32c-17.67 0-32 14.33-32 32zm360-48h-24v-40c0-4.42-3.58-8-8-8h-16c-4.42 0-8 3.58-8 8v64c0 4.42 3.58 8 8 8h48c4.42 0 8-3.58 8-8v-16c0-4.42-3.58-8-8-8zm137.75-63.96l-160-106.67a32.02 32.02 0 0 0-35.5 0l-160 106.67A32.002 32.002 0 0 0 128 138.66V512h128V368c0-8.84 7.16-16 16-16h96c8.84 0 16 7.16 16 16v144h128V138.67c0-10.7-5.35-20.7-14.25-26.63zM320 256c-44.18 0-80-35.82-80-80s35.82-80 80-80 80 35.82 80 80-35.82 80-80 80zm288-64h-64v320h80c8.84 0 16-7.16 16-16V224c0-17.67-14.33-32-32-32z"></path>
+                                </svg>
+                            <?php } ?>
+                        </div>
 
+                        <span class="flex flex-col flex-grow pl-4">
+                    <span class="font-bold text-lg text-gray-700 -mt-4"><?= $job->title ?></span>
+                    <span class="text-md text-gray-600 uppercase font-bold"><?= $job->employer ?></span>
+						<span class="text-sm text-gray-500 uppercase font-bold"><?= $job->phone ?></span>
+							<span class="text-sm text-gray-500 uppercase font-bold"><?= $job->email ?></span>
 
-
-
-
-<section id = "job" class = "p-5">
-	<!-- component -->
-
-	<div class = "grid grid-cols-1 lg:grid-cols-2 gap-2">
-
-		<div class = "bg-white h-full text-left px-4 py-4  justify-end border-t-2 border-gray-900">
-			<a class = "flex items-center flex-wrap">
-				<img
-						class = "inline-block object-cover object-center w-24 h-24 mb-4 bg-gray-100 rounded"
-						src = "https://dummyimage.com/302x302/94a3b8/ffffff"/>
-				<span class = "flex flex-col flex-grow pl-4">
-                    <span class = "font-bold text-lg text-gray-700 -mt-4">Software developer </span>
-                    <span class = "text-md text-gray-600 uppercase font-bold">Employeur</span>
-						<span class = "text-sm text-gray-500 uppercase font-bold">819-813-1234 teste2@asdlgksalk.com</span>
-						<span class = "text-sm text-gray-400 uppercase font-bold">Salaire : 22$/h</span>
                   </span>
-			</a>
-			<div class = "flex items-center flex-wrap ">
-				<a href = "#" onclick = "openModal('modal_job')"
-						class = "block tracking-widest uppercase text-center shadow bg-indigo-600 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">
-					consulter
-				</a>
-				<span class = " font-bold text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 px-2">
-          6 jours
+                    </a>
+                    <div class="flex items-center flex-wrap ">
+                        <a href="#" onclick="openModal('modal_job',<?= $job->id ?>)"
+                           class="block tracking-widest uppercase text-center shadow bg-indigo-600 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">
+                            consulter
+                        </a>
+                        <span class=" font-bold text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 px-2">
+         publié depuis <?= round((time() - strtotime($job->publicationDate)) / (60 * 60 * 24)) ?> jours
         </span>
 
 
-			</div>
-		</div>
+                    </div>
+                </div>
+            <?php }
+        } else { ?>
+            <img class="mb-8 rounded-md shadow-md" src="/images/miscs/jobmeme.jpg" alt="meme">
+        <?php } ?>
+    </div>
+    <dialog id="modal_job" class="bg-transparent z-0 relative w-screen h-screen">
+        <div class="p-7 flex justify-center items-center fixed left-0 top-0 w-full h-full bg-gray-900 bg-opacity-50 z-50 transition-opacity duration-300 opacity-0">
 
-	</div>
-	<dialog id = "modal_job" class = "bg-transparent z-0 relative w-screen h-screen">
-		<div class = "p-7 flex justify-center items-center fixed left-0 top-0 w-full h-full bg-gray-900 bg-opacity-50 z-50 transition-opacity duration-300 opacity-0">
+            <div class="flex flex-col items-start w-1/2">
+                <div class="px-7 overflow-x-hidden overflow-y-auto">
+                    <!-- This example requires Tailwind CSS v2.0+ -->
+                    <div class="bg-white shadow overflow-hidden sm:rounded-lg">
 
-				<div class = "flex flex-col items-start w-1/2">
-					<div class = "px-7 overflow-x-hidden overflow-y-auto">
-						<!-- This example requires Tailwind CSS v2.0+ -->
-						<div class = "bg-white shadow overflow-hidden sm:rounded-lg">
+                        <div class="p-7 flex items-center w-full">
+                            <div id="title" class="text-gray-900 font-bold text-lg">Nom du poste</div>
+                            <svg onclick="modalClose('modal_job')"
+                                 class="ml-auto fill-current text-gray-700 w-5 h-5 cursor-pointer"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/>
+                            </svg>
+                        </div>
 
-								<div class="p-7 flex items-center w-full">
-									<div class="text-gray-900 font-bold text-lg">Nom du poste</div>
-									<svg onclick="modalClose('modal_job')" class="ml-auto fill-current text-gray-700 w-5 h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-										<path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z" />
-									</svg>
-								</div>
 
+                        <div class="border-t border-gray-200">
+                            <dl>
+                                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        Employeur
+                                    </dt>
+                                    <dd id="employer" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                        Exemple
+                                    </dd>
+                                </div>
+                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        Type
+                                    </dt>
+                                    <dd id="category" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                        Stage
+                                    </dd>
+                                </div>
+                                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        Téléphone
+                                    </dt>
+                                    <dd id="phone" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+
+                                    </dd>
+                                </div>
+                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        Courriel
+                                    </dt>
+                                    <dd id="email" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    </dd>
+                                </div>
+
+                                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        Salaire
+                                    </dt>
+                                    <dd id="salairy" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                        À discuter
+                                    </dd>
+                                </div>
+                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        Durée
+                                    </dt>
+                                    <dd id="duration" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                        ...
+                                    </dd>
+                                </div>
+                                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        Description
+                                    </dt>
+                                    <dd id="description" class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                        Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt
+                                        cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id
+                                        mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur
+                                        mollit ad adipisicing reprehenderit deserunt qui eu.
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </dialog>
+
+</section>
+<script>
+
+$(document).ready(function(e)
+{
+$("#formulaireinscription").hide();
+$("#msgerreur").hide();
+})
+$("#inscription").click(function(e)
+{
+  $("#formulaireinscription").show();
+})
+
+
+
+$("#errorclose").click(function(e)
+{
+  $("#msgerreur").hide();
+})
+
+$("#confirm").click(function(e)
+{
+  let matricule, nom, prenom, courriel, type, cours;
+
+  matricule = $("#matricule").val().trim();
+  nom = $("#nom").val().trim();
+  prenom = $("#prenom").val().trim();
+  courriel = $("#email").val().trim();
+  type = $("#typeinscription").val().trim();
+  cours = $("#cours").val().trim();
+
+
+  if (matricule.length != 7) 
+  { 
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs matricule doit contenir 7 chiffres.</span>');
+    $("#msgerreur").show();
+  }
+  else if (prenom.length == 0)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs prénom ne peut pas être vide.</span>');
+    $("#msgerreur").show();
+  }
+  else if (nom.length == 0)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs nom ne peut pas être vide.</span>');
+    $("#msgerreur").show();
+  }
+  else if (courriel.length == 0)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs courriel ne peut pas être vide.</span>');
+    $("#msgerreur").show();
+  }
+  else if (nom.length > 250)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs nom ne peut pas être excéder plus de 250 caractères.</span>');
+    $("#msgerreur").show();
+  }
+
+  else if (prenom.length > 250)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs prénom ne peut pas être excéder plus de 250 caractères.</span>');
+    $("#msgerreur").show();
+  }
+
+  else if (courriel.length > 250)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs courriel ne peut pas être excéder plus de 250 caractères.</span>');
+    $("#msgerreur").show();
+  }
+
+  else
+  {
+    type = $('#typeinscription').find(":selected").val();
+    cours = $('#cours').find(":selected").val();
+  }
+
+  
+})
 
 							<div class = "border-t border-gray-200">
 								<dl>
