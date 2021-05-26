@@ -36,7 +36,7 @@
                 <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between flex-wrap">
                         <div class="w-0 flex-1 flex items-center">
-                            <span class="flex p-2 rounded-lg bg-<?=$notif['colorIcon']?>">
+                            <span class="flex p-2 rounded-lg bg-<?= $notif['colorIcon'] ?>">
                                 <!-- Heroicon name: speakerphone -->
                                 <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
                                      viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -122,6 +122,17 @@
                     <span class="mx-3">Tutorat</span>
                 </a>
 
+                <a :class=" selecteditem === 'job' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' "
+                   @click="selecteditem = 'job'" class="flex items-center mt-4 py-2 px-6"
+                   href="<?= $this->router->generate('jobIndex'); ?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="mx-3">Offres d'emplois</span>
+                </a>
+
                 <a :class=" selecteditem === 'actualities' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' "
                    @click="selecteditem = 'actualities'" class="flex items-center mt-4 py-2 px-6"
                    href="<?= $this->router->generate('newsList'); ?>">
@@ -179,7 +190,7 @@
                             </label>
                             <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
                                 <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px"
+                                     version="1.1" id="Capa_1" x="0px"
                                      y="0px"
                                      viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
                                      xml:space="preserve" width="512px" height="512px">
@@ -267,7 +278,8 @@
                             <a href="<?= $this->router->generate('adminUpdateProfil', ['id' => app\User::getUserId()]) ?>"
                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profil</a>
                             <a href="<?= $this->router->generate('adminLogout') ?>"
-                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Se déconnecter</a>
+                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Se
+                                déconnecter</a>
                         </div>
                     </div>
                 </div>

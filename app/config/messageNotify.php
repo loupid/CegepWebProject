@@ -1,9 +1,16 @@
 <?php
 
-return[
+return [
     'addNews' => [
         0 => [
             'message' => 'Une nouvelle actualité a été ajoutée!',
+            'color' => 'green-500',
+            'colorIcon' => 'green-700'
+        ]
+    ],
+    'addJob' => [
+        0 => [
+            'message' => 'Une nouvelle offre d\'emplois a été ajoutée!',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
@@ -32,6 +39,13 @@ return[
     'updateEvent' => [
         0 => [
             'message' => 'Un évènement a été modifié avec succès!',
+            'color' => 'green-500',
+            'colorIcon' => 'green-700'
+        ]
+    ],
+    'updateJob' => [
+        0 => [
+            'message' => 'Une offre d\'emplois a été modifié avec succès!',
             'color' => 'green-500',
             'colorIcon' => 'green-700'
         ]
@@ -72,10 +86,10 @@ return[
         ]
     ],
     'logout' => [
-    0 => [
-        'message' => 'Vous êtes bien déconnecté(e).',
-        'color' => 'green-500',
-        'colorIcon' => 'green-700'
+        0 => [
+            'message' => 'Vous êtes bien déconnecté(e).',
+            'color' => 'green-500',
+            'colorIcon' => 'green-700'
+        ]
     ]
-]
 ];

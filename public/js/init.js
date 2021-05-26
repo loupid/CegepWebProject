@@ -10,9 +10,9 @@ function setNewsCategorySelectBox() {
     }
 }
 
-function getNewsKey(value){
-    for (let key in setNewsCategorySelectBox()){
-        if (setNewsCategorySelectBox()[key] === value){
+function getNewsKey(value) {
+    for (let key in setNewsCategorySelectBox()) {
+        if (setNewsCategorySelectBox()[key] === value) {
             return key;
         }
     }
@@ -31,9 +31,26 @@ function setEventCategorySelectBox() {
     }
 }
 
-function getEventKey(value){
-    for (let key in setEventCategorySelectBox()){
-        if (setEventCategorySelectBox()[key] === value){
+function setJobCategorySelectBox() {
+    return {
+        stage: 'Stage',
+        partial: 'Emplois temps partiel',
+        full: 'Emplois temps plein',
+
+    }
+}
+
+function getEventKey(value) {
+    for (let key in setEventCategorySelectBox()) {
+        if (setEventCategorySelectBox()[key] === value) {
+            return key;
+        }
+    }
+}
+
+function getJobKey(value) {
+    for (let key in setJobCategorySelectBox()) {
+        if (setJobCategorySelectBox()[key] === value) {
             return key;
         }
     }
