@@ -260,7 +260,7 @@
                 <button id="cancel"
                         class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>
                     <a href="#tutorat">Annuler</a></button>
-                <button class='w-auto rounded-lg shadow-xl font-medium text-white px-4 py-2'
+                <button class='w-auto rounded-lg shadow-xl font-medium text-white px-4 py-2' id="confirm"
                         style="background-color: #da1a32;">Confirmer mon inscription
                 </button>
             </div>
@@ -321,7 +321,8 @@
                                 </a>
                                 <div class="flex items-center flex-wrap ">
                                     <a href="javascript:void(0)" onclick="openModal('modal_job',<?= $job->id ?>)"
-                                       class="block tracking-widest uppercase text-center shadow bg-indigo-600 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">
+                                       class=" font-medium block tracking-widest uppercase text-center shadow bg-indigo-600 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded"
+                                       style="background-color: #da1a32;">
                                         consulter
                                     </a>
                                     <span class=" font-bold text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 px-2">
