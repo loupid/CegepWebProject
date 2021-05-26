@@ -10,7 +10,7 @@ Use a better box model (opinionated).
 */
 
 *,
-*::before,
+*::before,y
 *::after {
   box-sizing: border-box;
 }

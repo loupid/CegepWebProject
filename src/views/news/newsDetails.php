@@ -5,7 +5,7 @@
                  src="/images/UploadedImages/<?= $news->file_name === '' ? 'default.png' : $news->file_name ?>"
                  alt="news_image"/>
 
-            <p class="text-indigo-500 font-semibold text-base mt-2"><?= $news->category ?></p>
+            <p class="text-black opacity-75 font-semibold text-base mt-2"><?= $news->category ?></p>
 
             <h1 class="font-semibold mb-2 text-gray-900 leading-none text-xl mt-1 capitalize truncate">
                 <?= $news->title ?>
