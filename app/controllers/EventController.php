@@ -12,7 +12,7 @@ class EventController extends Controller
 {
     public function getAll()
     {
-        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events order by start_date desc;");
+        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events order by start_date;");
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute();
         $events = $query->fetchAll();
@@ -25,7 +25,7 @@ class EventController extends Controller
         if (!empty($_POST['search'])) {
             $action = $_POST['search'];
         }
-        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events where upper(title) like upper( :search ) order by start_date desc;");
+        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events where upper(title) like upper( :search ) order by start_date;");
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute(array(':search' => '%'.$action.'%'));
         $events = $query->fetchAll();
@@ -37,7 +37,7 @@ class EventController extends Controller
         if (!empty($_POST['search'])) {
             $action = $_POST['search'];
         }
-        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events where upper(title) like upper( :search ) order by title asc;");
+        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events where upper(title) like upper( :search ) order by title;");
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute(array(':search' => '%'.$action.'%'));
         $events = $query->fetchAll();
