@@ -99,6 +99,8 @@ $router->map('POST', '/admin/links/updated', 'LinksController@updated', 'linksUp
 
 //services
 $router->map('GET', '/services', 'ServiceController@index', 'serviceIndex');
+$router->map('POST', '/job', 'ServiceController@getJob', 'getJob');
+
 
 //tutorat
 $router->map('GET', '/admin/tutorat', 'TutoratController@index', 'tutorattable');
