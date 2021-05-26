@@ -1,12 +1,7 @@
-<section id="job" class="p-5">
-    <!-- component -->
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
 <section id="tutorat">
     <div class="relative bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto">
-            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32 max-w-full">
+            <div class="relative pb-8 bg-white sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32 max-w-full">
 
 
                 <div>
@@ -186,10 +181,10 @@
         </div>
     </div>
 
-    <form class="flex h-screen bg-gray-200 items-center justify-center  mt-16 mb-36" style="height:fit-content;"
+    <form class="flex h-screen bg-gray-200 items-center justify-center" style="height:fit-content;"
           id="formulaireinscription" action="<?= $this->router->generate('tutoratCreate') ?>" method="POST"
           enctype="multipart/form-data">
-        <div class="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
+        <div class="my-12 grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
 
             <div id="msgerreur"
                  class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative ml-16 mr-16 mt-10"
@@ -261,9 +256,11 @@
             </div>
 
             <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
-                <button id="cancel"
-                        class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>
-                    <a href="#tutorat">Annuler</a></button>
+                <a id="cancel"
+                   class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'
+                   href="#tutorat">
+                    Annuler
+                </a>
                 <button class='w-auto rounded-lg shadow-xl font-medium text-white px-4 py-2' id="confirm"
                         style="background-color: #da1a32;">Confirmer mon inscription
                 </button>
@@ -272,10 +269,10 @@
     </form>
 
 </section>
-<section id="job" class="pt-5">
+<section id="job">
     <div class="relative bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto">
-            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32 max-w-full">
+            <div class="relative pb-8 bg-white sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32 max-w-full">
 
                 <main class="mt-10 mx-auto max-w-full px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex flex-row">
                     <div class="sm:text-center lg:text-left">
@@ -454,69 +451,57 @@
 </section>
 
 <style>
-html{
-  scroll-behavior: smooth;
-}
+    html {
+        scroll-behavior: smooth;
+    }
 </style>
-
+<?php ob_start() ?>
 <script>
 
-$(document).ready(function(e)
-{
-  $("#formulaireinscription").hide();
-  $("#msgerreur").hide();
-})
-$("#inscription").click(function(e)
-{
-  $("#formulaireinscription").show();
-})
+    $(document).ready(function (e) {
+        $("#formulaireinscription").hide();
+        $("#msgerreur").hide();
+    })
+    $("#inscription").click(function (e) {
+        $("#formulaireinscription").show();
+    })
 
-$("#cancel").click(function(e)
-{
-  $("#formulaireinscription").hide();
-})
+    $("#cancel").click(function (e) {
+        $("#formulaireinscription").hide();
+    })
 
 
-$("#errorclose").click(function(e)
-{
-  $("#msgerreur").hide();
-})
+    $("#errorclose").click(function (e) {
+        $("#msgerreur").hide();
+    })
 
-$("#confirm").click(function(e)
-{
-  let matricule, nom, prenom, courriel, type, cours;
+    $("#confirm").click(function (e) {
+        let matricule, nom, prenom, courriel, type, cours;
 
-  matricule = $("#matricule").val().trim();
-  nom = $("#nom").val().trim();
-  prenom = $("#prenom").val().trim();
-  courriel = $("#email").val().trim();
-  type = $("#typeinscription").val().trim();
-  cours = $("#cours").val().trim();
+        matricule = $("#matricule").val().trim();
+        nom = $("#nom").val().trim();
+        prenom = $("#prenom").val().trim();
+        courriel = $("#email").val().trim();
+        type = $("#typeinscription").val().trim();
+        cours = $("#cours").val().trim();
 
 
-  if (matricule.length != 7) 
-  { 
-    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs matricule doit contenir 7 chiffres.</span>');
-    $("#msgerreur").show();
-  }
-  else if (prenom.length == 0)
-  {
-    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs prénom ne peut pas être vide.</span>');
-    $("#msgerreur").show();
-  }
-  else if (nom.length == 0)
-  {
-    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs nom ne peut pas être vide.</span>');
-    $("#msgerreur").show();
-  }
-  else if (courriel.length == 0)
-  {
-    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs courriel ne peut pas être vide.</span>');
-    $("#msgerreur").show();
-  }
-  else if (nom.length > 250)
-  {
-    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs nom ne peut pas être excéder plus de 250 caractères.</span>');
-    $("#msgerreur").show();
-  }
+        if (matricule.length != 7) {
+            $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs matricule doit contenir 7 chiffres.</span>');
+            $("#msgerreur").show();
+        } else if (prenom.length == 0) {
+            $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs prénom ne peut pas être vide.</span>');
+            $("#msgerreur").show();
+        } else if (nom.length == 0) {
+            $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs nom ne peut pas être vide.</span>');
+            $("#msgerreur").show();
+        } else if (courriel.length == 0) {
+            $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs courriel ne peut pas être vide.</span>');
+            $("#msgerreur").show();
+        } else if (nom.length > 250) {
+            $("#message").replaceWith('<span class="block sm:inline" id = "message">Le champs nom ne peut pas être excéder plus de 250 caractères.</span>');
+            $("#msgerreur").show();
+        }
+    });
 </script>
+<?php $script = ob_get_clean();?>
