@@ -60,7 +60,6 @@ $router->map('POST','/admin/created','AdminController@created', 'adminCreated');
 $router->map('POST','/admin/updated','AdminController@updated', 'adminUpdated');
 $router->map('POST','/admin/updatedprofil','AdminController@updatedProfil', 'adminUpdatedProfil');
 
-
 //events
 $router->map('GET|POST', '/evenements', 'EventController@getAllWhere', 'eventsIndex');
 $router->map('GET|POST', '/evenements-oa', 'EventController@getAllWhereOA', 'eventsIndexOA');
@@ -103,7 +102,6 @@ $router->map('POST', '/admin/links/updated', 'LinksController@updated', 'linksUp
 //services
 $router->map('GET', '/services', 'ServiceController@index', 'serviceIndex');
 $router->map('POST', '/job', 'ServiceController@getJob', 'getJob');
-
 
 //tutorat
 $router->map('GET', '/admin/tutorat', 'TutoratController@index', 'tutorattable');
