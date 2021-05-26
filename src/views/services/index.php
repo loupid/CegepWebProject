@@ -420,6 +420,146 @@ $("#confirm").click(function(e)
     $("#msgerreur").show();
   }
 
+
+							<div class = "border-t border-gray-200">
+								<dl>
+									<div class = "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+										<dt class = "text-sm font-medium text-gray-500">
+											Employeur
+										</dt>
+										<dd class = "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+											Exemple
+										</dd>
+									</div>
+									<div class = "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+										<dt class = "text-sm font-medium text-gray-500">
+											Type
+										</dt>
+										<dd class = "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+											Stage
+										</dd>
+									</div>
+									<div class = "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+										<dt class = "text-sm font-medium text-gray-500">
+											Contact
+										</dt>
+										<dd class = "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+											8190010123 test@test.caom
+										</dd>
+									</div>
+
+									<div class = "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+										<dt class = "text-sm font-medium text-gray-500">
+											Salaire
+										</dt>
+										<dd class = "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+											À discuter
+										</dd>
+									</div>
+									<div class = "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+										<dt class = "text-sm font-medium text-gray-500">
+											Durée
+										</dt>
+										<dd class = "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+											...
+										</dd>
+									</div>
+									<div class = "bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+										<dt class = "text-sm font-medium text-gray-500">
+											Description
+										</dt>
+										<dd class = "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+											Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt
+											cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id
+											mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur
+											mollit ad adipisicing reprehenderit deserunt qui eu.
+										</dd>
+									</div>
+								</dl>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+		</div>
+	</dialog>
+
+</section>
+
+<style>
+html{
+  scroll-behavior: smooth;
+}
+</style>
+
+<script>
+
+$(document).ready(function(e)
+{
+  $("#formulaireinscription").hide();
+  $("#msgerreur").hide();
+})
+$("#inscription").click(function(e)
+{
+  $("#formulaireinscription").show();
+})
+
+$("#cancel").click(function(e)
+{
+  $("#formulaireinscription").hide();
+})
+
+$("#inscription").click(function(e)
+{
+  $("#formulaireinscription").show();
+})
+
+$("#errorclose").click(function(e)
+{
+  $("#msgerreur").hide();
+})
+
+
+
+$("#confirm").click(function(e)
+{
+  let matricule, nom, prenom, courriel, type, cours;
+
+  matricule = $("#matricule").val().trim();
+  nom = $("#nom").val().trim();
+  prenom = $("#prenom").val().trim();
+  courriel = $("#email").val().trim();
+  type = $("#typeinscription").val().trim();
+  cours = $("#cours").val().trim();
+
+
+  if (matricule.length != 7) 
+  { 
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs matricule doit contenir 7 chiffres.</span>');
+    $("#msgerreur").show();
+  }
+  else if (prenom.length == 0)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs prénom ne peut pas être vide.</span>');
+    $("#msgerreur").show();
+  }
+  else if (nom.length == 0)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs nom ne peut pas être vide.</span>');
+    $("#msgerreur").show();
+  }
+  else if (courriel.length == 0)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs courriel ne peut pas être vide.</span>');
+    $("#msgerreur").show();
+  }
+  else if (nom.length > 250)
+  {
+    $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs nom ne peut pas être excéder plus de 250 caractères.</span>');
+    $("#msgerreur").show();
+  }
+
   else if (prenom.length > 250)
   {
     $("#message").replaceWith( '<span class="block sm:inline" id = "message">Le champs prénom ne peut pas être excéder plus de 250 caractères.</span>');
@@ -440,6 +580,10 @@ $("#confirm").click(function(e)
 
   
 })
+
+
+
+
 
     function openModal(key) {
         document.getElementById(key).showModal();
