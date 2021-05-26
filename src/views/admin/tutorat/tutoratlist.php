@@ -63,8 +63,8 @@ $selectedItem = ob_get_clean();
                         <span class="text-sm leading-5 text-gray-900 px-2"><?= $etudiant->cours?></span>
                     </td>
 
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                        <span class="text-sm leading-5 text-gray-900 px-2"><?= $etudiant->statut?></span>
+                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 ">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <?= ($etudiant->statut)? 'bg-yellow-300 text-yellow-800' : 'bg-indigo-200 text-indigo-800'?>"><?= ($etudiant->statut)? "Tuteur" : "Élève"; ?></span>
                     </td>
 
                     <!--Action Row-->
