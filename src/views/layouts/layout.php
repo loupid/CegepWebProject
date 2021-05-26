@@ -27,6 +27,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script type="module" src="/js/component.js"></script>
+    <script  src="/js/service.js"></script>
     <style>
         .modal {
             transition: opacity 0.25s ease;
@@ -251,7 +252,10 @@
                     <!--                        </div>-->
                     <!--                    </div>-->
                     <!--                </div>-->
-
+					<a href="<?= $this->router->generate('serviceIndex') ?>"
+							class="text-base font-medium text-gray-900 hover:text-indigo-600">
+						Services
+					</a>
                     <a href="<?= $this->router->generate('eventsIndex') ?>"
                        class="text-base font-medium text-gray-900 hover:text-indigo-600">
                         Événements

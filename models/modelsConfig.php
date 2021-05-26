@@ -4,3 +4,5 @@ require '../models/Admin.php';
 require '../models/News.php';
 require '../models/Event.php';
 require '../models/Link.php';
+require '../models/Job.php';
+require '../models/InscriptionTutorat.php';
