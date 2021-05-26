@@ -23,13 +23,13 @@ class InscriptionTutorat implements \IModel
             $values .= $comma . '?';
             $comma = ',';
         }
-        $query = "INSERT INTO links (" . $attributes . " ) VALUES (" . $values . ")";
+        $query = "INSERT INTO tutorat (" . $attributes . " ) VALUES (" . $values . ")";
         $db->prepare($query)->execute($data);
     }
 
     public static function update($id, $db, $array = [])
     {
-        $query = "UPDATE links SET";
+        $query = "UPDATE tutorat SET";
         $comma = ' ';
         foreach ($array as $key => $value) {
             $query .= $comma . $key . " = '" . $value . "'";
@@ -42,6 +42,12 @@ class InscriptionTutorat implements \IModel
     public static function delete($matricule, $db)
     {
         $query = "DELETE FROM tutorat WHERE matricule = '" . $matricule . "'";
+        $db->prepare($query)->execute();
+    }
+
+    public static function deleteAll($db)
+    {
+        $query = "DELETE FROM tutorat";
         $db->prepare($query)->execute();
     }
 
