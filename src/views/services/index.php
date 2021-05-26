@@ -431,7 +431,7 @@
     </div>
 
     <form class="flex h-screen bg-gray-200 items-center justify-center" style="height:fit-content;"
-          id="formulaireinscriptioni" action="<?= $this->router->generate('espaceICreated') ?>" method="POST"
+          id="formulaireinscriptioni" action="<?= $this->router->generate('espaceICreate') ?>" method="POST"
           enctype="multipart/form-data">
         <div class="my-12 grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
 
