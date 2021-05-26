@@ -63,6 +63,10 @@ $router->map('POST','/admin/updatedprofil','AdminController@updatedProfil', 'adm
 
 //events
 $router->map('GET', '/evenements', 'EventController@getAll', 'eventsIndex');
+//filtre recherche
+$router->map('POST', '/evenements', 'EventController@getAllWhere', 'eventsRecherche');
+$router->map('GET', '/evenements-oa', 'EventController@getAllWhereOA', 'eventsRechercheOA');
+
 $router->map('GET', '/admin/events', 'EventController@eventsList', 'eventsList');
 $router->map('GET', '/admin/event/create', 'EventController@create', 'eventCreate');
 $router->map('GET', '/admin/event/update/[i:id]', 'EventController@update', 'eventUpdate');
@@ -74,6 +78,11 @@ $router->map('POST', '/admin/event/updated', 'EventController@updated', 'eventUp
 
 //news
 $router->map('GET', '/actualites', 'NewsController@getAll', 'newsIndex');
+$router->map('GET', '/actualites/oa', 'NewsController@getAll', 'newsIndexOA');
+//news recherche
+$router->map('POST', '/actualites', 'NewsController@getAllWhere', 'newsRecherche');
+$router->map('POST', '/actualites/oa', 'NewsController@getAllWhere', 'newsRechercheOA');
+
 $router->map('GET', '/actualites/[i:id]','NewsController@getNews', 'newsDetails');
 $router->map('GET', '/admin/news', 'NewsController@newsList', 'newsList');
 $router->map('GET', '/admin/news/create', 'NewsController@create', 'newsCreate');
