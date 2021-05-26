@@ -48,7 +48,7 @@
 </div>
 <div class="flex flex-col justify-between">
     <div class="relative bg-white shadow">
-        <div class="mx-auto px-4 sm:px-6" style=" background-image: -webkit-linear-gradient(left, #092d74, #061f50)">
+        <div class="mx-auto px-6 sm:px-6" style=" background-image: -webkit-linear-gradient(left, #092d74, #061f50)">
             <div class="flex justify-between items-center border-gray-100 py-6 md:justify-start md:space-x-10">
                 <div class="flex justify-start">
                     <a href="<?= $this->router->generate('index') ?>" class="inline-block mr-4">
