@@ -63,9 +63,10 @@ $router->map('POST','/admin/updatedprofil','AdminController@updatedProfil', 'adm
 
 //events
 $router->map('GET', '/evenements', 'EventController@getAll', 'eventsIndex');
+$router->map('GET', '/evenements-oa', 'EventController@getAllWhereOA', 'eventsIndexOA');
 //filtre recherche
 $router->map('POST', '/evenements', 'EventController@getAllWhere', 'eventsRecherche');
-$router->map('GET', '/evenements-oa', 'EventController@getAllWhereOA', 'eventsRechercheOA');
+$router->map('POST', '/evenements-oa-[a:search]', 'EventController@getAllWhereOA', 'eventsRechercheOA');
 
 $router->map('GET', '/admin/events', 'EventController@eventsList', 'eventsList');
 $router->map('GET', '/admin/event/create', 'EventController@create', 'eventCreate');
