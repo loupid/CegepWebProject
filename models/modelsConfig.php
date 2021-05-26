@@ -5,4 +5,5 @@ require '../models/News.php';
 require '../models/Event.php';
 require '../models/Link.php';
 require '../models/Orders.php';
+require '../models/Offers.php';
 require '../models/Clothes.php';

@@ -1,6 +1,9 @@
 <?php
 
 namespace controllers;
+use models\Offers;
+use PDO;
+use models\Clothes;
 
 class ClothesController extends Controller
 {
@@ -59,24 +62,43 @@ class ClothesController extends Controller
     {
 
         #TODO: Get data to be sent to the view
-
-        return $this->view('admin/clothes/offers/offersList', [], 1);
+        $query = $this->getDatabase()->prepare("select * from offers;");
+        $query->setFetchMode(PDO::FETCH_CLASS, Offers::class);
+        $query->execute();
+        $offersList = $query->fetchAll();
+        $clothes_list = [];
+        foreach($offersList as $offer){
+            if (!array_key_exists($offer->clothes_id, $clothes_list)){
+                $query2 = $this->getDatabase()->prepare("select * from clothes where id = ?;");
+                $query2->setFetchMode(PDO::FETCH_CLASS, Clothes::class);
+                $query2->execute([0=>$offer->clothes_id]);
+                $clothe = $query2->fetchAll();
+                $clothes_list[$offer->clothes_id] = $clothe;
+            }
+        }
+        return $this->view('admin/clothes/offers/offersList', ["offersList"=>$offersList, "clothes_list"=>$clothes_list], 1);
     }
 
     public function offersCreate()
     {
-
-        #TODO: Get data to be sent to the view
-
-        return $this->view('admin/clothes/offers/offersCreate', [], 1);
+        $query = $this->getDatabase()->prepare("select * from clothes;");
+        $query->setFetchMode(PDO::FETCH_CLASS, Clothes::class);
+        $query->execute();
+        $clothes_list = $query->fetchAll();
+        $clothesArray = [];
+        foreach($clothes_list as $clothe){
+            $clothesArray[$clothe->id] = $clothe->name . " " . $clothe->color;
+        }
+        return $this->view('admin/clothes/offers/offersCreate', ["clothesJSON"=>str_replace('"',"'",json_encode($clothesArray))], 1);
     }
 
     public function offersCreated()
     {
-
+        $data = $_POST;
+        #$data['clé'];
         #TODO: Get data from post and insert in database
-
-        return $this->view('admin/clothes/offers/offersCreated', [], 1);
+        Offers::Create($this->getDatabase(), $data);
+        return $this->offersIndex();
     }
 
     public function offersEdit($id)

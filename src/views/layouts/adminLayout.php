@@ -135,6 +135,17 @@
                     <span class="mx-3">Événements</span>
                 </a>
 
+                <a :class=" selecteditem === 'events' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' "
+                   @click="selecteditem = 'events'" class="flex items-center mt-4 py-2 px-6"
+                   href="<?= $this->router->generate('offersIndex') ?>">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="mx-3">Offres de commandes</span>
+                </a>
+
                 <a :class=" selecteditem === 'links' ? 'bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100' "
                    @click="selecteditem = 'links'" class="flex items-center mt-4 py-2 px-6"
                    href="<?= $this->router->generate('linksList') ?>">
