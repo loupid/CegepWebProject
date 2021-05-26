@@ -44,7 +44,7 @@
       <main class="mt-10 mx-auto max-w-full px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex flex-row">
         <div class="sm:text-center lg:text-left">
           <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-            <span class="block xl:inline">Le service de tutorat par les pairs</span>
+            <span class="block xl:inline" style="color: #061f50;">Le service de tutorat par les pairs</span>
           </h1>
           <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
           Le Tutorat par les pairs est un service où des étudiants tuteurs, choisis parmi les meilleurs de leur programme, aident des étudiants en difficulté dans un cours visé de 1re année à raison d’une heure par semaine pendant au moins 10 semaines. Les rencontres d’aide sont personnalisées et consistent principalement à de l’aide aux devoirs. Les méthodes de travail efficaces sont également abordées pour permettre à l’étudiant aidé d’acquérir de bonnes habitudes dans ses études, et ainsi, développer une plus grande autonomie. 
@@ -55,7 +55,7 @@
           </p>
           <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div class="rounded-md shadow">
-              <a id = "inscription" href="#formulaireinscription" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+              <a id = "inscription" href="#formulaireinscription" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10" style="background-color: #da1a32;">
                 S'inscrire maintenant
               </a>
             </div>
@@ -71,12 +71,12 @@
             
         </div>
         <div class="w-full mb-10">
-            <div class="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+            <div class="text-3xl text-left leading-tight h-3" style="color: #061f50;">“</div>
             <p class="text-sm text-gray-600 text-center px-5">Je me suis rendu la session passée que je pouvais avoir de la difficulté avec la matière et suite à l'aide de mon tuteur la session passé j'ai réussi à passer le cours et améliorer mon niveau en programmation Java. J'ai donc continué avec le tutorat cette session et ça m'a encore plus aidé à maitriser la matière étant donné que le tuteur été toujours là pour moi et avoir des cours supplémentaires individuellement avec quelqu'un aide toujours mieux !  </p>
-            <div class="text-3xl text-indigo-500 text-right leading-tight h-3 -mt-3">”</div>
+            <div class="text-3xl text-right leading-tight h-3 -mt-3" style="color: #061f50;">”</div>
         </div>
         <div class="w-full">
-            <p class="text-md text-indigo-500 font-bold text-center">Lyes Aidoun</p>
+            <p class="text-md font-bold text-center" style="color: #061f50;">Lyes Aidoun</p>
         </div>
     </div>
 
@@ -86,12 +86,12 @@
 
         </div>
         <div class="w-full mb-10">
-            <div class="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+            <div class="text-3xl text-left leading-tight h-3" style="color: #061f50;">“</div>
             <p class="text-sm text-gray-600 text-center px-5">Après avoir échoué ma première session d’introduction a la programmation, j’ai décidé de m’inscrire à ce programme-ci et cela m’a grandement aidé dans la réussite de ce cours. Le programme permet d’avoir une heure /semaine avec un étudiant de deuxième année qui t’aide dans tes laboratoires et à la compréhension des notes de cours. J’ai même décidé de continuer lors de la deuxième session et cela s’est poursuivi dans la même continuité. Je vous conseille grandement de vous inscrire car c’est bénéfique pour votre apprentissage et cela ne prend pas de temps sur vos heures libres, c’est « que » une heure / semaine c’est très clairement faisable avec les cours à côté.</p>
-            <div class="text-3xl text-indigo-500 text-right leading-tight h-3 -mt-3">”</div>
+            <div class="text-3xl text-right leading-tight h-3 -mt-3" style="color: #061f50;">”</div>
         </div>
         <div class="w-full">
-            <p class="text-md text-indigo-500 font-bold text-center">Adrien Seychelles</p>
+            <p class="text-md font-bold text-center" style="color: #061f50;">Adrien Seychelles</p>
         </div>
     </div>
 
@@ -100,12 +100,12 @@
 
         </div>
         <div class="w-full mb-10">
-            <div class="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+            <div class="text-3xl text-left leading-tight h-3" style="color: #061f50;">“</div>
             <p class="text-sm text-gray-600 text-center px-5">Selon moi, le tutorat m'a été extrêmement utile. Le tutorat m'a aidé à comprendre la matière sous un autre point de vue. De plus, tous les tuteurs ont un âge similaire à vous, ce qui créait une meilleure relation saine entre le tuteur et l'étudiant. Depuis que je suis au cégep, tous les tuteurs que j'ai eu ont été très amicale et très aidant face aux difficultés que j'ai rencontrées dans mes programmes. Si vous avez des problèmes à propos de comprendre ou de suivre la matière de vos cours, je recommande pour toutes personnes ayant des difficultés dans leur programme de s'y inscrire.</p>
-            <div class="text-3xl text-indigo-500 text-right leading-tight h-3 -mt-3">”</div>
+            <div class="text-3xl text-right leading-tight h-3 -mt-3" style="color: #061f50;">”</div>
         </div>
         <div class="w-full">
-            <p class="text-md text-indigo-500 font-bold text-center">Anthony Proulx</p>
+            <p class="text-md font-bold text-center" style="color: #061f50;">Anthony Proulx</p>
         </div>
     </div>
 
@@ -114,12 +114,12 @@
 
         </div>
         <div class="w-full mb-10">
-            <div class="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+            <div class="text-3xl text-left leading-tight h-3" style="color: #061f50;">“</div>
             <p class="text-sm text-gray-600 text-center px-5">Être tuteur a été pour moi une occasion d'apporter mon aide à des étudiants qui en avaient besoin. Cela m'a permis de réviser et d'approfondir certaines notions, me rendant ainsi capable de mieux les expliquer aux aidés. Ça a été un beau défi pour moi, car je devais essayer de trouver les meilleures approches pour leur expliquer les différents concepts. C'est une expérience que je recommande à ceux que ça pourrait intéresser.</p>
-            <div class="text-3xl text-indigo-500 text-right leading-tight h-3 -mt-3">”</div>
+            <div class="text-3xl text-right leading-tight h-3 -mt-3" style="color: #061f50;">”</div>
         </div>
         <div class="w-full">
-            <p class="text-md text-indigo-500 font-bold text-center">Raphaël Céré</p>
+            <p class="text-md font-bold text-center" style="color: #061f50;">Raphaël Céré</p>
         </div>
     </div>
 
@@ -146,34 +146,34 @@
   </div>
     <div class="flex justify-center">
       <div class="flex">
-        <h1 class="text-gray-600 font-bold md:text-2xl text-xl pt-12">Inscription au service de tutorat par les pairs</h1>
+        <h1 class="font-bold md:text-2xl text-xl pt-12" style="color: #061f50;">Inscription au service de tutorat par les pairs</h1>
       </div>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
       <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="matricule">Matricule</label>
-      <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Matricule" id="matricule" name="matricule"/>
+      <input class="py-2 px-3 rounded-lg border-2 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" style="border-color: #061f50;" type="text" placeholder="Matricule" id="matricule" name="matricule"/>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
       <div class="grid grid-cols-1">
         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="prenom">Prénom</label>
-        <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Prénom" id="prenom" name="prenom"/>
+        <input class="py-2 px-3 rounded-lg border-2 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" style="border-color: #061f50;" type="text" placeholder="Prénom" id="prenom" name="prenom"/>
       </div>
       <div class="grid grid-cols-1">
         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="nom">Nom</label>
-        <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Nom" id="nom" name="nom"/>
+        <input class="py-2 px-3 rounded-lg border-2 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" style="border-color: #061f50;" type="text" placeholder="Nom" id="nom" name="nom"/>
       </div>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
       <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="courriel">Courriel</label>
-      <input class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="email" placeholder="Courriel" id="email" name="courriel"/>
+      <input class="py-2 px-3 rounded-lg border-2 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" style="border-color: #061f50;" type="email" placeholder="Courriel" id="email" name="courriel"/>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
       <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="statut">Type d'inscription</label>
-      <select class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" id="typeinscription" name="statut">
+      <select class="py-2 px-3 rounded-lg border-2 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" style="border-color: #061f50;" id="typeinscription" name="statut">
         <option value="0">Etudiant demandant de l'aide</option>
         <option value="1">Tuteur</option>
       </select>
@@ -181,7 +181,7 @@
 
     <div class="grid grid-cols-1 mt-5 mx-7">
       <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="cours">Cours</label>
-      <select class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" id="cours" name="cours">
+      <select class="py-2 px-3 rounded-lg border-2 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" style="border-color: #061f50;" id="cours" name="cours">
         <option value="420-116-RI - Introduction à la programmation">420-116-RI - Introduction à la programmation</option>
         <option value="420-124-RI - Développement WEB I">420-124-RI - Développement WEB I</option>
         <option value="420-215-RI - Programmation orientée objet">420-215-RI - Programmation orientée objet</option>
@@ -190,7 +190,7 @@
 
     <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
       <button id = "cancel" class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'><a href="#tutorat">Annuler</a></button>
-      <button class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Confirmer mon inscription</button>
+      <button class='w-auto rounded-lg shadow-xl font-medium text-white px-4 py-2' style="background-color: #da1a32;">Confirmer mon inscription</button>
     </div>
 
   </div>
