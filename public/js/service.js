@@ -49,14 +49,24 @@ function modalClose(key) {
 
 $(document).ready(function (e) {
     $("#formulaireinscription").hide();
+    $("#formulaireinscriptioni").hide();
     $("#msgerreur").hide();
+    $("#msgerreuri").hide();
 
     $("#inscription").click(function (e) {
         $("#formulaireinscription").show();
     })
 
+    $("#inscriptioni").click(function (e) {
+        $("#formulaireinscriptioni").show();
+    })
+
     $("#cancel").click(function (e) {
         $("#formulaireinscription").hide();
+    })
+
+    $("#canceli").click(function (e) {
+        $("#formulaireinscriptioni").hide();
     })
 
     $("#inscription").click(function (e) {
@@ -68,8 +78,82 @@ $(document).ready(function (e) {
     })
 
 
+let lundi, mardi, mercredi, jeudi, vendredi
+$("#lundi").change(function(e)
+{
+    lundi = $("#lundi").prop('checked'); 
+    if($("#lundi").prop('checked'))
+    {
+        $(".inputlundi").prop('disabled', false); 
+        lundi = "Disponible"
+    }
+    else
+    {
+       $(".inputlundi").prop('disabled', true); 
+       $(".inputlundi").val(""); 
+    }
+})
+
+$("#mardi").change(function(e)
+{
+    mardi = $("#mardi").prop('checked'); 
+    if($("#mardi").prop('checked'))
+    {
+        $(".inputmardi").prop('disabled', false); 
+        lundi = "Disponible"
+    }
+    else
+    {
+       $(".inputmardi").prop('disabled', true); 
+       $(".inputmardi").val(""); 
+    }
+})
+
+$("#mercredi").change(function(e)
+{
+    mercredi = $("#mercredi").prop('checked'); 
+    if($("#mercredi").prop('checked'))
+    {
+        $(".inputmercredi").prop('disabled', false); 
+        mercredi = "Disponible"
+    }
+    else
+    {
+       $(".inputmercredi").prop('disabled', true); 
+       $(".inputmercredi").val(""); 
+    }
+})
+
+$("#jeudi").change(function(e)
+{
+    jeudi = $("#jeudi").prop('checked'); 
+    if($("#jeudi").prop('checked'))
+    {
+        $(".inputjeudi").prop('disabled', false); 
+        jeudi = "Disponible"
+    }
+    else
+    {
+       $(".inputjeudi").prop('disabled', true); 
+       $(".inputjeudi").val(""); 
+    }
+})
+
+$("#vendredi").change(function(e)
+{
+    vendredi = $("#vendredi").prop('checked'); 
+    if($("#vendredi").prop('checked'))
+    {
+        $(".inputvendredi").prop('disabled', false); 
+        vendredi = "Disponible"
+    }
+    else
+    {
+       $(".inputvendredi").prop('disabled', true); 
+       $(".inputvendredi").val(""); 
+    }
+})
     $("#confirm").click(function (e) {
-        debugger
         let matricule, nom, prenom, courriel, type, cours;
 
         matricule = $("#matricule").val().trim();
@@ -113,6 +197,49 @@ $(document).ready(function (e) {
             cours = $('#cours').find(":selected").val();
         }
 
+    })
+
+    $("#confirmi").click(function (e) {
+        let matriculei, nomi, prenomi, courrieli, jour, dispo;
+
+        matriculei = $("#matriculei").val().trim();
+        nomi = $("#nomi").val().trim();
+        prenomi = $("#prenomi").val().trim();
+        courrieli = $("#emaili").val().trim();
+
+
+        if (matriculei.length != 7) {
+            $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">Le champs matricule doit contenir 7 chiffres.</span>');
+            $("#msgerreuri").show();
+            e.preventDefault()
+        } else if (prenomi.length == 0) {
+            $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">Le champs prénom ne peut pas être vide.</span>');
+            $("#msgerreuri").show();
+            e.preventDefault()
+        } else if (nomi.length == 0) {
+            $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">Le champs nom ne peut pas être vide.</span>');
+            $("#msgerreuri").show();
+            e.preventDefault()
+        } else if (courrieli.length == 0) {
+            $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">Le champs courriel ne peut pas être vide.</span>');
+            $("#msgerreuri").show();
+            e.preventDefault()
+        } else if (nomi.length > 250) {
+            $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">Le champs nom ne peut pas être excéder plus de 250 caractères.</span>');
+            $("#msgerreuri").show();
+            e.preventDefault()
+        } else if (prenomi.length > 250) {
+            $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">Le champs prénom ne peut pas être excéder plus de 250 caractères.</span>');
+            $("#msgerreuri").show();
+            e.preventDefault()
+        } else if (courrieli.length > 250) {
+            $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">Le champs courriel ne peut pas être excéder plus de 250 caractères.</span>');
+            $("#msgerreuri").show();
+            e.preventDefault()
+        } else {
+            type = $('#typeinscription').find(":selected").val();
+            cours = $('#cours').find(":selected").val();
+        }
 
     })
 })
