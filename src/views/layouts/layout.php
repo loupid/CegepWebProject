@@ -57,7 +57,7 @@
                              alt="Logo département">
                     </a>
                 </div>
-                <div class="flex justify-start w-full">
+                <div class="flex justify-start">
                     <p class="text-base font-medium text-white md:flex inline-flex items-center text-base py-6">
                     Informatique | Trois-Rivières
                     </p>
@@ -76,7 +76,7 @@
                     </button>
                 </div>
                 
-                <div class= "flex md:justify-end w-full">
+                <div class= "flex justify-start">
                 <nav class= "hidden md:flex space-x-10">
 
 
