@@ -257,9 +257,11 @@
             </div>
 
             <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
-                    <a id="cancel" class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2' href="#tutorat">
-                        Annuler
-                    </a>
+                <a id="cancel"
+                   class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'
+                   href="#tutorat">
+                    Annuler
+                </a>
                 <button class='w-auto rounded-lg shadow-xl font-medium text-white px-4 py-2' id="confirm"
                         style="background-color: #da1a32;">Confirmer mon inscription
                 </button>
