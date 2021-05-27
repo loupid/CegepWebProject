@@ -6,3 +6,4 @@ require '../models/Event.php';
 require '../models/Link.php';
 require '../models/Job.php';
 require '../models/InscriptionTutorat.php';
+require '../models/espaceI.php';

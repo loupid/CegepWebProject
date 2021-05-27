@@ -119,5 +119,7 @@ $router->map('POST', '/admin/offre/created', 'JobController@created', 'jobCreate
 $router->map('POST', '/admin/offre/updated', 'JobController@updated', 'jobUpdated');
 
 //Espace I 
-
+$router->map('GET', '/admin/espace', 'espaceController@index', 'espaceIndex');
+$router->map('GET', '/admin/espace/delete/[i:id]','espaceController@delete', 'espaceDelete');
+$router->map('GET', '/admin/espace/delete','espaceController@deleteAll', 'espaceDeleteAll');
 $router->map('POST', '/service/ajouti', 'espaceController@created', 'espaceICreate');
