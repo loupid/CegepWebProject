@@ -6,13 +6,14 @@ use app\FileManager;
 use app\Session;
 use app\User;
 use models\Event;
+use models\Inscription;
 use PDO;
 
 class EventController extends Controller
 {
     public function getAll()
     {
-        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events order by start_date;");
+        $query = $this->getDatabase()->prepare("select id, title, start_date, category, organizer, address, price, description, end_date, file_name, link from events order by start_date;");
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute();
         $events = $query->fetchAll();
@@ -25,19 +26,20 @@ class EventController extends Controller
         if (!empty($_POST['search'])) {
             $action = $_POST['search'];
         }
-        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events where upper(title) like upper( :search ) order by start_date;");
+        $query = $this->getDatabase()->prepare("select id, title, start_date, category, organizer, address, price, description, end_date, file_name, link from events where upper(title) like upper( :search ) order by start_date;");
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute(array(':search' => '%'.$action.'%'));
         $events = $query->fetchAll();
         return $this->view('events/index', ['events' => $events, 'search' => $action, 'ordreActif' => ''], 0);
     }
 
-    public function getAllWhereOA(){
+    public function getAllWhereOA()
+    {
         $action = "";
         if (!empty($_POST['search'])) {
             $action = $_POST['search'];
         }
-        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events where upper(title) like upper( :search ) order by title;");
+        $query = $this->getDatabase()->prepare("select id, title, start_date, category, organizer, address, price, description, end_date, file_name, link from events where upper(title) like upper( :search ) order by title;");
         $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
         $query->execute(array(':search' => '%'.$action.'%'));
         $events = $query->fetchAll();
@@ -115,5 +117,22 @@ class EventController extends Controller
         $match = $this->router->match();
         Event::delete($match['params']['id'], $con);
         $this->eventsList();
+    }
+
+    public function eventInvit()
+    {
+        $confirm = false;
+        $data = $_POST;
+        $query = $this->getDatabase()->prepare("select id from inscriptions where email = :email and id_event = :id_event;");
+        $query->execute(array(':email' => $data['email'], ':id_event' => $data['id_event']));
+        if (!$query->fetchAll()){
+            Inscription::create($this->getDatabase(), $data);
+            $confirm = true;
+        }
+        $query = $this->getDatabase()->prepare("select id, title, start_date, category, organizer, address, price, description, end_date, file_name, link from events order by start_date;");
+        $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
+        $query->execute();
+        $events = $query->fetchAll();
+        return $this->view('events/index', ['events' => $events, 'ordreActif' => '', 'confirm' => $confirm], 0);
     }
 }
