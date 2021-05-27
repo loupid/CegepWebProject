@@ -412,19 +412,10 @@
 
                     <div class="flex flex-col items-end sm:text-center lg:text-right">
                         <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                            <span class="block xl:inline" style="color: #061f50;">Centre d’aide en informatique (Espace I)</span>
+                            <span class="block xl:inline" style="color: #061f50;">Centre d’aide en informatique (EspaceI)</span>
                         </h1>
                         <p class="mt-5 sm:max-w-xl text-base text-gray-500 sm:text-lg md:text-xl lg:mx-0 lg:text-right">
-                        Un premier objectif est d’offrir un support à tous les étudiants du collège : 
-
-
-                                    Être tuteur a été pour moi une
-                        occasion d'apporter mon aide à des étudiants qui en avaient besoin. Cela m'a
-                        permis de réviser et d'approfondir certaines notions, me rendant ainsi capable
-                        de mieux les expliquer aux aidés. Ça a été un beau défi pour moi, car je devais
-                        essayer de trouver les meilleures approches pour leur expliquer les différents
-                        concepts. C'est une expérience que je recommande à ceux que ça pourrait
-                        intéresser.
+                        Le centre d’aide en informatique EspaceI a été créer pour deux objectifs. Le premier est d'offrir des ressources numériques portant sur la bureautique à tous les étudiants du collège ainsi que documenter les différentes solutions apportées afin de maximiser les services offerts à plus long terme. Le second objectif est d'offrir un service de tutorat pour une mise à niveau dans l’utilisation d’outils technologiques.
                         </p>
                         <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                             <div class="rounded-md shadow">

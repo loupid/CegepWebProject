@@ -47,7 +47,7 @@ class espaceController extends Controller
         dump($info);
         $array = array();
         for ($ctr = 0; ctr < $info.length()/3; $ctr++) {
-            array()
+            $array.push(array($info[$ctr]))
         }
         /*$info = array('matricule' => $data['matricule'], 'prenom' => $data['prenom'], 'nom' => $data['nom'], 'courriel' =>$data['courriel']);*/
         
