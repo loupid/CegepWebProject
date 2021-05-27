@@ -86,6 +86,7 @@ class espaceController extends Controller
             }
 
             dump($data);
+            $arrayDispos = array("dispos"=>$arrayDispos);
             echo json_encode($arrayDispos);
             dump($arrayDispos);
 
