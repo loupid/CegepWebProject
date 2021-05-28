@@ -58,8 +58,7 @@ if (!empty($events)) {
 <div id="listeEvents" class="flex-col mx-auto flex items-center justify-center pt-8 px-8">
     <?php
     foreach ($events as $event) { ?>
-    <div id="event_<?= $event->id;?>"
-        class="flex flex-col w-full bg-white mb-8 rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5 cursor-pointer">
+    <div class="flex flex-col w-full bg-white mb-8 rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5">
         <div class="w-full h-64 bg-top bg-cover rounded-t"
             style="background-image: url('/images/UploadedImages/<?= $event->file_name === '' ? 'default.png' : $event->file_name ?>'); background-position: center; background-size:cover;">
         </div>
@@ -77,8 +76,13 @@ if (!empty($events)) {
                 </div>
             </div>
             <div class="p-4 font-normal text-gray-800 md:w-3/4">
-                <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800"><?= $event->title; ?>
-                </h1>
+                <div class="flex justify-between mb-4">
+                    <h1 class="mt-1 text-4xl font-bold leading-none tracking-tight text-gray-800"><?= $event->title; ?>
+                    </h1>
+                    <button
+                        onclick="afficherModal(<?= $event->id;?>,'<?= $event->title; ?>')"
+                        class="px-4 w-1/3 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-indigo-500">S'inscrire</button>
+                </div>
                 <p class="leading-normal"><?= $event->description; ?>
                 </p>
                 <div class="flex flex-row items-center mt-4 text-gray-900">
@@ -196,16 +200,15 @@ if (!empty($events)) {
 ob_start(); ?>
 <script src="/js/formValidator.js"></script>
 <script>
-    $("#listeEvents > div").click(function() {
+    function afficherModal(id, title) {
         $("body").addClass("overflow-y-hidden");
         $("#modal").removeClass("hidden");
         setTimeout(() => {
             $("#modal").removeClass("opacity-0");
-        }, 30);
-        $("#id_event").val($(this).attr("id").split("_")[1]);
-        $("#titreModal").text("Inscription à l'événement " + $(this).children("div").children("div").children(
-            "h1").text());
-    });
+        }, 1);
+        $("#id_event").val(id);
+        $("#titreModal").text("Inscription à l'événement " + title);
+    }
 
     $("#btFermerModal, #bgModal").click(function() {
         $("body").removeClass("overflow-y-hidden");

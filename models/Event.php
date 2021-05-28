@@ -61,9 +61,11 @@ class Event implements \IModel
     }
 
     public static function delete($id, $db)
-    {
+    {   
         // TODO: Implement delete() method.
-        $query = "DELETE FROM events WHERE id = '" . $id."'";
-        $db->prepare($query)->execute();
+        $query = "DELETE FROM events WHERE id = :id;";
+        $db->prepare($query)->execute(array(':id' => $id));
+        $query = "DELETE FROM inscriptions WHERE id_event = :id_event;";
+        $db->prepare($query)->execute(array(':id_event' => $id));
     }
 }
