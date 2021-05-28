@@ -10,14 +10,6 @@ use PDO;
 
 class EventController extends Controller
 {
-    public function getAll()
-    {
-        $query = $this->getDatabase()->prepare("select title, start_date, category, organizer, address, price, description, end_date, file_name, link from events order by start_date desc;");
-        $query->setFetchMode(PDO::FETCH_CLASS, Event::class);
-        $query->execute();
-        $events = $query->fetchAll();
-        return $this->view('events/index', ['events' => $events, 'ordreActif' => ''], 0);
-    }
     //filtre event
     public function getAllWhere()
     {

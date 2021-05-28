@@ -1,4 +1,4 @@
-<form action="<?= $ordreActif === "" ? $this->router->generate("eventsRecherche") : $this->router->generate("eventsRechercheOA") ?>" method="post">
+<form action="<?= $ordreActif === "" ? $this->router->generate("eventsIndex") : $this->router->generate("eventsIndexOA") ?>" method="post">
 <div class="text-gray-600 relative w-3/6 m-auto top-4">
   <input type="search" name="search" placeholder="Recherche" value="<?= $search ?? ''?>" class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none w-full">
   <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
@@ -14,12 +14,12 @@ if (!empty($events)) {
     ?>
     <section class="mt-5 w-1/2 mx-auto">
         <div class="mx-auto pt-5 border-b border-gray-200 flex justify-center">
-            <label class="text-gray-600">Filtrer par :</label>
+            <label class="text-gray-600">Trier par :</label>
             <a href=".<?= $this->router->generate("eventsIndex")?>" class="mx-5 text-gray-600 transition-colors pb-3 border-b cursor-pointer <?php if ($ordreActif === "") {
         echo "border-red-500 text-red-500";
     } else {
         echo "hover:text-black";
-    } ?>">Date de l'événement: <?= $search ?? "" ?></a>
+    } ?>">Date de l'événement</a>
             <a href=".<?= $this->router->generate("eventsIndexOA")?>" class="text-gray-600 transition-colors pb-3 border-b cursor-pointer <?php if ($ordreActif === "nom") {
         echo "border-red-500 text-red-500";
     } else {
