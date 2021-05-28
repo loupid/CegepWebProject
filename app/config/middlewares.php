@@ -43,5 +43,8 @@ return [
     ],
     "linksUpdate" => [
         AdminMiddleware::class
+    ],
+    "inscriptionList" => [
+        AdminMiddleware::class
     ]
 ];

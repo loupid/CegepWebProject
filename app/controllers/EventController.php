@@ -135,4 +135,13 @@ class EventController extends Controller
         $events = $query->fetchAll();
         return $this->view('events/index', ['events' => $events, 'ordreActif' => '', 'confirm' => $confirm], 0);
     }
+
+    public function inscriptionList()
+    {
+        $data = $_POST;
+        $query = $this->getDatabase()->prepare("select firstname, lastname, email from inscriptions where id_event = :id_event;");
+        $query->setFetchMode(PDO::FETCH_ASSOC);
+        $query->execute(array(':id_event' => $data['id_event']));
+        echo json_encode($query->fetchAll());
+    }
 }

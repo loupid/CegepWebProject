@@ -40,15 +40,15 @@ if (!empty($events)) {
         ?>
 <section class="mt-5 w-1/2 mx-auto">
     <div class="mx-auto pt-5 border-b border-gray-200 flex justify-center">
-        <label class="text-gray-600">Filtrer par :</label>
+        <label class="text-gray-600 text-center">Filtrer <span class="whitespace-nowrap">par :</span></label>
         <a href="<?= $this->router->generate("eventsRecherche")?>"
-            class="mx-5 text-gray-600 transition-colors pb-3 border-b cursor-pointer <?php if ($ordreActif === "") {
+            class="mx-5 text-gray-600 transition-colors pb-3 border-b cursor-pointer text-center <?php if ($ordreActif === "") {
             echo "border-red-500 text-red-500";
         } else {
             echo "hover:text-black";
         } ?>">Date de l'événement</a>
         <a href="<?= $this->router->generate("eventsRechercheOA", ["search"=> $search ?? ""])?>"
-            class="text-gray-600 transition-colors pb-3 border-b cursor-pointer <?php if ($ordreActif === "nom") {
+            class="text-gray-600 transition-colors pb-3 border-b cursor-pointer text-center <?php if ($ordreActif === "nom") {
             echo "border-red-500 text-red-500";
         } else {
             echo "hover:text-black";
@@ -143,11 +143,11 @@ if (!empty($events)) {
 <div id="modal" class="hidden opacity-0 fixed w-full h-full top-0 left-0 flex items-center justify-center transition">
     <div id="bgModal" class="absolute w-full h-full bg-gray-900 opacity-50 cursor-pointer">
     </div>
-    <div class="absolute bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg">
+    <div class="absolute bg-white w-11/12 md:max-w-screen-md mx-auto rounded shadow-lg">
         <div class="py-4 text-left px-6">
             <div class="flex justify-between items-center pb-5">
                 <p id="titreModal" class="text-2xl font-bold">Inscription à l'événement</p>
-                <div id="btFermerModal" class="cursor-pointer">
+                <div id="btFermerModal" class="pl-4 cursor-pointer">
                     <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                         viewBox="0 0 18 18">
                         <path
@@ -197,14 +197,18 @@ ob_start(); ?>
 <script src="/js/formValidator.js"></script>
 <script>
     $("#listeEvents > div").click(function() {
+        $("body").addClass("overflow-y-hidden");
         $("#modal").removeClass("hidden");
         setTimeout(() => {
             $("#modal").removeClass("opacity-0");
         }, 30);
         $("#id_event").val($(this).attr("id").split("_")[1]);
+        $("#titreModal").text("Inscription à l'événement " + $(this).children("div").children("div").children(
+            "h1").text());
     });
 
     $("#btFermerModal, #bgModal").click(function() {
+        $("body").removeClass("overflow-y-hidden");
         $("#modal").addClass("opacity-0");
         setTimeout(() => {
             $("#modal").addClass("hidden");

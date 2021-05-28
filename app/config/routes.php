@@ -70,6 +70,7 @@ $router->map('POST/GET', '/evenements-oa', 'EventController@getAllWhereOA', 'eve
 $router->map('POST', '/evenements/inscription', 'EventController@eventInvit', 'eventsInvitation');
 
 $router->map('GET', '/admin/events', 'EventController@eventsList', 'eventsList');
+$router->map('POST', '/admin/events/inscription', 'EventController@inscriptionList', 'inscriptionList');
 $router->map('GET', '/admin/event/create', 'EventController@create', 'eventCreate');
 $router->map('GET', '/admin/event/update/[i:id]', 'EventController@update', 'eventUpdate');
 $router->map('GET', '/admin/event/delete/[i:id]','EventController@delete', 'eventDelete');
