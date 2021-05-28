@@ -68,7 +68,7 @@ if (!empty($newsList)) {
 <?php } ?>
 
 <?php
-    if($pageNum >= 3) {
+    if($pageNum > 1) {
         ?>
         <div>
             <ul class="flex pl-0 list-none rounded my-5 mr-5 justify-center">
