@@ -37,23 +37,8 @@ class espaceController extends Controller
     {
         $data = $_POST;
         $info = array_slice($data, 4);
-        // dump ($data); 
-        // uksort($info,    function($a,$b) 
-        // { $days_of_week = array("Lundi"=>1,"Lundi_debut"=>2,"Lundi_fin"=>3,"Mardi"=>4,"Mardi_debut"=>5,"Mardi_fin"=>6,"Mercredi"=>7,"Mercredi_debut"=>8,"Mercredi_fin"=>9,"Jeudi"=>10,"Jeudi_debut"=>11,"Jeudi_fin"=>12, "Vendredi"=>13,"Vendredi_debut"=>14, "Vendredi_fin"=>15);  
-        //     if ($days_of_week[$a]==$days_of_week[$b]) 
-        //         return 0;   
-        //     return ($days_of_week[$a]<$days_of_week[$b])?-1:1; 
-        // });
-        //     dump($info);
-        //     $array = array();
-        //     for ($ctr = 0; $ctr < sizeof($info)/3; $ctr++) {
-        //         array_push($array, $info[$ctr]);
-        //     }
-        //     dump($array);
 
 
-
-            // ma version--------------------------------------------------------------------------------
             $arrayDispos = array();
             if(array_key_exists("Lundi", $info)){
                 $arrayLundi = array("jour"=>"Lundi", "debut"=>$info["Lundi_debut"], "fin"=>$info["Lundi_fin"]);
@@ -84,26 +69,12 @@ class espaceController extends Controller
                 array_push($arrayDispos, $arrayVendredi);
                 // dump($arrayVendredi);
             }
-
-            dump($data);
             $arrayDispos = array("dispos"=>$arrayDispos);
-            echo json_encode($arrayDispos);
-            dump($arrayDispos);
 
-            
-
-
-            // fin ma version----------------------------------------------------------------------------
 
 
 
             espaceI::create($this->getDatabase(), array("Matricule"=>$data["matricule"], "Prenom"=>$data["prenom"], "Nom"=>$data["nom"], "Courriel"=>$data["courriel"], "Horaire"=>json_encode($arrayDispos)));
-
-
-            /*$info = array('matricule' => $data['matricule'], 'prenom' => $data['prenom'], 'nom' => $data['nom'], 'courriel' =>$data['courriel']);*/
-            
-            /*espaceI::create($this->getDatabase(), $data);*/
-            /*$this->addNotification('addEvent');*/
             return $this->redirectToRoute('serviceIndex');
     }
 

@@ -529,35 +529,35 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="Lundi_debut">Début</label>
                     <div class="col-span-6 sm:col-span-3">
-                        <input name = "Lundi_debut" type="time"disabled id="start_date" :min="new Date().toISOString().slice(0,-8)"
+                        <input name = "Lundi_debut" type="time"disabled id="lundi_start_date" :min="new Date().toISOString().slice(0,-8)"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md inputlundi">
                     </div>
                 </div>
                 <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="Mardi_debut">Début</label>
                     <div class="col-span-6 sm:col-span-3">
-                        <input name = "Mardi_debut" type="time" disabled id="start_date" :min="new Date().toISOString().slice(0,-8)"
+                        <input name = "Mardi_debut" type="time" disabled id="mardi_start_date" :min="new Date().toISOString().slice(0,-8)"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md inputmardi">
                     </div>
                 </div>
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="Mercredi_debut">Début</label>
                     <div class="col-span-6 sm:col-span-3">
-                        <input name = "Mercredi_debut" type="time" disabled id="start_date" :min="new Date().toISOString().slice(0,-8)"
+                        <input name = "Mercredi_debut" type="time" disabled id="mercredi_start_date" :min="new Date().toISOString().slice(0,-8)"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md inputmercredi">
                     </div>
                 </div>
                 <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="Jeudi_debut">Début</label>
                     <div class="col-span-6 sm:col-span-3">
-                        <input name = "Jeudi_debut" type="time" disabled id="start_date" :min="new Date().toISOString().slice(0,-8)"
+                        <input name = "Jeudi_debut" type="time" disabled id="jeudi_start_date" :min="new Date().toISOString().slice(0,-8)"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md inputjeudi">
                     </div>
                 </div>
                 <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="Vendredi_debut">Début</label>
                     <div class="col-span-6 sm:col-span-3">
-                        <input name = "Vendredi_debut"type="time"  disabled id="start_date" :min="new Date().toISOString().slice(0,-8)"
+                        <input name = "Vendredi_debut"type="time"  disabled id="vendredi_start_date" :min="new Date().toISOString().slice(0,-8)"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md inputvendredi">
                     </div>
                 </div>
@@ -567,35 +567,35 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="Lundi_fin">Fin</label>
                     <div class="col-span-6 sm:col-span-3">
-                        <input name = "Lundi_fin" type="time" disabled  id="start_date" :min="new Date().toISOString().slice(0,-8)"
+                        <input name = "Lundi_fin" type="time" disabled  id="lundi_end_date" :min="new Date().toISOString().slice(0,-8)"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md inputlundi">
                     </div>
                 </div>
                 <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="Mardi_fin">Fin</label>
                     <div class="col-span-6 sm:col-span-3">
-                        <input name = "Mardi_fin" type="time" disabled id="start_date" :min="new Date().toISOString().slice(0,-8)"
+                        <input name = "Mardi_fin" type="time" disabled id="mardi_end_date" :min="new Date().toISOString().slice(0,-8)"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md inputmardi">
                     </div>
                 </div>
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="Mercredi_fin">Fin</label>
                     <div class="col-span-6 sm:col-span-3">
-                        <input name = "Mercredi_fin" type="time" disabled id="start_date" :min="new Date().toISOString().slice(0,-8)"
+                        <input name = "Mercredi_fin" type="time" disabled id="mercredi_end_date" :min="new Date().toISOString().slice(0,-8)"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md inputmercredi">
                     </div>
                 </div>
                 <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="Jeudi_fin">Fin</label>
                     <div class="col-span-6 sm:col-span-3">
-                        <input name = "Jeudi_fin" type="time"  disabled id="start_date" :min="new Date().toISOString().slice(0,-8)"
+                        <input name = "Jeudi_fin" type="time"  disabled id="jeudi_end_date" :min="new Date().toISOString().slice(0,-8)"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md inputjeudi">
                     </div>
                 </div>
                 <div class="grid grid-cols-1">
                 <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold" for="Vendredi_fin">Fin</label>
                     <div class="col-span-6 sm:col-span-3">
-                        <input name = "Vendredi_fin" type="time" disabled id="start_date" :min="new Date().toISOString().slice(0,-8)"
+                        <input name = "Vendredi_fin" type="time" disabled id="vendredi_end_date" :min="new Date().toISOString().slice(0,-8)"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md inputvendredi">
                     </div>
                 </div>

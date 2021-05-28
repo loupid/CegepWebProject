@@ -200,12 +200,17 @@ $("#vendredi").change(function(e)
     })
 
     $("#confirmi").click(function (e) {
-        let matriculei, nomi, prenomi, courrieli, jour, dispo;
+        let matriculei, nomi, prenomi, courrieli, lundi, mardi, mercredi, jeudi, vendredi, debut, fin;
 
         matriculei = $("#matriculei").val().trim();
         nomi = $("#nomi").val().trim();
         prenomi = $("#prenomi").val().trim();
         courrieli = $("#emaili").val().trim();
+        lundi = $("#lundi").prop('checked');
+        mardi = $("#mardi").prop('checked');
+        mercredi = $("#mercredi").prop('checked');
+        jeudi = $("#jeudi").prop('checked');
+        vendredi = $("#vendredi").prop('checked');
 
 
         if (matriculei.length != 7) {
@@ -239,6 +244,67 @@ $("#vendredi").change(function(e)
         } else {
             type = $('#typeinscription').find(":selected").val();
             cours = $('#cours').find(":selected").val();
+        }
+
+        if(lundi){
+            if($("#lundi_start_date").val() == "" || $("#lundi_end_date").val() == ""){
+                $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">les champs heures de lundi ne sont pas complets.</span>');
+                $("#msgerreuri").show();
+                e.preventDefault();
+            } else if($("#lundi_start_date").val() >= $("#lundi_end_date").val()){
+                $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">l\'heure de debut de lundi doit etre avant celle de fin.</span>');
+                $("#msgerreuri").show();
+                e.preventDefault();
+            }
+        }
+
+        if(mardi){
+            if($("#mardi_start_date").val() == "" || $("#mardi_end_date").val() == ""){
+                $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">les champs heures de mardi ne sont pas complets.</span>');
+                $("#msgerreuri").show();
+                e.preventDefault();
+            } else if($("#lundi_start_date").val() >= $("#lundi_end_date").val()){
+                $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">l\'heure de debut de mardi doit etre avant celle de fin.</span>');
+                $("#msgerreuri").show();
+                e.preventDefault();
+            }
+        }
+
+        if(mercredi){
+            if($("#mercredi_start_date").val() == "" || $("#mercredi_end_date").val() == ""){
+                $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">les champs heures de mercredi ne sont pas complets.</span>');
+                $("#msgerreuri").show();
+                e.preventDefault();
+            } else if($("#mercredi_start_date").val() >= $("#mercredi_end_date").val()){
+                $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">l\'heure de debut de mercredi doit etre avant celle de fin.</span>');
+                $("#msgerreuri").show();
+                e.preventDefault();
+            }
+        }
+
+        if(jeudi){
+            if($("#jeudi_start_date").val() == "" || $("#jeudi_end_date").val() == ""){
+                $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">les champs heures de jeudi ne sont pas complets.</span>');
+                $("#msgerreuri").show();
+                e.preventDefault();
+            } else if($("#jeudi_start_date").val() >= $("#jeudi_end_date").val()){
+                $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">l\'heure de debut de jeudi doit etre avant celle de fin.</span>');
+                $("#msgerreuri").show();
+                e.preventDefault();
+            }
+        }
+
+        if(vendredi){
+            debugger;
+            if($("#vendredi_start_date").val() == "" || $("#vendredi_end_date").val() == ""){
+                $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">les champs heures de vendredi ne sont pas complets.</span>');
+                $("#msgerreuri").show();
+                e.preventDefault();
+            } else if($("#vendredi_start_date").val() >= $("#vendredi_end_date").val()){
+                $("#messagei").replaceWith('<span class="block sm:inline" id = "messagei">l\'heure de debut de vendredi doit etre avant celle de fin.</span>');
+                $("#msgerreuri").show();
+                e.preventDefault();
+            }
         }
 
     })
