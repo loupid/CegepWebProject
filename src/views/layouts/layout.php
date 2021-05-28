@@ -504,7 +504,7 @@
             </div>
         </div>
 
-        <div class="bg-cwc-white mb-auto">
+        <div class="bg-white mb-auto">
             <?= $content ?? '' ?>
         </div>
 
